@@ -11,7 +11,8 @@ export default defineConfig({
   integrations: [
     starlight({
       title: SITE.name,
-      description: SITE.description,
+      description:
+        'Claude Code skills that implement frameworks and algorithms from A Smart Bear and the Hidden Multipliers book.',
       social: {
         github: URLS.githubRepo,
       },
