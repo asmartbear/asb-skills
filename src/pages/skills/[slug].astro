@@ -1,6 +1,6 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import { marked } from 'marked';
+import { Marked, type Tokens } from 'marked';
 import { listPublicSkills } from '../../lib/skills';
 import InstallInstructions from '../../components/InstallInstructions.astro';
 
@@ -11,8 +11,37 @@ export async function getStaticPaths() {
   }));
 }
 
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+}
+
 const { skill } = Astro.props;
-const wrapperBodyHtml = await marked.parse(skill.wrapperBody);
+
+// Build a fresh Marked instance per-page with a renderer that adds heading
+// IDs, so Starlight's TOC anchors actually link somewhere.
+const md = new Marked({
+  renderer: {
+    heading(token) {
+      const text = this.parser.parseInline(token.tokens);
+      const slug = slugify(this.parser.parseInline(token.tokens, this.parser.textRenderer));
+      return `<h${token.depth} id="${slug}">${text}</h${token.depth}>\n`;
+    },
+  },
+});
+
+// Tokenise once to extract H2/H3 headings for the right-side outline.
+const headings = md
+  .lexer(skill.wrapperBody)
+  .filter((t): t is Tokens.Heading =>
+    t.type === 'heading' && (t.depth === 2 || t.depth === 3))
+  .map((t) => ({ depth: t.depth, slug: slugify(t.text), text: t.text }));
+
+const wrapperBodyHtml = await md.parse(skill.wrapperBody);
 const FENCE = '-'.repeat(3);
 const frontmatterLines = Object.entries(skill.skillFrontmatter)
   .map(([k, v]) => `${k}: ${typeof v === 'string' ? JSON.stringify(v) : String(v)}`)
@@ -20,7 +49,7 @@ const frontmatterLines = Object.entries(skill.skillFrontmatter)
 const rawSkillFile = `${FENCE}\n${frontmatterLines}\n${FENCE}\n\n${skill.skillBody}\n`;
 ---
 
-<StarlightPage frontmatter={{ title: skill.wrapper.title, description: skill.wrapper.summary }}>
+<StarlightPage frontmatter={{ title: skill.wrapper.title, description: skill.wrapper.summary }} headings={headings}>
   <p><em>{skill.wrapper.summary}</em></p>
 
   <InstallInstructions
