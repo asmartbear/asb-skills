@@ -17,6 +17,16 @@ export default defineConfig({
           tag: 'meta',
           attrs: { property: 'og:site_name', content: SITE.name },
         },
+        // Default first-visit theme to dark. Starlight's ThemeProvider
+        // reads localStorage['starlight-theme']; seed it before that
+        // script runs so users who haven't explicitly chosen still get
+        // dark, even if their system prefers light. The theme picker
+        // continues to work and overrides this default once used.
+        {
+          tag: 'script',
+          content:
+            "(function(){try{if(!localStorage.getItem('starlight-theme')){localStorage.setItem('starlight-theme','dark');document.documentElement.dataset.theme='dark';}}catch(e){}})();",
+        },
       ],
       social: {
         github: URLS.githubRepo,

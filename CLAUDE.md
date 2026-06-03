@@ -84,6 +84,9 @@ bun run dev              # Astro dev server (http://localhost:4321)
 bun run build            # static build → dist/
 bun run check            # astro check (type + content schema)
 bun run lint             # lint all skills + wrappers
+# Optional — install a skill globally so it loads in OTHER repos' Claude Code
+# sessions. Not needed while developing in this repo: Claude Code reads
+# .claude/skills/ from the current project directly.
 bun run link <name>      # symlink .claude/skills/<name> → ~/.claude/skills/<name>
 bun run unlink <name>    # remove that symlink
 ```

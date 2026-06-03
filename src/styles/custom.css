@@ -14,3 +14,18 @@
 
 /* Tighten the splash hero on the homepage a touch */
 .hero-html { line-height: 1.4; }
+
+/* Dial heading sizes down a hair from Starlight defaults. */
+:root {
+  --sl-text-h1: 2.125rem;   /* was 2.5rem */
+  --sl-text-h2: 1.625rem;   /* was 1.875rem */
+  --sl-text-h3: 1.3125rem;  /* was 1.5rem */
+}
+
+/* Cap the splash-hero H1's auto-scaling at the regular H1 size.
+   Default Starlight uses clamp(--sl-text-3xl, 5vw, --sl-text-6xl) which
+   gets very large on wide screens; we cap the max at --sl-text-h1 so it
+   tracks our heading scale and stays tunable from the variable above. */
+.hero h1 {
+  font-size: clamp(var(--sl-text-3xl), calc(0.25rem + 5vw), var(--sl-text-h1)) !important;
+}

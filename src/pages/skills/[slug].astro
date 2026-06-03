@@ -195,7 +195,7 @@ if (skill.lastUpdated && !og?.modifiedTime) {
     border-radius: 0.5rem;
     background: var(--sl-color-gray-6);
     overflow: hidden;
-    transition: border-color 0.15s, transform 0.15s;
+    transition: border-color 0.15s, background-color 0.15s;
   }
   .related-card::before {
     content: '';
@@ -206,7 +206,7 @@ if (skill.lastUpdated && !og?.modifiedTime) {
   }
   .related-card:hover {
     border-color: var(--sl-color-accent);
-    transform: translateY(-2px);
+    background: color-mix(in srgb, var(--sl-color-gray-6) 85%, var(--sl-color-gray-5));
   }
   .related-card a {
     display: block;

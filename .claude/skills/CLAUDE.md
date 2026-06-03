@@ -66,8 +66,10 @@ The only hard rule: do NOT use the `asb-` prefix.
    paths to A Smart Bear articles and the Hidden Multipliers book).
 2. Author `.claude/skills/asb-<name>/SKILL.md`. Re-state the framework in your
    own words; do not copy prose from the corpus.
-3. Test in a real Claude session: `bun run link asb-<name>`, iterate, then
-   `bun run unlink asb-<name>`.
+3. Test it in a Claude Code session opened in THIS repo — the skill loads
+   automatically from `.claude/skills/<name>/`. No symlink needed. (If you
+   want to use it globally in other repos, `bun run link asb-<name>` is
+   available; not part of the normal dev loop.)
 4. Create the wrapper at `src/content/skills/asb-<name>.mdx` with `title`,
    `summary`, optional `order` and `featured`, plus any marketing prose for
    the page.

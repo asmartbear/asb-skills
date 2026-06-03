@@ -4,9 +4,11 @@ Two scripts; both run under Bun (`bun run scripts/<name>.ts`):
 
 - `lint-skills.ts` — validates every skill and wrapper. CI runs this. Exits
   non-zero on any error. Add new structural rules here, not inline elsewhere.
-- `link-skill.ts` — symlinks a skill into `~/.claude/skills/` so it loads in
-  real Claude Code sessions. Exposed as `bun run link <name>` /
-  `bun run unlink <name>`.
+- `link-skill.ts` — OPTIONAL. Symlinks a skill from this repo into
+  `~/.claude/skills/` so it loads in Claude Code sessions opened in *other*
+  repos. Not needed while developing here — Claude Code reads
+  `.claude/skills/` from the current project directly. Exposed as
+  `bun run link <name>` / `bun run unlink <name>`.
 
 ## Conventions
 

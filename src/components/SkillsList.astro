@@ -43,7 +43,7 @@ const skills = featured ? all.filter((s) => s.wrapper.featured) : all;
     border: 1px solid var(--sl-color-gray-5);
     border-radius: 0.5rem;
     background: var(--sl-color-gray-6);
-    transition: border-color 0.15s, transform 0.15s;
+    transition: border-color 0.15s, background-color 0.15s;
     overflow: hidden;
   }
   /* Thin accent stripe along the top edge of every card. */
@@ -56,7 +56,7 @@ const skills = featured ? all.filter((s) => s.wrapper.featured) : all;
   }
   .skill-card:hover {
     border-color: var(--sl-color-accent);
-    transform: translateY(-2px);
+    background: color-mix(in srgb, var(--sl-color-gray-6) 85%, var(--sl-color-gray-5));
   }
   .skill-card a {
     display: block;

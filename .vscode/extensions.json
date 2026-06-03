@@ -1,5 +1,7 @@
 {
   "recommendations": [
+    "anthropic.claude-code",
+    "astro-build.astro-vscode",
     "dbaeumer.vscode-eslint"
   ]
 }
