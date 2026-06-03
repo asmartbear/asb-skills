@@ -1,7 +1,7 @@
 ---
 description: "Interactive, multi-phase workflow for authoring a new public asb-* skill from one of Jason Cohen's concepts. Invoke explicitly via /create-asb-skill — auto-invocation is disabled to avoid accidentally kicking off this long workflow."
 disable-model-invocation: true
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash(.claude/skills/jason-corpus-search/search.sh:*), Bash(bun run lint:*), Bash(bun run build:*), Bash(mkdir:*), Bash(ls:*), AskUserQuestion
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash(.claude/skills/jason-corpus-search/search.sh:*), Bash(bun run lint:*), Bash(bun run build:*), Bash(mkdir:*), Bash(ls:*), Bash(cp .claude/skills/create-asb-skill/template.md:*), AskUserQuestion
 ---
 
 # create-asb-skill — turn a Jason Cohen concept into a public asb-* skill
@@ -47,11 +47,16 @@ chat with Jason too — they keep the two layers from blurring.
 
 The work product is the state:
 
-- Phases 1–3 happen in chat. Jason can ask you to summarize at any point.
-- From Phase 4 onward, the partial `.claude/skills/asb-<slug>/SKILL.md` on
-  disk IS the resumption point. If the session ends mid-draft, the file is
-  the memory.
-- The `.mdx` wrapper is written last (Phase 6).
+- The `.mdx` wrapper at `src/content/skills/asb-<slug>.mdx` is created at
+  Phase 0 from `template.md` and is **kept current through every phase** —
+  references go in as you read them, the summary and long description
+  sharpen as the framework crystallizes. If the session ends mid-stream,
+  the on-disk .mdx already reflects everything decided so far.
+- The SKILL.md at `.claude/skills/asb-<slug>/SKILL.md` is created at Phase
+  4. From that point on, the on-disk file is the working draft and the
+  resumption point for the SKILL.md side.
+- Phases 1–3 don't write any SKILL.md yet (decisions accumulate in chat
+  and in the .mdx). Phase 6 polishes both files and lints.
 
 If Jason returns and says "continue forging," look for the in-progress
 SKILL.md on disk, read it, ask which phase he wants to resume at, and
@@ -68,9 +73,28 @@ Ask Jason for, in this order:
    concept name; let Jason override.
 3. **Source pointers** — the article(s) or chapter(s) where the concept
    lives. Jason may give article slugs (e.g. `pricing-determines-your-business-model`)
-   or chapter names. Capture as many as he names.
+   or chapter names. Capture as many as he names; these become **Primary
+   references** in the wrapper.
 
-Confirm back what you heard. Move to Phase 1.
+### Then immediately create the .mdx wrapper
+
+Copy `.claude/skills/create-asb-skill/template.md` →
+`src/content/skills/asb-<slug>.mdx` and fill in what you know now:
+
+- `title:` — the concept name
+- `summary:` — a one-line, deliberately broad summary. It WILL be sharpened
+  in later phases; don't try to make it perfect now.
+- Long description — one rough sentence is enough at Phase 0. It grows and
+  tightens through later phases.
+- **Primary references** — record each source Jason named, as a proper
+  bullet (article URL with trailing slash, or italicized chapter name).
+  See "URL rules" near the end of this document.
+- **Further reading** — leave the TODO marker; Phase 1 fills this in.
+
+This file is the **live working artifact** for the wrapper-side of the
+forging — keep it updated continuously (see "Keep the .mdx updated as you
+go" in the operating principles). Confirm what you wrote back to Jason and
+move to Phase 1.
 
 **Don't** auto-pick the slug without showing Jason. **Don't** start searching
 the corpus until Phase 1.
@@ -101,9 +125,13 @@ paraphrase-of-paraphrase.
    `cli storage search` directly. Multiple different phrasings surface more
    than one careful query does.
 
-3. **Triage hits with Jason.** Present adjacent results with one-line
-   summaries. Use `AskUserQuestion` (multi-select) to let Jason mark which
-   are actually relevant. Read the confirmed ones.
+3. **Just read the hits.** Don't ask Jason which adjacent articles or
+   chapters look worth reading — skim them all. Reading is cheap; asking is
+   friction. Not every word of every hit will be germane, but skim
+   liberally and pick out the parts that are. The only time to ask before
+   reading is if the search returns something that's obviously a different
+   topic with a coincidentally similar title — and even then, lean toward
+   skimming first.
 
 4. **Hold in working memory** (and summarize back to Jason):
    - **Direct quotes worth preserving** with source attribution.
@@ -113,10 +141,16 @@ paraphrase-of-paraphrase.
    - **Open questions** — places where the corpus is fuzzy that Phase 2 will
      need to press for precision.
 
-5. **Track the canonical source list** for the .mdx wrapper later:
-   - Each article → `{slug, title, url: https://longform.asmartbear.com/<slug>/}`
-     (note the trailing slash — required)
-   - Each chapter → `{title, section?}`
+5. **Update the .mdx wrapper as you go.** Open `src/content/skills/asb-<slug>.mdx`
+   and append references as you read them:
+   - Articles Jason explicitly named → **Primary references**.
+   - Articles/chapters the corpus search surfaced that you skimmed and
+     found useful → **Further reading**.
+   - URL format: `https://longform.asmartbear.com/<slug>/` (trailing slash
+     required). Chapters: `*Chapter name* (section "...") in *Hidden Multipliers* — <https://hiddenmultipliers.com>`.
+   - Also expand the long description with a rougher-but-fuller version of
+     what the framework is, based on what you've now read. It will get
+     sharpened later; don't aim for tight prose yet.
 
 Confirm extraction with Jason before moving on; he may add a source you
 missed.
@@ -155,6 +189,17 @@ this particular concept and fire them off:
 Iterate the four-part statement until Jason signs off. Do not move on while
 something is "approximately right" — that imprecision compounds in later
 phases.
+
+### Update the .mdx as the framework sharpens
+
+Once the four-part statement is signed off, return to
+`src/content/skills/asb-<slug>.mdx` and **tighten** what's there:
+
+- `summary:` — rewrite as a sharp one-liner that reflects the now-precise
+  framework, not the broad Phase-0 placeholder.
+- Long description — replace the rough Phase-1 prose with a tighter
+  explanation of what the framework is and when it applies. Still 2–4
+  paragraphs, still inviting, but now grounded in the distilled vocabulary.
 
 ---
 
@@ -249,6 +294,14 @@ useful.
   following these instructions? Patch that."
 - "Is the user better off after talking to this skill than after just reading
   the underlying article? If not, why does the skill exist?"
+
+### Update the .mdx with a concrete usage example
+
+Now that the interaction shape is clear, add a short concrete example to
+the long description in `src/content/skills/asb-<slug>.mdx` — something
+like "Ask Claude to apply this skill to your <X>, and it will walk you
+through <process> until you have <output>." Keep it inviting and grounded
+in real situations the end user would recognize.
 
 ---
 
@@ -375,33 +428,27 @@ Show Jason the post-review diff and get sign-off.
 
 ## Phase 6 — Publish
 
-Goal: land the wrapper, lint, report.
+Goal: polish the wrapper, lint, build, report. The .mdx wrapper has been
+live and updated continuously since Phase 0; by now it should be most of
+the way there.
 
 ### Steps
 
-1. **Write the wrapper** `src/content/skills/asb-<slug>.mdx`. Template:
-
-   ```mdx
-   ---
-   title: <skill display title>
-   summary: <one line, ~150 chars max — used for site listing and <meta description>>
-   order: <integer, optional — controls position in sidebar/home list>
-   featured: <true|false, optional — surfaces on home page>
-   ---
-
-   <2–4 paragraphs of public-facing marketing/explanatory prose. Tone:
-   inviting, concrete, no jargon. Should make the reader want to install
-   the skill. Often includes a short example of what the skill does in
-   practice — e.g. "Ask Claude to apply this skill to your X, and it will…".>
-
-   ## Where this comes from
-
-   - [<article title>](https://longform.asmartbear.com/<slug>/) (A Smart Bear)
-   - *<Chapter name>* (section "<subsection>", if applicable) in *Hidden Multipliers* — <https://hiddenmultipliers.com>
-   ```
-
-   Ask Jason for `title`, `summary`, and whether to set `featured` / `order`.
-   Propose defaults derived from the Phase 2/3 conversation.
+1. **Final polish of `src/content/skills/asb-<slug>.mdx`.** Re-read it
+   cold and tighten anything that still feels rambly:
+   - `summary:` — one sharp line, under ~150 chars. Used for site listing
+     and `<meta description>`.
+   - Long description — 2–4 inviting paragraphs. Concrete, no jargon.
+     Should make the reader want to install the skill. Should include the
+     usage-example sentence added in Phase 3.
+   - **Primary references** — confirm each one has a proper link and is
+     actually a primary source, not adjacent reading.
+   - **Further reading** — confirm any items here are real, useful, and
+     non-redundant with Primary. If the section ended up empty, remove
+     the heading entirely rather than leaving an empty section.
+   - Ask Jason whether to add `order:` (integer; controls sidebar/home
+     position) and `featured: true|false` (surfaces on home page). Both
+     optional.
 
 2. **Run lint and build:**
    ```sh
@@ -415,9 +462,18 @@ Goal: land the wrapper, lint, report.
 
 ---
 
-## URL rules (for the wrapper .mdx)
+## Reference sections in the .mdx wrapper
 
-These appear in the wrapper's "Where this comes from" section.
+The wrapper has two reference sections, each holding any number of items
+(including zero — drop the heading entirely if empty):
+
+- **Primary references** — the article(s) and chapter(s) Jason explicitly
+  named as the source for the concept. Usually 1–3.
+- **Further reading** — adjacent articles or chapters that informed the
+  skill (surfaced by the Phase 1 corpus search) and are worth pointing the
+  reader at for more depth. Any number.
+
+Both sections use the same item formats:
 
 - **A Smart Bear articles**: `https://longform.asmartbear.com/<slug>/`
   - The `<slug>` is the on-disk filename without the `.md` extension.
@@ -440,6 +496,20 @@ files are never published.
   born. Light adversarial energy in Phases 1, 4, 5 is fine.
 - **Don't fill in answers for Jason.** Propose, then ask. The goal is *his*
   framework on the page, not yours.
+- **Don't ask permission to read.** Reading more of the corpus is always
+  cheap; asking Jason "should I read X?" for each candidate is friction
+  and a sign you're hedging. Skim widely, then bring back what's germane.
+  Only ask before reading if a hit is obviously off-topic.
+- **Keep the .mdx updated as you go.** The wrapper at
+  `src/content/skills/asb-<slug>.mdx` is a live working artifact, created
+  at Phase 0 from `template.md` and edited continuously. Whenever you
+  learn something the wrapper should reflect — a new primary source, a
+  good further-reading hit, a sharper way to phrase the framework, a
+  better summary line — open the file and update it then. Don't batch
+  wrapper edits to Phase 6. Earlier text is allowed (encouraged) to be
+  rough; later edits sharpen it. The summary in particular should evolve
+  from broad placeholder at Phase 0, to sharp one-liner by Phase 2, to
+  polished by Phase 6.
 - **One concept per skill.** If during distillation the framework keeps
   splitting in two, stop and ask whether this should be two skills.
 - **Re-read `.claude/skills/CLAUDE.md`** if you're unsure whether something
