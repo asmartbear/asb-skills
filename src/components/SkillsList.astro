@@ -1,0 +1,60 @@
+---
+import { listPublicSkills } from '../lib/skills';
+const skills = listPublicSkills();
+---
+
+{skills.length === 0 ? (
+  <p><em>No public skills yet. Add one at <code>src/content/skills/asb-&lt;name&gt;.mdx</code> with a matching <code>.claude/skills/asb-&lt;name&gt;/SKILL.md</code>.</em></p>
+) : (
+  <ul class="skills-list not-content">
+    {skills.map((s) => (
+      <li class="skill-card">
+        <a href={`/skills/${s.name}/`}>
+          <h3>{s.wrapper.title}</h3>
+          <p>{s.wrapper.summary}</p>
+          <code>{s.name}</code>
+        </a>
+      </li>
+    ))}
+  </ul>
+)}
+
+<style>
+  .skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+  .skill-card {
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    background: var(--sl-color-gray-6);
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .skill-card:hover {
+    border-color: var(--sl-color-accent);
+    transform: translateY(-2px);
+  }
+  .skill-card a {
+    display: block;
+    padding: 1rem 1.25rem;
+    color: inherit;
+    text-decoration: none;
+  }
+  .skill-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+  }
+  .skill-card p {
+    margin: 0 0 0.75rem;
+    color: var(--sl-color-gray-2);
+    font-size: 0.95rem;
+  }
+  .skill-card code {
+    font-size: 0.8rem;
+    color: var(--sl-color-gray-3);
+  }
+</style>

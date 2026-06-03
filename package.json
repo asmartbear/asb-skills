@@ -1,0 +1,32 @@
+{
+  "name": "asb-skills",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "bun run scripts/lint-skills.ts",
+    "link": "bun run scripts/link-skill.ts link",
+    "unlink": "bun run scripts/link-skill.ts unlink"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.0.0",
+    "@astrojs/starlight": "^0.30.0",
+    "astro": "^5.0.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^14.1.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@types/bun": "^1.1.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "bun": ">=1.1.0"
+  }
+}

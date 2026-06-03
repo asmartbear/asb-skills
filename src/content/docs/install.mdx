@@ -1,0 +1,25 @@
+---
+title: How to install a skill
+description: Drop any A Smart Bear skill into your own Claude Code installation.
+---
+
+import InstallInstructions from '../../components/InstallInstructions.astro';
+
+Every skill on this site is a single `SKILL.md` file. To use one, drop it into
+your own Claude Code installation. There's no package manager — just copy the
+file.
+
+<InstallInstructions />
+
+## What is a Claude Code skill?
+
+A skill is a markdown file with YAML frontmatter that tells Claude when and how
+to apply a particular piece of knowledge or workflow. Claude auto-loads skills
+whose descriptions match what you're asking about. Read more in the official
+[Claude Code skills docs](https://docs.claude.com/en/docs/claude-code/skills).
+
+## Why "asb-"?
+
+Every skill on this site starts with `asb-` (for *A Smart Bear*). The prefix
+namespaces the skills so they don't collide with your own local skills, and
+makes it obvious in any Claude session which knowledge came from here.

@@ -1,0 +1,44 @@
+---
+import { URLS, githubRawUrl } from '../lib/site';
+
+interface Props {
+  /** Skill name, e.g. "asb-pricing-ladder". If omitted, generic placeholder is used. */
+  name?: string;
+}
+const { name } = Astro.props;
+const skillName = name ?? 'asb-skill-name';
+const repoUrl = URLS.githubRepo;
+const rawSkillUrl = githubRawUrl(`.claude/skills/${skillName}/SKILL.md`);
+---
+
+<aside class="install-box">
+  <h3>Install <code>{skillName}</code></h3>
+  <p>From your terminal:</p>
+  <pre><code>{`mkdir -p ~/.claude/skills/${skillName}
+curl -fsSL ${rawSkillUrl} \\
+  -o ~/.claude/skills/${skillName}/SKILL.md`}</code></pre>
+
+  <p>
+    Or clone the whole repository and copy the skill folder you want
+    into <code>~/.claude/skills/</code>:
+  </p>
+  <pre><code>{`git clone ${repoUrl}.git
+cp -r asb-skills/.claude/skills/${skillName} ~/.claude/skills/`}</code></pre>
+
+  <p>
+    Restart Claude Code (or run <code>/context</code>) to pick up the new skill.
+  </p>
+</aside>
+
+<style>
+  .install-box {
+    border-left: 4px solid var(--sl-color-accent);
+    background: var(--sl-color-gray-6);
+    padding: 1rem 1.25rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    margin-block: 1.5rem;
+  }
+  .install-box h3 {
+    margin-top: 0;
+  }
+</style>

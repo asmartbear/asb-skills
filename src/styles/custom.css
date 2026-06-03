@@ -1,0 +1,16 @@
+/* Skills from A Smart Bear — light theme overrides on top of Starlight defaults. */
+
+:root {
+  --sl-color-accent-low: #fcefd6;
+  --sl-color-accent: #c47600;
+  --sl-color-accent-high: #6f4200;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #3b2900;
+  --sl-color-accent: #f0a02a;
+  --sl-color-accent-high: #fde2b3;
+}
+
+/* Tighten the splash hero on the homepage a touch */
+.hero-html { line-height: 1.4; }

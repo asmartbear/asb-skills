@@ -1,0 +1,55 @@
+{
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 120,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "scm.diffDecorationsIgnoreTrimWhitespace": "true",
+  "explorer.openEditors.sortOrder": "fullPath",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.tsbuildinfo": true,
+    "**/dist": true,
+    ".claude/worktrees": true
+  },
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+  "js/ts.preferences.importModuleSpecifier": "project-relative",
+  "js/ts.preferences.preferTypeOnlyAutoImports": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "search.exclude": {
+    "**/dist": true,
+    ".claude/worktrees": true
+  },
+  "files.watcherExclude": {
+    "**/.claude/worktrees/**": true
+  },
+  "git.repositoryScanIgnoredFolders": [".claude/worktrees"],
+  "claudeCode.useTerminal": false,
+  "claudeCode.allowDangerouslySkipPermissions": true,
+  "claudeCode.initialPermissionMode": "acceptEdits",
+  "terminal.integrated.minimumContrastRatio": 1,
+  "claudeCode.usePythonEnvironment": false,
+  "[markdown]": {
+    "editor.quickSuggestions": {
+      "other": false,
+      "comments": false,
+      "strings": false
+    }
+  },
+  "markdownlint.config": {},
+  "markdown.validate.enabled": false,
+  "yaml.schemas": {},
+  "yaml.validate": false,
+  "files.associations": {
+    "**/.claude/skills/*/SKILL.md": "markdown"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*", "scripts/**/*"],
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "types": ["bun"],
+    "strictNullChecks": true,
+    "allowJs": true
+  }
+}

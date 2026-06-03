@@ -1,0 +1,51 @@
+---
+interface Props {
+  text: string;
+  label?: string;
+}
+const { text, label = 'Copy' } = Astro.props;
+const encoded = Buffer.from(text, 'utf8').toString('base64');
+---
+
+<button
+  type="button"
+  class="copy-btn"
+  data-copy-b64={encoded}
+  data-default-label={label}
+>{label}</button>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const b64 = btn.dataset.copyB64;
+      if (!b64) return;
+      const text = new TextDecoder().decode(
+        Uint8Array.from(atob(b64), (c) => c.charCodeAt(0)),
+      );
+      try {
+        await navigator.clipboard.writeText(text);
+        const original = btn.dataset.defaultLabel ?? 'Copy';
+        btn.textContent = 'Copied ✓';
+        setTimeout(() => (btn.textContent = original), 1500);
+      } catch {
+        btn.textContent = 'Copy failed';
+      }
+    });
+  });
+</script>
+
+<style>
+  .copy-btn {
+    background: var(--sl-color-accent);
+    color: var(--sl-color-white);
+    border: 0;
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.875rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .copy-btn:hover {
+    filter: brightness(1.1);
+  }
+</style>
