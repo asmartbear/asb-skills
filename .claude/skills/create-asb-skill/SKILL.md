@@ -79,13 +79,15 @@ Ask Jason for, in this order:
 ### Then immediately create the .mdx wrapper
 
 Copy `.claude/skills/create-asb-skill/template.md` →
-`src/content/skills/asb-<slug>.mdx` and fill in what you know now:
+`src/content/skills/asb-<slug>.mdx` and fill in what you know now. Write
+title and summary in the **marketing voice** described below — these are
+not labels, they're hooks. Don't aim for perfect at Phase 0; aim for
+"clearly already trying to sell it." Later phases sharpen.
 
-- `title:` — the concept name
-- `summary:` — a one-line, deliberately broad summary. It WILL be sharpened
-  in later phases; don't try to make it perfect now.
-- Long description — one rough sentence is enough at Phase 0. It grows and
-  tightens through later phases.
+- `title:` — hook + descriptive. See "Marketing voice."
+- `summary:` — benefit-first one-liner. See "Marketing voice."
+- Long description — one rough sentence is enough at Phase 0, but already
+  led by the reader's payoff, not "this skill does X."
 - **Primary references** — record each source Jason named, as a proper
   bullet (article URL with trailing slash, or italicized chapter name).
   See "URL rules" near the end of this document.
@@ -193,13 +195,16 @@ phases.
 ### Update the .mdx as the framework sharpens
 
 Once the four-part statement is signed off, return to
-`src/content/skills/asb-<slug>.mdx` and **tighten** what's there:
+`src/content/skills/asb-<slug>.mdx` and **tighten** what's there. Apply
+the marketing voice (see "Marketing voice" near the end of this document):
 
-- `summary:` — rewrite as a sharp one-liner that reflects the now-precise
-  framework, not the broad Phase-0 placeholder.
+- `title:` — if the Phase-0 hook now feels off given the sharpened
+  framework, rewrite. Hook + descriptive.
+- `summary:` — rewrite as a sharp, benefit-first one-liner that reflects
+  the now-precise framework. Lead with the reader's payoff, then the how.
 - Long description — replace the rough Phase-1 prose with a tighter
-  explanation of what the framework is and when it applies. Still 2–4
-  paragraphs, still inviting, but now grounded in the distilled vocabulary.
+  version. Still 2–4 paragraphs, still benefit-led, now grounded in the
+  distilled vocabulary.
 
 ---
 
@@ -435,12 +440,16 @@ the way there.
 ### Steps
 
 1. **Final polish of `src/content/skills/asb-<slug>.mdx`.** Re-read it
-   cold and tighten anything that still feels rambly:
-   - `summary:` — one sharp line, under ~150 chars. Used for site listing
-     and `<meta description>`.
-   - Long description — 2–4 inviting paragraphs. Concrete, no jargon.
-     Should make the reader want to install the skill. Should include the
-     usage-example sentence added in Phase 3.
+   cold and tighten anything that still feels rambly. Apply the marketing
+   voice (see "Marketing voice" below):
+   - `title:` — hook + descriptive. Reads like something a reader would
+     want to click on, not a label on a filing cabinet.
+   - `summary:` — one sharp benefit-first line, under ~150 chars. Lead
+     with what the reader gets, then how. Used for site listing and
+     `<meta description>`.
+   - Long description — 2–4 paragraphs that open with the reader's
+     payoff. Concrete, no jargon. Should make the reader want to install
+     the skill. Should include the usage-example sentence added in Phase 3.
    - **Primary references** — confirm each one has a proper link and is
      actually a primary source, not adjacent reading.
    - **Further reading** — confirm any items here are real, useful, and
@@ -459,6 +468,63 @@ the way there.
 
 3. Tell Jason: file paths written, lint/build status, suggested next step
    (`bun run dev` to preview locally, then commit and push).
+
+---
+
+## Marketing voice (for title, summary, and long description in the .mdx)
+
+The wrapper is the public face of the skill on the website. Title and
+summary are **marketing copy**, not labels. They have to pull a reader in
+and earn the click. Apply this voice from Phase 0 onward, and tighten in
+Phases 2 and 6.
+
+### Title
+
+Hook + descriptive. The title MUST tell the reader what the skill is — a
+pure hook with no information is a fail — but it should do so in a way
+that's emotionally interesting, pithy, or evocative. The reader should
+feel "what's that about, tell me more" and then immediately see what it
+is. Pithy beats clinical; vague is unacceptable.
+
+- ❌ Clinical/labeling: "Acquisition diagnostic skill", "Pricing framework"
+- ❌ Vague hook: "Sharpen your thinking", "Get unstuck"
+- ✅ Hook + descriptive: "Diagnose why your acquisition channel is broken",
+  "Stress-test an idea until it cracks or sharpens"
+
+### Summary (the one-line `summary:` field)
+
+**Benefit-first.** Lead with what the reader GETS — the outcome, the
+problem solved, the change. THEN briefly say HOW (what the skill is /
+does). Not the other way around. Verbs of *transformation* over verbs
+of *description*.
+
+- ❌ Description-led: "This is a devil's-advocate interrogator that asks
+  hard questions about your plan."
+- ✅ Benefit-led: "Stress-test your ideas to a fine point with a relentless
+  devil's-advocate interrogation that surfaces every weak assumption."
+
+The summary doubles as the site's `<meta description>` for that page, so
+it's also doing SEO work — search-result snippet style.
+
+### Long description (the 2–4 paragraph body)
+
+Open the FIRST paragraph with the reader's payoff — the change they get,
+the problem this solves, the situation it cuts through. Make them want to
+keep reading. THEN, in subsequent paragraphs, explain what the framework
+is, when it applies, and how the wielder actually facilitates it. Close
+with the concrete usage example from Phase 3 ("Ask Claude to apply this
+skill to your X, and it will…").
+
+Concrete, no jargon. If a sentence could appear in any skill's
+description, it's filler — cut it. The reader should finish the body
+already convinced it's worth installing.
+
+### Test the voice
+
+Read your draft as if you were the reader scrolling the home page. Does
+the title make you want to click? Does the summary make you want to read
+the body? Does the body make you want to install the skill? If any answer
+is "no" or "meh," it's not done.
 
 ---
 
