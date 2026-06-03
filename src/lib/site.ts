@@ -14,6 +14,9 @@ export const SITE = {
   name: 'Skills from A Smart Bear',
   /** Production URL. Used as Astro's `site` and for absolute links. */
   url: 'https://skills.asmartbear.com',
+  /** One-line site description. Used for <meta name="description"> and as Starlight's default page description. */
+  description:
+    'Claude Code skills that implement frameworks and algorithms from A Smart Bear and the Hidden Multipliers book.',
 } as const;
 
 export const URLS = {
