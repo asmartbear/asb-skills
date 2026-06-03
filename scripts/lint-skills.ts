@@ -86,7 +86,7 @@ function lintSkill(name: string, isPublic: boolean) {
   }
 }
 
-function lintWrapper(name: string) {
+function lintWrapper(name: string, wrapperSet: Set<string>) {
   const mdx = join(WRAPPERS_DIR, `${name}.mdx`);
   const md = join(WRAPPERS_DIR, `${name}.md`);
   const path = existsSync(mdx) ? mdx : md;
@@ -112,6 +112,19 @@ function lintWrapper(name: string) {
   if (!existsSync(skillPath)) {
     err(`[wrapper:${name}] no matching .claude/skills/${name}/SKILL.md`);
   }
+  if (data.related !== undefined) {
+    if (!Array.isArray(data.related) || data.related.some((r: unknown) => typeof r !== 'string')) {
+      err(`[wrapper:${name}] "related" must be a list of skill-name strings`);
+    } else {
+      for (const ref of data.related as string[]) {
+        if (ref === name) {
+          err(`[wrapper:${name}] "related" lists itself`);
+        } else if (!wrapperSet.has(ref)) {
+          err(`[wrapper:${name}] "related" references "${ref}" which is not a public skill`);
+        }
+      }
+    }
+  }
 }
 
 const skillDirs = listSkillDirs();
@@ -122,7 +135,7 @@ for (const name of skillDirs) {
   lintSkill(name, wrapperSet.has(name));
 }
 for (const name of wrappers) {
-  lintWrapper(name);
+  lintWrapper(name, wrapperSet);
 }
 
 console.log(`Linted ${skillDirs.length} skills, ${wrappers.length} wrappers.`);

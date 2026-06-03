@@ -1,6 +1,15 @@
 ---
-title: TODO — hook + descriptive (filled at Phase 0). Pulls the reader in ("tell me more") while still telling them what the skill is. Pithy, emotionally interesting, but never vague.
-summary: TODO — benefit-first one-liner, ~150 chars. Lead with what the reader GETS (the outcome, the problem solved), then briefly say HOW. Not "This is a devil's-advocate interrogator" but "Stress-test your ideas to a fine point with a devil's-advocate interrogator." Broad at first, sharpened in later phases.
+title: TODO — hook + descriptive (filled at Phase 0). Full per-page title. Pulls the reader in ("tell me more") while still telling them what the skill is. Pithy, emotionally interesting, but never vague.
+cardTitle: TODO — short title shown on the home-page card. 1–3 words. Falls back to `title` if omitted, but a long full title looks bad on the card. E.g. title="Rude Q&A: The Constructive Devil's Advocate" → cardTitle="Rude Q&A".
+hook: TODO — verb-led one-liner shown on the home-page card. 5–8 words. Falls back to `summary` if omitted. Must scan in one beat. E.g. "Grills your plan until it cracks."
+summary: TODO — benefit-first one-liner, ~150 chars, rendered as italic line at the top of the per-skill page and used for `<meta description>`. Lead with what the reader GETS (the outcome, the problem solved), then briefly say HOW. Not "This is a devil's-advocate interrogator" but "Stress-test your ideas to a fine point with a devil's-advocate interrogator." Broad at first, sharpened in later phases.
+input: TODO — one-line description of what the user brings TO the skill (a plan, a draft, a brief, a number, etc.). Filled in Phase 3 once the interaction shape is clear. Renders as the top row of the Input/Output tile on the per-skill page. Both `input` AND `output` must be set for the tile to render.
+output: TODO — one-line description of what the user GETS BACK from the skill (a markdown doc, a diagnosis, a list, etc.). Filled in Phase 3. Renders as the bottom row of the I/O tile.
+# related: [asb-foo, asb-bar]  # Uncomment and list other public-skill names that someone using this skill would naturally reach for next. Renders as a "Related skills" section at the bottom of the per-page (and adds an entry to the right-side TOC). Skip / leave commented if there are no obvious follow-ons. One-directional — list only the skills useful as a follow-on from THIS one. Lint will error on unknown names.
+source:
+  # Primary-source citation. Renders as a short "Adapted from <title>." sentence appended to the italic summary at the top of the per-page. Use the foundation article most directly behind the skill — usually the first entry under `## From the source` Foundation. Skip the whole `source:` block to suppress the citation.
+  title: "TODO — title of the primary A Smart Bear article (or chapter), as it appears in the article"
+  url: "https://longform.asmartbear.com/SLUG/"
 ---
 
 TODO — long description. This body renders as the public-facing page on the

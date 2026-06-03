@@ -1,17 +1,27 @@
 ---
 import { listPublicSkills } from '../lib/skills';
-const skills = listPublicSkills();
+
+interface Props {
+  /** If true, only show skills with `featured: true`. If false/undefined, show all. */
+  featured?: boolean;
+}
+const { featured } = Astro.props;
+
+const all = listPublicSkills();
+const skills = featured ? all.filter((s) => s.wrapper.featured) : all;
 ---
 
 {skills.length === 0 ? (
-  <p><em>No public skills yet. Add one at <code>src/content/skills/asb-&lt;name&gt;.mdx</code> with a matching <code>.claude/skills/asb-&lt;name&gt;/SKILL.md</code>.</em></p>
+  featured ? null : (
+    <p><em>No public skills yet. Add one at <code>src/content/skills/asb-&lt;name&gt;.mdx</code> with a matching <code>.claude/skills/asb-&lt;name&gt;/SKILL.md</code>.</em></p>
+  )
 ) : (
   <ul class="skills-list not-content">
     {skills.map((s) => (
       <li class="skill-card">
         <a href={`/skills/${s.name}/`}>
-          <h3>{s.wrapper.title}</h3>
-          <p>{s.wrapper.summary}</p>
+          <h3>{s.wrapper.cardTitle ?? s.wrapper.title}</h3>
+          <p class="hook">{s.wrapper.hook ?? s.wrapper.summary}</p>
           <code>{s.name}</code>
         </a>
       </li>
@@ -26,13 +36,23 @@ const skills = listPublicSkills();
     margin: 0;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
   }
   .skill-card {
+    position: relative;
     border: 1px solid var(--sl-color-gray-5);
     border-radius: 0.5rem;
     background: var(--sl-color-gray-6);
     transition: border-color 0.15s, transform 0.15s;
+    overflow: hidden;
+  }
+  /* Thin accent stripe along the top edge of every card. */
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: var(--sl-color-accent);
   }
   .skill-card:hover {
     border-color: var(--sl-color-accent);
@@ -45,10 +65,10 @@ const skills = listPublicSkills();
     text-decoration: none;
   }
   .skill-card h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.1rem;
+    margin: 0 0 0.4rem;
+    font-size: 1.15rem;
   }
-  .skill-card p {
+  .skill-card .hook {
     margin: 0 0 0.75rem;
     color: var(--sl-color-gray-2);
     font-size: 0.95rem;

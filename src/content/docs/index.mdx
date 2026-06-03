@@ -3,28 +3,40 @@ title: Skills from A Smart Bear
 description: Claude Code skills that implement frameworks and algorithms from A Smart Bear and the Hidden Multipliers book.
 template: splash
 hero:
-  tagline: Battle-tested business frameworks from two decades of A Smart Bear writing and the Hidden Multipliers book — packaged as drop-in Claude Code skills.
-  actions:
-    - text: How to install
-      link: /install/
-      icon: right-arrow
-      variant: primary
-    - text: A Smart Bear
-      link: https://longform.asmartbear.com
-      icon: external
-      attrs:
-        target: _blank
-        rel: noopener
-    - text: Hidden Multipliers
-      link: https://hiddenmultipliers.com
-      icon: external
-      attrs:
-        target: _blank
-        rel: noopener
+  tagline: 'AI skills that execute the frameworks and workflows from the <a href="https://longform.asmartbear.com" target="_blank" rel="noopener">A Smart Bear</a> blog and in the book <em><a href="https://hiddenmultipliers.com" target="_blank" rel="noopener">Hidden Multipliers</a></em>.'
 ---
 
+import { LinkButton } from '@astrojs/starlight/components';
 import SkillsList from '../../components/SkillsList.astro';
+import CuratorByline from '../../components/CuratorByline.astro';
 
-## Browse the skills
+<CuratorByline />
+
+<div class="hero-actions sl-flex">
+  <LinkButton href="/install/" icon="right-arrow" variant="primary">How to install</LinkButton>
+  <LinkButton href="https://longform.asmartbear.com" icon="external" variant="secondary" attrs={{ target: '_blank', rel: 'noopener' }}>A Smart Bear</LinkButton>
+  <LinkButton href="https://hiddenmultipliers.com" icon="external" variant="secondary" attrs={{ target: '_blank', rel: 'noopener' }}>Hidden Multipliers</LinkButton>
+</div>
+
+<style is:global>{`
+  /* Splash hero leaves a lot of vertical space; tighten it on this page. */
+  .main-pane > .content-panel:first-child,
+  .main-pane main { padding-block-start: 1rem !important; }
+  .hero {
+    padding-block-start: 0 !important;
+    padding-block-end: 0.5rem !important;
+  }
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    margin-block: 0 2rem;
+  }
+`}</style>
+
+## Most Popular
+
+<SkillsList featured />
+
+## All Skills
 
 <SkillsList />

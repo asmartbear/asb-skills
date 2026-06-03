@@ -127,8 +127,17 @@ title and summary in the **marketing voice** described below — these are
 not labels, they're hooks. Don't aim for perfect at Phase 0; aim for
 "clearly already trying to sell it." Later phases sharpen.
 
-- `title:` — hook + descriptive. See "Marketing voice."
+- `title:` — full per-page title. Hook + descriptive. See "Marketing voice."
+- `cardTitle:` — short home-page-card title (1–3 words). Almost always
+  needed because `title` is usually too long for a card. See "Marketing voice."
+- `hook:` — verb-led one-liner (5–8 words) shown on the home-page card.
+  Distinct from `summary`. See "Marketing voice."
 - `summary:` — benefit-first one-liner. See "Marketing voice."
+- `input:` / `output:` — leave the TODO markers; Phase 3 fills these in
+  once the interaction shape is clear.
+- `related:` — leave commented out for now. Phase 6 (or any later session
+  that adds an adjacent skill) decides whether this skill should point at
+  follow-on skills.
 - Long description — one rough sentence is enough at Phase 0, but already
   led by the reader's payoff, not "this skill does X."
 - **`## Example invocation`** — leave the TODO marker; Phase 3 fills this in once
@@ -352,6 +361,22 @@ useful.
 - "Is the user better off after talking to this skill than after just reading
   the underlying article? If not, why does the skill exist?"
 
+### Fill in `input:` and `output:` in the .mdx frontmatter
+
+Now that the interaction shape is clear, fill in `input:` and `output:` in
+the .mdx frontmatter — both single-line strings. They render as a two-row
+"Input / Output" tile above the install box on the per-skill page, giving
+readers an at-a-glance shape of what the skill consumes and produces. Both
+must be set for the tile to render; if only one applies, leave both blank.
+
+- `input:` — what the user brings. *"A plan, pitch, decision, or
+  positioning — a one-line dilemma or a fully-supported brief."*
+- `output:` — what the user gets back. *"A markdown document with
+  sharpened decisions, accepted consequences, and the next questions you
+  owe yourself."*
+
+Keep them short and concrete; this is a glance-level tile, not prose.
+
 ### Fill in the `## Example invocation` section of the .mdx
 
 Now that the interaction shape is clear, fill in the `## Example invocation` section
@@ -525,6 +550,13 @@ the way there.
    - **`## Example invocation`** — confirm the slash-command code block is realistic
      and the prose paragraph describes what the skill actually does (no
      literal LLM output), in second-person voice.
+   - `related:` — at Phase 6, ask Jason whether this skill should list any
+     existing public skills as natural follow-ons. If yes, add a `related:
+     [asb-foo, asb-bar]` array to the frontmatter. Each named skill must be
+     an existing public skill (lint errors on unknowns). One-directional;
+     don't worry about the reverse pointer unless the other skill should
+     also point here. If there are no obvious follow-ons, leave the field
+     out entirely — the "Related skills" section just won't render.
    - **`## From the source`** — confirm Foundation (1–2 critical) and
      Supporting (rest) are correctly split, each item has a one-line why-
      relevant explanation, no "(A Smart Bear)" suffix anywhere. If
@@ -553,7 +585,7 @@ summary are **marketing copy**, not labels. They have to pull a reader in
 and earn the click. Apply this voice from Phase 0 onward, and tighten in
 Phases 2 and 6.
 
-### Title
+### Title (full per-page title, the `title:` field)
 
 Hook + descriptive. The title MUST tell the reader what the skill is — a
 pure hook with no information is a fail — but it should do so in a way
@@ -565,6 +597,31 @@ is. Pithy beats clinical; vague is unacceptable.
 - ❌ Vague hook: "Sharpen your thinking", "Get unstuck"
 - ✅ Hook + descriptive: "Diagnose why your acquisition channel is broken",
   "Stress-test an idea until it cracks or sharpens"
+
+### Card title (the `cardTitle:` field) — short home-card label
+
+The home-page card has limited width and shows a stack of (cardTitle →
+hook → slug). The full `title:` is usually too long to fit cleanly on a
+card. `cardTitle:` is the 1–3-word version — the everyday name for the
+skill, not the marketing subtitle.
+
+- title: *"Rude Q&A: The Constructive Devil's Advocate"* → cardTitle: *"Rude Q&A"*
+- title: *"Diagnose why your acquisition channel is broken"* → cardTitle: *"Acquisition diagnostic"*
+
+If the `title:` is already short (≤ 3 words), omit `cardTitle:` and it
+falls back to `title`.
+
+### Hook (the `hook:` field) — verb-led card one-liner
+
+Renders on the home-page card under the cardTitle. Distinct from
+`summary`: the hook is meant to be *scanned* in one beat, the summary is
+read. Verb-led, present-tense, 5–8 words. Falls back to `summary` if
+omitted, but `summary` is usually too long for the card.
+
+- ❌ Description: "A skill for stress-testing your plans."
+- ❌ Adjective-led: "Sharp, unsparing devil's advocate for your plans."
+- ✅ Verb-led: "Grills your plan until it cracks."
+- ✅ Verb-led: "Diagnoses why your funnel is broken."
 
 ### Summary (the one-line `summary:` field)
 
@@ -580,6 +637,20 @@ of *description*.
 
 The summary doubles as the site's `<meta description>` for that page, so
 it's also doing SEO work — search-result snippet style.
+
+### Input / Output (the `input:` and `output:` fields)
+
+These render as a small two-row tile above the install box on the per-
+skill page — Input across the top, Output across the bottom — giving the
+reader a glance-level shape of the skill. Both must be set for the tile
+to render; if only one side applies, leave both blank.
+
+Voice: terse, concrete, scan-readable. Not prose. One sentence each.
+
+- ✅ `input:` *"A plan, pitch, decision, or positioning — a one-line dilemma or a fully-supported brief."*
+- ✅ `output:` *"A markdown document with sharpened decisions, accepted consequences, and the next questions you owe yourself."*
+- ❌ `input:` *"Whatever you've got — anything works really."* (vague)
+- ❌ `output:` *"Insights and clarity around your situation."* (fluff)
 
 ### Long description (the 2–4 paragraph body)
 

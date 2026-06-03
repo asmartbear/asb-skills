@@ -2,6 +2,9 @@
 dist/
 .astro/
 
+# build caches (e.g. fetched og-meta from source articles)
+.cache/
+
 # dependencies
 node_modules/
 

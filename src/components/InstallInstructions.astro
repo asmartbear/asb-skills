@@ -11,8 +11,10 @@ interface Props {
   githubUrl?: string;
   /** GitHub raw URL for "Raw file". Defaults to computed from name. */
   rawUrl?: string;
+  /** ISO date (YYYY-MM-DD) of the last git commit touching the skill. Renders a small footer line; omitted if undefined. */
+  lastUpdated?: string;
 }
-const { name, copyText, githubUrl, rawUrl } = Astro.props;
+const { name, copyText, githubUrl, rawUrl, lastUpdated } = Astro.props;
 const skillName = name ?? 'asb-skill-name';
 const repoUrl = URLS.githubRepo;
 const rawSkillUrl = rawUrl ?? githubRawUrl(`.claude/skills/${skillName}/SKILL.md`);
@@ -44,6 +46,10 @@ curl -fsSL ${rawSkillUrl} \\
     <pre><code>{`git clone ${repoUrl}.git
 cp -r asb-skills/.claude/skills/${skillName} ~/.claude/skills/`}</code></pre>
   </details>
+
+  {lastUpdated && (
+    <p class="install-stamp">Last updated <time datetime={lastUpdated}>{lastUpdated}</time></p>
+  )}
 </aside>
 
 <style>
@@ -101,5 +107,11 @@ cp -r asb-skills/.claude/skills/${skillName} ~/.claude/skills/`}</code></pre>
   }
   .install-cli > summary:hover {
     color: var(--sl-color-accent);
+  }
+
+  .install-stamp {
+    margin: 0.75rem 0 0;
+    font-size: 0.8rem;
+    color: var(--sl-color-gray-3);
   }
 </style>

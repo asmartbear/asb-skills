@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # need full history so per-skill "Last updated" stamps are accurate
 
       - uses: oven-sh/setup-bun@v2
         with:

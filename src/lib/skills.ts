@@ -1,4 +1,5 @@
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
+import { execSync } from 'node:child_process';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
@@ -12,8 +13,20 @@ export const WRAPPERS_DIR = join(REPO_ROOT, 'src', 'content', 'skills');
 export interface SkillWrapperFrontmatter {
   title: string;
   summary: string;
+  /** Optional shorter title used on the home-page card. Falls back to `title`. */
+  cardTitle?: string;
+  /** Optional short verb-led one-liner shown on the home-page card. Falls back to `summary`. */
+  hook?: string;
+  /** Optional one-line description of what the user brings to the skill. Renders in the per-page I/O tile when both `input` and `output` are set. */
+  input?: string;
+  /** Optional one-line description of what the user gets back. Renders in the per-page I/O tile when both `input` and `output` are set. */
+  output?: string;
   featured?: boolean;
   order?: number;
+  /** Optional list of other public-skill names (e.g. ["asb-pricing-ladder"]) to surface in a "Related skills" section on the per-page. Missing or empty → no section rendered. Named skills that don't exist are skipped silently at render time (and flagged by `bun run lint`). One-directional — list only the skills useful as a follow-on from this one. */
+  related?: string[];
+  /** Optional primary-source citation. When set, an "Adapted from <title>." sentence appears appended to the summary line at the top of the per-skill page. Use the foundation article most directly behind the skill — usually the first entry under `## From the source` Foundation. */
+  source?: { title: string; url: string };
 }
 
 export interface SkillFile {
@@ -27,6 +40,8 @@ export interface SkillFile {
   wrapperBody: string;
   githubUrl: string;
   rawUrl: string;
+  /** ISO date (YYYY-MM-DD) of the most recent git commit touching the SKILL.md or wrapper. `undefined` if git history is unavailable (e.g. shallow checkout with no history). */
+  lastUpdated: string | undefined;
 }
 
 function readWrapperNames(): string[] {
@@ -44,6 +59,22 @@ function readWrapper(name: string): { frontmatter: SkillWrapperFrontmatter; body
   const raw = readFileSync(path, 'utf8');
   const { data, content } = matter(raw);
   return { frontmatter: data as SkillWrapperFrontmatter, body: content.trim() };
+}
+
+/** ISO date (YYYY-MM-DD) of the most recent commit touching any of the given paths. Returns undefined if git fails (e.g. shallow checkout with no history of these files, or repo not initialized). */
+function lastCommitDate(paths: string[]): string | undefined {
+  try {
+    const out = execSync(
+      `git log -1 --format=%cI -- ${paths.map((p) => JSON.stringify(p)).join(' ')}`,
+      { cwd: REPO_ROOT, stdio: ['ignore', 'pipe', 'ignore'] },
+    )
+      .toString()
+      .trim();
+    if (!out) return undefined;
+    return out.slice(0, 10); // YYYY-MM-DD
+  } catch {
+    return undefined;
+  }
 }
 
 function readSkillFile(name: string): { body: string; frontmatter: Record<string, unknown> } | null {
@@ -66,6 +97,7 @@ export function listPublicSkills(): SkillFile[] {
     const skill = readSkillFile(name);
     if (!wrapper || !skill) continue;
     const skillRelPath = `.claude/skills/${name}/SKILL.md`;
+    const wrapperRelPath = `src/content/skills/${name}.mdx`;
     out.push({
       name,
       skillPath: join(SKILLS_DIR, name, 'SKILL.md'),
@@ -76,6 +108,7 @@ export function listPublicSkills(): SkillFile[] {
       wrapperBody: wrapper.body,
       githubUrl: githubBlobUrl(skillRelPath),
       rawUrl: githubRawUrl(skillRelPath),
+      lastUpdated: lastCommitDate([skillRelPath, wrapperRelPath]),
     });
   }
   out.sort((a, b) => {
