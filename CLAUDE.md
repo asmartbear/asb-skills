@@ -7,7 +7,9 @@ decades of articles at [A Smart Bear](https://longform.asmartbear.com) and the
 new book *[Hidden Multipliers](https://hiddenmultipliers.com)*.
 
 The site is deployed via GitHub Actions to **GitHub Pages** at
-**skills.asmartbear.com**. Runtime / package manager is **Bun**.
+**skills.asmartbear.com**. Runtime / package manager is **Bun**. The git
+remote is **`origin`** (github.com/asmartbear/asb-skills); push to `main`
+triggers deploy.
 
 ## Two classes of skill — read this before touching anything in `.claude/skills/`
 

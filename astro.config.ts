@@ -15,6 +15,9 @@ export default defineConfig({
       social: {
         github: URLS.githubRepo,
       },
+      components: {
+        SocialIcons: './src/components/SocialIcons.astro',
+      },
       customCss: ['./src/styles/custom.css'],
       sidebar: [
         { label: 'Home', link: '/' },
