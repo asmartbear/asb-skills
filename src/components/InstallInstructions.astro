@@ -1,33 +1,49 @@
 ---
-import { URLS, githubRawUrl } from '../lib/site';
+import { URLS, githubRawUrl, githubBlobUrl } from '../lib/site';
+import CopyButton from './CopyButton.astro';
 
 interface Props {
   /** Skill name, e.g. "asb-pricing-ladder". If omitted, generic placeholder is used. */
   name?: string;
+  /** Full text of the SKILL.md file (with frontmatter) for the Copy button. */
+  copyText?: string;
+  /** GitHub blob URL for "View source on GitHub". Defaults to computed from name. */
+  githubUrl?: string;
+  /** GitHub raw URL for "Raw file". Defaults to computed from name. */
+  rawUrl?: string;
 }
-const { name } = Astro.props;
+const { name, copyText, githubUrl, rawUrl } = Astro.props;
 const skillName = name ?? 'asb-skill-name';
 const repoUrl = URLS.githubRepo;
-const rawSkillUrl = githubRawUrl(`.claude/skills/${skillName}/SKILL.md`);
+const rawSkillUrl = rawUrl ?? githubRawUrl(`.claude/skills/${skillName}/SKILL.md`);
+const blobSkillUrl = githubUrl ?? githubBlobUrl(`.claude/skills/${skillName}/SKILL.md`);
 ---
 
 <aside class="install-box">
-  <h3>Install <code>{skillName}</code></h3>
-  <p>From your terminal:</p>
-  <pre><code>{`mkdir -p ~/.claude/skills/${skillName}
+  <h3>Installing <code>{skillName}</code></h3>
+
+  <div class="install-actions">
+    {copyText && <CopyButton text={copyText} label="Copy SKILL.md" />}
+    <a href={blobSkillUrl} target="_blank" rel="noopener">View source on GitHub →</a>
+    <a href={rawSkillUrl} target="_blank" rel="noopener">Raw file →</a>
+  </div>
+
+  <p class="install-hint">
+    Save into <code>~/.claude/skills/{skillName}/SKILL.md</code>, then restart
+    Claude Code (or run <code>/context</code>) to pick up the new skill.
+  </p>
+
+  <details class="install-cli">
+    <summary>Or install from the command line</summary>
+    <p>Fetch directly:</p>
+    <pre><code>{`mkdir -p ~/.claude/skills/${skillName}
 curl -fsSL ${rawSkillUrl} \\
   -o ~/.claude/skills/${skillName}/SKILL.md`}</code></pre>
 
-  <p>
-    Or clone the whole repository and copy the skill folder you want
-    into <code>~/.claude/skills/</code>:
-  </p>
-  <pre><code>{`git clone ${repoUrl}.git
+    <p>Or clone the whole repository and copy the skill folder:</p>
+    <pre><code>{`git clone ${repoUrl}.git
 cp -r asb-skills/.claude/skills/${skillName} ~/.claude/skills/`}</code></pre>
-
-  <p>
-    Restart Claude Code (or run <code>/context</code>) to pick up the new skill.
-  </p>
+  </details>
 </aside>
 
 <style>
@@ -40,5 +56,50 @@ cp -r asb-skills/.claude/skills/${skillName} ~/.claude/skills/`}</code></pre>
   }
   .install-box h3 {
     margin-top: 0;
+  }
+
+  .install-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-block: 0.5rem 0.75rem;
+  }
+
+  .install-hint {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin-block: 0.5rem;
+  }
+
+  .install-cli {
+    margin-top: 0.75rem;
+  }
+  .install-cli > summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--sl-color-accent-high);
+    list-style: none;
+    user-select: none;
+    padding: 0.25rem 0;
+    display: inline-flex;
+    align-items: center;
+  }
+  .install-cli > summary::-webkit-details-marker {
+    display: none;
+  }
+  .install-cli > summary::before {
+    content: '▸';
+    display: inline-block;
+    margin-right: 0.4rem;
+    transition: transform 0.15s ease;
+    font-size: 0.85em;
+  }
+  .install-cli[open] > summary::before {
+    transform: rotate(90deg);
+  }
+  .install-cli > summary:hover {
+    color: var(--sl-color-accent);
   }
 </style>

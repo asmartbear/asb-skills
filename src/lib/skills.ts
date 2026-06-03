@@ -23,6 +23,8 @@ export interface SkillFile {
   skillBody: string;
   skillFrontmatter: Record<string, unknown>;
   wrapper: SkillWrapperFrontmatter;
+  /** Markdown body of the wrapper `.mdx`/`.md` file (without frontmatter). */
+  wrapperBody: string;
   githubUrl: string;
   rawUrl: string;
 }
@@ -34,14 +36,14 @@ function readWrapperNames(): string[] {
     .map((f) => f.replace(/\.mdx?$/, ''));
 }
 
-function readWrapperFrontmatter(name: string): SkillWrapperFrontmatter | null {
+function readWrapper(name: string): { frontmatter: SkillWrapperFrontmatter; body: string } | null {
   const mdx = join(WRAPPERS_DIR, `${name}.mdx`);
   const md = join(WRAPPERS_DIR, `${name}.md`);
   const path = existsSync(mdx) ? mdx : existsSync(md) ? md : null;
   if (!path) return null;
   const raw = readFileSync(path, 'utf8');
-  const { data } = matter(raw);
-  return data as SkillWrapperFrontmatter;
+  const { data, content } = matter(raw);
+  return { frontmatter: data as SkillWrapperFrontmatter, body: content.trim() };
 }
 
 function readSkillFile(name: string): { body: string; frontmatter: Record<string, unknown> } | null {
@@ -60,7 +62,7 @@ function readSkillFile(name: string): { body: string; frontmatter: Record<string
 export function listPublicSkills(): SkillFile[] {
   const out: SkillFile[] = [];
   for (const name of readWrapperNames()) {
-    const wrapper = readWrapperFrontmatter(name);
+    const wrapper = readWrapper(name);
     const skill = readSkillFile(name);
     if (!wrapper || !skill) continue;
     const skillRelPath = `.claude/skills/${name}/SKILL.md`;
@@ -70,7 +72,8 @@ export function listPublicSkills(): SkillFile[] {
       skillRelPath,
       skillBody: skill.body,
       skillFrontmatter: skill.frontmatter,
-      wrapper,
+      wrapper: wrapper.frontmatter,
+      wrapperBody: wrapper.body,
       githubUrl: githubBlobUrl(skillRelPath),
       rawUrl: githubRawUrl(skillRelPath),
     });

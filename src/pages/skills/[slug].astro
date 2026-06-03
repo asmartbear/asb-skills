@@ -2,7 +2,6 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { marked } from 'marked';
 import { listPublicSkills } from '../../lib/skills';
-import CopyButton from '../../components/CopyButton.astro';
 import InstallInstructions from '../../components/InstallInstructions.astro';
 
 export async function getStaticPaths() {
@@ -13,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { skill } = Astro.props;
-const skillBodyHtml = await marked.parse(skill.skillBody);
+const wrapperBodyHtml = await marked.parse(skill.wrapperBody);
 const FENCE = '-'.repeat(3);
 const frontmatterLines = Object.entries(skill.skillFrontmatter)
   .map(([k, v]) => `${k}: ${typeof v === 'string' ? JSON.stringify(v) : String(v)}`)
@@ -24,25 +23,12 @@ const rawSkillFile = `${FENCE}\n${frontmatterLines}\n${FENCE}\n\n${skill.skillBo
 <StarlightPage frontmatter={{ title: skill.wrapper.title, description: skill.wrapper.summary }}>
   <p><em>{skill.wrapper.summary}</em></p>
 
-  <InstallInstructions name={skill.name} />
+  <InstallInstructions
+    name={skill.name}
+    copyText={rawSkillFile}
+    githubUrl={skill.githubUrl}
+    rawUrl={skill.rawUrl}
+  />
 
-  <h2>SKILL.md</h2>
-
-  <div class="skill-actions">
-    <CopyButton text={rawSkillFile} label="Copy SKILL.md" />
-    <a href={skill.githubUrl} target="_blank" rel="noopener">View source on GitHub →</a>
-    <a href={skill.rawUrl} target="_blank" rel="noopener">Raw file →</a>
-  </div>
-
-  <div class="skill-body" set:html={skillBodyHtml} />
+  <div class="wrapper-body" set:html={wrapperBodyHtml} />
 </StarlightPage>
-
-<style>
-  .skill-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-block: 1rem 1.5rem;
-    align-items: center;
-  }
-</style>

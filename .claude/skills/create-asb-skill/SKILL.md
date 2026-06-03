@@ -1,7 +1,7 @@
 ---
 description: "Interactive, multi-phase workflow for authoring a new public asb-* skill from one of Jason Cohen's concepts. Invoke explicitly via /create-asb-skill — auto-invocation is disabled to avoid accidentally kicking off this long workflow."
 disable-model-invocation: true
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash(.claude/skills/jason-corpus-search/search.sh:*), Bash(bun run lint:*), Bash(bun run build:*), Bash(mkdir:*), Bash(ls:*), Bash(cp .claude/skills/create-asb-skill/template.md:*), AskUserQuestion
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash(.claude/skills/jason-corpus-search/search.sh:*), Bash(bun run lint:*), Bash(bun run build:*), Bash(mkdir:*), Bash(ls:*), Bash(cp .claude/skills/create-asb-skill/template.mdx:*), AskUserQuestion
 ---
 
 # create-asb-skill — turn a Jason Cohen concept into a public asb-* skill
@@ -43,12 +43,55 @@ pressing JASON. When it talks about "wielding-time adversarial posture" or
 skill's relationship with its future end user. Use these words explicitly in
 chat with Jason too — they keep the two layers from blurring.
 
+### How the two files are used at runtime — and why this matters
+
+Two files, two completely different jobs. Get this wrong and you'll under-
+or over-invest in the wrong one.
+
+- **`.mdx` wrapper** (`src/content/skills/asb-<slug>.mdx`) — this is the
+  **public-facing webpage** on skills.asmartbear.com. The site renders:
+  title (frontmatter) → italic summary (frontmatter) → Installing box →
+  the wrapper body (long description + `## Example invocation` + `## From the
+  source`). The SKILL.md content is **not** shown on the page; readers get
+  it via the Installing box (download / view-source / raw / copy). So the
+  wrapper body is the *sales surface*: it has to convince a stranger that
+  this is worth installing, give them a vivid example of using it, and
+  point them at Jason's source articles for context. Inviting, concrete,
+  marketing-flavored. Roughly 2–4 paragraphs of long description, a
+  realistic `## Example invocation`, and a structured `## From the source`.
+- **`SKILL.md`** (`.claude/skills/asb-<slug>/SKILL.md`) — this is the
+  **prompt that loads into a wielder LLM** when the end user invokes the
+  skill. The end user never reads it for content (only the LLM does). So
+  it's a tightly-written operational document: framework re-stated in its
+  own words, vocabulary, wielding-time posture and standing rules, how-to
+  steps, refusal conditions. Self-contained, Claude-Code-agnostic.
+
+Concretely: do not put marketing prose in SKILL.md, and do not put step-by-
+step wielder instructions in the .mdx. Long descriptions don't help the
+wielder LLM (it doesn't load them); standing rules don't help the reader
+(they're in the wrong voice).
+
+### A "what good looks like" example
+
+When unsure of voice, structure, or how the two files complement each
+other, read the live exemplar pair:
+
+- Wrapper: `src/content/skills/asb-rude-qa.mdx`
+- SKILL.md: `.claude/skills/asb-rude-qa/SKILL.md`
+
+The wrapper shows the marketing voice, the `## Example invocation` shape (slash-command
+fenced block + prose paragraph describing what the skill does without
+showing literal output), and the `## From the source` foundation-vs-
+supporting split with why-relevant explanations on every item. The SKILL.md
+shows wielding-posture rules, the standing dwell/move-on rules, a wielding
+artifact spec, and refusal conditions.
+
 ### Forging-time state — no side file
 
 The work product is the state:
 
 - The `.mdx` wrapper at `src/content/skills/asb-<slug>.mdx` is created at
-  Phase 0 from `template.md` and is **kept current through every phase** —
+  Phase 0 from `template.mdx` and is **kept current through every phase** —
   references go in as you read them, the summary and long description
   sharpen as the framework crystallizes. If the session ends mid-stream,
   the on-disk .mdx already reflects everything decided so far.
@@ -78,7 +121,7 @@ Ask Jason for, in this order:
 
 ### Then immediately create the .mdx wrapper
 
-Copy `.claude/skills/create-asb-skill/template.md` →
+Copy `.claude/skills/create-asb-skill/template.mdx` →
 `src/content/skills/asb-<slug>.mdx` and fill in what you know now. Write
 title and summary in the **marketing voice** described below — these are
 not labels, they're hooks. Don't aim for perfect at Phase 0; aim for
@@ -88,10 +131,13 @@ not labels, they're hooks. Don't aim for perfect at Phase 0; aim for
 - `summary:` — benefit-first one-liner. See "Marketing voice."
 - Long description — one rough sentence is enough at Phase 0, but already
   led by the reader's payoff, not "this skill does X."
-- **Primary references** — record each source Jason named, as a proper
-  bullet (article URL with trailing slash, or italicized chapter name).
-  See "URL rules" near the end of this document.
-- **Further reading** — leave the TODO marker; Phase 1 fills this in.
+- **`## Example invocation`** — leave the TODO marker; Phase 3 fills this in once
+  the interaction shape is clear.
+- **`## From the source`** — record each source Jason named here, as a
+  proper bullet. Foundation (the 1–2 critical sources) goes in the lead
+  paragraph + first bullet list; Supporting (everything else, often
+  empty at Phase 0) goes in the second bullet list. See the "From the
+  source" section near the end of this document for full format.
 
 This file is the **live working artifact** for the wrapper-side of the
 forging — keep it updated continuously (see "Keep the .mdx updated as you
@@ -144,12 +190,18 @@ paraphrase-of-paraphrase.
      need to press for precision.
 
 5. **Update the .mdx wrapper as you go.** Open `src/content/skills/asb-<slug>.mdx`
-   and append references as you read them:
-   - Articles Jason explicitly named → **Primary references**.
-   - Articles/chapters the corpus search surfaced that you skimmed and
-     found useful → **Further reading**.
+   and slot references into `## From the source` as you read them:
+   - The 1–2 most critical articles (the one Jason named as the primary
+     source, plus at most one other that's load-bearing — e.g. the
+     philosophical/conceptual home of the framework) → **Foundation**
+     bullets, each with a one-line why-this-is-critical explanation.
+   - Adjacent articles or chapters that informed specific pieces of the
+     mechanism, the target state, or refusal conditions → **Supporting**
+     bullets, each with a one-line how-it-relates explanation.
    - URL format: `https://longform.asmartbear.com/<slug>/` (trailing slash
      required). Chapters: `*Chapter name* (section "...") in *Hidden Multipliers* — <https://hiddenmultipliers.com>`.
+   - Do NOT append "(A Smart Bear)" after each item — the URL makes the
+     source obvious; the suffix is noise.
    - Also expand the long description with a rougher-but-fuller version of
      what the framework is, based on what you've now read. It will get
      sharpened later; don't aim for tight prose yet.
@@ -300,13 +352,31 @@ useful.
 - "Is the user better off after talking to this skill than after just reading
   the underlying article? If not, why does the skill exist?"
 
-### Update the .mdx with a concrete usage example
+### Fill in the `## Example invocation` section of the .mdx
 
-Now that the interaction shape is clear, add a short concrete example to
-the long description in `src/content/skills/asb-<slug>.mdx` — something
-like "Ask Claude to apply this skill to your <X>, and it will walk you
-through <process> until you have <output>." Keep it inviting and grounded
-in real situations the end user would recognize.
+Now that the interaction shape is clear, fill in the `## Example invocation` section
+
+of `src/content/skills/asb-<slug>.mdx`. Structure:
+
+1. **Lead-in sentence** in second-person voice: "You can invoke the skill
+   like this:" (NOT "A user might invoke" — see the second-person voice
+   rule below).
+
+2. **Fenced code block** with ```text fence (slash commands aren't real
+   code; we just want a clean monospace box). Contents: a realistic
+   slash-command invocation with enough context that the interrogation /
+   diagnosis / coaching has something specific to bite on. Don't make it
+   a one-word toy example.
+
+3. **Prose paragraph(s)** describing what the skill does with that input.
+   What it presses on. What it refuses to accept. What candidate answers
+   it offers when the end user is stuck. Where it dwells. What you walk
+   away with at the end. **Do NOT show literal LLM output** — describe the
+   substance in your own words. The reader should be able to picture the
+   conversation and see the value without reading a transcript.
+
+Use the live exemplar at `src/content/skills/asb-rude-qa.mdx` (the `##
+Example` section) as a model for shape, length, and voice.
 
 ---
 
@@ -448,13 +518,18 @@ the way there.
      with what the reader gets, then how. Used for site listing and
      `<meta description>`.
    - Long description — 2–4 paragraphs that open with the reader's
-     payoff. Concrete, no jargon. Should make the reader want to install
-     the skill. Should include the usage-example sentence added in Phase 3.
-   - **Primary references** — confirm each one has a proper link and is
-     actually a primary source, not adjacent reading.
-   - **Further reading** — confirm any items here are real, useful, and
-     non-redundant with Primary. If the section ended up empty, remove
-     the heading entirely rather than leaving an empty section.
+     payoff. Concrete, no jargon, **second-person voice** ("you," not
+     "the user"). Should make the reader want to install the skill. The
+     dedicated `## Example invocation` section below handles the concrete-example
+     work; the long description doesn't need to repeat that.
+   - **`## Example invocation`** — confirm the slash-command code block is realistic
+     and the prose paragraph describes what the skill actually does (no
+     literal LLM output), in second-person voice.
+   - **`## From the source`** — confirm Foundation (1–2 critical) and
+     Supporting (rest) are correctly split, each item has a one-line why-
+     relevant explanation, no "(A Smart Bear)" suffix anywhere. If
+     Supporting ended up empty, drop the lead-in line and the empty bullet
+     list rather than leaving an empty section.
    - Ask Jason whether to add `order:` (integer; controls sidebar/home
      position) and `featured: true|false` (surfaces on home page). Both
      optional.
@@ -511,13 +586,30 @@ it's also doing SEO work — search-result snippet style.
 Open the FIRST paragraph with the reader's payoff — the change they get,
 the problem this solves, the situation it cuts through. Make them want to
 keep reading. THEN, in subsequent paragraphs, explain what the framework
-is, when it applies, and how the wielder actually facilitates it. Close
-with the concrete usage example from Phase 3 ("Ask Claude to apply this
-skill to your X, and it will…").
+is, when it applies, and how the wielder actually facilitates it. The
+dedicated `## Example invocation` section below the long description does the
+concrete-example work; don't shoehorn an example into the description.
 
 Concrete, no jargon. If a sentence could appear in any skill's
 description, it's filler — cut it. The reader should finish the body
 already convinced it's worth installing.
+
+### Second-person voice — everywhere in the .mdx
+
+Address the reader directly: "you," not "the user" / "a user" / "the
+end user." This includes the long description, the `## Example invocation` section's
+lead-in and prose paragraph, and any other prose in the wrapper. The
+wrapper is the website page — it's talking to the reader, not describing
+them in third person.
+
+- ❌ "A user might invoke the skill like this:"
+- ✅ "You can invoke the skill like this:"
+- ❌ "After reading the outline, the user is pressed on whether…"
+- ✅ "After reading your outline, you're pressed on whether…"
+
+The `## From the source` bullets are an exception — they describe
+articles, not the reader, so third-person prose about each article is
+correct there.
 
 ### Test the voice
 
@@ -528,18 +620,47 @@ is "no" or "meh," it's not done.
 
 ---
 
-## Reference sections in the .mdx wrapper
+## The `## From the source` section in the .mdx wrapper
 
-The wrapper has two reference sections, each holding any number of items
-(including zero — drop the heading entirely if empty):
+The wrapper has one references section, titled `## From the source`,
+structured into two parts (Foundation + Supporting). The exemplar at
+`src/content/skills/asb-rude-qa.mdx` shows the full shape. The template
+at `.claude/skills/create-asb-skill/template.mdx` is the authoritative
+scaffold — copy it at Phase 0 and fill in.
 
-- **Primary references** — the article(s) and chapter(s) Jason explicitly
-  named as the source for the concept. Usually 1–3.
-- **Further reading** — adjacent articles or chapters that informed the
-  skill (surfaced by the Phase 1 corpus search) and are worth pointing the
-  reader at for more depth. Any number.
+### Foundation — the 1–2 critical sources
 
-Both sections use the same item formats:
+Lead with a short prose sentence identifying the foundational article(s).
+Variants depending on count:
+
+- One critical article: *"The primary article behind this skill is
+  [**Title**](URL), where Jason …"*
+- Two critical articles: *"Two articles form the foundation of this
+  skill:"* followed by a bullet list with both.
+
+Each Foundation bullet is a bolded link to the article followed by an
+em-dash and one line on **why this article is critical / what role it
+plays** in the skill — not just a paraphrase of the article. E.g. *"the
+technique itself, including why unfair questions are a feature rather
+than a flaw"* or *"the philosophical scaffolding underneath — Rude Q&A is
+the operational answer to the question this article poses."*
+
+### Supporting — everything else
+
+Lead with one prose line identifying what kind of role these articles
+play, e.g. *"Supporting articles each cover a piece of the mechanism or
+the target the interrogator is reaching for:"* — adapt the phrasing to
+the skill.
+
+Each Supporting bullet is the bolded link + em-dash + one line on what
+**specific piece** of the framework, mechanism, target, or refusal-
+condition this article supplies. Not a generic "related reading" tag —
+explain the precise relationship.
+
+If there are zero Supporting items, omit the lead-in line and the empty
+bullet list entirely. Don't leave the prose stub stranded.
+
+### Item formatting rules
 
 - **A Smart Bear articles**: `https://longform.asmartbear.com/<slug>/`
   - The `<slug>` is the on-disk filename without the `.md` extension.
@@ -550,9 +671,11 @@ Both sections use the same item formats:
   Reference the chapter (and subsection, if relevant) by name in prose.
   The URL is always just `https://hiddenmultipliers.com`.
   - Example: `*Pricing power* (section "The whale curve") in *Hidden Multipliers* — <https://hiddenmultipliers.com>`
-
-Italicize chapter and book names. Don't link to local Obsidian paths — those
-files are never published.
+- Bold the article title inside the link (`[**Title**](URL)`).
+- **Do NOT append "(A Smart Bear)"** after each item — the URL makes the
+  source obvious; the suffix is noise.
+- Italicize chapter and book names. Don't link to local Obsidian paths —
+  those files are never published.
 
 ---
 
@@ -568,7 +691,7 @@ files are never published.
   Only ask before reading if a hit is obviously off-topic.
 - **Keep the .mdx updated as you go.** The wrapper at
   `src/content/skills/asb-<slug>.mdx` is a live working artifact, created
-  at Phase 0 from `template.md` and edited continuously. Whenever you
+  at Phase 0 from `template.mdx` and edited continuously. Whenever you
   learn something the wrapper should reflect — a new primary source, a
   good further-reading hit, a sharper way to phrase the framework, a
   better summary line — open the file and update it then. Don't batch
