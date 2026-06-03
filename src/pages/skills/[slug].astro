@@ -175,6 +175,14 @@ if (skill.lastUpdated && !og?.modifiedTime) {
     }
   }
 
+  /* Same overflow-fix as in InstallInstructions, for fenced code blocks
+     rendered into the wrapper body (e.g. the ## Example invocation block). */
+  .wrapper-body pre {
+    overflow-x: auto;
+    max-width: 100%;
+    white-space: pre;
+  }
+
   .related {
     margin-top: 2.5rem;
   }

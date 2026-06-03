@@ -59,6 +59,16 @@ cp -r asb-skills/.claude/skills/${skillName} ~/.claude/skills/`}</code></pre>
     padding: 1rem 1.25rem;
     border-radius: 0 0.5rem 0.5rem 0;
     margin-block: 1.5rem;
+    /* Allow flex/grid children (and `<pre>` snippets) to shrink below
+       their intrinsic content width instead of forcing the page wider. */
+    min-width: 0;
+    max-width: 100%;
+  }
+  .install-box pre {
+    overflow-x: auto;
+    max-width: 100%;
+    /* Preserve original line breaks but let the box's overflow handle width. */
+    white-space: pre;
   }
   .install-box h3 {
     margin-top: 0;
