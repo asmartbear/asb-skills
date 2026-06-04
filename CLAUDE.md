@@ -89,6 +89,9 @@ bun run lint             # lint all skills + wrappers
 # .claude/skills/ from the current project directly.
 bun run link <name>      # symlink .claude/skills/<name> → ~/.claude/skills/<name>
 bun run unlink <name>    # remove that symlink
+
+bun run deploy-and-wait  # git push, then poll `gh` until the GitHub Pages
+                         # deploy for that commit finishes (requires `gh`)
 ```
 
 ## Per-area rules

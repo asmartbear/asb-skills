@@ -11,7 +11,8 @@
     "check": "astro check",
     "lint": "bun run scripts/lint-skills.ts",
     "link": "bun run scripts/link-skill.ts link",
-    "unlink": "bun run scripts/link-skill.ts unlink"
+    "unlink": "bun run scripts/link-skill.ts unlink",
+    "deploy-and-wait": "bun run scripts/deploy-and-wait.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.0.0",
