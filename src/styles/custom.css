@@ -15,6 +15,14 @@
 /* Tighten the splash hero on the homepage a touch */
 .hero-html { line-height: 1.4; }
 
+/* Prevent any single overflowing child (long <pre>, wide image, etc.)
+   from dragging the whole page into horizontal scroll on mobile.
+   Inner scroll on <pre> still works because their own overflow-x is set. */
+html, body { overflow-x: clip; }
+/* Defensive: keep Starlight's main content column from being expanded by
+   intrinsic-width children (flex/grid items default to min-width: auto). */
+.main-frame, .main-pane, main, .sl-container, .content-panel { min-width: 0; }
+
 /* Dial heading sizes down a hair from Starlight defaults. */
 :root {
   --sl-text-h1: 2.125rem;   /* was 2.5rem */
