@@ -23,6 +23,14 @@ html, body { overflow-x: clip; }
    intrinsic-width children (flex/grid items default to min-width: auto). */
 .main-frame, .main-pane, main, .sl-container, .content-panel { min-width: 0; }
 
+/* Reclaim a bit of horizontal real estate on narrow phones — Starlight's
+   default content padding is generous and stacks with our component padding. */
+@media (max-width: 30rem) {
+  .sl-container, .content-panel {
+    padding-inline: 0.85rem !important;
+  }
+}
+
 /* Dial heading sizes down a hair from Starlight defaults. */
 :root {
   --sl-text-h1: 2.125rem;   /* was 2.5rem */

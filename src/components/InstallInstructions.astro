@@ -63,6 +63,13 @@ cp -r asb-skills/.claude/skills/${skillName} ~/.claude/skills/`}</code></pre>
        their intrinsic content width instead of forcing the page wider. */
     min-width: 0;
     max-width: 100%;
+    box-sizing: border-box;
+  }
+  @media (max-width: 30rem) {
+    .install-box {
+      padding: 0.85rem 0.85rem 0.85rem 0.75rem;
+      margin-inline: -0.25rem;
+    }
   }
   .install-box pre {
     overflow-x: auto;
