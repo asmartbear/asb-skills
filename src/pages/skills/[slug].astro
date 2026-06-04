@@ -87,6 +87,23 @@ if (skill.lastUpdated && !og?.modifiedTime) {
 ---
 
 <StarlightPage frontmatter={{ title: skill.wrapper.title, description: skill.wrapper.summary, head }} headings={headings}>
+  {og?.image && skill.wrapper.source && (
+    <a
+      class="source-hero"
+      href={skill.wrapper.source.url}
+      target="_blank"
+      rel="noopener"
+      title={`Read the source article: ${skill.wrapper.source.title}`}
+    >
+      <img
+        src={og.image}
+        alt={og.imageAlt ?? skill.wrapper.source.title}
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+  )}
+
   <p>
     <em>{skill.wrapper.summary}</em>
     {skill.wrapper.source && (
@@ -138,6 +155,39 @@ if (skill.lastUpdated && !og?.modifiedTime) {
 <style>
   .source-cite {
     color: var(--sl-color-gray-3);
+  }
+
+  /* Source-article hero image: float right next to the summary + I/O tile so
+     it adds visual interest without dominating. On narrow screens it drops
+     above the summary at full width. */
+  .source-hero {
+    float: right;
+    width: 14rem;
+    max-width: 40%;
+    margin: 0 0 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid var(--sl-color-gray-5);
+    background: var(--sl-color-gray-6);
+    display: block;
+    line-height: 0;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .source-hero:hover {
+    border-color: var(--sl-color-accent);
+  }
+  .source-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  @media (max-width: 40rem) {
+    .source-hero {
+      float: none;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 0 1rem;
+    }
   }
 
   .io-tile {
