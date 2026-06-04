@@ -185,11 +185,14 @@ if (skill.lastUpdated && !og?.modifiedTime) {
   }
 
   /* Same overflow-fix as in InstallInstructions, for fenced code blocks
-     rendered into the wrapper body (e.g. the ## Example invocation block). */
-  .wrapper-body pre {
+     rendered into the wrapper body (e.g. the ## Example invocation block).
+     `:global(pre)` is required because the body is injected via set:html
+     by marked, so the elements don't carry Astro's scoped class. */
+  .wrapper-body :global(pre) {
     overflow-x: auto;
     max-width: 100%;
     white-space: pre;
+    box-sizing: border-box;
   }
 
   .related {
