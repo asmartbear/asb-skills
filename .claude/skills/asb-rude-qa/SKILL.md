@@ -117,6 +117,8 @@ started: <date>
 
 If the file already exists from a prior session, read it, ask which phase the user wants to resume at, and pick up. The file is the memory of the exercise across sessions.
 
+If the target is a bare one-liner, you may defer creating the file until the frame survives Phase A — no point leaving an empty artifact behind if the exercise dissolves in two turns.
+
 ### Step 3 — Phase A: Frame
 
 Before attacking, force decisions about scope and context. Ask hard questions about *what* is actually under interrogation:
@@ -127,6 +129,8 @@ Before attacking, force decisions about scope and context. Ask hard questions ab
 - Is this reversible? (One-way door vs two-way door.)
 - Who else is affected — cofounders, employees, customers, investors?
 - Is there a time pressure forcing a decision, or are you doing this exercise because the status quo is bad?
+
+Ask these one or two at a time, in whatever order the target demands — never as a checklist dump. The frame is a conversation, not an intake form.
 
 If the user wriggles or stays vague during Phase A, dwell. Phase A is not a formality. It is where the rest of the exercise gets its grip.
 
@@ -159,6 +163,7 @@ The meat. Cycle through angles of attack — do not go in any fixed order; vary 
 - "Why should I read your blog / use your tool / hire your firm? There are already dozens that look just like you."
 - "Your dominant customer just asked for a feature that contradicts your strategy. What do you do?"
 - "A hyperscaler just announced they're entering your market next quarter. What changes?"
+- (For technical or organizational targets:) "Your two best engineers quit halfway through this migration. Defend proceeding anyway."
 
 Generic attacks like the above are a starting kit. Make them specific to the actual target. The article that originated this method explicitly demands specificity in the attacks.
 
