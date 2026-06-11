@@ -1,7 +1,7 @@
 ---
 description: "Interactive, multi-phase workflow for authoring a new public asb-* skill from one of Jason Cohen's concepts. Invoke explicitly via /create-asb-skill — auto-invocation is disabled to avoid accidentally kicking off this long workflow."
 disable-model-invocation: true
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash(.claude/skills/jason-corpus-search/search.sh:*), Bash(bun run lint:*), Bash(bun run build:*), Bash(mkdir:*), Bash(ls:*), Bash(cp .claude/skills/create-asb-skill/template.mdx:*), AskUserQuestion
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash(.claude/skills/jason-corpus-search/search.sh:*), Bash(bun run lint:*), Bash(bun run build:*), Bash(mkdir:*), Bash(ls:*), Bash(cp .claude/skills/create-asb-skill/template.mdx:*), Bash(cp .claude/skills/create-asb-skill/archetypes/:*), AskUserQuestion
 ---
 
 # create-asb-skill — turn a Jason Cohen concept into a public asb-* skill
@@ -99,7 +99,7 @@ The work product is the state:
   4. From that point on, the on-disk file is the working draft and the
   resumption point for the SKILL.md side.
 - Phases 1–3 don't write any SKILL.md yet (decisions accumulate in chat
-  and in the .mdx). Phase 6 polishes both files and lints.
+  and in the .mdx). Phase 8 polishes both files and lints.
 
 If Jason returns and says "continue forging," look for the in-progress
 SKILL.md on disk, read it, ask which phase he wants to resume at, and
@@ -135,7 +135,7 @@ not labels, they're hooks. Don't aim for perfect at Phase 0; aim for
 - `summary:` — benefit-first one-liner. See "Marketing voice."
 - `input:` / `output:` — leave the TODO markers; Phase 3 fills these in
   once the interaction shape is clear.
-- `related:` — leave commented out for now. Phase 6 (or any later session
+- `related:` — leave commented out for now. Phase 8 (or any later session
   that adds an adjacent skill) decides whether this skill should point at
   follow-on skills.
 - Long description — one rough sentence is enough at Phase 0, but already
@@ -285,13 +285,23 @@ useful.
 2. **Inputs.** What does the LLM need from the user to apply the framework?
    What questions should it ask first?
 
-3. **Interaction shape.** Which of these — and why?
-   - Diagnostic walk-through (ask, listen, classify).
-   - Generation/proposal (LLM produces an artifact, user refines).
-   - Audit (LLM evaluates user's existing thing against the framework).
-   - Coaching (LLM presses user with questions, doesn't propose).
-   - Multi-phase facilitation (LLM walks user through a long process, maybe
-     across sessions).
+3. **Interaction shape — convene the Archetype Council.** Read
+   `.claude/skills/create-asb-skill/archetypes/README.md`. Present the
+   Phase 2 four-part statement to all five personalities (Interrogator,
+   Auditor, Elicitor, Drafter, Decision-Forcer) and render each one's
+   answer in chat, in its own voice, 2–4 sentences: *"If this skill were
+   mine, here is how I'd run it — and here is why I am / am not the right
+   fit."* Include the recusals — Jason sees the whole council. Then declare
+   a verdict: one personality wins, or two blend (name the **primary**,
+   whose skeleton gets copied at Phase 4, and exactly which sections the
+   secondary contributes). Confirm with Jason. If the concept genuinely
+   fits none of the five, say so and design free-form — but treat no-fit as
+   a flag: re-examine the Phase 2 distillation first, since a framework
+   that fits no archetype is often a framework that isn't sharp yet.
+
+   The remaining questions in this phase (inputs, artifact, posture,
+   output, refusals) fill the chosen skeleton's `TODO(...)` slots — keep
+   your notes keyed to the slot names so Phase 4 is mechanical.
 
 4. **Wielding artifact — does the produced skill need one?** Some skills
    facilitate a multi-step process for the end user (a diagnostic
@@ -408,8 +418,25 @@ Example` section) as a model for shape, length, and voice.
 ## Phase 4 — Draft SKILL.md
 
 Goal: write the actual `.claude/skills/asb-<slug>/SKILL.md`. From this phase
-on, the on-disk file is the working draft. `mkdir -p` the directory if it
-doesn't exist; write the file; iterate with Edit.
+on, the on-disk file is the working draft.
+
+Start from the council's winning skeleton, not a blank page:
+
+```sh
+mkdir -p .claude/skills/asb-<slug>
+cp .claude/skills/create-asb-skill/archetypes/<personality>.md .claude/skills/asb-<slug>/SKILL.md
+```
+
+Then resolve every `TODO(slot-name)` marker using the Phase 1–3 material.
+The skeleton is scaffolding, not a cage: rewrite freely, rename phases to
+fit the framework's vocabulary, delete sections that don't apply (e.g. the
+working-document step when Phase 3 opted out of a wielding artifact). For a
+blend, import the named sections from the secondary personality's file.
+Iterate with Edit.
+
+**Exit gate:** before leaving this phase, run
+`grep -n "TODO(" .claude/skills/asb-<slug>/SKILL.md` — it must return
+nothing.
 
 ### Hard constraints on the draft
 
@@ -454,6 +481,10 @@ ones specific to public asb-* skills (see `.claude/skills/CLAUDE.md`):
 
 ### Structure to aim for
 
+The archetype skeleton already provides this shape — this block is the
+reference for what the resolved draft should still look like when you're
+done rewriting:
+
 ```
 ---
 description: "..."
@@ -486,7 +517,53 @@ Phase 5.
 
 ---
 
-## Phase 5 — Adversarial review
+## Phase 5 — Source-map faithfulness audit
+
+Goal: prove every load-bearing claim in the draft is grounded in Jason's
+actual writing or an explicit forging-time decision — BEFORE adversarial
+review, so review critiques a faithful draft rather than polishing an
+invented one. This is the defense against the forger's paraphrase quietly
+becoming the published framework.
+
+### Steps
+
+1. **Build the source map in chat** (not a committed file). One row per H2/H3
+   section of the draft, and per distinct claim within it:
+
+   ```
+   <section / claim> → <grounding>
+   ```
+
+   Grounding is exactly one of:
+   - **(a) Source passage** — article slug or chapter name plus a few
+     identifying words of the passage ("strategic-choices — 'both sides are
+     smart'").
+   - **(b) Forging decision** — "Phase 2/3 conversation — Jason confirmed
+     <decision>". For things Jason decided during forging that aren't in the
+     corpus.
+   - **(c) UNGROUNDED** — neither. Flag it.
+
+2. **Re-open sources as needed.** Read the corpus files again; re-run
+   `jason-corpus-search` for claims you can't place. Do NOT ground from
+   memory — memory of the corpus is exactly where drift hides.
+
+3. **Patch the three failure classes:**
+   - **Ungrounded** — the forger invented it. Show it to Jason: either he
+     explicitly signs off (it becomes class b) or it gets cut.
+   - **Contradiction** — the draft asserts X where the source says Y. Show
+     Jason both, side by side. Fix the draft — or, if Jason is deliberately
+     departing from his own published take, record that decision out loud
+     (it becomes class b, with the departure named).
+   - **Drift** — a paraphrase that changed the meaning, scope, or strength
+     of the original ("usually" became "always"; a two-condition rule lost a
+     condition). Tighten the draft to match the source.
+
+4. **Show Jason the summary**: counts per grounding class, plus every flag
+   and how it was resolved. His sign-off gates Phase 6.
+
+---
+
+## Phase 6 — Adversarial review
 
 Goal: stress-test the draft before it ships. Be hostile to your own work.
 
@@ -526,7 +603,31 @@ Show Jason the post-review diff and get sign-off.
 
 ---
 
-## Phase 6 — Publish
+## Phase 7 — Simulated use
+
+Goal: watch the draft skill actually being wielded before it ships. Prose
+review (Phases 5–6) catches textual failures; only simulated use catches
+behavioral ones — a wielder that recites instead of applies, nods along with
+weak answers, or forgets to refuse.
+
+Follow the procedure in `.claude/skills/exercise-asb-skill/SKILL.md` against
+the on-disk draft:
+
+1. Quarantine: the wielder side of each role-play uses ONLY the draft file.
+2. 3–5 scenarios, required mix: canonical user, terse/underspecified user,
+   boundary case, refusal case (optionally a lazy answerer). Show the list
+   to Jason before running.
+3. Run labeled transcripts; judge each against the fixed rubric (applied vs.
+   recited, specific vs. generic, dwell fired, refusal fired, tone/substance
+   split, artifact handling).
+4. Patch the draft for every FAIL/WEAK; re-run only the failed scenarios
+   until clean.
+5. Show Jason the verdict table and the resulting draft diff. His sign-off
+   gates Phase 8.
+
+---
+
+## Phase 8 — Publish
 
 Goal: polish the wrapper, lint, build, report. The .mdx wrapper has been
 live and updated continuously since Phase 0; by now it should be most of
@@ -550,7 +651,7 @@ the way there.
    - **`## Example invocation`** — confirm the slash-command code block is realistic
      and the prose paragraph describes what the skill actually does (no
      literal LLM output), in second-person voice.
-   - `related:` — at Phase 6, ask Jason whether this skill should list any
+   - `related:` — at Phase 8, ask Jason whether this skill should list any
      existing public skills as natural follow-ons. If yes, add a `related:
      [asb-foo, asb-bar]` array to the frontmatter. Each named skill must be
      an existing public skill (lint errors on unknowns). One-directional;
@@ -573,8 +674,10 @@ the way there.
    ```
    Report results. If lint fails, fix and re-run.
 
-3. Tell Jason: file paths written, lint/build status, suggested next step
-   (`bun run dev` to preview locally, then commit and push).
+3. Tell Jason: file paths written, lint/build status, confirmation that
+   Phases 5 (source-map audit) and 7 (simulated use) both passed, and the
+   suggested next step (`bun run dev` to preview locally, then commit and
+   push).
 
 ---
 
@@ -583,7 +686,7 @@ the way there.
 The wrapper is the public face of the skill on the website. Title and
 summary are **marketing copy**, not labels. They have to pull a reader in
 and earn the click. Apply this voice from Phase 0 onward, and tighten in
-Phases 2 and 6.
+Phases 2 and 8.
 
 ### Title (full per-page title, the `title:` field)
 
@@ -753,7 +856,8 @@ bullet list entirely. Don't leave the prose stub stranded.
 ## Operating principles across all phases
 
 - **Press hardest in Phases 2 and 3.** Those are where vague skills are
-  born. Light adversarial energy in Phases 1, 4, 5 is fine.
+  born. Phases 5–7 carry their own structured adversarial mechanisms;
+  light adversarial energy in Phases 1 and 4 is fine.
 - **Don't fill in answers for Jason.** Propose, then ask. The goal is *his*
   framework on the page, not yours.
 - **Don't ask permission to read.** Reading more of the corpus is always
@@ -766,10 +870,10 @@ bullet list entirely. Don't leave the prose stub stranded.
   learn something the wrapper should reflect — a new primary source, a
   good further-reading hit, a sharper way to phrase the framework, a
   better summary line — open the file and update it then. Don't batch
-  wrapper edits to Phase 6. Earlier text is allowed (encouraged) to be
+  wrapper edits to Phase 8. Earlier text is allowed (encouraged) to be
   rough; later edits sharpen it. The summary in particular should evolve
   from broad placeholder at Phase 0, to sharp one-liner by Phase 2, to
-  polished by Phase 6.
+  polished by Phase 8.
 - **One concept per skill.** If during distillation the framework keeps
   splitting in two, stop and ask whether this should be two skills.
 - **Re-read `.claude/skills/CLAUDE.md`** if you're unsure whether something

@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import sitemap from '@astrojs/sitemap';
 import { listPublicSkills } from './src/lib/skills';
 import { SITE, URLS } from './src/lib/site';
 
@@ -16,6 +17,15 @@ export default defineConfig({
         {
           tag: 'meta',
           attrs: { property: 'og:site_name', content: SITE.name },
+        },
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'alternate',
+            type: 'application/rss+xml',
+            title: SITE.name,
+            href: '/rss.xml',
+          },
         },
         // Default first-visit theme to dark. Starlight's ThemeProvider
         // reads localStorage['starlight-theme']; seed it before that
@@ -44,5 +54,6 @@ export default defineConfig({
         },
       ],
     }),
+    sitemap(),
   ],
 });

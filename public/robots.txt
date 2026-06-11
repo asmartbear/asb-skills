@@ -1,0 +1,4 @@
+# Site not yet open to search engines. To launch: replace with
+# "Allow: /" and add "Sitemap: https://skills.asmartbear.com/sitemap-index.xml".
+User-agent: *
+Disallow: /

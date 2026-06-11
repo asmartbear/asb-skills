@@ -11,46 +11,26 @@ The site is deployed via GitHub Actions to **GitHub Pages** at
 remote is **`origin`** (github.com/asmartbear/asb-skills); push to `main`
 triggers deploy.
 
-## Two classes of skill — read this before touching anything in `.claude/skills/`
+## Two classes of skill
 
-This repo holds two distinct kinds of skill that live in the same directory but
-follow completely different rules.
+`.claude/skills/` holds both: **public `asb-*` skills** (have a wrapper at
+`src/content/skills/<name>.mdx`; published on the website; must be fully
+self-contained and Claude-Code-agnostic) and **dev-only skills** (no `asb-`
+prefix, no wrapper; unrestricted internal tooling, never distributed). The
+authoritative rules are in `.claude/skills/CLAUDE.md` — **read it before
+touching any skill.**
 
-### Public skills — `asb-*`, on the website
+## Kinds of changes
 
-A skill is **public** if it has BOTH:
-- `.claude/skills/asb-<name>/SKILL.md` (canonical content), AND
-- `src/content/skills/asb-<name>.mdx` (website wrapper — the index that says "publish this").
-
-Public skills are distributed to other people via the website, so they have
-**hard constraints**:
-
-1. **Must be fully self-contained.** The `SKILL.md` may not reference any other
-   file in this repo — not other skills, not agents, not docs, not assets.
-   Someone copying just that one file into their `~/.claude/skills/` must get
-   the entire skill.
-2. **Must be portable to non-Claude-Code systems.** Do NOT use Claude
-   Code-specific frontmatter or features: no `context: fork`, no `agent:`, no
-   `model: opus`, no `allowed-tools`, no `hooks`, no `$ARGUMENTS` substitutions,
-   no references to Claude Code subagents or slash commands. Stick to plain
-   markdown plus the universally-supported `description` field. The skills must
-   be useful in any LLM system that can load a markdown instruction file.
-3. **Name must start with `asb-`** — namespaces them when installed alongside
-   other people's skills.
-
-### Dev-only skills — no prefix, no wrapper, no restrictions
-
-A skill is **dev-only** if it has a `SKILL.md` but NO matching `.mdx` wrapper.
-Example today: `doc-skills`.
-
-Dev-only skills exist to help Claude work *inside this repo*. They:
-
-- Are never published, never appear on the website, never distributed.
-- **Are unrestricted.** They can hard-code model choices, use `context: fork`,
-  reference other skills/agents in this project, link to other files in the
-  repo, depend on Claude Code-specific behavior — anything goes. They are
-  internal tooling.
-- Must NOT use the `asb-` prefix (so the distinction is visible at a glance).
+| Change | Files to touch | Verify with |
+| :----- | :------------- | :---------- |
+| New public skill | `/create-asb-skill` workflow → `.claude/skills/asb-<n>/SKILL.md` + `src/content/skills/asb-<n>.mdx` | `bun run lint && bun run build`; `/exercise-asb-skill asb-<n>` |
+| Edit a published skill | the same two files, kept consistent | `bun run lint`; re-run `/exercise-asb-skill asb-<n>` |
+| Dev-only skill / tooling | `.claude/skills/<n>/` (no `asb-` prefix, no wrapper) | `bun run lint` |
+| Site change (pages, components, styles) | `src/` (see `src/CLAUDE.md`) | `bun run check && bun run build`; eyeball via `bun run dev` |
+| Skill-idea backlog | `BACKLOG.md` only | nothing |
+| Scripts / lint rules | `scripts/*.ts` (see `scripts/CLAUDE.md`) | `bun run lint` |
+| Publish to production | push to `main` | `bun run deploy-and-wait` |
 
 ## How skill content is loaded
 
@@ -84,14 +64,9 @@ bun run dev              # Astro dev server (http://localhost:4321)
 bun run build            # static build → dist/
 bun run check            # astro check (type + content schema)
 bun run lint             # lint all skills + wrappers
-# Optional — install a skill globally so it loads in OTHER repos' Claude Code
-# sessions. Not needed while developing in this repo: Claude Code reads
-# .claude/skills/ from the current project directly.
-bun run link <name>      # symlink .claude/skills/<name> → ~/.claude/skills/<name>
+bun run link <name>      # symlink skill into ~/.claude/skills (cross-repo use; see scripts/CLAUDE.md)
 bun run unlink <name>    # remove that symlink
-
-bun run deploy-and-wait  # git push, then poll `gh` until the GitHub Pages
-                         # deploy for that commit finishes (requires `gh`)
+bun run deploy-and-wait  # git push, then watch the GitHub Pages deploy (requires `gh`)
 ```
 
 ## Per-area rules
@@ -100,9 +75,3 @@ bun run deploy-and-wait  # git push, then poll `gh` until the GitHub Pages
 - `.claude/skills/CLAUDE.md` — the public-vs-dev-only distinction in detail
 - `src/CLAUDE.md` — Astro + Starlight conventions
 - `scripts/CLAUDE.md` — Bun TS scripts
-
-## Open setup tasks (one-time)
-
-- Point DNS for `skills.asmartbear.com` at GitHub Pages (CNAME → `<user>.github.io`).
-- Enable Pages in repo settings → Source: GitHub Actions.
-- Pick a `LICENSE` (skills are intended for public reuse).
