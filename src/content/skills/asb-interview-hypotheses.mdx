@@ -1,0 +1,83 @@
+---
+title: "Hypotheses: Your best guesses, written down to facilitate learning"
+cardTitle: "Hypotheses"
+hook: "Turns your assumptions into testable bets."
+summary: Convert your untested beliefs about customers, pain, and price into numbered, falsifiable hypotheses — the raw material your customer interviews are designed to test.
+input: "Your GOALS.md goal questions, plus what you currently believe about customers, pain, price, and competition."
+output: "A HYPOTHESES.md file: numbered, falsifiable hypotheses (H1, H2, …), each mapped to the goal questions it addresses."
+related: [asb-interview-goals, asb-rude-qa]
+source:
+  title: "Chapter 10 of Hidden Multipliers: A multiplier of one's own"
+  url: "https://hiddenmultipliers.com"
+---
+
+It feels wrong to write down the answers before interviewing anyone — the
+whole point is to discover the truth, not presume you have it. But
+recorded predictions are what make interviews teach you anything: an
+unwritten belief cannot lose an argument with reality, and confirmation
+bias will quietly discard every answer that contradicts what you already
+think. Writing your best guesses down first — even the ones that feel too
+obvious to bother with — is the step that defeats it. It's also where
+great interview questions come from: each question is a miniature
+experiment designed to test one hypothesis.
+
+This is the second step of the interview method that begins with goal
+questions. This skill takes your GOALS.md as input, then walks your goals
+one at a time, drawing out what you actually believe about each — and
+pressing your beliefs into specific, falsifiable form, because "customers
+care about speed" is a mood while "customers over X page-views lose
+revenue when the site is slow, and have paid to fix it" is a claim that
+can lose. It will offer candidate hypotheses when you're stuck, but only
+as templates for you to correct: the list must be *your* bets, because
+half the value of the exercise is the wrestling, and a plausible list you
+never owned teaches you nothing when reality contradicts it. When the
+list is sharp, it's preserved in HYPOTHESES.md — numbered H1, H2, …, each
+mapped to the goals it addresses — ready for the next step of the method.
+
+Expect half of them to be wrong. That's not a flaw in your list; that's
+why you're interviewing.
+
+## Example invocation
+
+You can invoke the skill like this:
+
+```text
+/asb-interview-hypotheses Here's my GOALS.md from the goal-questions
+exercise. Let's write the hypotheses — I have a lot of opinions about our
+property-manager customers but I've never written any of them down.
+```
+
+The skill reads your goals and business context and gets straight to
+work — no re-interrogation — walking the goal list one goal at a time.
+For each, it offers *angles* where you probably hold beliefs (what
+customers spend today, whose budget it is, what a blowup costs) and asks
+what you actually guess; say "give me some ideas" and it drafts candidate
+hypotheses for you to correct instead. Your vague beliefs get pressed
+into testable shape — "our customers hate their current software" becomes
+"firms managing 200+ units spend at least five hours a week building
+owner reports by hand and resent it" — and your too-obvious-to-say
+assumptions get written down over your protest, because the mundane ones
+are wrong most expensively. It refuses to simply generate the list for
+you, and it declines to tell you which hypotheses are true, because
+that's what the interviews are for. And because every hypothesis becomes
+interview questioning time, it presses the other direction too — hard.
+Vague, uninteresting, or obviously-true-and-inert entries don't survive:
+every hypothesis must earn its place by being *actionable* — proving it
+true or false would visibly change what product you build, which market
+you target, how you position and sell, or what you charge. Fifty
+hypotheses is an interview that never happens. You walk away
+with HYPOTHESES.md: your unvalidated beliefs stated plainly in prose,
+then H1, H2, … with [G-number] mappings, ready to drive one open-ended
+interview question per hypothesis in the next step.
+
+## From the source
+
+Two sources form the foundation of this skill:
+
+- As in Chapter 10 of *Hidden Multipliers*: *A multiplier of one's own* (section "Hypotheses: Your Current Best Guesses") — [hiddenmultipliers.com](https://hiddenmultipliers.com) — the hypotheses step itself: the prediction-science case for writing guesses down, the eighteen-hypothesis WP Engine example with its goal mappings, and the famous wrong ones (security, free trials) that interviews overturned.
+- [**The Iterative-Hypothesis customer development method**](https://longform.asmartbear.com/customer-development/) — the published article version of the method, including the warning that AI-generated hypotheses are only templates to correct to what you actually believe, because half the value is thinking it through yourself.
+
+Supporting articles each supply a piece of the mechanism:
+
+- [**When being an "expert" is harmful**](https://longform.asmartbear.com/expert-harmful/) — why domain expertise doesn't exempt you from writing down and testing even mundane assumptions.
+- [**Yes, but who said they'd actually BUY the damn thing?**](https://longform.asmartbear.com/customer-validation/) — why "customers would buy X" is a wish, not a hypothesis, and what real evidence looks like instead.
