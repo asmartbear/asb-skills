@@ -765,7 +765,12 @@ family member, apply these conventions:
   description names its input and output artifacts.
 - **Wrapper `related:` links chain the family** (each step points at the
   next, and back), and each wrapper's long description says where the
-  step sits in the method.
+  step sits in the method ("This is the second step of…").
+- **`order:` enforces method sequence on the site.** Family members get
+  consecutive `order:` values in method order (the asb-interview-*
+  family holds 20, 21, 22) so the sidebar and home page list the steps
+  in the order they're meant to be used — never rely on alphabetical
+  accident. A new step slots into the family's block.
 
 ## Marketing voice (for title, summary, and long description in the .mdx)
 
