@@ -1,0 +1,94 @@
+---
+title: "Interview Questions: Test your hypotheses without leading the witness"
+cardTitle: "Interview Questions"
+hook: "Forges unbiased questions from your hypotheses."
+summary: Turn each hypothesis into an open-ended, unbiased interview question — a miniature experiment that uncovers what customers actually think, not what you hope to hear.
+input: "A HYPOTHESES.md file — or a single hypothesis you want to test in an interview."
+output: "A QUESTIONS.md of numbered questions in interview order, each mapped to the hypotheses it tests (single-hypothesis mode: the final question, in chat)."
+related: [asb-interview-hypotheses, asb-rude-qa]
+source:
+  title: "Chapter 10 of Hidden Multipliers: A multiplier of one's own"
+  url: "https://hiddenmultipliers.com"
+---
+
+Ask a customer "Blogs get hacked all the time and it's devastating,
+right? Would you like extra security?" and everyone says yes — they'd
+look foolish otherwise. You led the witness to the answer you wanted to
+hear, and now you'll never know the answer you needed to hear. Most
+customer interviews fail exactly here: not in who you talk to, but in
+questions that quietly telegraph the hoped-for answer and harvest polite
+agreement dressed up as validation.
+
+This is the third step of the interview method that runs goals →
+hypotheses → questions. Because every question is anchored to a
+hypothesis, writing good ones stops being guesswork: each question is a
+miniature experiment, held to four criteria from the book — it must be
+able to confirm or negate the hypothesis, hint at no particular answer,
+elicit specifics rather than sentiment, and invite information you
+didn't know to ask for. The skill drafts candidates, grills every
+version — including yours — with a polite-stranger test, phrases
+everything in your customers' own vocabulary, and refuses outright to
+finalize a question that violates the criteria, because a leading
+question doesn't just weaken an interview; it manufactures false
+evidence. The one sanctioned exception, straight from the source: near
+the end of an interview you may float a specific price, because the
+visceral reaction to a real number is itself the data.
+
+Give it your whole HYPOTHESES.md and it walks the list — grouping
+related hypotheses so the set fits a real conversation, ordering the
+result like an interview plan, and maintaining QUESTIONS.md as a live
+file from the first settled question so a long session (or a resumed
+one) never loses work. Or give it a single hypothesis and it simply
+works that one question into shape with you and hands it back in chat —
+no files, no ceremony.
+
+## Example invocation
+
+You can invoke the skill like this:
+
+```text
+/asb-interview-questions Here's my HYPOTHESES.md from the hypotheses
+exercise — turn these into the questions I'll actually ask.
+```
+
+The skill reads your hypotheses (and your goals file, for your
+customers' vocabulary) and works through the list one question at a
+time — proposing a merge when two hypotheses could share a question and
+asking before combining, never dumping a batch of drafts on you at
+once. For each question it drafts an open-ended candidate, attacks its
+own draft
+— could a polite stranger guess the answer you're hoping for? could an
+honest answer fail to settle the hypothesis? — and iterates with you
+until one survives. When you propose "So no-shows are a big problem for
+you, right?" it names the tell, shows the open rewrite ("Walk me
+through what happened the last time someone booked a class and didn't
+show up"), and won't move on — or write the question down — until the
+version on the table is genuinely unbiased. The finished QUESTIONS.md
+reads like an interview plan: context-setting questions first, price
+near the end, each question tagged with the hypotheses it tests, plus
+standing probes for chasing surprises live.
+
+Or bring one hypothesis with no file at all:
+
+```text
+/asb-interview-questions My hypothesis: gym owners spend at least 2
+hours a week chasing failed membership payments. How do I ask about
+this without planting the answer?
+```
+
+In this mode there's no file — the skill checks the hypothesis is sharp
+enough to test, drafts and grills candidate phrasings with you, and
+hands back the final question in chat, with a natural follow-up probe
+to use when the answer surprises you.
+
+## From the source
+
+Two sources form the foundation of this skill:
+
+- As in Chapter 10 of *Hidden Multipliers*: *A multiplier of one's own* (section "Questions: What to Ask During the Interview") — [hiddenmultipliers.com](https://hiddenmultipliers.com) — the questions step itself: the four criteria, the leading-the-witness failure and its security-question example, and the bad-versus-good question table this skill's grilling is built on.
+- [**The Iterative-Hypothesis customer development method**](https://longform.asmartbear.com/customer-development/) — the published article version of the method, including the price-quoting exception, the value-testing question pattern, and the follow-up probes for chasing surprises.
+
+Supporting articles each supply a piece of the mechanism:
+
+- [**Yes, but who said they'd actually BUY the damn thing?**](https://longform.asmartbear.com/customer-validation/) — why "would you buy it?" questions produce worthless yeses, which is the failure mode the four criteria exist to prevent.
+- [**When you have nothing: How to find potential customers to interview**](https://longform.asmartbear.com/find-customers-to-interview/) — where to find the people to ask, once the questions are ready.

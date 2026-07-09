@@ -312,10 +312,54 @@ useful.
    - Is the process long enough or multi-session enough to warrant a file?
    - What goes in it? (A YAML header tracking current phase, plus captured
      decisions.)
-   - Who chooses the path? (End user, with a sensible default.)
+   - Who chooses the path? (End user, with a sensible default. If the
+     skill consumes an input file, the output goes in the same directory
+     as the input.)
    - Most skills DON'T need a wielding artifact — only opt in when the
      process genuinely spans sessions or produces a deliverable the end
      user would want to keep.
+   - **Live file, not end-of-session file.** When the artifact is built
+     item by item (a numbered list forged across many exchanges), the
+     wielder creates the file as soon as the FIRST item is settled and
+     appends after each one — long sessions forget and contexts get
+     compacted; the file is the memory, not the chat. The file opens
+     with an explicit `⚠️ IN PROGRESS` status note recording exactly
+     where the walk stopped (plus any plan the resumed session must
+     inherit, e.g. a grouping), so a fresh session can resume from disk
+     alone; finalizing removes the note. This pattern is proven in
+     `asb-interview-hypotheses` / `asb-interview-questions` — copy it,
+     don't reinvent it.
+
+4b. **Pacing — one item per exchange.** For any skill that forges
+   multiple items with the user (goals, hypotheses, questions, list
+   entries), bake in strict pacing as a standing posture rule: a SMALL
+   opening move (acknowledge the input, flag anomalies, then start item
+   one — never an opening wall of plans + batched drafts), exactly one
+   item drafted/worked per exchange (candidate variants of the SAME item
+   are fine; drafts for two different items are not), any
+   merge/grouping/skip proposed and confirmed BEFORE acting on it, and a
+   settle-then-write rhythm against the live file. This was learned the
+   hard way: a produced skill that passed prose review and simulation
+   dumped a full plan plus three grilled drafts in its opening message
+   during real use. These skills facilitate the user; a user who can't
+   react to a message is being performed for, not facilitated.
+
+4c. **Ownership vs. craft — who wins a disagreement?** Decide, per part
+   of the produced artifact, which of two hard-bar semantics applies:
+   - **User-owned content** (their beliefs, their decisions): the wielder
+     presses hard but ultimately records the user's version — "it's their
+     list." Candidates offered are templates the user must correct;
+     batch-nodding is refused; but the user's genuine belief goes in even
+     when the wielder disagrees.
+   - **Craft-gated content** (anything with objective quality criteria,
+     e.g. a non-leading interview question): the criteria are
+     NON-negotiable — a violating item is never recorded, in any form,
+     "not even both versions," however the user insists. The refusal is
+     always of the broken item, never of the user's underlying intent,
+     which always has a compliant version available.
+   Naming which semantic governs which section prevents both failure
+   modes: a wielder that overrides the user's beliefs, and a wielder that
+   lets a "it's my interview" appeal breach a quality gate.
 
 5. **Wielding-time adversarial posture.** Critical and frequently
    underused. Most asb-* skills should not just *apply* the framework — they
@@ -556,7 +600,13 @@ becoming the published framework.
      (it becomes class b, with the departure named).
    - **Drift** — a paraphrase that changed the meaning, scope, or strength
      of the original ("usually" became "always"; a two-condition rule lost a
-     condition). Tighten the draft to match the source.
+     condition). Tighten the draft to match the source. **Drift runs in
+     both directions**: check for rules STRICTER than the source, not just
+     weaker. (Real case: a draft banned all willingness-to-pay hypotheses
+     as "purchase referendums" when Jason's canonical example list
+     explicitly contains "will pay $50/mo" hypotheses — the source bans
+     asking "would you buy?", not holding priced beliefs. Over-restriction
+     is invented doctrine, just as much as over-loosening.)
 
 4. **Show Jason the summary**: counts per grounding class, plus every flag
    and how it was resolved. His sign-off gates Phase 6.
@@ -680,6 +730,42 @@ the way there.
    push).
 
 ---
+
+## Skill families and chained artifacts
+
+Some skills come in families — sequential steps of one method, each
+consuming the previous step's output file (proven pattern:
+`asb-interview-goals` → GOALS.md → `asb-interview-hypotheses` →
+HYPOTHESES.md → `asb-interview-questions` → QUESTIONS.md). When forging a
+family member, apply these conventions:
+
+- **Shared slug namespace** (`asb-<family>-<step>`) and numbered-item
+  conventions that chain: each artifact's items get stable prefixed
+  numbers (G1…, H1…, Q1…) and later artifacts cite earlier ones by those
+  numbers (`[G4]`, `[H2, H7]`). Numbers freeze when a file is finalized,
+  since downstream steps cite them.
+- **Output file lives in the same directory as the input file.**
+- **Self-containment still holds, via graceful description.** A family
+  member never *requires* its siblings: it accepts the input artifact
+  from any source (file or pasted), describes the artifact rather than
+  naming the producing skill ("a goal-question list, numbered G1, G2, …"),
+  and its Next-steps prose describes how to continue the method rather
+  than which skill to install.
+- **Invoke-if-installed is the sanctioned exception** to the
+  no-references rule: a public skill MAY name another public asb-* skill
+  as an *optional* enhancement ("if a devil's-advocate skill such as
+  *Rude Q&A* / `asb-rude-qa` is installed, invoke it with this brief: …")
+  PROVIDED an equivalent inline fallback is fully specified so the skill
+  works standalone. Jason approved this pattern explicitly; the fallback
+  is not optional.
+- **Description boundaries between siblings.** Each family member's
+  `description` must route correctly against its neighbors: the earlier
+  skill's "Do NOT load" names the later step ("…or when a goal-question
+  list already exists and the user wants hypotheses"), and each
+  description names its input and output artifacts.
+- **Wrapper `related:` links chain the family** (each step points at the
+  next, and back), and each wrapper's long description says where the
+  step sits in the method.
 
 ## Marketing voice (for title, summary, and long description in the .mdx)
 
@@ -842,9 +928,15 @@ bullet list entirely. Don't leave the prose stub stranded.
     `https://longform.asmartbear.com/pricing-determines-your-business-model/`
   - **The trailing slash is required.**
 - **Hidden Multipliers book**: the book is not online chapter-by-chapter.
-  Reference the chapter (and subsection, if relevant) by name in prose.
-  The URL is always just `https://hiddenmultipliers.com`.
-  - Example: `*Pricing power* (section "The whale curve") in *Hidden Multipliers* — <https://hiddenmultipliers.com>`
+  Reference the chapter (and subsection, if relevant) using Jason's
+  standing convention: `As in Chapter <N> of *Hidden Multipliers*:
+  *<Chapter title>* (section "…")`. The URL is always just
+  `https://hiddenmultipliers.com`.
+  - Example: `As in Chapter 10 of *Hidden Multipliers*: *A multiplier of one's own* (section "How to Extract Insights from Customers") — [hiddenmultipliers.com](https://hiddenmultipliers.com)`
+  - The `source:` frontmatter title follows suit: `"Chapter 10 of Hidden Multipliers: A multiplier of one's own"`.
+- **MDX gotcha**: `<https://example.com>` autolinks BREAK the MDX build
+  (the parser reads `<h` as a JSX tag). Always use
+  `[text](https://example.com)` form in wrapper files.
 - Bold the article title inside the link (`[**Title**](URL)`).
 - **Do NOT append "(A Smart Bear)"** after each item — the URL makes the
   source obvious; the suffix is noise.

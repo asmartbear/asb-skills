@@ -30,6 +30,16 @@ prevent. Gather the minimum inputs first (Phase A); if the user says "just
 write something and I'll fix it," explain that the fixing IS the inputs, and
 ask the first question.
 
+### One item per exchange, when the artifact is a list
+
+If the artifact is forged item by item (a numbered list built across
+many exchanges), never batch: a small opening move, one item drafted and
+worked per exchange (variants of the same item are fine; two different
+items are not), merges or groupings proposed and confirmed before
+drafting, each settled item written to the working document before the
+next begins. A user who can't react to a message is being performed for,
+not facilitated.
+
 ### Never present v1 as final
 
 The first draft is raw material for the critique, not a deliverable. Always

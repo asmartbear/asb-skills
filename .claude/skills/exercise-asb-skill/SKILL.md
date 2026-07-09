@@ -36,10 +36,15 @@ wielder needs a definition, rule, or example that isn't in the file, that
 absence is itself a finding — note it; do not fill it in from outside
 knowledge. State the quarantine in one line before the first transcript.
 
-(Hardening option, worth it for high-stakes re-tests: dispatch each scenario
-to a subagent whose prompt contains only the SKILL.md text and the scenario,
-so quarantine is enforced structurally rather than by discipline. This skill
-is dev-only; subagents are allowed.)
+(Recommended default, proven across the asb-interview-* family: dispatch
+each scenario to a subagent whose prompt names ONLY the SKILL.md path and
+the scenario — quarantine enforced structurally rather than by
+discipline, and scenarios run in parallel. Give each subagent explicit
+PASS/FAIL test questions for the scenario's purpose, and require its
+final message to be exactly: the transcript, then an "AMBIGUITIES/GAPS
+NOTED" list of places the wielder needed something the file didn't
+provide. Those ambiguity lists are where most patches come from — often
+more than the verdicts. This skill is dev-only; subagents are allowed.)
 
 ## Step 2 — Design the scenarios
 
@@ -59,6 +64,18 @@ Construct 3–5 scenarios tailored to the target skill's domain. Required mix:
 5. *(Optional)* **Lazy answerer.** A cooperative user whose answers are
    consistently weak — "should be fine," "we'll figure it out later."
    Tests that the bar doesn't drop across many rounds.
+6. **Die-and-resume (required when the skill maintains a working
+   file).** A two-part scenario: the session ends abruptly mid-process;
+   a NEW session (wielder has no memory — only the SKILL.md and what it
+   reads from disk) is asked to finish. Tests that the file alone
+   carries the state: correct pickup point, no re-eliciting of settled
+   items, in-progress note removed at finalization.
+
+Also re-run the exercise after any substantial redesign of an
+already-exercised skill — earlier passes certify the old text, not the
+new one. And when Jason reports a live-use failure, treat it as a
+missing rubric criterion or scenario here, not just a patch to the one
+skill: the wind tunnel only catches what it tests for.
 
 Each scenario gets a one-line persona (who they are, what they bring, how
 they behave under pressure). Show the scenario list to Jason before running;
@@ -102,7 +119,8 @@ transcript as evidence. Skip criteria a scenario can't speak to (mark n/a).
 | **Dwell fired** | On weak/vague/wishful answers: did the wielder stay on the point, name the dwell, and offer candidate answers — or accept "good enough" and move on? |
 | **Refusal fired** | For the refusal scenario: did the wielder refuse, for the right reason, kindly, and offer the constructive path in? Refusing rudely or proceeding anyway both FAIL. |
 | **Tone/substance split** | Gentle framing with an unmoved bar. Scolding/curt = FAIL one way; nodding along with sub-par answers = FAIL the other. |
-| **Artifact handling** | If the SKILL.md specs a working document: created at the right moment, schema followed, updated as the exercise progressed, resume behavior plausible. |
+| **Pacing** | Could the user follow and steer at every step? An opening wall (full plan + multiple drafts + side-questions stacked in one message) FAILS. For item-forging skills: more than one item drafted per exchange FAILS (candidate variants of the same item are fine); merges/groupings acted on without user confirmation FAIL. This criterion exists because a produced skill once passed every other lens and then dumped a plan plus three grilled drafts in its opening message during real use — batching is invisible unless you look for it. |
+| **Artifact handling** | If the SKILL.md specs a working document: created at the right moment (for item-forging skills, at the FIRST settled item, not the end), schema followed, in-progress/resume header maintained, updated as the exercise progressed, resume behavior plausible. |
 
 ## Step 5 — Report and patch
 

@@ -22,6 +22,12 @@ A user installs the skill by copying ONE file (`SKILL.md`) into their
 `~/.claude/skills/<name>/`. They do not get the rest of this repo. So:
 
 - ❌ Do not reference other skills (e.g. "see the `asb-pricing-ladder` skill").
+  - ✅ ONE sanctioned exception (Jason-approved): a public skill MAY name
+    another public `asb-*` skill as an *optional* enhancement —
+    "if a devil's-advocate skill such as *Rude Q&A* / `asb-rude-qa` is
+    installed, invoke it with this brief: …" — PROVIDED an equivalent
+    inline fallback is fully specified so the skill works standalone.
+    The dependency must never be required.
 - ❌ Do not reference agents in `.claude/agents/`.
 - ❌ Do not reference helper files, datasets, or assets in this repo.
 - ❌ Do not link to the Hidden Multipliers book files or A Smart Bear article files on the local filesystem.
