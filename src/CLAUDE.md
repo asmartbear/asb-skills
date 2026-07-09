@@ -6,9 +6,12 @@
   `install.mdx` live here. **Skill pages are NOT rendered from here** — they
   use a custom dynamic route (see below).
 - `content/skills/` — public-skill wrappers (one `.mdx` per public skill).
-  Frontmatter: `title`, `summary`, optional `featured`, `order`. Body is
-  optional marketing prose. **The presence of a file here is what publishes a
-  skill.** No file → skill is dev-only and invisible.
+  Frontmatter: `title`, `summary`, optional `featured`, `order`. Body has
+  three required sections in order: `## What this is about` (2–4 marketing
+  paragraphs), `## Example invocation` (slash-command code block + prose),
+  `## From the source` (foundation + supporting article links). **The presence
+  of a file here is what publishes a skill.** No file → skill is dev-only and
+  invisible.
 - `pages/skills/[slug].astro` — dynamic route. For each public skill, joins
   the wrapper (`content/skills/<name>.mdx`) with the canonical content
   (`.claude/skills/<name>/SKILL.md`) and renders both inside Starlight chrome

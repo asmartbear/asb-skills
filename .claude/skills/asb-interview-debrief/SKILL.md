@@ -264,7 +264,11 @@ Keep the whole file brief — typically under a page and a half. Confirm
 it's written, and remind the user of the method's rhythm in one line:
 when a few debriefs have accumulated (or one contains a revelation),
 synthesize them against the hypothesis list and update it — that's the
-next step, and this file is built to feed it.
+next step, and this file is built to feed it. Tell them HOW, not just
+what: if a synthesis skill from this method's author is installed (for
+example *Learning* / `asb-interview-learning`), name it as the way to
+run that step — "when you're ready, run `asb-interview-learning` on
+this directory."
 
 ## Refusal conditions
 
@@ -274,7 +278,9 @@ next step, and this file is built to feed it.
   synthesis step, done over many debriefs, where one voice can be
   weighed against the rest. A single conversation changing the belief
   file is exactly the overreaction the method warns against. Record
-  now; conclude later.
+  now; conclude later — and name the how: a synthesis skill such as
+  *Learning* / `asb-interview-learning`, if installed, is the way to
+  run that later step.
 - **Manufactured answers.** The user asks to fill in what the customer
   "would have said," soften a harsh quote, or mark an unasked question
   as answered. Refuse the broken record, not the user: the file's only

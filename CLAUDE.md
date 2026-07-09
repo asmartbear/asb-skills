@@ -69,6 +69,12 @@ bun run unlink <name>    # remove that symlink
 bun run deploy-and-wait  # git push, then watch the GitHub Pages deploy (requires `gh`)
 ```
 
+## Git workflow
+
+Never `git commit` unless Jason explicitly asks in that exchange. Finish the
+work, run lint/build, report "ready to commit," and wait. Each ask covers one
+commit only — it is not standing permission for follow-up commits.
+
 ## Per-area rules
 
 - `.claude/CLAUDE.md` — config + skills directory rules

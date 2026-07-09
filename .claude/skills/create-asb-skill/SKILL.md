@@ -51,14 +51,13 @@ or over-invest in the wrong one.
 - **`.mdx` wrapper** (`src/content/skills/asb-<slug>.mdx`) — this is the
   **public-facing webpage** on skills.asmartbear.com. The site renders:
   title (frontmatter) → italic summary (frontmatter) → Installing box →
-  the wrapper body (long description + `## Example invocation` + `## From the
-  source`). The SKILL.md content is **not** shown on the page; readers get
-  it via the Installing box (download / view-source / raw / copy). So the
-  wrapper body is the *sales surface*: it has to convince a stranger that
-  this is worth installing, give them a vivid example of using it, and
-  point them at Jason's source articles for context. Inviting, concrete,
-  marketing-flavored. Roughly 2–4 paragraphs of long description, a
-  realistic `## Example invocation`, and a structured `## From the source`.
+  the wrapper body (`## What this is about` with 2–4 paragraphs +
+  `## Example invocation` + `## From the source`). The SKILL.md content is
+  **not** shown on the page; readers get it via the Installing box (download /
+  view-source / raw / copy). So the wrapper body is the *sales surface*: it
+  has to convince a stranger that this is worth installing, give them a vivid
+  example of using it, and point them at Jason's source articles for context.
+  Inviting, concrete, marketing-flavored.
 - **`SKILL.md`** (`.claude/skills/asb-<slug>/SKILL.md`) — this is the
   **prompt that loads into a wielder LLM** when the end user invokes the
   skill. The end user never reads it for content (only the LLM does). So
@@ -79,9 +78,10 @@ other, read the live exemplar pair:
 - Wrapper: `src/content/skills/asb-rude-qa.mdx`
 - SKILL.md: `.claude/skills/asb-rude-qa/SKILL.md`
 
-The wrapper shows the marketing voice, the `## Example invocation` shape (slash-command
-fenced block + prose paragraph describing what the skill does without
-showing literal output), and the `## From the source` foundation-vs-
+The wrapper shows the marketing voice, the `## What this is about` heading
+with inviting description paragraphs, the `## Example invocation` shape
+(slash-command fenced block + prose paragraph describing what the skill does
+without showing literal output), and the `## From the source` foundation-vs-
 supporting split with why-relevant explanations on every item. The SKILL.md
 shows wielding-posture rules, the standing dwell/move-on rules, a wielding
 artifact spec, and refusal conditions.
@@ -138,8 +138,9 @@ not labels, they're hooks. Don't aim for perfect at Phase 0; aim for
 - `related:` — leave commented out for now. Phase 8 (or any later session
   that adds an adjacent skill) decides whether this skill should point at
   follow-on skills.
-- Long description — one rough sentence is enough at Phase 0, but already
-  led by the reader's payoff, not "this skill does X."
+- **`## What this is about`** — already present from the template; add one
+  rough sentence of long description under it, led by the reader's payoff,
+  not "this skill does X." Phase 6 expands to 2–4 paragraphs.
 - **`## Example invocation`** — leave the TODO marker; Phase 3 fills this in once
   the interaction shape is clear.
 - **`## From the source`** — record each source Jason named here, as a
@@ -693,11 +694,11 @@ the way there.
    - `summary:` — one sharp benefit-first line, under ~150 chars. Lead
      with what the reader gets, then how. Used for site listing and
      `<meta description>`.
-   - Long description — 2–4 paragraphs that open with the reader's
-     payoff. Concrete, no jargon, **second-person voice** ("you," not
-     "the user"). Should make the reader want to install the skill. The
-     dedicated `## Example invocation` section below handles the concrete-example
-     work; the long description doesn't need to repeat that.
+   - **`## What this is about`** — 2–4 paragraphs that open with the
+     reader's payoff. Concrete, no jargon, **second-person voice** ("you,"
+     not "the user"). Should make the reader want to install the skill. The
+     dedicated `## Example invocation` section below handles the concrete-
+     example work; the description doesn't need to repeat that.
    - **`## Example invocation`** — confirm the slash-command code block is realistic
      and the prose paragraph describes what the skill actually does (no
      literal LLM output), in second-person voice.
@@ -749,8 +750,15 @@ family member, apply these conventions:
   member never *requires* its siblings: it accepts the input artifact
   from any source (file or pasted), describes the artifact rather than
   naming the producing skill ("a goal-question list, numbered G1, G2, …"),
-  and its Next-steps prose describes how to continue the method rather
-  than which skill to install.
+  and its Next-steps prose describes how to continue the method in
+  method terms. BUT at the handoff moment — the closing "here's what
+  comes next" line — the skill should ALSO name the sibling that
+  performs the next step, invoke-if-installed style ("when you're
+  ready, run `asb-interview-learning` on this directory"). Live-use
+  lesson: a wielder described the synthesis step perfectly but never
+  said which installed skill runs it, leaving the user knowing WHAT
+  comes next but not HOW; the method description is the fallback, the
+  named sibling is the affordance.
 - **Invoke-if-installed is the sanctioned exception** to the
   no-references rule: a public skill MAY name another public asb-* skill
   as an *optional* enhancement ("if a devil's-advocate skill such as
@@ -846,23 +854,23 @@ Voice: terse, concrete, scan-readable. Not prose. One sentence each.
 - ❌ `input:` *"Whatever you've got — anything works really."* (vague)
 - ❌ `output:` *"Insights and clarity around your situation."* (fluff)
 
-### Long description (the 2–4 paragraph body)
+### `## What this is about` (the 2–4 paragraph body)
 
 Open the FIRST paragraph with the reader's payoff — the change they get,
 the problem this solves, the situation it cuts through. Make them want to
 keep reading. THEN, in subsequent paragraphs, explain what the framework
 is, when it applies, and how the wielder actually facilitates it. The
-dedicated `## Example invocation` section below the long description does the
+dedicated `## Example invocation` section that follows handles the
 concrete-example work; don't shoehorn an example into the description.
 
 Concrete, no jargon. If a sentence could appear in any skill's
-description, it's filler — cut it. The reader should finish the body
+description, it's filler — cut it. The reader should finish the section
 already convinced it's worth installing.
 
 ### Second-person voice — everywhere in the .mdx
 
 Address the reader directly: "you," not "the user" / "a user" / "the
-end user." This includes the long description, the `## Example invocation` section's
+end user." This includes the `## What this is about` paragraphs, the `## Example invocation` section's
 lead-in and prose paragraph, and any other prose in the wrapper. The
 wrapper is the website page — it's talking to the reader, not describing
 them in third person.
