@@ -143,17 +143,39 @@ it hides behind good results.
 
 ## The interviewer's posture
 
-### A few prompts per exchange, one characteristic at a time
+### One prompt at a time, one characteristic at a time
 
-Offer prompts in small batches (two or three) and let the user
-answer whichever bites — forcing all of them in order is a form, not
-an interview. But *settle* one characteristic at a time: when an
-answer surfaces a candidate, stop and work it — press for the
-episode, find the pattern, draft the non-judgmental phrasing, get
-the strength-contexts and hindrance-contexts — before offering more
+Offer ONE prompt per exchange — focused beats buffet. If it draws a
+blank or a "skip" mid-section, offer the next single prompt; a small
+choice of prompts is for section openings (especially after a skip
+ended the previous section), and when you present one, say
+explicitly: "answer whichever bites — one is plenty, more is
+fine; if you give me several, I'll work them one at a time." Forcing
+prompts in order is a form, not an interview — but so is a wall of
+them. *Settle* one characteristic at a time: when an answer surfaces
+a candidate, stop and work it — press for the episode, find the
+pattern, draft the non-judgmental phrasing, get the
+strength-contexts and hindrance-contexts — before offering more
 prompts. Propose candidate phrasings freely; the user confirms. When
-an answer is rich with several candidates, park the extras
-explicitly and work them next — nothing volunteered is lost.
+an answer is rich with several candidates, visibly narrow to one and
+park the extras — one line each, worked next; nothing volunteered is
+lost.
+
+**One ask per message.** Every message ends with exactly one thing
+for the user to do: one question, or one drafted fact to confirm —
+never a question AND a draft AND a second question braided together.
+Parking notes stay brief and carry no asks. And when a message does
+need the user to respond to something, the ask sits at the END of
+the message, stated in full — never "the questions above" with
+status text in between, never a pointer that makes them scroll.
+
+**Prompt frames are scaffolding, not eligibility.** "Even as a kid"
+and its siblings are evocative ways in — an answer that meets the
+prompt's spirit (a genuine, long-standing pull) counts even when it
+doesn't match the frame (it started at thirty; it wasn't on
+vacation). Follow up for the extra color if it's there ("did this
+show up earlier too?") — as a bonus question, never a gate, and
+never re-asked once the user has answered the substance.
 
 ### The presses
 
@@ -209,6 +231,17 @@ other; and check what's missing — no hindrances (nobody has none),
 no unflattering drives, no outside-in edge.* If no such skill is
 available, run exactly that interrogation yourself, visibly.
 
+Presenting the press's findings follows the same pacing as the whole
+interview: work them with the user ONE at a time, not as a numbered
+dump of flags. When a finding needs nothing from the user, apply it
+and say so in a line (such lines may share a message with the next
+finding's single ask — the one-ask rule counts asks, not findings). When it needs the user, phrase it as one
+explicit, answerable question — "confirm X is true" is a fine ask,
+but say that's the ask; never leave the user guessing whether an
+observation wants a reply. Ask only for what's actually needed
+(never "answer all four — well, really two"), and put the ask at the
+end of the message, restated in full.
+
 ## How to use this skill
 
 ### Phase A — Frame and open
@@ -222,13 +255,13 @@ for an existing `WHO-ME.md` there: an in-progress header means resume — pick u
 exactly where the pointer says, including any homework marked
 pending; don't re-ask settled characteristics. Otherwise open small:
 one line on how this works (prompts, episodes, a file of facts) and
-the first two or three drive prompts.
+the first drive prompt — one, not a menu.
 
 ### Phase B — Mine the drives, then the hindrances
 
-Work the drive prompts in small batches, settling characteristics
-one at a time per the posture; a batch that yields nothing new
-("it's all variations of the tooling thing") means that section is
+Work the drive prompts one at a time, settling characteristics one
+at a time per the posture; when the last prompt or two yield nothing
+new ("it's all variations of the tooling thing"), that section is
 mined — move on, appending any corroboration under the existing
 frozen numbers. Then announce the turn and work the anti-questions
 the same way — the hindrances section is mandatory, not optional; a
@@ -277,13 +310,22 @@ closing press over just the new material.
   no homework was ever assigned.
 - **Coverage check:** drives, hindrances, at least one unflattering
   or unsanctioned motive (their absence usually means sanitizing),
-  and the outside-in section (settled, or explicitly pending).
-- **Close the loop.** If Phase A named a question ("why do I keep
-  burning out," "what should I build"), read the finished map back
-  against it — as the map talking, not as therapy or a strategy
-  plan: "you're excellent at the thing that wrecks you, rewarded
-  into more of it, and the energizing thing is a footnote." What to
-  do about it belongs to the strategy step.
+  the outside-in section (settled, or explicitly pending), and the
+  `## The shape` section written — a file without it is a parts list
+  missing its picture.
+- **Close the loop — and write it into the file.** After the press
+  (deliberately: the shape synthesizes material that has already
+  survived the attack), read the finished map back as one synthesis: the most salient characteristics
+  counterbalanced against each other, cited by [M-number], and — if
+  Phase A named a question ("why do I keep burning out," "what
+  should I build") — answered against it, as the map talking, not as
+  therapy or a strategy plan: "you're excellent at the thing that
+  wrecks you, rewarded into more of it, and the energizing thing is
+  a footnote." This reading is the single most valuable thing the
+  exercise produces, so it does NOT live only in chat: record it as
+  the file's `## The shape` section, placed right after the
+  preamble — the executive summary the M-entries below support.
+  What to do about it belongs to the strategy step.
 - **Contradiction pass:** entries that fight each other ("craves
   autonomy" / "wants a boss's approval") are surfaced — sometimes
   one is aspiration, sometimes both are true in different contexts;
@@ -317,6 +359,15 @@ closing press over just the new material.
 <Two or three lines: what decision this self-portrait serves, if
 named. Characteristics are non-judgmental facts — strengths in some
 contexts, hindrances in others — numbered in settle order, frozen.>
+
+## The shape
+
+<Written at the close, once the map is complete: one or two
+paragraphs reading the whole portrait back — the deepest drives and
+what they want, the fences the hindrances draw, the counterweights
+and tensions, all cited by [M-number] — and, if a framing question
+was named, what the map says about it. The map talking: it doesn't
+prescribe what to do; it says what shape the answer has to have.>
 
 ## Drives
 

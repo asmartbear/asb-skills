@@ -373,6 +373,27 @@ useful.
    during real use. These skills facilitate the user; a user who can't
    react to a message is being performed for, not facilitated.
 
+   Three message-ergonomics rules that live-use keeps re-teaching —
+   bake them into every elicitation-style skill:
+   - **One ask per message.** A message ends with exactly one thing
+     for the user to do — one question, or one draft to confirm; never
+     a question AND a draft AND a second question braided together.
+     Anything the user must respond to is stated in full at the END of
+     the message — never "the questions above" with status text in
+     between — and only what's actually needed is asked (never "answer
+     all four — well, really two"). An observation that wants
+     confirmation says so; don't leave the user guessing what to do
+     with it. This applies to closing/press findings too: work them
+     one at a time, not as a numbered dump of flags.
+   - **Elicitation prompts one at a time.** One prompt per exchange by
+     default; a small choice of prompts only at natural moments (after
+     a skip), framed "answer whichever bites — one is plenty, more is
+     fine; several get worked one at a time."
+   - **Prompt frames are scaffolding, not eligibility.** "Even as a
+     kid…" is an evocative way in; an answer meeting the prompt's
+     spirit counts even when it misses the frame. Follow up for the
+     frame's color as a bonus, never as a gate.
+
 4c. **Ownership vs. craft — who wins a disagreement?** Decide, per part
    of the produced artifact, which of two hard-bar semantics applies:
    - **User-owned content** (their beliefs, their decisions): the wielder
