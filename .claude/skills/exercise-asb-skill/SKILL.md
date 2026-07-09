@@ -144,6 +144,13 @@ transcript as evidence. Skip criteria a scenario can't speak to (mark n/a).
 ## Judging discipline
 
 - Quote evidence for every non-PASS verdict. No quote, no finding.
+- When a verdict FAILs, first check the test question against the
+  skill's intended design: a scenario criterion stricter than the
+  design produces a false FAIL (real case: "opening must contain NO
+  proposals" flunked a skill whose sanctioned opening is
+  summary-plus-first-item). That's still a finding — but the patch is
+  usually to make the SKILL.md state the intended behavior
+  unambiguously, not to change the behavior.
 - Judge the transcript, not the SKILL.md prose. A beautifully-written rule
   that didn't fire when tested is a FAIL, not a PASS-because-the-text-says-so.
 - One systemic failure beats five cosmetic findings. If the same root cause
