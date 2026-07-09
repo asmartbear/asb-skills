@@ -73,24 +73,25 @@ rows. Split it. The split costs nothing — adjacent short questions are
 cheap to ask — and the notes stay attributable.
 
 The way to have a simple, single-answer main question AND natural depth
-is the **question-plus-beats structure**, which is the preferred shape
-for most settled questions:
+is the **question-plus-follow-ups structure**, which is the preferred
+shape for most settled questions:
 
 > **Q2.** "Think back to the last time you noticed you'd missed a
 > call. What went through your head?"
-> → beats, same story: "…and what did you do about it?" · "was that
-> somebody you already knew, or a new number?"
+> → follow-ups, same story: "…and what did you do about it?" · "was
+> that somebody you already knew, or a new number?"
 
-The main ask stays clean and yields one recordable answer; the beats
-are planned follow-ups the interviewer waits a few moments to deploy,
-each drilling into the *same* story. Beats are not a loophole: every
-beat must adhere to all the rules of good questions — the four
-criteria, no leading, no second independent ask smuggled in. Used well,
-beats are also where deliberately-withheld material gets recovered:
-notice the example's main question doesn't say "a call from a new
-customer" — whether he classifies the caller, and how, is data — so the
-new-vs-known axis arrives as a beat, in his words, after the unprompted
-reaction is already on the table.
+The main ask stays clean and yields one recordable answer; the
+follow-ups are planned-but-optional — the interviewer waits a few
+moments after the main answer lands, then deploys whichever the story
+warrants, each drilling into the *same* story. Follow-ups are not a
+loophole: every one must adhere to all the rules of good questions —
+the four criteria, no leading, no second independent ask smuggled in.
+Used well, follow-ups are also where deliberately-withheld material
+gets recovered: notice the example's main question doesn't say "a call
+from a new customer" — whether he classifies the caller, and how, is
+data — so the new-vs-known axis arrives as a follow-up, in his words,
+after the unprompted reaction is already on the table.
 
 ### Ask about their life, not your product
 
@@ -137,13 +138,13 @@ speculative answer can be weighed against a real one.
   customers, produced by the previous step of the method; the input here.
 - **Leading the witness** — any phrasing that signals the hoped-for
   answer, which polite interviewees will then supply.
-- **Beat** — a short, planned follow-up attached to a specific question,
-  asked after the main answer lands ("…and what did you do about it?").
-  Beats drill into the same story — same spreadsheet row — and obey
-  every rule main questions do.
-- **Probe** — a standing follow-up used live in the interview ("walk me
-  through a specific example") — not scripted per hypothesis, but listed
-  once for use everywhere.
+- **Follow-up** — a short, planned-but-optional question attached to a
+  specific main question, asked after the main answer lands ("…and what
+  did you do about it?"). Follow-ups drill into the same story — same
+  spreadsheet row — and obey every rule main questions do.
+- **Probe** — a standing follow-up used live anywhere in the interview
+  ("walk me through a specific example") — not scripted per hypothesis,
+  but listed once for use everywhere.
 
 ## The crafter's posture
 
@@ -392,8 +393,8 @@ which interview track if there are two populations.>
 interview order at finalization)
 
 **Q1.** <Open-ended question, in the customers' vocabulary.>    [H1, H4]
-→ beats, same story: <planned follow-ups, if any — each obeying every
-rule main questions do>
+→ follow-ups, same story: <planned-but-optional follow-up questions, if
+any — each obeying every rule main questions do>
 
 **Q2.** <…>    [H3]
 
