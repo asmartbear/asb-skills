@@ -26,6 +26,7 @@ touching any skill.**
 | :----- | :------------- | :---------- |
 | New public skill | `/create-asb-skill` workflow → `.claude/skills/asb-<n>/SKILL.md` + `src/content/skills/asb-<n>.mdx` | `bun run lint && bun run build`; `/exercise-asb-skill asb-<n>` |
 | Edit a published skill | the same two files, kept consistent | `bun run lint`; re-run `/exercise-asb-skill asb-<n>` |
+| New/edit a process page (a documented sequence of skills) | `src/content/processes/<slug>.mdx` + `process: <slug>` on each member skill's wrapper (see `src/CLAUDE.md`) | `bun run lint && bun run build` |
 | Dev-only skill / tooling | `.claude/skills/<n>/` (no `asb-` prefix, no wrapper) | `bun run lint` |
 | Site change (pages, components, styles) | `src/` (see `src/CLAUDE.md`) | `bun run check && bun run build`; eyeball via `bun run dev` |
 | Skill-idea backlog | `BACKLOG.md` only | nothing |

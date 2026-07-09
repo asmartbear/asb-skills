@@ -1,0 +1,244 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { Marked, type Tokens } from 'marked';
+import { listProcesses } from '../../lib/processes';
+import { fetchOgMeta } from '../../lib/og-meta';
+
+export async function getStaticPaths() {
+  return listProcesses().map((process) => ({
+    params: { slug: process.name },
+    props: { process },
+  }));
+}
+
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+}
+
+const { process } = Astro.props;
+const fm = process.frontmatter;
+
+// Fresh Marked instance with heading IDs so Starlight's TOC anchors resolve.
+const md = new Marked({
+  renderer: {
+    heading(token) {
+      const text = this.parser.parseInline(token.tokens);
+      const slug = slugify(this.parser.parseInline(token.tokens, this.parser.textRenderer));
+      return `<h${token.depth} id="${slug}">${text}</h${token.depth}>\n`;
+    },
+  },
+});
+
+// H2/H3 headings from the body → right-side outline. Append the auto-rendered
+// steps section so it shows up in the TOC too.
+const headings = md
+  .lexer(process.body)
+  .filter((t): t is Tokens.Heading => t.type === 'heading' && (t.depth === 2 || t.depth === 3))
+  .map((t) => ({ depth: t.depth, slug: slugify(t.text), text: t.text }));
+if (process.steps.length > 0) {
+  headings.push({ depth: 2, slug: 'the-steps', text: 'The steps' });
+}
+
+const bodyHtml = await md.parse(process.body);
+
+// Reuse the source article's OG image as a hero + social preview, mirroring
+// the per-skill page.
+const og = fm.source ? await fetchOgMeta(fm.source.url) : undefined;
+
+type HeadTag = { tag: 'meta'; attrs?: Record<string, string | boolean | undefined> };
+const head: HeadTag[] = [];
+if (og?.image) {
+  head.push({ tag: 'meta', attrs: { property: 'og:image', content: og.image } });
+  head.push({ tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } });
+  head.push({ tag: 'meta', attrs: { name: 'twitter:image', content: og.image } });
+  if (og.imageWidth) head.push({ tag: 'meta', attrs: { property: 'og:image:width', content: og.imageWidth } });
+  if (og.imageHeight) head.push({ tag: 'meta', attrs: { property: 'og:image:height', content: og.imageHeight } });
+  if (og.imageAlt) head.push({ tag: 'meta', attrs: { property: 'og:image:alt', content: og.imageAlt } });
+}
+head.push({ tag: 'meta', attrs: { name: 'twitter:title', content: fm.title } });
+head.push({ tag: 'meta', attrs: { name: 'twitter:description', content: fm.summary } });
+---
+
+<StarlightPage frontmatter={{ title: fm.title, description: fm.summary, head }} headings={headings}>
+  {og?.image && fm.source && (
+    <a
+      class="source-hero"
+      href={fm.source.url}
+      target="_blank"
+      rel="noopener"
+      title={`Read the source: ${fm.source.title}`}
+    >
+      <img src={og.image} alt={og.imageAlt ?? fm.source.title} loading="lazy" decoding="async" />
+    </a>
+  )}
+
+  <p>
+    <em>{fm.summary}</em>
+    {fm.source && (
+      <em class="source-cite"> Adapted from <a href={fm.source.url} target="_blank" rel="noopener">{fm.source.title}</a>.</em>
+    )}
+  </p>
+
+  <div class="process-body" set:html={bodyHtml} />
+
+  {process.steps.length > 0 && (
+    <section class="steps not-content" aria-labelledby="the-steps">
+      <h2 id="the-steps">The steps</h2>
+      <ol class="step-list">
+        {process.steps.map((s, i) => (
+          <li class="step-card">
+            <a href={`/skills/${s.name}/`}>
+              <span class="step-num" aria-hidden="true">{i + 1}</span>
+              <div class="step-text">
+                <h3>{s.wrapper.cardTitle ?? s.wrapper.title}</h3>
+                <p class="step-hook">{s.wrapper.hook ?? s.wrapper.summary}</p>
+                {s.wrapper.input && s.wrapper.output && (
+                  <p class="step-io">
+                    <span class="io-in">{s.wrapper.input}</span>
+                    <span class="io-arrow" aria-hidden="true">→</span>
+                    <span class="io-out">{s.wrapper.output}</span>
+                  </p>
+                )}
+                <code>{s.name}</code>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )}
+</StarlightPage>
+
+<style>
+  .source-cite {
+    color: var(--sl-color-gray-3);
+  }
+
+  /* Source hero — same treatment as the per-skill page. */
+  .source-hero {
+    float: right;
+    width: 14rem;
+    max-width: 40%;
+    margin: 0 0 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid var(--sl-color-gray-5);
+    background: var(--sl-color-gray-6);
+    display: block;
+    line-height: 0;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .source-hero:hover {
+    border-color: var(--sl-color-accent);
+  }
+  .source-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  @media (max-width: 40rem) {
+    .source-hero {
+      float: none;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 0 1rem;
+    }
+  }
+
+  .process-body :global(pre) {
+    overflow-x: auto;
+    max-width: 100%;
+    white-space: pre;
+    box-sizing: border-box;
+  }
+
+  .steps {
+    margin-top: 2.5rem;
+  }
+  .steps h2 {
+    margin-bottom: 0.75rem;
+  }
+  .step-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+    counter-reset: step;
+  }
+  .step-card {
+    position: relative;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    background: var(--sl-color-gray-6);
+    overflow: hidden;
+    transition: border-color 0.15s, background-color 0.15s;
+  }
+  .step-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: var(--sl-color-accent);
+  }
+  .step-card:hover {
+    border-color: var(--sl-color-accent);
+    background: color-mix(in srgb, var(--sl-color-gray-6) 85%, var(--sl-color-gray-5));
+  }
+  .step-card a {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 0.95rem 1.15rem;
+    color: inherit;
+    text-decoration: none;
+  }
+  .step-num {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    background: var(--sl-color-accent);
+    color: var(--sl-color-white);
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .step-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .step-card h3 {
+    margin: 0.15rem 0 0.3rem;
+    font-size: 1.1rem;
+  }
+  .step-hook {
+    margin: 0 0 0.5rem;
+    color: var(--sl-color-gray-2);
+    font-size: 0.95rem;
+  }
+  .step-io {
+    margin: 0 0 0.5rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--sl-color-gray-3);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+  .io-arrow {
+    color: var(--sl-color-accent-high);
+    font-weight: 700;
+  }
+  .step-card code {
+    font-size: 0.75rem;
+    color: var(--sl-color-gray-3);
+  }
+</style>

@@ -17,4 +17,17 @@ export const collections = {
       order: z.number().optional(),
     }),
   }),
+  // Website-only "process" pages: a documented sequence of skills run
+  // end-to-end. Not distributed skills — see src/lib/processes.ts.
+  processes: defineCollection({
+    loader: glob({ pattern: '*.{md,mdx}', base: './src/content/processes' }),
+    schema: z.object({
+      title: z.string(),
+      summary: z.string(),
+      order: z.number().optional(),
+      cardTitle: z.string().optional(),
+      hook: z.string().optional(),
+      source: z.object({ title: z.string(), url: z.string() }).optional(),
+    }),
+  }),
 };

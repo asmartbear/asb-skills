@@ -8,6 +8,7 @@ hero:
 
 import { LinkButton } from '@astrojs/starlight/components';
 import SkillsList from '../../components/SkillsList.astro';
+import ProcessList from '../../components/ProcessList.astro';
 import CuratorByline from '../../components/CuratorByline.astro';
 
 <CuratorByline />
@@ -40,12 +41,40 @@ import CuratorByline from '../../components/CuratorByline.astro';
   .hero-actions > .sl-link-button {
     margin-block: 0 !important;
   }
+
+  /* Home page: Processes and Skills side by side on wide screens; stacked
+     (Processes first, per source order) on narrow ones. */
+  .home-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  @media (min-width: 50rem) {
+    .home-columns {
+      grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+      gap: 3rem;
+    }
+  }
+  .home-col-title {
+    margin-block: 0 0.25rem;
+  }
+  .home-col-blurb {
+    margin-block: 0 1.25rem;
+    color: var(--sl-color-gray-3);
+    font-size: 0.95rem;
+  }
 `}</style>
 
-## Most Popular
-
-<SkillsList featured />
-
-## All Skills
-
-<SkillsList />
+<div class="home-columns">
+  <section class="home-col home-col--processes">
+    <h2 class="home-col-title">Processes</h2>
+    <p class="home-col-blurb">Multi-step methods — sequences of skills you run end-to-end.</p>
+    <ProcessList />
+  </section>
+  <section class="home-col home-col--skills">
+    <h2 class="home-col-title">Skills</h2>
+    <p class="home-col-blurb">Individual skills, each a self-contained framework you can invoke on its own.</p>
+    <SkillsList />
+  </section>
+</div>

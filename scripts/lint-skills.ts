@@ -22,6 +22,7 @@ import matter from 'gray-matter';
 const REPO_ROOT = resolve(import.meta.dir, '..');
 const SKILLS_DIR = join(REPO_ROOT, '.claude', 'skills');
 const WRAPPERS_DIR = join(REPO_ROOT, 'src', 'content', 'skills');
+const PROCESSES_DIR = join(REPO_ROOT, 'src', 'content', 'processes');
 
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -42,6 +43,36 @@ function listWrappers(): string[] {
   return readdirSync(WRAPPERS_DIR)
     .filter((f) => f.endsWith('.mdx') || f.endsWith('.md'))
     .map((f) => f.replace(/\.mdx?$/, ''));
+}
+
+function listProcesses(): string[] {
+  if (!existsSync(PROCESSES_DIR)) return [];
+  return readdirSync(PROCESSES_DIR)
+    .filter((f) => f.endsWith('.mdx') || f.endsWith('.md'))
+    .map((f) => f.replace(/\.mdx?$/, ''));
+}
+
+function lintProcess(name: string) {
+  const mdx = join(PROCESSES_DIR, `${name}.mdx`);
+  const md = join(PROCESSES_DIR, `${name}.md`);
+  const path = existsSync(mdx) ? mdx : md;
+  let parsed: ReturnType<typeof matter>;
+  try {
+    parsed = matter(readFileSync(path, 'utf8'));
+  } catch (e) {
+    err(`[process:${name}] invalid YAML frontmatter: ${(e as Error).message}`);
+    return;
+  }
+  const { data, content } = parsed;
+  if (!data.title || typeof data.title !== 'string') {
+    err(`[process:${name}] missing or non-string "title"`);
+  }
+  if (!data.summary || typeof data.summary !== 'string') {
+    err(`[process:${name}] missing or non-string "summary"`);
+  }
+  if (!content.trim()) {
+    err(`[process:${name}] body is empty`);
+  }
 }
 
 function lintSkill(name: string, isPublic: boolean) {
@@ -86,7 +117,7 @@ function lintSkill(name: string, isPublic: boolean) {
   }
 }
 
-function lintWrapper(name: string, wrapperSet: Set<string>) {
+function lintWrapper(name: string, wrapperSet: Set<string>, processSet: Set<string>) {
   const mdx = join(WRAPPERS_DIR, `${name}.mdx`);
   const md = join(WRAPPERS_DIR, `${name}.md`);
   const path = existsSync(mdx) ? mdx : md;
@@ -125,20 +156,34 @@ function lintWrapper(name: string, wrapperSet: Set<string>) {
       }
     }
   }
+  if (data.process !== undefined) {
+    if (typeof data.process !== 'string') {
+      err(`[wrapper:${name}] "process" must be a process-slug string`);
+    } else if (!processSet.has(data.process)) {
+      err(`[wrapper:${name}] "process" references "${data.process}" which has no src/content/processes/${data.process}.mdx`);
+    } else if (data.order === undefined) {
+      warn(`[wrapper:${name}] sets "process" but has no "order" — process steps are sequenced by "order"`);
+    }
+  }
 }
 
 const skillDirs = listSkillDirs();
 const wrappers = listWrappers();
 const wrapperSet = new Set(wrappers);
+const processes = listProcesses();
+const processSet = new Set(processes);
 
 for (const name of skillDirs) {
   lintSkill(name, wrapperSet.has(name));
 }
 for (const name of wrappers) {
-  lintWrapper(name, wrapperSet);
+  lintWrapper(name, wrapperSet, processSet);
+}
+for (const name of processes) {
+  lintProcess(name);
 }
 
-console.log(`Linted ${skillDirs.length} skills, ${wrappers.length} wrappers.`);
+console.log(`Linted ${skillDirs.length} skills, ${wrappers.length} wrappers, ${processes.length} processes.`);
 if (warnings.length) {
   console.log(`\n${warnings.length} warning(s):`);
   warnings.forEach((w) => console.log(`  ⚠ ${w}`));

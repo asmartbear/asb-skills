@@ -1,0 +1,116 @@
+---
+import { listProcesses } from '../lib/processes';
+import { fetchOgMeta } from '../lib/og-meta';
+
+const processes = listProcesses();
+
+// Resolve OG thumbnails in parallel; failures fall back to no image.
+const thumbs = await Promise.all(
+  processes.map(async (p) => {
+    if (!p.frontmatter.source) return undefined;
+    const og = await fetchOgMeta(p.frontmatter.source.url);
+    return og?.image;
+  }),
+);
+---
+
+{processes.length === 0 ? (
+  <p><em>No processes yet.</em></p>
+) : (
+  <ul class="process-list not-content">
+    {processes.map((p, i) => (
+      <li class="process-card">
+        <a href={`/processes/${p.name}/`}>
+          {thumbs[i] && (
+            <img class="process-thumb" src={thumbs[i]} alt="" loading="lazy" decoding="async" />
+          )}
+          <div class="process-text">
+            <h3>{p.frontmatter.cardTitle ?? p.frontmatter.title}</h3>
+            <p class="hook">{p.frontmatter.hook ?? p.frontmatter.summary}</p>
+            {p.steps.length > 0 && <span class="steps-badge">{p.steps.length} steps</span>}
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
+)}
+
+<style>
+  .process-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
+  }
+  .process-card {
+    position: relative;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    background: var(--sl-color-gray-6);
+    transition: border-color 0.15s, background-color 0.15s;
+    overflow: hidden;
+  }
+  .process-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: var(--sl-color-accent);
+    z-index: 1;
+  }
+  .process-card:hover {
+    border-color: var(--sl-color-accent);
+    background: color-mix(in srgb, var(--sl-color-gray-6) 85%, var(--sl-color-gray-5));
+  }
+  .process-card a {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    color: inherit;
+    text-decoration: none;
+    align-items: flex-start;
+  }
+  .process-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .process-card h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.15rem;
+  }
+  .process-card .hook {
+    margin: 0 0 0.75rem;
+    color: var(--sl-color-gray-2);
+    font-size: 0.95rem;
+  }
+  .steps-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--sl-color-accent-high);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+  }
+  .process-thumb {
+    flex: 0 0 auto;
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 0.375rem;
+    border: 1px solid var(--sl-color-gray-5);
+    background: var(--sl-color-gray-5);
+    display: block;
+    order: 2;
+  }
+  @media (max-width: 24rem) {
+    .process-thumb {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+</style>
