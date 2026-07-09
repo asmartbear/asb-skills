@@ -305,6 +305,11 @@ chase surprises, and update until nothing surprises you anymore.>
 ```
 
 Confirm the file is written and read the goal list back one final time.
+Close with the handoff — tell the user how, not just what: the next
+step is writing hypotheses against these goals, and if a hypotheses
+skill from this method's author is installed (for example *Hypotheses* /
+`asb-interview-hypotheses`), name it as the way to run that step —
+"when you're ready, run `asb-interview-hypotheses` on this GOALS.md."
 
 If the user asks *who* to interview: people matching the goals' segments —
 existing customers, recent wins, walked-away prospects, people living the

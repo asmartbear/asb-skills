@@ -448,15 +448,10 @@ of `src/content/skills/asb-<slug>.mdx`. Structure:
    diagnosis / coaching has something specific to bite on. Don't make it
    a one-word toy example.
 
-3. **Prose paragraph(s)** describing what the skill does with that input.
-   What it presses on. What it refuses to accept. What candidate answers
-   it offers when the end user is stuck. Where it dwells. What you walk
-   away with at the end. **Do NOT show literal LLM output** — describe the
-   substance in your own words. The reader should be able to picture the
-   conversation and see the value without reading a transcript.
-
-Use the live exemplar at `src/content/skills/asb-rude-qa.mdx` (the `##
-Example` section) as a model for shape, length, and voice.
+3. **One or two sentences** saying roughly what happens — the shape of
+   the session and what the reader walks away with. Do NOT narrate the
+   step-by-step process; readers won't read a detailed how-it-works
+   paragraph. Do NOT show literal LLM output. Address the reader as "you."
 
 ---
 
@@ -699,9 +694,10 @@ the way there.
      not "the user"). Should make the reader want to install the skill. The
      dedicated `## Example invocation` section below handles the concrete-
      example work; the description doesn't need to repeat that.
-   - **`## Example invocation`** — confirm the slash-command code block is realistic
-     and the prose paragraph describes what the skill actually does (no
-     literal LLM output), in second-person voice.
+   - **`## Example invocation`** — confirm the slash-command code block is
+     realistic, and that the prose after it is one or two sentences
+     (roughly what happens and what you walk away with — NOT a step-by-step
+     how), in second-person voice, no literal LLM output.
    - `related:` — at Phase 8, ask Jason whether this skill should list any
      existing public skills as natural follow-ons. If yes, add a `related:
      [asb-foo, asb-bar]` array to the frontmatter. Each named skill must be

@@ -370,6 +370,12 @@ explicitly skipped), critique the *set*:
 **Phase D — Finalize.** Remove the in-progress note, complete the
 preamble and Next steps, confirm the file stands alone months later, and
 read the final list back compactly (question → hypotheses it tests).
+Close with the handoff — tell the user how, not just what: run the
+interviews, and put each conversation on the record while it's fresh;
+if a debrief skill from this method's author is installed (for example
+*Interview Debrief* / `asb-interview-debrief`), name it as the way —
+"after each interview, run `asb-interview-debrief` with your transcript
+or notes and this QUESTIONS.md."
 
 Structure:
 

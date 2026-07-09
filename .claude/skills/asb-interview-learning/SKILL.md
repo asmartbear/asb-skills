@@ -390,8 +390,10 @@ the three verdicts — continue (with a stated focus and a rough number),
 stop and act, or re-aim — and make the user commit to it out loud
 rather than drifting; the committed terms (focus, number, date) go
 into the run line. If continuing: name which hypotheses the next
-interviews must resolve and whether the question list needs trimming to
-fit. If stopping: the validated facts in the hypothesis file are now
+interviews must resolve, whether the question list needs trimming to
+fit — and how the loop runs: debrief each new conversation onto the
+record (via a debrief skill such as *Interview Debrief* /
+`asb-interview-debrief`, if installed), then run this synthesis again. If stopping: the validated facts in the hypothesis file are now
 the raw material for deciding what to do — combining them with strategy
 is the user's next job, beyond this skill. If re-aiming: say which kind
 of miss the divergence suggests (wrong pain, wrong people, wrong

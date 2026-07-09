@@ -410,7 +410,13 @@ you learn, and stop when nothing surprises you anymore.>
 
 Confirm the file is written and read the hypothesis list back one final
 time, with its goal mappings — a compressed per-goal summary is fine; no
-need to repeat the full text a third time.
+need to repeat the full text a third time. Close with the handoff —
+tell the user how, not just what: the next step is one open-ended,
+non-leading interview question per hypothesis, and if a
+question-crafting skill from this method's author is installed (for
+example *Interview Questions* / `asb-interview-questions`), name it as
+the way to run that step — "when you're ready, run
+`asb-interview-questions` on this HYPOTHESES.md."
 
 ## Refusal conditions
 
