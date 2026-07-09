@@ -169,9 +169,15 @@ paraphrase-of-paraphrase.
 
 1. **Read the primary sources Jason named.** For each:
    - Article: `Read /Users/jcohen/Obsidian/Longform/Projects/Articles/Content/<slug>.md`
-   - Chapter: locate via
-     `Glob /Users/jcohen/Obsidian/Longform/Projects/Hidden Multipliers/Content/**/*.md`
-     then `Read`. If Jason named a subsection, grep for the heading.
+   - Chapter: start from the chapter index at
+     `/Users/jcohen/Obsidian/Longform/Projects/Hidden Multipliers/Chapters.md` —
+     it lists every chapter with number, title, subtitle, slug, the
+     `Content/<slug>.md` body path, and a full section outline. Use it to
+     resolve a chapter name or number to its body file (then `Read` that),
+     to skim the outline before reading, and to spot adjacent chapters
+     worth pulling in. Fallback:
+     `Glob /Users/jcohen/Obsidian/Longform/Projects/Hidden Multipliers/Content/**/*.md`.
+     If Jason named a subsection, grep for the heading.
 
 2. **Semantic search for adjacent material.** Run `jason-corpus-search`'s
    wrapper with 2–4 different phrasings of the concept:
@@ -749,7 +755,7 @@ the way there.
 
 Some skills come in families — sequential steps of one method, each
 consuming the previous step's output file. The fully-proven exemplar is
-the six-skill asb-interview-* set (orders 20–25): goals → GOALS.md →
+the six-skill asb-interview-* set (orders 22–27): goals → GOALS.md →
 hypotheses → HYPOTHESES.md → questions → QUESTIONS.md → debrief →
 interviews/*.md → learning (edits the working files) → report →
 FINAL-REPORT.md. When Jason brings a multi-step method from the book
@@ -817,7 +823,11 @@ conventions:
   step sits in the method ("This is the second step of…").
 - **`order:` enforces method sequence on the site.** Family members get
   consecutive `order:` values in method order (the asb-interview-*
-  family holds 20, 21, 22) so the sidebar and home page list the steps
+  family holds 22, 23, 24) so the sidebar and home page list the steps
+  — and `order:` also encodes CROSS-family dependency: a skill whose
+  artifact another skill consumes sorts before its consumer (the
+  voters file feeds positioning, so voters sorts earlier), keeping
+  each family's internal sequence intact
   in the order they're meant to be used — never rely on alphabetical
   accident. A new step slots into the family's block.
 
