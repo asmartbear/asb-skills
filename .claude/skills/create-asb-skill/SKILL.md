@@ -338,7 +338,15 @@ useful.
      inherit, e.g. a grouping), so a fresh session can resume from disk
      alone; finalizing removes the note. This pattern is proven in
      `asb-interview-hypotheses` / `asb-interview-questions` — copy it,
-     don't reinvent it.
+     don't reinvent it. Two sibling shapes for other work styles, both
+     proven in the same family: a whole-draft artifact keeps a
+     reviewed-through pointer in its in-progress header
+     (`asb-interview-report`); a skill that edits standing files keeps
+     dated change-log lines per applied change plus one end-of-walk
+     run line, so "log lines but no run line" tells a fresh session a
+     walk died mid-run (`asb-interview-learning`). Whatever the shape:
+     resumable-from-disk-alone is the requirement, and die-and-resume
+     is a mandatory exercise scenario for any skill that keeps state.
 
 4b. **Pacing — one item per exchange.** For any skill that forges
    multiple items with the user (goals, hypotheses, questions, list
@@ -740,16 +748,44 @@ the way there.
 ## Skill families and chained artifacts
 
 Some skills come in families — sequential steps of one method, each
-consuming the previous step's output file (proven pattern:
-`asb-interview-goals` → GOALS.md → `asb-interview-hypotheses` →
-HYPOTHESES.md → `asb-interview-questions` → QUESTIONS.md). When forging a
-family member, apply these conventions:
+consuming the previous step's output file. The fully-proven exemplar is
+the six-skill asb-interview-* set (orders 20–25): goals → GOALS.md →
+hypotheses → HYPOTHESES.md → questions → QUESTIONS.md → debrief →
+interviews/*.md → learning (edits the working files) → report →
+FINAL-REPORT.md. When Jason brings a multi-step method from the book
+or an article, default to forging it as a family under these
+conventions:
 
+- **One step, one skill.** Decompose along the method's OWN step
+  structure — each skill accomplishes exactly one step and produces
+  that step's artifact; a skill that does two steps is two skills
+  (Phase 0 decision: map the whole method to its skill set before
+  forging the first one, and reserve the consecutive `order:` block).
+  Steps too thin to stand alone fold into a neighbor deliberately
+  ("stop when it's boring" folded into the learning step), and one
+  method step may also split into two skills when its halves have
+  different inputs and outputs (recording one interview vs.
+  synthesizing many). Forge in method order: each skill consumes the
+  previous artifact's format, so the format must exist first.
+- **Every family member is resumable from disk alone.** Sessions die
+  and contexts get compacted mid-step, so each skill maintains its
+  state ON DISK, in whatever shape fits its work — an
+  `⚠️ IN PROGRESS` header with a coverage/next-item pointer for
+  item-by-item forging (goals, hypotheses, questions); a
+  reviewed-through pointer for whole-draft-then-review artifacts (the
+  report); dated change-log lines plus an end-of-walk run line for
+  skills that edit standing files (learning), where "log lines but no
+  run line" itself signals a died walk. The file is the memory, not
+  the chat; a fresh session must be able to pick up exactly where the
+  dead one stopped without re-eliciting anything settled — and
+  die-and-resume is a mandatory Phase 7 scenario for every skill that
+  keeps state.
 - **Shared slug namespace** (`asb-<family>-<step>`) and numbered-item
   conventions that chain: each artifact's items get stable prefixed
-  numbers (G1…, H1…, Q1…) and later artifacts cite earlier ones by those
-  numbers (`[G4]`, `[H2, H7]`). Numbers freeze when a file is finalized,
-  since downstream steps cite them.
+  numbers (G1…, H1…, Q1…, F1…) and later artifacts cite earlier ones by
+  those numbers (`[G4]`, `[H2, H7]`). Numbers freeze when a file is
+  finalized, since downstream steps cite them — revisions append new
+  numbers, never renumber or reuse.
 - **Output file lives in the same directory as the input file.**
 - **Self-containment still holds, via graceful description.** A family
   member never *requires* its siblings: it accepts the input artifact
