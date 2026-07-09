@@ -259,8 +259,10 @@ anchor level is the customer's need, not the product's category. "We
 sell managed Postgres hosting" anchors as "have a production database
 that runs itself." Run the crystallization gate on it — including
 occupants: the user plus their direct competitors. This is N1. Create
-`NEEDS-STACK.md` as soon as N1 settles (same directory as any input
-file; otherwise the working directory), with the in-progress header.
+`NEEDS-STACK.md` as soon as N1 settles — in the same directory as any
+input file; with no input file, ask where the method's files should
+live before creating it (default: the current directory) — with the
+in-progress header.
 
 ### Phase B — Walk down
 

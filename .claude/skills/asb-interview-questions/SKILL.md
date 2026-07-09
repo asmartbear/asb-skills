@@ -335,7 +335,9 @@ call this different things — what do you call it?"). Then:
 
 **Record to the file as you go.** As soon as the first question is
 settled, create `QUESTIONS.md` **in the same directory as the input
-HYPOTHESES.md** and write it in; after each question (or small group) is
+HYPOTHESES.md** (if the hypotheses were pasted and no path is known,
+ask where the method's files live first — default: the current
+directory) and write it in; after each question (or small group) is
 settled, append it and rewrite the status note's coverage line so the
 pointer is never stale — since grouping breaks numeric order, list the
 H-numbers covered so far and name the next group, rather than assuming

@@ -342,8 +342,9 @@ resume — pick up at the message the pointer names, don't re-litigate
 settled statements, and don't repeat the context ask when the
 preamble already records what exists (or that nothing does); a
 finalized file means ask whether to extend or revise. Output lives
-in the same directory as the input file(s); otherwise the working
-directory.
+in the same directory as the input file(s); with pasted copy and no
+files, ask where the method's files should live before creating
+anything (default: the current directory).
 
 Open small: what was read, the customer and level context in hand,
 which messages look weakest and why — then message one.

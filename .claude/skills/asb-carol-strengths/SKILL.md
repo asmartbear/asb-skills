@@ -200,7 +200,7 @@ re-litigate settled attributes. Marked complete means ask whether to
 revise or replace.
 
 Output location: `STRENGTHS-WEAKNESSES.md` in the same directory as
-the input file.
+the input file. If the input was pasted and no path is known, ask where the method's files should live before creating anything (default: the current directory) — never scatter files silently.
 
 ### Phase B — Distill and classify, one attribute at a time
 

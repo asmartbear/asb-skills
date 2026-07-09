@@ -215,9 +215,10 @@ available, run exactly that interrogation yourself, visibly.
 
 Ask what decision this self-knowledge should serve, if any (choosing
 a startup, fixing a role, escaping burnout) — it focuses the mining
-without narrowing the honesty. Check for an existing `WHO-ME.md` at
-the target location (the working directory, or alongside any related
-files the user names): an in-progress header means resume — pick up
+without narrowing the honesty. Ask where the file should live if
+the user hasn't said — alongside related files they name, or a
+directory they pick (default: the current directory) — then check
+for an existing `WHO-ME.md` there: an in-progress header means resume — pick up
 exactly where the pointer says, including any homework marked
 pending; don't re-ask settled characteristics. Otherwise open small:
 one line on how this works (prompts, episodes, a file of facts) and

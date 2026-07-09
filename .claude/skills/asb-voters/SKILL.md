@@ -198,8 +198,9 @@ first: in-progress header = resume where the pointer says; finalized
 have a reason).
 
 Output: `VOTERS.md`, same directory as the primary input file (the
-self-portrait if one exists, else the strengths chart), otherwise
-the working directory.
+self-portrait if one exists, else the strengths chart); with no input
+files, ask where the method's files should live before creating it
+(default: the current directory).
 
 ### Phase B — Harvest candidates
 

@@ -319,9 +319,14 @@ useful.
    - Is the process long enough or multi-session enough to warrant a file?
    - What goes in it? (A YAML header tracking current phase, plus captured
      decisions.)
-   - Who chooses the path? (End user, with a sensible default. If the
-     skill consumes an input file, the output goes in the same directory
-     as the input.)
+   - Who chooses the path? (End user. If the skill consumes an input
+     file, the output goes in the same directory as the input. When
+     nothing anchors the location — a chain head, pasted inputs — the
+     wielder must ASK where the method's files should live before
+     creating anything, offering the current directory as the default;
+     it never silently picks. And the wrapper documents it: readers are
+     told to name their working directory in the invocation — see the
+     Example-invocation note below.)
    - Most skills DON'T need a wielding artifact — only opt in when the
      process genuinely spans sessions or produces a deliverable the end
      user would want to keep.
@@ -475,6 +480,13 @@ of `src/content/skills/asb-<slug>.mdx`. Structure:
    the session and what the reader walks away with. Do NOT narrate the
    step-by-step process; readers won't read a detailed how-it-works
    paragraph. Do NOT show literal LLM output. Address the reader as "you."
+
+4. **For skills that write files**, close the section with the standing
+   working-directory note (one short paragraph): tell the reader to say
+   where they're working — name a directory or point at their existing
+   files in the invocation — so the skill keeps the method's files
+   together there, and that it asks before creating anything if they
+   don't. Every published file-writing skill carries this note.
 
 ---
 
@@ -793,6 +805,11 @@ conventions:
   finalized, since downstream steps cite them — revisions append new
   numbers, never renumber or reuse.
 - **Output file lives in the same directory as the input file.**
+  When no input file anchors the location (the family's first step, or
+  pasted inputs with no known path), the skill asks where the method's
+  files should live before creating anything — default the current
+  directory — so every step's files end up side by side, never
+  scattered silently.
 - **Self-containment still holds, via graceful description.** A family
   member never *requires* its siblings: it accepts the input artifact
   from any source (file or pasted), describes the artifact rather than

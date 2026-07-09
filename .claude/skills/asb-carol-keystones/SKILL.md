@@ -185,7 +185,7 @@ already exists at the target location, read it: in-progress header
 means resume — pick up at the strength the header names, don't
 re-litigate settled keystones. Complete means ask whether to revise.
 
-Output: `KEYSTONES.md` in the same directory as the input file.
+Output: `KEYSTONES.md` in the same directory as the input file. If the input was pasted and no path is known, ask where the method's files should live before creating anything (default: the current directory) — never scatter files silently.
 
 ### Phase B — Walk the strengths
 

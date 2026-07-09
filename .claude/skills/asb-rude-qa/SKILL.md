@@ -83,7 +83,7 @@ Also at the start: ask whether they want validation or attack. If they signal th
 
 ### Step 2 — Create or open the working document
 
-Create a markdown file to hold the running state of the interrogation and the final deliverable. Default path: `./rude-qa-<short-slug>.md` in the user's current working directory (let the user override; suggest a slug derived from the target).
+Create a markdown file to hold the running state of the interrogation and the final deliverable. Ask where it should live if the user hasn't said, suggesting `./rude-qa-<short-slug>.md` in the current working directory (slug derived from the target).
 
 Initialize with this header structure (the wielder updates this as the exercise progresses):
 

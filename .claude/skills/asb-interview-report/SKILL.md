@@ -290,7 +290,8 @@ Assign F-numbers as findings crystallize; make each finding one claim
 ### Phase C — Draft whole, then review
 
 Write the complete draft **to disk first** as `FINAL-REPORT.md`, in
-the same directory as the hypothesis file — the name says what it is:
+the same directory as the hypothesis file (pasted inputs with no
+known path: ask where the method's files live before writing) — the name says what it is:
 the method's complete answer, the one file to hand to someone who
 wasn't in the room — with the in-progress header,
 sessions die and conversations truncate; the file is the memory. Then

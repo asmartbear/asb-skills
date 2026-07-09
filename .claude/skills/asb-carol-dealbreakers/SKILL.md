@@ -153,7 +153,7 @@ deal-breakers. If a DEALBREAKERS.md already exists: in-progress
 header means resume; complete means ask whether to revise.
 
 Output: `DEALBREAKERS.md` in the same directory; honing edits go
-directly into `KEYSTONES.md`.
+directly into `KEYSTONES.md`. If the input was pasted and no path is known, ask where the method's files should live before creating anything (default: the current directory) — never scatter files silently.
 
 ### Phase B — Map the deal-breakers
 

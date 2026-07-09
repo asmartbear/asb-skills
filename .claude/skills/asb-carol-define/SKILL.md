@@ -175,7 +175,7 @@ definition inherits over-broad markers — flag it. If a CAROL.md
 exists: in-progress header means resume at the reviewed-through
 pointer; complete means ask whether to revise.
 
-Output: `CAROL.md` in the same directory.
+Output: `CAROL.md` in the same directory. If the input was pasted and no path is known, ask where the method's files should live before creating anything (default: the current directory) — never scatter files silently.
 
 ### Phase B — Synthesize and draft whole
 

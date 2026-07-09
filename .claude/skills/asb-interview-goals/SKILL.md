@@ -273,9 +273,11 @@ tired.
 
 ### Phase E — Write GOALS.md
 
-When the list is agreed, write it to `GOALS.md` in the current working
-directory (offer the user a different path or name if they prefer; if the
-file already exists, read it first and ask whether to revise or replace).
+When the list is agreed, write it to `GOALS.md` in the directory the
+user named for this method's files — if they never named one, ask now
+(default: the current working directory), because every later step's
+files will live beside it. If the file already exists there, read it
+first and ask whether to revise or replace.
 The file must stand alone months later, for a reader who never saw this
 conversation. Structure:
 

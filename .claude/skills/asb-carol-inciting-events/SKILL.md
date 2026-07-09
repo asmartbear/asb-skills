@@ -191,7 +191,7 @@ revise. (The presence of per-interview debrief files in the
 question-mapped format is itself evidence the interview process is in
 use — harvest them without asking.)
 
-Output: `INCITING-EVENTS.md` in the same directory.
+Output: `INCITING-EVENTS.md` in the same directory. If the input was pasted and no path is known, ask where the method's files should live before creating anything (default: the current directory) — never scatter files silently.
 
 ### Phase B — Walk the keystones
 

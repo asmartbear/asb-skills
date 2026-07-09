@@ -172,7 +172,9 @@ Gather, asking only for what's missing:
    answers.
 
 **Where the file goes:** an `interviews/` directory next to the
-question list (create it if absent), one file per conversation, named
+question list (create it if absent; if the question list isn't on
+disk, ask where the method's files live — default: the current
+directory — and put `interviews/` there), one file per conversation, named
 `YYYY-MM-DD-<person-or-label>.md`. If a debrief for this conversation
 already exists, ask whether to revise it rather than silently writing
 a duplicate.
