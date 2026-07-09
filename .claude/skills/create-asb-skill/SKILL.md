@@ -319,6 +319,15 @@ useful.
    - Most skills DON'T need a wielding artifact — only opt in when the
      process genuinely spans sessions or produces a deliverable the end
      user would want to keep.
+   - **Spec skimmer-zones by exclusion.** If the artifact has a zone
+     meant for human skimming (a top summary), positive adjectives
+     ("brief," "tight," "salient") are not enough — drafts pass them
+     while still editorializing. Name what may NOT appear there
+     (commentary, interpretation, the finding's history, comparisons
+     to prior beliefs) and include a wrong/right example pair. Learned
+     live: a report skill's "as brief as possible" summary shipped
+     lines like "…which cuts against the assumption that tenure dulls
+     the pain."
    - **Live file, not end-of-session file.** When the artifact is built
      item by item (a numbered list forged across many exchanges), the
      wielder creates the file as soon as the FIRST item is settled and

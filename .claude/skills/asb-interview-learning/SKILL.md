@@ -395,7 +395,12 @@ fit — and how the loop runs: debrief each new conversation onto the
 record (via a debrief skill such as *Interview Debrief* /
 `asb-interview-debrief`, if installed), then run this synthesis again. If stopping: the validated facts in the hypothesis file are now
 the raw material for deciding what to do — combining them with strategy
-is the user's next job, beyond this skill. If re-aiming: say which kind
+is the user's next job, beyond this skill. Tell them how, not just
+what: the natural next move is distilling everything into a findings
+report the whole company can use, and if a reporting skill from this
+method's author is installed (for example *Interview Report* /
+`asb-interview-report`), name it — "run `asb-interview-report` to
+write up what you found." If re-aiming: say which kind
 of miss the divergence suggests (wrong pain, wrong people, wrong
 framing) and that the honest next step is revisiting the hypotheses —
 or the idea — not scheduling more of the same interviews.
