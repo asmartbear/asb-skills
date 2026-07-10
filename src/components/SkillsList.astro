@@ -5,11 +5,15 @@ import { fetchOgMeta } from '../lib/og-meta';
 interface Props {
   /** If true, only show skills with `featured: true`. If false/undefined, show all. */
   featured?: boolean;
+  /** If true, hide skills that are steps of a workshop — they belong under their
+   * workshop, not in the flat skills list. */
+  independentOnly?: boolean;
 }
-const { featured } = Astro.props;
+const { featured, independentOnly } = Astro.props;
 
 const all = listPublicSkills();
-const skills = featured ? all.filter((s) => s.wrapper.featured) : all;
+let skills = featured ? all.filter((s) => s.wrapper.featured) : all;
+if (independentOnly) skills = skills.filter((s) => !s.wrapper.workshop);
 
 // Resolve OG thumbnails in parallel; failures fall back to no image.
 const thumbs = await Promise.all(

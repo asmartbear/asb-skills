@@ -84,4 +84,8 @@ templating; the duplication is rare enough not to be worth the machinery.
   canonical body comes from `.claude/skills/<name>/SKILL.md` via `lib/skills.ts`.
 - The Starlight sidebar is built at config-load time from `listPublicSkills()`.
   Adding a new skill = adding the two files; the sidebar updates automatically.
+  Skills that belong to a workshop (`workshop:` set) are nested as collapsible
+  steps under that workshop; the flat "Skills" group lists only independent
+  skills. The home page mirrors this: `<SkillsList independentOnly />` hides
+  workshop steps, which appear only inside their `WorkshopList` card.
 - Don't add files to `content/docs/skills/`. Skills do not live there.

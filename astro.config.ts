@@ -50,15 +50,34 @@ export default defineConfig({
       sidebar: [
         { label: 'Home', link: '/' },
         { label: 'How to install', link: '/install/' },
+        // Workshops group: each workshop is a collapsible sub-group holding an
+        // Overview link (to the workshop page) plus its ordered steps. This
+        // nests the step-skills under their workshop instead of scattering them
+        // through a flat list. Starlight auto-expands the group containing the
+        // current page.
         ...(workshops.length
           ? [{
               label: 'Workshops',
-              items: workshops.map((p) => ({ label: p.frontmatter.title, link: `/workshops/${p.name}/` })),
+              items: workshops.map((w) => ({
+                label: w.frontmatter.title,
+                collapsed: true,
+                items: [
+                  { label: 'Overview', link: `/workshops/${w.name}/` },
+                  ...w.steps.map((s, i) => ({
+                    label: `${i + 1}. ${s.wrapper.cardTitle ?? s.wrapper.title}`,
+                    link: `/skills/${s.name}/`,
+                  })),
+                ],
+              })),
             }]
           : []),
+        // Skills group: only skills that are NOT part of a workshop — the
+        // workshop steps live under their workshop above.
         {
           label: 'Skills',
-          items: skills.map((s) => ({ label: s.wrapper.title, link: `/skills/${s.name}/` })),
+          items: skills
+            .filter((s) => !s.wrapper.workshop)
+            .map((s) => ({ label: s.wrapper.title, link: `/skills/${s.name}/` })),
         },
       ],
     }),
