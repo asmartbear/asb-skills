@@ -1,5 +1,5 @@
 ---
-description: "Facilitates the first step of a proven ideal-customer (ICP) method: gathering raw, honest, specific observations about what a company and product actually are — before any judgment about strengths or weaknesses. Walks the user through twelve unsparing question categories (what customers praise, the complaint with no defense, what separates your most profitable customers, what you claim but aren't, what you envy in competitors, your philosophy, and more) — or processes a team's write-storm notes one observation at a time — and records the results in OBSERVATIONS.md (numbered O1, O2, …), vivid and unevaluated. Load when the user wants to figure out their ideal customer, take an honest look at their company, run a strengths-and-weaknesses exercise from scratch, or says 'who is our Carol' or 'what are we actually good at.' Do NOT load to classify observations into strengths and weaknesses (the next step), or for personal self-reflection unrelated to a company."
+description: "Facilitates the first step of a proven ideal-customer (ICP) method: gathering raw, honest, specific observations about what a company and product actually are — before any judgment about strengths or weaknesses. Walks the user through twelve unsparing question categories (what customers praise, the complaint with no defense, what separates your most profitable customers, and more) — or processes a team's write-storm notes one observation at a time — and records the results in OBSERVATIONS.md (numbered O1, O2, …), vivid and unevaluated. For a company operating online, it first scans public reviews and press into an External Research section that seeds it. Load when the user wants to figure out their ideal customer, take an honest look at their company, run a strengths-and-weaknesses exercise from scratch, or says 'who is our Carol' or 'what are we actually good at.' Do NOT load to classify observations into strengths and weaknesses (the next step), or for personal self-reflection unrelated to a company."
 ---
 
 # Observations: The Raw Facts About Who You Actually Are
@@ -34,6 +34,21 @@ unintentionally? What must its strategy be, even if nobody wrote it
 down? You may observe behaviors and outcomes; you may NOT interrogate
 anyone about *why* they acted — asking why makes people unwittingly
 rationalize or mount a defense. This is discovery, not judgment.
+
+### Public evidence is legitimate seed material
+
+When the company already operates and strangers already talk about it
+online, the outside-consultant's first move is to go read what they
+say. Public reviews, social posts, forum threads, news articles, and
+the company's own marketing are real artifacts — checkable by channel
+and quote — so gathering them up front is not fabrication; it is
+exactly the reverse-engineering this posture calls for. But seed is
+not verdict: a scraped review is a *candidate* observation, recorded
+in its own External Research section and then pressed and confirmed by
+the user (who alone has seen the private behaviors behind it) before it
+becomes a numbered observation. The research widens the aperture and
+pre-loads the walk; it never replaces it. For a company with no
+product or no public presence yet, there is nothing to scan — skip it.
 
 ### Don't evaluate, don't blame, don't act
 
@@ -223,10 +238,33 @@ and confirmed individually.
 Get the minimum context to make prompts concrete: what the company
 does, roughly how old and big, who buys today. Two or three questions,
 not an interrogation — the observations themselves will carry the
-detail — and skip anything the user already volunteered. Ask where
-working files for this method should live (default: current
-directory); `OBSERVATIONS.md` goes there, and later steps' files will
-sit beside it. If an OBSERVATIONS.md already exists there, read it
+detail — and skip anything the user already volunteered. Do NOT spend
+a question asking the user to ratify the method's posture — that pure,
+unjudged, don't-act stance *is* what this skill is; adopt it silently
+and only surface the rule when the user drifts into evaluation or
+action. Ask where working files for this method should live (default:
+current directory); `OBSERVATIONS.md` goes there, and later steps'
+files will sit beside it.
+
+**External research (existing companies only).** Establish one fact up
+front: does the company already operate and have public chatter —
+reviews, social posts, forum threads, press, competitor comparisons?
+If yes, and you can search the web, do it *before* the walk: gather
+what customers, competitors, and press actually say — praise,
+complaints, comparisons, existential events, pricing, notable
+incidents — and record the specific findings (each with its channel
+and a quote, rating, or number) in an **External Research** section at
+the top of `OBSERVATIONS.md`. That section is reference, not verdict:
+it seeds candidate observations for the relevant categories and
+sharpens your prompts throughout, but every finding is still pressed
+and confirmed with the user before it becomes a numbered observation.
+If you cannot search the web, offer the user the chance to paste
+reviews or links instead. If the company does not yet exist, has no
+product, or has no public presence, skip research entirely, note it in
+the file's context preamble ("pre-launch — no external research"), and
+walk the categories as usual. Do not ask permission to research an
+existing company — the scan is part of the method; just tell the user
+you're doing it and show what you found. If an OBSERVATIONS.md already exists there, read it
 first: an in-progress header means resume — confirm, pick up at the
 category the header names, don't re-elicit what's recorded, and don't
 re-ask the setup questions (the file's context preamble carries
@@ -245,7 +283,12 @@ questions (adapted to the company's specifics — for a services firm,
 offer a concrete prompt or two, let the user answer, press mush into
 facts, and record settled observations to the file as you go. "Nothing
 for this one" is acceptable after prompts have been tried; record the
-category as deliberately thin.
+category as deliberately thin. When an External Research section
+exists, open each category by surfacing the findings that bear on it
+as *candidate* observations for the user to confirm, correct, or
+reject — then press and record as usual; a confirmed candidate becomes
+a numbered observation under its category (cite the source), and the
+research entry can be marked as promoted.
 
 **Team mode:** ingest the dump, then process one or two observations
 per exchange in the write-storm way: clarify what it is (questions,
@@ -306,6 +349,21 @@ buys today — enough that these observations read correctly months
 later. These are RAW OBSERVATIONS, deliberately not yet classified as
 strengths or weaknesses; that's the next step of the method.>
 
+## External research (public sources — seed material, not yet confirmed)
+
+*(Present only when the company already operates online. Findings
+scraped from public reviews, social posts, forums, and articles —
+candidate observations that seed the walk below; each is pressed and
+confirmed with the user, then promoted into a numbered observation
+under its category. This section stays in the file for reference even
+after finalization. Omit it entirely for pre-launch companies and note
+that in the preamble.)*
+
+- **[channel / source]** <Specific finding — quote, rating, number, or
+  event. Mark "→ promoted to O#" once a finding is confirmed into the
+  walk.>
+- <…>
+
 ## 1. Undeniable comparative strength
 
 **O1.** <Specific, vivid observation — behavior, number, quote, or
@@ -346,7 +404,11 @@ renumber to "fix" it, since downstream citations would break.
   haven't seen their customers cancel or their architecture wobble.
   Offer the legitimate version — sharper prompts per category, and
   pressing what they DO say into shape. An invented observation
-  poisons every downstream step.
+  poisons every downstream step. (Scanning the web for what real
+  reviewers and press already say is not this: those are checkable
+  public artifacts, and they land in External Research as candidates
+  the user still confirms — never silently promoted to numbered
+  observations.)
 - **"Which of these are strengths?"** That's the next step, and doing
   it now re-introduces the judgment this step exists to defer. Park
   the question, finish the gathering.
