@@ -46,22 +46,30 @@ const thumbs = await Promise.all(
   }
   .workshop-card {
     position: relative;
+    /* Workshops highlight in a darker indigo — a deeper shade of the site's
+       hyperlink color — so a workshop reads as a distinct kind of thing from
+       an individual skill (which highlights in the amber accent). Hardcoded
+       for now; tweak these two values to taste. */
+    --workshop-accent: #4f46e5;
     border: 1px solid var(--sl-color-gray-5);
     border-radius: 0.5rem;
     background: var(--sl-color-gray-6);
     transition: border-color 0.15s, background-color 0.15s;
     overflow: hidden;
   }
+  :global(:root[data-theme='dark']) .workshop-card {
+    --workshop-accent: #818cf8;
+  }
   .workshop-card::before {
     content: '';
     position: absolute;
     inset: 0 0 auto 0;
     height: 3px;
-    background: var(--sl-color-accent);
+    background: var(--workshop-accent);
     z-index: 1;
   }
   .workshop-card:hover {
-    border-color: var(--sl-color-accent);
+    border-color: var(--workshop-accent);
     background: color-mix(in srgb, var(--sl-color-gray-6) 85%, var(--sl-color-gray-5));
   }
   .workshop-card a {
