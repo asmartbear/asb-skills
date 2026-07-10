@@ -1,5 +1,5 @@
 ---
-description: "Distills a person's or company's strengths, experiences, and obsessions down to their one or two VOTERS — the decisive, idiosyncratically extreme traits that win the contest because customers who value them accept every other trade-off. Runs each candidate through a hard gauntlet: extremity earned through obsession (not mere competence), rarity among peers, decisiveness (name the weaknesses it overpowers), and reverberation (it must force decisions in product, pricing, and market). Caps the answer at two, records survivors in VOTERS.md, and delivers the honest zero-voter verdict — nothing is extreme yet: invest one obsession into extremity, or change games. Takes a self-portrait file (M-numbered), strengths or keystones charts, or a live capture. Load when the user asks what makes them special, what to bet the strategy on, their unfair advantage or superpower, or to 'find our voters.' Do NOT load to build the full self-portrait (the previous step) or to design the whole strategy — this file feeds it."
+description: "Distills a person's or company's strengths, experiences, and obsessions down to their one or two VOTERS — the decisive, idiosyncratically extreme traits that win the contest because customers who value them accept every other trade-off. Runs each candidate through a hard gauntlet: extremity earned through obsession (not mere competence), rarity among peers, decisiveness (name the weaknesses it overpowers), and reverberation (it must force decisions in product, pricing, and market). Caps the answer at two, records survivors in VOTERS.md — plus the near-miss 'special strengths' to deploy — and delivers the honest zero-voter verdict when nothing is extreme yet. Takes a self-portrait file (M-numbered), strengths or keystones charts, or a live capture. Load when the user asks what makes them special, what to bet the strategy on, their unfair advantage or superpower, or to 'find our voters.' Do NOT load to build the full self-portrait (the previous step) or to design the whole strategy — this file feeds it."
 ---
 
 # Voters: The One or Two Things That Win the Whole Game
@@ -82,8 +82,27 @@ The debate tactic works because a judge can hold one or two points;
 so can a market. Three voters is a feature list wearing a costume.
 When more than two candidates survive the bar, the distillation
 question is forcing: *when they conflict, which one wins? Which one
-or two would you bet the company on?* The rest are demoted to shaping
-strengths — still true, still useful for strategy, not voters.
+or two would you bet the company on?* The rest are demoted — to
+*special strengths* if they're near-misses (top-1%, extreme on some
+axis) or *shaping strengths* if they're merely common — still true,
+still useful for strategy, not voters.
+
+### Special strengths: the near-misses worth deploying
+
+Below the voters, above the common traits, sits a tier that must not
+be lost: the **special strength** — a candidate that nails part of the
+bar (real extremity, real energy) and is genuinely special (top-1%,
+not "everyone claims it"), yet misses on one decisive axis — usually
+it's *fairly* rare but not THE-person rare, or no real cost has ever
+been eaten for it. It is not a voter and must never be inflated into
+one. But it is also not a mere shaping strength to file and forget:
+it's a secondary pillar the strategy really should deploy — the thing
+that makes the plan better and the person more successful and happy,
+even though it isn't the one bet. The distiller keeps the voter filter
+tight AND catches these near-misses on the way down, so their value
+isn't buried. (The classic case: the *standout investment candidate* —
+extremity real, decisiveness merely untested — is a special strength
+that also names the change-games bet in a zero-voter file.)
 
 ### Special, not best — and the zero-voter verdict
 
@@ -106,6 +125,13 @@ shaping strengths relabeled as voters.
 
 - **Voter (V1, V2)** — a decisive, extreme, rare, reverberating
   trait; at most two survive.
+- **Special strength (near-miss voter)** — genuinely special
+  (top-1%, not merely common) and passing SOME of the bar hard —
+  usually extremity and energy — but missing one decisive axis,
+  typically THE-person rarity or a named overpowered cost. Not a
+  voter; recorded in its own section as a secondary pillar the
+  strategy should deliberately deploy — strongly advised, not
+  mandatory.
 - **Shaping strength** — true and strategy-relevant but common;
   recorded in its own section, never as a voter.
 - **Overpowers** (the template's field name) — the named trade-offs
@@ -164,12 +190,15 @@ user's record, taken at their word after one honest press. But
 whether a candidate passes the bar is not a vote: a candidate without
 extremity evidence, without rarity, without named overpowered costs,
 or without reverberation is not recorded as a voter no matter how
-attached the user is — it goes to shaping strengths with the
-reasoning on the record. (The boundary: **cut** is for virtue-words,
-aspirations, and evidence-free claims; anything genuine but common
-or shallow — real familiarity, real-but-ordinary diligence — is a
-shaping strength, kept because the strategy work and the verdict's
-change-games branch draw on it.) Tone stays warm: the refusal is of
+attached the user is — it goes to special or shaping strengths with
+the reasoning on the record. (The boundary: **cut** is for
+virtue-words, aspirations, and evidence-free claims; anything genuine
+and *special* — top-1%, extreme on some axis — that misses one
+decisive voter test is a **special strength**, flagged as a secondary
+pillar to deploy; anything genuine but *common* or shallow — real
+familiarity, real-but-ordinary diligence — is a **shaping strength**;
+both are kept because the strategy work and the verdict's change-games
+branch draw on them.) Tone stays warm: the refusal is of
 the classification, never of the trait, which remains true and
 useful. And the wielder never invents history — the evidence in the
 file is the user's, confirmed; the closing press may probe whether
@@ -222,12 +251,15 @@ so a resumed session doesn't re-pitch it.
 One candidate per exchange, all five tests run visibly, verdict on
 the record: **voter-candidate** (passed all — written into The
 voters at verdict time with its V-number; if Phase D's ranking later
-demotes it, it moves to shaping strengths with a "demoted at
-ranking" note and its number is never reused), **shaping strength**
-(true, common — recorded with one line of reasoning), or **cut**
-(aspiration, virtue-word, or no evidence — dies in the header's
-candidate list with its reasoning, not in the body). Press per the
-posture; invoke the interrogation on soft verdicts. Update the file
+demotes it, it moves to special or shaping strengths with a "demoted
+at ranking" note and its number is never reused), **special strength**
+(a near-miss — special and passing some tests hard, but missing one
+decisive axis; recorded as a secondary pillar to deploy, with the axis
+it missed on the record), **shaping strength** (true, common —
+recorded with one line of reasoning), or **cut** (aspiration,
+virtue-word, or no evidence — dies in the header's candidate list with
+its reasoning, not in the body). Press per the posture; invoke the
+interrogation on soft verdicts. Update the file
 and pointer each exchange — the in-flight candidate's status reads
 "in gauntlet," and the pointer records which tests have run and
 their outcomes so far, plus any evidence the user gave for them,
@@ -239,13 +271,15 @@ restart the candidate from test 1.)
 
 - **Count the survivors.** Three or more: force the ranking — "when
   they conflict, which wins? which one or two do you bet on?" —
-  demote the rest to shaping strengths. One or two: proceed. Zero:
-  write the verdict section — the plain statement plus the twofold
-  response (invest the deepest genuine obsession into extremity, or
-  change games), naming the specific obsession candidates from the
-  harvest. An almost-voter (extremity real, decisiveness untested)
-  appears in BOTH places: in shaping strengths tagged "the standout
-  investment candidate," and by name in the verdict. Naming the bet
+  demote the rest to special strengths (near-misses) or shaping
+  strengths (common), per how special each is. One or two: proceed.
+  Zero: write the verdict section — the plain statement plus the
+  twofold response (invest the deepest genuine obsession into
+  extremity, or change games), naming the specific obsession
+  candidates from the harvest. An almost-voter (extremity real,
+  decisiveness untested) appears in BOTH places: in special strengths
+  tagged "the standout investment candidate," and by name in the
+  verdict. Naming the bet
   and the proving trade-offs it implies (what to refuse, whom to
   walk away from — the missing evidence of tests 3 and 4) is this
   skill's job; designing the full plan around it is downstream.
@@ -275,7 +309,8 @@ restart the candidate from test 1.)
 
 > ⚠️ IN PROGRESS — candidates harvested: <list, each with source,
 > a one-line episode note for live-captured evidence, and status:
-> pending / in gauntlet / voter-candidate / shaping / cut (reason)>;
+> pending / in gauntlet / voter-candidate / special / shaping /
+> cut (reason)>;
 > currently at the gauntlet: <which candidate — tests run and their
 > outcomes so far, with the evidence given; note any soft verdict a
 > resumed session should re-press>. <If the gauntlet is done: "walk
@@ -303,6 +338,13 @@ this distills, what strategy question it serves.>
     the evidence it runs on joy, not discipline>.
 
 **V2.** <(only if a second genuinely survives)>
+
+## Special strengths (near-miss voters — deploy as secondary pillars)
+
+- <Trait> — <one line: which parts of the bar it nails (extremity,
+  energy) and the one it misses (fairly-rare-not-THE-person, or no
+  overpowered cost); why the strategy should still deploy it as a
+  secondary pillar>.    [M/S]
 
 ## Shaping strengths (true, useful, not voters)
 
@@ -333,8 +375,14 @@ frozen number with the user's confirmation while in progress.
 ## Refusal conditions
 
 - **A third voter, however insisted.** Two is the cap because
-  decisiveness is the point; the third demotes to shaping strengths
-  with the ranking reasoning on the record.
+  decisiveness is the point; the third demotes to a special or
+  shaping strength with the ranking reasoning on the record.
+- **Burying a near-miss as a generic shaping strength.** A top-1%,
+  extreme-on-some-axis strength that missed just one voter test is a
+  *special strength* — called out as a secondary pillar to deploy, not
+  lumped in with common traits. Losing its value is the mirror image
+  of inflating it into a voter; the filter is tight in both
+  directions.
 - **Virtue-words as voters.** "Quality," "hard work," "customer
   focus," "our people" — every competitor claims them; nothing that
   every peer would also claim can decide a contest. Press to the
