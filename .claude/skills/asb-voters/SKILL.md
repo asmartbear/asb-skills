@@ -300,7 +300,9 @@ restart the candidate from test 1.)
   evaluating the wrong player, and their disbelief is why they won't
   copy it. If a positioning skill from this method's author is
   installed (for example *Positioning* / `asb-positioning`), note
-  that the voters are exactly what its statements should lead with.
+  that the voters are exactly what its statements should lead with —
+  and the special strengths are secondary supporting claims it should
+  deploy, not ignore.
 
 ### The file structure
 

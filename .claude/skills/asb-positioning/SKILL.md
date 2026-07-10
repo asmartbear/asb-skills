@@ -284,8 +284,11 @@ stuck — but the bar never moves, however many rounds it takes.
 At the start, ask whether the user has: an ideal-customer definition
 (a file defining the customer by behavioral markers, often with
 numbered keystones K1…, deal-breakers D1…, and inciting events E1…),
-a needs-stack file (levels N1… with roles), and customer-interview
-findings. In the same breath, ask which of the three pricing
+a needs-stack file (levels N1… with roles), customer-interview
+findings, and a voters / decisive-advantage file (a VOTERS.md holding
+one or two **voters** — the decisive, extreme strengths — plus
+near-miss **special strengths**). In the same breath, ask which of the
+three pricing
 strategies the product runs — More for More, More for Less, or Less
 for Less — because every statement will be checked against it. If
 the user doesn't know, proceed now and say plainly: pick-one-and-align
@@ -300,12 +303,18 @@ update the preamble (only statements freeze; the preamble doesn't)
 and re-check settled statements against the declared story, fixing
 wording under their frozen numbers. Read whatever files exist and cite them
 in the statements; facts recorded there count as supplied — no fresh
-confirmation unless stale. If missing, say plainly — once, without
+confirmation unless stale. When a VOTERS.md exists, the positioning
+LEADS with its one or two voters — they are the claims your headline
+statements should assert and prove — and it deliberately deploys the
+special strengths as secondary supporting claims rather than ignoring
+them; absent the file, work from the strongest true differentiator the
+user names. If missing, say plainly — once, without
 nagging in conversation (the file's Next-steps re-mention of the
 fuller path is by design, not nagging) — that the rewrite will be
 materially better with them (companion skills from this method's
-author produce both, if installed: an ideal-customer method ending
-in `asb-carol-define`, and `asb-needs-stack` for the ladder), then
+author produce these, if installed: an ideal-customer method ending
+in `asb-carol-define`, `asb-needs-stack` for the ladder, and
+`asb-voters` for the voters / special-strengths file), then
 proceed: elicit the minimum inline — the ideal customer by
 circumstance and behavior (two lines), their scoreboard currency,
 your level and one up/down — BEFORE diagnosing or rewriting
