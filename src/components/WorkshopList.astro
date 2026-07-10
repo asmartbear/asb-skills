@@ -1,12 +1,12 @@
 ---
-import { listProcesses } from '../lib/processes';
+import { listWorkshops } from '../lib/workshops';
 import { fetchOgMeta } from '../lib/og-meta';
 
-const processes = listProcesses();
+const workshops = listWorkshops();
 
 // Resolve OG thumbnails in parallel; failures fall back to no image.
 const thumbs = await Promise.all(
-  processes.map(async (p) => {
+  workshops.map(async (p) => {
     if (!p.frontmatter.source) return undefined;
     const og = await fetchOgMeta(p.frontmatter.source.url);
     return og?.image;
@@ -14,17 +14,17 @@ const thumbs = await Promise.all(
 );
 ---
 
-{processes.length === 0 ? (
-  <p><em>No processes yet.</em></p>
+{workshops.length === 0 ? (
+  <p><em>No workshops yet.</em></p>
 ) : (
-  <ul class="process-list not-content">
-    {processes.map((p, i) => (
-      <li class="process-card">
-        <a href={`/processes/${p.name}/`}>
+  <ul class="workshop-list not-content">
+    {workshops.map((p, i) => (
+      <li class="workshop-card">
+        <a href={`/workshops/${p.name}/`}>
           {thumbs[i] && (
-            <img class="process-thumb" src={thumbs[i]} alt="" loading="lazy" decoding="async" />
+            <img class="workshop-thumb" src={thumbs[i]} alt="" loading="lazy" decoding="async" />
           )}
-          <div class="process-text">
+          <div class="workshop-text">
             <h3>{p.frontmatter.cardTitle ?? p.frontmatter.title}</h3>
             <p class="hook">{p.frontmatter.hook ?? p.frontmatter.summary}</p>
             {p.steps.length > 0 && <span class="steps-badge">{p.steps.length} steps</span>}
@@ -36,7 +36,7 @@ const thumbs = await Promise.all(
 )}
 
 <style>
-  .process-list {
+  .workshop-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -44,7 +44,7 @@ const thumbs = await Promise.all(
     gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
   }
-  .process-card {
+  .workshop-card {
     position: relative;
     border: 1px solid var(--sl-color-gray-5);
     border-radius: 0.5rem;
@@ -52,7 +52,7 @@ const thumbs = await Promise.all(
     transition: border-color 0.15s, background-color 0.15s;
     overflow: hidden;
   }
-  .process-card::before {
+  .workshop-card::before {
     content: '';
     position: absolute;
     inset: 0 0 auto 0;
@@ -60,11 +60,11 @@ const thumbs = await Promise.all(
     background: var(--sl-color-accent);
     z-index: 1;
   }
-  .process-card:hover {
+  .workshop-card:hover {
     border-color: var(--sl-color-accent);
     background: color-mix(in srgb, var(--sl-color-gray-6) 85%, var(--sl-color-gray-5));
   }
-  .process-card a {
+  .workshop-card a {
     display: flex;
     gap: 1rem;
     padding: 1rem 1.25rem;
@@ -72,15 +72,15 @@ const thumbs = await Promise.all(
     text-decoration: none;
     align-items: flex-start;
   }
-  .process-text {
+  .workshop-text {
     flex: 1;
     min-width: 0;
   }
-  .process-card h3 {
+  .workshop-card h3 {
     margin: 0 0 0.4rem;
     font-size: 1.15rem;
   }
-  .process-card .hook {
+  .workshop-card .hook {
     margin: 0 0 0.75rem;
     color: var(--sl-color-gray-2);
     font-size: 0.95rem;
@@ -96,7 +96,7 @@ const thumbs = await Promise.all(
     border-radius: 999px;
     padding: 0.15rem 0.6rem;
   }
-  .process-thumb {
+  .workshop-thumb {
     flex: 0 0 auto;
     width: 5rem;
     height: 5rem;
@@ -108,7 +108,7 @@ const thumbs = await Promise.all(
     order: 2;
   }
   @media (max-width: 24rem) {
-    .process-thumb {
+    .workshop-thumb {
       width: 4rem;
       height: 4rem;
     }

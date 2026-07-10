@@ -2,11 +2,11 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
 import { listPublicSkills } from './src/lib/skills';
-import { listProcesses } from './src/lib/processes';
+import { listWorkshops } from './src/lib/workshops';
 import { SITE, URLS } from './src/lib/site';
 
 const skills = listPublicSkills();
-const processes = listProcesses();
+const workshops = listWorkshops();
 
 export default defineConfig({
   site: SITE.url,
@@ -50,10 +50,10 @@ export default defineConfig({
       sidebar: [
         { label: 'Home', link: '/' },
         { label: 'How to install', link: '/install/' },
-        ...(processes.length
+        ...(workshops.length
           ? [{
-              label: 'Processes',
-              items: processes.map((p) => ({ label: p.frontmatter.title, link: `/processes/${p.name}/` })),
+              label: 'Workshops',
+              items: workshops.map((p) => ({ label: p.frontmatter.title, link: `/workshops/${p.name}/` })),
             }]
           : []),
         {

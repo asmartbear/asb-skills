@@ -11,6 +11,10 @@ The site is deployed via GitHub Actions to **GitHub Pages** at
 remote is **`origin`** (github.com/asmartbear/asb-skills); push to `main`
 triggers deploy.
 
+**The site is not launched yet** (robots.txt blocks crawlers; nothing is
+indexed). So big structural changes — renaming URLs, content collections,
+directories — are safe to make now without SEO or breakage cost.
+
 ## Two classes of skill
 
 `.claude/skills/` holds both: **public `asb-*` skills** (have a wrapper at
@@ -26,7 +30,7 @@ touching any skill.**
 | :----- | :------------- | :---------- |
 | New public skill | `/create-asb-skill` workflow → `.claude/skills/asb-<n>/SKILL.md` + `src/content/skills/asb-<n>.mdx` | `bun run lint && bun run build`; `/exercise-asb-skill asb-<n>` |
 | Edit a published skill | the same two files, kept consistent | `bun run lint`; re-run `/exercise-asb-skill asb-<n>` |
-| New/edit a process page (a documented sequence of skills) | `src/content/processes/<slug>.mdx` + `process: <slug>` on each member skill's wrapper (see `src/CLAUDE.md`) | `bun run lint && bun run build` |
+| New/edit a workshop page (a documented sequence of skills) | `src/content/workshops/<slug>.mdx` + `workshop: <slug>` on each member skill's wrapper (see `src/CLAUDE.md`) | `bun run lint && bun run build` |
 | Dev-only skill / tooling | `.claude/skills/<n>/` (no `asb-` prefix, no wrapper) | `bun run lint` |
 | Site change (pages, components, styles) | `src/` (see `src/CLAUDE.md`) | `bun run check && bun run build`; eyeball via `bun run dev` |
 | Skill-idea backlog | `BACKLOG.md` only | nothing |

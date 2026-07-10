@@ -2,7 +2,7 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { Marked, type Tokens } from 'marked';
 import { listPublicSkills } from '../../lib/skills';
-import { getProcessForSkill } from '../../lib/processes';
+import { getWorkshopForSkill } from '../../lib/workshops';
 import { fetchOgMeta } from '../../lib/og-meta';
 import InstallInstructions from '../../components/InstallInstructions.astro';
 
@@ -31,8 +31,8 @@ const relatedSkills = (skill.wrapper.related ?? [])
   .map((name) => allSkills.find((s) => s.name === name))
   .filter((s): s is typeof allSkills[number] => Boolean(s) && s!.name !== skill.name);
 
-// If this skill is a step of a documented process, surface a back-link banner.
-const membership = getProcessForSkill(skill.name);
+// If this skill is a step of a documented workshop, surface a back-link banner.
+const membership = getWorkshopForSkill(skill.name);
 
 // Build a fresh Marked instance per-page with a renderer that adds heading
 // IDs, so Starlight's TOC anchors actually link somewhere.
@@ -116,20 +116,20 @@ if (skill.lastUpdated && !og?.modifiedTime) {
   </p>
 
   {membership && (
-    <aside class="process-banner not-content">
-      <a class="process-banner-link" href={`/processes/${membership.process.name}/`}>
-        <span class="process-banner-eyebrow">Step {membership.stepIndex} of {membership.stepCount} in a process</span>
-        <span class="process-banner-title">{membership.process.frontmatter.title}</span>
+    <aside class="workshop-banner not-content">
+      <a class="workshop-banner-link" href={`/workshops/${membership.workshop.name}/`}>
+        <span class="workshop-banner-eyebrow">Step {membership.stepIndex} of {membership.stepCount} in a workshop</span>
+        <span class="workshop-banner-title">{membership.workshop.frontmatter.title}</span>
       </a>
-      <nav class="process-banner-nav" aria-label="Adjacent steps">
+      <nav class="workshop-banner-nav" aria-label="Adjacent steps">
         {membership.stepIndex > 1 && (
-          <a href={`/skills/${membership.process.steps[membership.stepIndex - 2].name}/`}>
-            ← {membership.process.steps[membership.stepIndex - 2].wrapper.cardTitle ?? membership.process.steps[membership.stepIndex - 2].wrapper.title}
+          <a href={`/skills/${membership.workshop.steps[membership.stepIndex - 2].name}/`}>
+            ← {membership.workshop.steps[membership.stepIndex - 2].wrapper.cardTitle ?? membership.workshop.steps[membership.stepIndex - 2].wrapper.title}
           </a>
         )}
         {membership.stepIndex < membership.stepCount && (
-          <a href={`/skills/${membership.process.steps[membership.stepIndex].name}/`}>
-            {membership.process.steps[membership.stepIndex].wrapper.cardTitle ?? membership.process.steps[membership.stepIndex].wrapper.title} →
+          <a href={`/skills/${membership.workshop.steps[membership.stepIndex].name}/`}>
+            {membership.workshop.steps[membership.stepIndex].wrapper.cardTitle ?? membership.workshop.steps[membership.stepIndex].wrapper.title} →
           </a>
         )}
       </nav>
@@ -182,9 +182,9 @@ if (skill.lastUpdated && !og?.modifiedTime) {
     color: var(--sl-color-gray-3);
   }
 
-  /* "Part of a process" back-link banner, shown near the top when a skill is a
-     step of a documented process. */
-  .process-banner {
+  /* "Part of a workshop" back-link banner, shown near the top when a skill is a
+     step of a documented workshop. */
+  .workshop-banner {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -197,7 +197,7 @@ if (skill.lastUpdated && !og?.modifiedTime) {
     background: color-mix(in srgb, var(--sl-color-accent) 8%, var(--sl-color-gray-6));
     clear: both;
   }
-  .process-banner-link {
+  .workshop-banner-link {
     display: flex;
     flex-direction: column;
     gap: 0.1rem;
@@ -205,32 +205,32 @@ if (skill.lastUpdated && !og?.modifiedTime) {
     text-decoration: none;
     min-width: 0;
   }
-  .process-banner-eyebrow {
+  .workshop-banner-eyebrow {
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--sl-color-accent-high);
   }
-  .process-banner-title {
+  .workshop-banner-title {
     font-weight: 600;
     font-size: 1.02rem;
   }
-  .process-banner-link:hover .process-banner-title {
+  .workshop-banner-link:hover .workshop-banner-title {
     text-decoration: underline;
   }
-  .process-banner-nav {
+  .workshop-banner-nav {
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem 0.9rem;
     font-size: 0.82rem;
   }
-  .process-banner-nav a {
+  .workshop-banner-nav a {
     color: var(--sl-color-gray-2);
     text-decoration: none;
     white-space: nowrap;
   }
-  .process-banner-nav a:hover {
+  .workshop-banner-nav a:hover {
     color: var(--sl-color-accent-high);
   }
 

@@ -1,13 +1,13 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { Marked, type Tokens } from 'marked';
-import { listProcesses } from '../../lib/processes';
+import { listWorkshops } from '../../lib/workshops';
 import { fetchOgMeta } from '../../lib/og-meta';
 
 export async function getStaticPaths() {
-  return listProcesses().map((process) => ({
-    params: { slug: process.name },
-    props: { process },
+  return listWorkshops().map((workshop) => ({
+    params: { slug: workshop.name },
+    props: { workshop },
   }));
 }
 
@@ -20,8 +20,8 @@ function slugify(text: string): string {
     .replace(/-+/g, '-');
 }
 
-const { process } = Astro.props;
-const fm = process.frontmatter;
+const { workshop } = Astro.props;
+const fm = workshop.frontmatter;
 
 // Fresh Marked instance with heading IDs so Starlight's TOC anchors resolve.
 const md = new Marked({
@@ -37,14 +37,14 @@ const md = new Marked({
 // H2/H3 headings from the body → right-side outline. Append the auto-rendered
 // steps section so it shows up in the TOC too.
 const headings = md
-  .lexer(process.body)
+  .lexer(workshop.body)
   .filter((t): t is Tokens.Heading => t.type === 'heading' && (t.depth === 2 || t.depth === 3))
   .map((t) => ({ depth: t.depth, slug: slugify(t.text), text: t.text }));
-if (process.steps.length > 0) {
+if (workshop.steps.length > 0) {
   headings.push({ depth: 2, slug: 'the-steps', text: 'The steps' });
 }
 
-const bodyHtml = await md.parse(process.body);
+const bodyHtml = await md.parse(workshop.body);
 
 // Reuse the source article's OG image as a hero + social preview, mirroring
 // the per-skill page.
@@ -84,13 +84,13 @@ head.push({ tag: 'meta', attrs: { name: 'twitter:description', content: fm.summa
     )}
   </p>
 
-  <div class="process-body" set:html={bodyHtml} />
+  <div class="workshop-body" set:html={bodyHtml} />
 
-  {process.steps.length > 0 && (
+  {workshop.steps.length > 0 && (
     <section class="steps not-content" aria-labelledby="the-steps">
       <h2 id="the-steps">The steps</h2>
       <ol class="step-list">
-        {process.steps.map((s, i) => (
+        {workshop.steps.map((s, i) => (
           <li class="step-card">
             <a href={`/skills/${s.name}/`}>
               <span class="step-num" aria-hidden="true">{i + 1}</span>
@@ -150,7 +150,7 @@ head.push({ tag: 'meta', attrs: { name: 'twitter:description', content: fm.summa
     }
   }
 
-  .process-body :global(pre) {
+  .workshop-body :global(pre) {
     overflow-x: auto;
     max-width: 100%;
     white-space: pre;

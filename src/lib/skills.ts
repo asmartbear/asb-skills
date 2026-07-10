@@ -25,8 +25,8 @@ export interface SkillWrapperFrontmatter {
   order?: number;
   /** Optional list of other public-skill names (e.g. ["asb-pricing-ladder"]) to surface in a "Related skills" section on the per-page. Missing or empty → no section rendered. Named skills that don't exist are skipped silently at render time (and flagged by `bun run lint`). One-directional — list only the skills useful as a follow-on from this one. */
   related?: string[];
-  /** Optional slug of the process (`src/content/processes/<slug>.mdx`) this skill is a step of. When set, the per-page shows a "Part of <process>" banner and the process page lists this skill as a step (ordered by `order`). Membership is one-to-one; lint checks the slug resolves. */
-  process?: string;
+  /** Optional slug of the workshop (`src/content/workshops/<slug>.mdx`) this skill is a step of. When set, the per-page shows a "Part of <workshop>" banner and the workshop page lists this skill as a step (ordered by `order`). Membership is one-to-one; lint checks the slug resolves. */
+  workshop?: string;
   /** Optional primary-source citation. When set, an "Adapted from <title>." sentence appears appended to the summary line at the top of the per-skill page. Use the foundation article most directly behind the skill — usually the first entry under `## From the source` Foundation. */
   source?: { title: string; url: string };
 }

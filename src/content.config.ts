@@ -17,10 +17,10 @@ export const collections = {
       order: z.number().optional(),
     }),
   }),
-  // Website-only "process" pages: a documented sequence of skills run
-  // end-to-end. Not distributed skills — see src/lib/processes.ts.
-  processes: defineCollection({
-    loader: glob({ pattern: '*.{md,mdx}', base: './src/content/processes' }),
+  // Website-only "workshop" pages: a documented sequence of skills run
+  // end-to-end. Not distributed skills — see src/lib/workshops.ts.
+  workshops: defineCollection({
+    loader: glob({ pattern: '*.{md,mdx}', base: './src/content/workshops' }),
     schema: z.object({
       title: z.string(),
       summary: z.string(),

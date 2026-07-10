@@ -8,15 +8,15 @@ hero:
 
 import { LinkButton } from '@astrojs/starlight/components';
 import SkillsList from '../../components/SkillsList.astro';
-import ProcessList from '../../components/ProcessList.astro';
+import WorkshopList from '../../components/WorkshopList.astro';
 import CuratorByline from '../../components/CuratorByline.astro';
 
 <CuratorByline />
 
 <div class="hero-actions">
   <LinkButton href="/install/" icon="right-arrow" variant="primary">How to install</LinkButton>
-  <LinkButton href="https://longform.asmartbear.com" icon="external" variant="secondary" target="_blank" rel="noopener">A Smart Bear</LinkButton>
-  <LinkButton href="https://hiddenmultipliers.com" icon="external" variant="secondary" target="_blank" rel="noopener">Hidden Multipliers</LinkButton>
+  <LinkButton href="https://longform.asmartbear.com" icon="external" variant="secondary" target="_blank" rel="noopener"><span class="btn-stack"><span class="btn-eyebrow">The Blog</span>A Smart Bear</span></LinkButton>
+  <LinkButton href="https://hiddenmultipliers.com" icon="external" variant="secondary" target="_blank" rel="noopener"><span class="btn-stack"><span class="btn-eyebrow">The Book</span>Hidden Multipliers</span></LinkButton>
 </div>
 
 <style is:global>{`
@@ -41,9 +41,25 @@ import CuratorByline from '../../components/CuratorByline.astro';
   .hero-actions > .sl-link-button {
     margin-block: 0 !important;
   }
+  /* The Blog / The Book buttons carry a small uppercase label above their
+     title so a first-time visitor knows what each destination is. */
+  .hero-actions .btn-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.15;
+    text-align: left;
+  }
+  .hero-actions .btn-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
 
-  /* Home page: Processes and Skills side by side on wide screens; stacked
-     (Processes first, per source order) on narrow ones. */
+  /* Home page: Workshops and Skills side by side on wide screens; stacked
+     (Workshops first, per source order) on narrow ones. */
   .home-columns {
     display: grid;
     grid-template-columns: 1fr;
@@ -53,24 +69,50 @@ import CuratorByline from '../../components/CuratorByline.astro';
   @media (min-width: 50rem) {
     .home-columns {
       grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
-      gap: 3rem;
+      /* Three shared rows: title / blurb / list. Both columns span them via
+         subgrid, so the titles align, the blurb tops align, and the first
+         tiles align — regardless of how the blurbs wrap. */
+      grid-template-rows: auto auto auto;
+      column-gap: 3rem;
+      row-gap: 0;
+    }
+    .home-col {
+      display: grid;
+      grid-row: 1 / span 3;
+      grid-template-rows: subgrid;
+      /* Critical: without this the list cell stretches to fill the tall
+         shared list row (sized to the longer Skills column), ballooning the
+         Workshops tiles. start keeps every cell — including the tiles — at
+         its natural height, top-anchored in its row. */
+      align-items: start;
     }
   }
+  /* Starlight injects "margin-top:1rem" on any element that follows a sibling
+     inside .sl-markdown-content (specificity 0,1,2) — it lands on the second
+     column (dropping Skills below Workshops) and on every 2nd+ child inside a
+     column. These 0,2,0 selectors outrank it and zero those offsets, so all
+     vertical spacing comes solely from the explicit bottom margins below and
+     every row lines up across the two columns. */
+  .home-columns > .home-col,
+  .home-columns .home-col > * {
+    margin-top: 0;
+  }
   .home-col-title {
-    margin-block: 0 0.25rem;
+    margin-block: 0 0.15rem;
+    line-height: 1.15;
   }
   .home-col-blurb {
-    margin-block: 0 1.25rem;
+    margin-block: 0 0.85rem;
     color: var(--sl-color-gray-3);
     font-size: 0.95rem;
   }
 `}</style>
 
 <div class="home-columns">
-  <section class="home-col home-col--processes">
-    <h2 class="home-col-title">Processes</h2>
+  <section class="home-col home-col--workshops">
+    <h2 class="home-col-title">Workshops</h2>
     <p class="home-col-blurb">Multi-step methods — sequences of skills you run end-to-end.</p>
-    <ProcessList />
+    <WorkshopList />
   </section>
   <section class="home-col home-col--skills">
     <h2 class="home-col-title">Skills</h2>
