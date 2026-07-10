@@ -14,7 +14,7 @@
   skill.** No file → skill is dev-only and invisible.
 - `content/workshops/` — **workshop** pages (one `.mdx` per workshop). A workshop
   is a website-only concept: a documented sequence of skills run end-to-end
-  (e.g. `customer-interview-method`). Frontmatter: `title`, `summary`, optional
+  (e.g. `customer-interviews`). Frontmatter: `title`, `summary`, optional
   `order`, `cardTitle`, `hook`, `source`. Body is authored narrative (rendered
   via marked, like skill wrapper bodies) that links member skills with relative
   links. **Workshops are NOT distributed skills** — the self-contained /
@@ -85,7 +85,8 @@ templating; the duplication is rare enough not to be worth the machinery.
 - The Starlight sidebar is built at config-load time from `listPublicSkills()`.
   Adding a new skill = adding the two files; the sidebar updates automatically.
   Skills that belong to a workshop (`workshop:` set) are nested as collapsible
-  steps under that workshop; the flat "Skills" group lists only independent
-  skills. The home page mirrors this: `<SkillsList independentOnly />` hides
-  workshop steps, which appear only inside their `WorkshopList` card.
+  steps under that workshop; the flat "Standalone" group lists only independent
+  skills. The home page mirrors this (under a "Standalone" heading):
+  `<SkillsList independentOnly />` hides workshop steps, which appear only
+  inside their `WorkshopList` card.
 - Don't add files to `content/docs/skills/`. Skills do not live there.
