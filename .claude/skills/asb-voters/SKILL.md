@@ -304,6 +304,14 @@ restart the candidate from test 1.)
 
 ### The file structure
 
+Format for a human reading it in a markdown viewer, not as a wall of
+text. Every voter is an H3 with a short name, then a **bold
+one-sentence headline** (the voter itself), then a one-line supporting
+note, then the bar rendered as **labeled bullets** — never a single
+multi-line indented paragraph, which collapses into an unreadable blob
+(and 4-space indents render as code blocks in many viewers). The same
+labeled-bullet discipline applies to the strengths sections.
+
 ```markdown
 # Voters — <person or company>
 
@@ -324,20 +332,32 @@ this distills, what strategy question it serves.>
 
 ## The voters
 
-**V1.** <The voter, stated specifically and vividly — the obsession,
-    its depth, its history. Never a bare noun like "performance.">
-    [M3, M7]
-    Evidence of extremity: <the years, the episodes, the
-    unreasonable investments — the user's record>.
-    Rarity: <why a well-informed peer names them for this>.
-    Overpowers: <the named costs fans accept; which weaknesses read
-    as service to the voter, and to whom>.
-    Reverberates into: <the second-order decisions it forces —
-    product, pricing, market, refusals>.
-    Energizes: <the test-5 result — who carries the obsession and
-    the evidence it runs on joy, not discipline>.
+### V1 — <short punchy name of the voter, 3–7 words>
 
-**V2.** <(only if a second genuinely survives)>
+**<One vivid sentence stating the voter — the crisp headline claim,
+never a bare noun like "performance.">**
+
+*<One supporting line: the core in a phrase, plus signature and
+amplifiers if any.>*
+
+**Draws on:** <M/S numbers>
+
+- **Extremity, earned** — <the years, episodes, unreasonable
+  investments — the user's record>.
+- **Rarity** — <why a well-informed peer names them for this; the
+  citable artifact>.
+- **Overpowers** — the trade-offs its fans happily eat:
+  - *<cost 1>* — <the cost, and which weakness reads as service to
+    the voter, and to whom>.
+  - *<cost 2>* — <…>.
+- **Reverberates into** — <the second-order decisions it forces —
+  product, pricing, market, refusals>.
+- **Energizes** — <the test-5 result — who carries the obsession and
+  the evidence it runs on joy, not discipline>.
+
+### V2 — <name>   (only if a second genuinely survives)
+
+<same structure>
 
 ## Special strengths (near-miss voters — deploy as secondary pillars)
 
