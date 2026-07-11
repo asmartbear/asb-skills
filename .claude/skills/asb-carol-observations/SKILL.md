@@ -230,6 +230,22 @@ time-pressed user, compress ceremony (shorter prompts, fragment
 answers welcome), never structure: each observation is still sharpened
 and confirmed individually.
 
+### Drain the category before moving on
+
+One answer is never the whole of a category. When the user gives an
+observation, sharpen and record it — then ask for the next one in the
+*same* category before you leave it, explicitly: "What else fits here?
+Give me another, or say *next* and we'll move on." Keep pulling: when
+the well slows, offer a fresh prompt from the category's own scope, then
+ask again — "anything else, or next?" Never advance to the next category
+on the strength of a single answer. Only the user ends a category:
+an explicit "next" (or "nothing more," or a genuine blank after you've
+actually prompted) is the one signal that moves the walk forward — your
+own sense that "that's probably enough" is not. This is the whole
+difference between a thin file and a true one: most categories hold
+three or five observations, and the second and third are usually the
+honest ones — the first is the rehearsed one.
+
 ## How to use this skill
 
 ### Mode detection
@@ -289,9 +305,13 @@ this skill.
 questions (adapted to the company's specifics — for a services firm,
 "technical architecture" becomes delivery methodology and tooling),
 offer a concrete prompt or two, let the user answer, press mush into
-facts, and record settled observations to the file as you go. "Nothing
-for this one" is acceptable after prompts have been tried; record the
-category as deliberately thin. When an External Research section
+facts, and record settled observations to the file as you go. Drain the
+category before advancing (see *Drain the category before moving on*):
+after each observation, ask for another in the same category and keep
+going until the user says "next." "Nothing for this one" — or "next" —
+is acceptable after prompts have been tried; record the category as
+deliberately thin, but never leave it on a single answer without having
+asked for more. When an External Research section
 exists, open each category by surfacing the findings that bear on it
 as *candidate* observations for the user to confirm, correct, or
 reject — then press and record as usual; a confirmed candidate becomes

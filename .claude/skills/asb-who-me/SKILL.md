@@ -169,6 +169,18 @@ an answer is rich with several candidates, visibly narrow to one and
 park the extras — one line each, worked next; nothing volunteered is
 lost.
 
+**Drain the vein before the next prompt.** One answer is not the end of
+a prompt. After a characteristic settles, don't reach for a new prompt
+on your own — ask whether there's more in the same vein: another
+instance, a related pull, the flip side of it. Say it explicitly:
+"More like that, or should I move to the next question?" Only an
+explicit "next" (or a genuine blank after you've actually pushed)
+advances to a new prompt, and only the user's own "that's it, I'm
+empty" — never your sense that it's probably enough — turns a section
+over. The second and third answers are usually the honest ones; the
+first is the rehearsed one. Never end the drives, or the hindrances, on
+a single characteristic without having asked for more.
+
 **One ask per message.** Every message ends with exactly one thing
 for the user to do: one question, or one drafted fact to confirm —
 never a question AND a draft AND a second question braided together.
@@ -268,10 +280,11 @@ the first drive prompt — one, not a menu.
 ### Phase B — Mine the drives, then the hindrances
 
 Work the drive prompts one at a time, settling characteristics one
-at a time per the posture; when the last prompt or two yield nothing
-new ("it's all variations of the tooling thing"), that section is
-mined — move on, appending any corroboration under the existing
-frozen numbers. Then announce the turn and work the anti-questions
+at a time per the posture and draining each vein before advancing (see
+*Drain the vein before the next prompt*); when the user is out and the
+last prompt or two yield nothing new ("it's all variations of the
+tooling thing"), that section is mined — move on, appending any
+corroboration under the existing frozen numbers. Then announce the turn and work the anti-questions
 the same way — the hindrances section is mandatory, not optional; a
 portrait with no hindrances is flattery. Create `WHO-ME.md` at the
 first settled characteristic and record each as it settles; keep the
