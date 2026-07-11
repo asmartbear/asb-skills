@@ -3,11 +3,31 @@ title: How to install a skill
 description: Drop any A Smart Bear skill into your own Claude Code installation.
 ---
 
+import { LinkButton } from '@astrojs/starlight/components';
 import InstallInstructions from '../../components/InstallInstructions.astro';
 
-Every skill on this site is a single `SKILL.md` file. To use one, drop it into
-your own Claude Code installation. There's no package manager — just copy the
-file.
+There's no package manager — the skills are just files. The easiest way to
+start is to grab all of them at once; most workshops run several skills
+together, and some depend on others (like `asb-rude-qa`), so having the whole
+set on hand saves you chasing pieces later.
+
+## Install everything at once
+
+<LinkButton href="/asb-skills.zip" icon="download" variant="primary" download>Download all skills (ZIP)</LinkButton>
+
+Unzip it into your Claude Code skills folder, then restart Claude Code (or run
+`/context`) to pick everything up:
+
+```bash
+unzip asb-skills.zip -d ~/.claude/skills/
+```
+
+Each skill lands in its own `~/.claude/skills/asb-<name>/SKILL.md`.
+
+## Or install a single skill
+
+Every skill on this site is a single `SKILL.md` file, so you can also just copy
+the one you want:
 
 <InstallInstructions />
 

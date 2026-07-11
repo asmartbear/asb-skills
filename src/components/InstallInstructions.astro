@@ -16,7 +16,6 @@ interface Props {
 }
 const { name, copyText, githubUrl, rawUrl, lastUpdated } = Astro.props;
 const skillName = name ?? 'asb-skill-name';
-const repoUrl = URLS.githubRepo;
 const rawSkillUrl = rawUrl ?? githubRawUrl(`.claude/skills/${skillName}/SKILL.md`);
 const blobSkillUrl = githubUrl ?? githubBlobUrl(`.claude/skills/${skillName}/SKILL.md`);
 ---
@@ -35,17 +34,10 @@ const blobSkillUrl = githubUrl ?? githubBlobUrl(`.claude/skills/${skillName}/SKI
     Claude Code (or run <code>/context</code>) to pick up the new skill.
   </p>
 
-  <details class="install-cli">
-    <summary>Or install from the command line</summary>
-    <p>Fetch directly:</p>
-    <pre><code>{`mkdir -p ~/.claude/skills/${skillName}
-curl -fsSL ${rawSkillUrl} \\
-  -o ~/.claude/skills/${skillName}/SKILL.md`}</code></pre>
-
-    <p>Or clone the whole repository and copy the skill folder:</p>
-    <pre><code>{`git clone ${repoUrl}.git
-cp -r asb-skills/.claude/skills/${skillName} ~/.claude/skills/`}</code></pre>
-  </details>
+  <p class="install-all">
+    <a href={URLS.allSkillsZip} download>↓ Or download <strong>all skills</strong> as one ZIP</a>
+    — the easiest way to get this skill together with everything it works alongside.
+  </p>
 
   {lastUpdated && (
     <p class="install-stamp">Last updated <time datetime={lastUpdated}>{lastUpdated}</time></p>
@@ -94,35 +86,14 @@ cp -r asb-skills/.claude/skills/${skillName} ~/.claude/skills/`}</code></pre>
     margin-block: 0.5rem;
   }
 
-  .install-cli {
-    margin-top: 0.75rem;
+  .install-all {
+    margin-block: 0.85rem 0.25rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid color-mix(in srgb, var(--sl-color-accent) 30%, transparent);
+    font-size: 0.92rem;
   }
-  .install-cli > summary {
-    cursor: pointer;
+  .install-all a {
     font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--sl-color-accent-high);
-    list-style: none;
-    user-select: none;
-    padding: 0.25rem 0;
-    display: inline-flex;
-    align-items: center;
-  }
-  .install-cli > summary::-webkit-details-marker {
-    display: none;
-  }
-  .install-cli > summary::before {
-    content: '▸';
-    display: inline-block;
-    margin-right: 0.4rem;
-    transition: transform 0.15s ease;
-    font-size: 0.85em;
-  }
-  .install-cli[open] > summary::before {
-    transform: rotate(90deg);
-  }
-  .install-cli > summary:hover {
-    color: var(--sl-color-accent);
   }
 
   .install-stamp {

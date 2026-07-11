@@ -9,6 +9,12 @@ Scripts under Bun (`bun run scripts/<name>.ts`):
   repos. Not needed while developing here — Claude Code reads
   `.claude/skills/` from the current project directly. Exposed as
   `bun run link <name>` / `bun run unlink <name>`.
+- `zip-skills.ts` — runs as the second half of `bun run build` (chained after
+  `astro build`). Bundles every PUBLIC skill (`listPublicSkills()`, so dev-only
+  skills are excluded) into `dist/asb-skills.zip` for the site's "download all
+  skills" link. Skill folders sit at the archive root; the hand-editable
+  provenance file `zip-readme.md` is added as the archive's `README.md`. Edit
+  that `.md` to change what a human sees when they open the ZIP.
 - `deploy-and-wait.ts` — runs `git push` and then watches the GitHub Pages
   deploy run for the pushed HEAD commit, exiting non-zero if it fails.
   Useful for "I want to test the change live and know exactly when it's

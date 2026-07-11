@@ -22,6 +22,8 @@ export const SITE = {
 export const URLS = {
   githubRepo: 'https://github.com/asmartbear/asb-skills',
   githubBranch: 'main',
+  /** Site-relative path to the "download all skills" archive, generated into dist/ at build time by scripts/zip-skills.ts. */
+  allSkillsZip: '/asb-skills.zip',
 } as const;
 
 /** GitHub `blob/` URL for a path inside this repo. */
