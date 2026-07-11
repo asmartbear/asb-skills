@@ -136,6 +136,14 @@ software), each may need their own stack; both can decide the sale.
 
 ## The elicitor's posture
 
+### Be clear, not clever
+
+Write to be understood, not admired. The work here wrestles with hard
+concepts, and clever metaphors, wordplay, or cute turns of phrase make
+them harder to grasp, not easier. Say plainly what you mean. If a
+sentence reads more clearly without a flourish, cut the flourish. State
+the actual point rather than gesturing wittily at it.
+
 ### One level per exchange, crystallized before moving
 
 The walk is strictly paced: anchor the user's own level first, then

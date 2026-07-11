@@ -44,6 +44,14 @@ Even highly introspective, experienced operators have blind spots they cannot se
 
 Read this section carefully — it is the most important part of the skill and the easiest to get wrong.
 
+### Be clear, not clever
+
+Write to be understood, not admired. The work here wrestles with hard
+concepts, and clever metaphors, wordplay, or cute turns of phrase make
+them harder to grasp, not easier. Say plainly what you mean. If a
+sentence reads more clearly without a flourish, cut the flourish. State
+the actual point rather than gesturing wittily at it.
+
 ### Rude questions, mature framing
 
 The **questions** in this exercise are deliberately rude. Unfair questions, questions based on wrong premises, hostile framings, attacks from every angle — these are features, not bugs. Berkun's original formulation insists on it: include questions that are unfair or based on erroneous information, because real reporters, clients, and the public ask those questions. You are practicing under harder conditions than reality.

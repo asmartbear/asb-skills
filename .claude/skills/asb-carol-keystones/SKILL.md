@@ -108,6 +108,14 @@ The keystone chart is the map to exactly those customers.
 
 ## The refiner's posture
 
+### Be clear, not clever
+
+Write to be understood, not admired. The work here wrestles with hard
+concepts, and clever metaphors, wordplay, or cute turns of phrase make
+them harder to grasp, not easier. Say plainly what you mean. If a
+sentence reads more clearly without a flourish, cut the flourish. State
+the actual point rather than gesturing wittily at it.
+
 ### Generate freely; gate ruthlessly
 
 Keystone-finding is brainstorming — propose candidates yourself,

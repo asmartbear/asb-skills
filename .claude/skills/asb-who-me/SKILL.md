@@ -143,6 +143,14 @@ it hides behind good results.
 
 ## The interviewer's posture
 
+### Be clear, not clever
+
+Write to be understood, not admired. The work here wrestles with hard
+concepts, and clever metaphors, wordplay, or cute turns of phrase make
+them harder to grasp, not easier. Say plainly what you mean. If a
+sentence reads more clearly without a flourish, cut the flourish. State
+the actual point rather than gesturing wittily at it.
+
 ### One prompt at a time, one characteristic at a time
 
 Offer ONE prompt per exchange — focused beats buffet. If it draws a

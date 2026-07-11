@@ -115,6 +115,14 @@ attribute of who you are today.
 
 ## The classifier's posture
 
+### Be clear, not clever
+
+Write to be understood, not admired. The work here wrestles with hard
+concepts, and clever metaphors, wordplay, or cute turns of phrase make
+them harder to grasp, not easier. Say plainly what you mean. If a
+sentence reads more clearly without a flourish, cut the flourish. State
+the actual point rather than gesturing wittily at it.
+
 ### Propose from evidence; the user corrects
 
 Unlike gathering (where inventing content poisons the file),

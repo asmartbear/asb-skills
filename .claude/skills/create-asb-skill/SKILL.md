@@ -532,7 +532,10 @@ Iterate with Edit.
 
 **Exit gate:** before leaving this phase, run
 `grep -n "TODO(" .claude/skills/asb-<slug>/SKILL.md` — it must return
-nothing.
+nothing. Then run
+`grep -n "Be clear, not clever" .claude/skills/asb-<slug>/SKILL.md` — it
+must return a hit (see Hard-constraint 9); if pruning or a free-form design
+dropped the block, restore it verbatim before moving on.
 
 ### Hard constraints on the draft
 
@@ -574,6 +577,25 @@ ones specific to public asb-* skills (see `.claude/skills/CLAUDE.md`):
    file (YAML header schema, phase tracking, default path). The wielder has
    no other state.
 8. **Body under 500 lines.** Use clear headings. Prose, not bullet soup.
+9. **Every skill carries the "Be clear, not clever" block, verbatim.** The
+   archetype skeletons already include it as the final `###` subsection of
+   their posture section; keep it there (or, for a free-form design or a
+   framework with no posture section, place it as a standalone `##` section
+   immediately before "How to use this skill"). The block MUST read exactly:
+
+   ```markdown
+   ### Be clear, not clever
+
+   Write to be understood, not admired. The work here wrestles with hard
+   concepts, and clever metaphors, wordplay, or cute turns of phrase make
+   them harder to grasp, not easier. Say plainly what you mean. If a
+   sentence reads more clearly without a flourish, cut the flourish. State
+   the actual point rather than gesturing wittily at it.
+   ```
+
+   Do not reword it, do not trim it, do not delete it when pruning skeleton
+   sections. If the skill has no posture/conduct `##` section at all, promote
+   the heading to `## Be clear, not clever` and keep the body verbatim.
 
 ### Structure to aim for
 
@@ -595,6 +617,13 @@ description: "..."
 
 ## <framework section 2>
 ...
+
+## <posture / conduct section>
+...
+
+### Be clear, not clever
+
+<verbatim block — see Hard-constraint 9>
 
 ## How to use this skill
 

@@ -71,6 +71,14 @@ TODO(posture-specifics): one short subsection — where THIS framework's
 leverage lives, i.e. the 2–3 claims or habits the interrogator should press
 hardest on, and the specific tell that an answer is fake-sharp.
 
+### Be clear, not clever
+
+Write to be understood, not admired. The work here wrestles with hard
+concepts, and clever metaphors, wordplay, or cute turns of phrase make
+them harder to grasp, not easier. Say plainly what you mean. If a
+sentence reads more clearly without a flourish, cut the flourish. State
+the actual point rather than gesturing wittily at it.
+
 ## How to use this skill
 
 ### Step 1 — Get the target
