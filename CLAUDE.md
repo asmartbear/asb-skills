@@ -80,6 +80,10 @@ Never `git commit` unless Jason explicitly asks in that exchange. Finish the
 work, run lint/build, report "ready to commit," and wait. Each ask covers one
 commit only — it is not standing permission for follow-up commits.
 
+When asked to `git push`, run plain `git push` and stop — never substitute
+`bun run deploy-and-wait` or otherwise wait on the deploy. It's fine if the
+push errors; waiting for it is never important.
+
 ## Per-area rules
 
 - `.claude/CLAUDE.md` — config + skills directory rules
