@@ -172,6 +172,22 @@ was read, roughly how many attribute clusters you see, then the first
 candidate. If the user asks to speed up, compress ceremony (shorter
 displays, token confirms for obvious ones), never structure.
 
+### Park downstream discoveries; don't solve them here
+
+Distilling surfaces things that belong to *later* steps — a weakness
+so absolute it reads as a deal-breaker, a trigger that clearly incites
+a purchase, a market segment worth remembering for the keystones. Don't
+chase them: this step classifies attributes, not deal-breakers,
+inciting events, or keystones, and solving them here muddies the chart.
+But don't lose them either. Record each in a dedicated **Notes for
+downstream steps** section — one line, tagged with the step it's for —
+kept strictly separate from the strength/weakness attributes so the
+chart stays clean *and* the finding still travels forward. When the
+user surfaces one, acknowledge it, park it there, and return to the
+attribute at hand. (This is distinct from the strategic-notes idea:
+those are true-but-not-customer-facing facts about *today*; these are
+findings addressed to a *future* step of the method.)
+
 ## How to use this skill
 
 ### Phase A — Ingest
@@ -243,6 +259,9 @@ attribute or two.
 - **Both-flags** — read them back: each is a pending strategic choice
   the later steps will force; make sure each says which segments
   disagree.
+- **Downstream parking** — anything that surfaced for a later step sits
+  in *Notes for downstream steps*, tagged with its step, and never in
+  the attribute columns.
 
 Finalize: remove the in-progress header and close with the handoff.
 The next step refines strengths into keystones — the characteristics
@@ -294,6 +313,15 @@ observations file.>
 
 - <Attribute candidate> — no to both rubric questions: <one line of
   reasoning>.    [O13]
+
+## Notes for downstream steps (parked, not attributes)
+
+<Findings that surfaced during distillation but belong to a LATER step
+of the method — recorded so they aren't lost, kept out of the attribute
+columns so the chart stays clean. Each line tags the step it's for.>
+
+- <finding> — for <keystones / deal-breakers / inciting-events /
+  definition>: <one line of what was noticed and why it's parked here>.
 
 ## Next steps
 

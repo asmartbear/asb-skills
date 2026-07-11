@@ -1,5 +1,6 @@
 ---
 description: "Reference for creating, editing, or updating Claude Code SKILL.md files — including any change to a skill's YAML frontmatter, description, invocation rules, or body. Covers all YAML frontmatter fields (description, when_to_use, disable-model-invocation, user-invocable, allowed-tools, disallowed-tools, context, agent, effort, paths, shell, etc.), authoring best practices, and string substitutions. Load BEFORE writing or modifying any file in .claude/skills/, not only when creating a new one. For agent .md files, see doc-agents."
+user-invocable: false
 ---
 
 # Instructions when creating or editing skills.
@@ -56,7 +57,7 @@ All fields are optional. Only `description` is recommended.
 | `context`                  | No          | Set to `fork` to run in a forked subagent context. The skill content becomes the subagent's task prompt; it won't have access to conversation history. Only makes sense for task skills, not reference content.                                                                                                                                                                     |
 | `agent`                    | No          | Which subagent type to use when `context: fork` is set. Options: built-in (`Explore`, `Plan`, `general-purpose`) or any custom subagent from `.claude/agents/`. Default: `general-purpose`.                                                                                                                                                                                          |
 | `paths`                    | No          | Glob patterns that limit when Claude auto-loads this skill. Comma-separated string or YAML list. When set, Claude considers the skill only when working with matching files.                                                                                                                                                                                                        |
-| `shell`                    | No          | Shell for `` !`command` `` injection and ` ```! ` blocks. `bash` (default) or `powershell`. PowerShell requires `CLAUDE_CODE_USE_POWERSHELL_TOOL=1`.                                                                                                                                                                                                                                |
+| `shell`                    | No          | Shell for dynamic-context-injection commands (see "Dynamic context injection" below). `bash` (default) or `powershell`. PowerShell requires `CLAUDE_CODE_USE_POWERSHELL_TOOL=1`.                                                                                                                                                                                                    |
 | `hooks`                    | No          | Lifecycle hooks scoped to this skill (`PreToolUse`, `PostToolUse`, `Stop`). See [hooks in skills and agents](https://code.claude.com/docs/en/hooks#hooks-in-skills-and-agents).                                                                                                                                                                                                      |
 
 ### Skill content lifecycle
@@ -106,25 +107,66 @@ seems to stop influencing behavior after compaction, re-invoke it.
   fallback 16,000 chars). If skills get excluded, run `/context` to check.
   Override with `SLASH_COMMAND_TOOL_CHAR_BUDGET` env var.
 
+### Authoring expert / reference skills (external-knowledge domains)
+
+For a skill that makes Claude an "expert" on an external product, tool, or service
+whose facts live online and change over time (e.g. `riverside`), encode the
+*retrieval and verification method*, not a snapshot of the facts:
+
+- **Encode the map, not the corpus.** The skill should make Claude expert by knowing
+  *where to look and how to confirm* — a routing map of authoritative sources plus a
+  verification protocol — not by memorizing facts that go stale. You can't fit the whole
+  product's docs in a skill anyway.
+- **Never answer from memory; retrieve then verify.** Model memory of a specific app is
+  usually wrong or stale, and a confident wrong answer is worse than an honest "couldn't
+  confirm." State that rule *and the reason* rather than relying on bare all-caps
+  MUST/NEVER — Claude generalizes better from the why.
+- **Tier the trusted sources** (official → first-party-adjacent → a small vetted
+  third-party allowlist) and require citing the source URL and labeling official vs
+  third-party. Explicitly exclude SEO listicles, affiliate roundups, and forums; a fact
+  found only on an untrusted source is reported as unverified.
+- **Search beats blind fetch for bot-blocked docs.** Many help centers (Zendesk,
+  Intercom) return HTTP 403 to `WebFetch` but are fully search-indexed. Prefer
+  `WebSearch` with `allowed_domains` scoped to the official domain to find articles, then
+  fetch only pages that allow it; corroborate against a second source when full text can't
+  be fetched. Never guess or construct a doc URL — find the real one.
+- **Verify every URL before it goes in the skill** (same discipline as the
+  `research-purchase` skill's link-verification rule), and keep the verified link catalog
+  in a one-level-deep bundled `sources.md` (with a TOC) so SKILL.md stays a short routing
+  table — progressive disclosure.
+- **Pre-approve research tools** via `allowed-tools: WebSearch WebFetch Read` so answering
+  doesn't trigger permission prompts.
+
 ### String substitutions in skill content
 
-| Variable               | Description                                                                                                                                                                |
-| :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `$ARGUMENTS`           | All arguments passed when invoking the skill. If not present in content, arguments are appended as `ARGUMENTS: <value>`.                                                  |
-| `$ARGUMENTS[N]`        | Access a specific argument by 0-based index (shell-style quoting — wrap multi-word values in quotes to keep them as one argument).                                        |
-| `$N`                   | Shorthand for `$ARGUMENTS[N]` (`$0` = first argument).                                                                                                                     |
-| `$name`                | Named argument declared in the `arguments` frontmatter list. With `arguments: [issue, branch]`, `$issue` expands to arg 0 and `$branch` to arg 1.                         |
-| `${CLAUDE_SESSION_ID}` | Current session ID. Useful for logging or session-specific files.                                                                                                          |
-| `${CLAUDE_EFFORT}`     | Current effort level (`low`, `medium`, `high`, `xhigh`, `max`). Use to adapt instructions to the active effort.                                                            |
-| `${CLAUDE_SKILL_DIR}`  | Directory containing the skill's `SKILL.md`. For plugin skills, the skill's subdirectory, not the plugin root. Use in `` !`...` `` injection to reference bundled scripts. |
+The Variable column below writes a space after `$` so the loader doesn't
+substitute these examples while loading *this* skill — the real variables have
+no space. (Same self-documentation trap as dynamic injection, below.)
+
+| Variable                 | Description                                                                                                                                                                |
+| :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `$ ARGUMENTS`            | All arguments passed when invoking the skill. If not present in content, arguments are appended as `ARGUMENTS: <value>`.                                                  |
+| `$ ARGUMENTS[N]`         | Access a specific argument by 0-based index (shell-style quoting — wrap multi-word values in quotes to keep them as one argument).                                        |
+| `$ N`                    | Shorthand for `$ ARGUMENTS[N]` (`$ 0` = first argument).                                                                                                                   |
+| `$ name`                 | Named argument declared in the `arguments` frontmatter list. With `arguments: [issue, branch]`, `$ issue` expands to arg 0 and `$ branch` to arg 1.                       |
+| `$ {CLAUDE_SESSION_ID}`  | Current session ID. Useful for logging or session-specific files.                                                                                                          |
+| `$ {CLAUDE_EFFORT}`      | Current effort level (`low`, `medium`, `high`, `xhigh`, `max`). Use to adapt instructions to the active effort.                                                            |
+| `$ {CLAUDE_SKILL_DIR}`   | Directory containing the skill's `SKILL.md`. For plugin skills, the skill's subdirectory, not the plugin root. Use in dynamic-injection commands to reference bundled scripts. |
 
 ### Dynamic context injection
 
-A line like `` !`git diff HEAD` `` (or a ` ```! ` block) is executed before
-Claude sees the skill content; the command output is inlined in its place.
-Use this to ground a skill in live state (current diff, current branch,
-file listing) without making Claude run a tool first. The `shell` frontmatter
-field selects bash (default) or powershell.
+A line consisting of an exclamation mark immediately followed by a
+backtick-quoted command — `!` + `` `git diff HEAD` `` with no space between
+them — is executed before Claude sees the skill content; the command output
+is inlined in its place. A fenced code block whose opening fence is three
+backticks immediately followed by `!` works the same way for multi-line
+scripts. Use this to ground a skill in live state (current diff, current
+branch, file listing) without making Claude run a tool first. The `shell`
+frontmatter field selects bash (default) or powershell.
+
+(The literal syntax is deliberately not written out in this file — the skill
+loader would execute it on load. That's also the trap to avoid in any skill
+that *documents* injection rather than *using* it.)
 
 ### Other skill features (not frontmatter)
 
