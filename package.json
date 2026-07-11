@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && bun run scripts/zip-skills.ts",
+    "build": "bun run scripts/zip-skills.ts && astro build",
     "preview": "astro preview",
     "check": "astro check",
     "lint": "bun run scripts/lint-skills.ts",

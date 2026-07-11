@@ -1,6 +1,8 @@
 # build output
 dist/
 .astro/
+# generated at build/dev time by scripts/zip-skills.ts (served from public/)
+public/asb-skills.zip
 
 # build caches (e.g. fetched og-meta from source articles)
 .cache/
