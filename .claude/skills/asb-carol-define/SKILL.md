@@ -46,6 +46,98 @@ honestly say "dentists in Norway." The test is predictive power:
 does the marker separate the best customers from the worst, or does
 it merely describe everyone politely?
 
+### A menu of non-demographic dimensions
+
+Demographics are the lazy axes; the dimensions below are the *kind* that
+actually separate the best customers from the worst. Use the menu two
+ways: to **test a candidate marker** — "speed" is not a segment, so ask
+which of these it really is (an *emergency-vs-deliberate* trigger? a
+*decision-cycle* difference? a *problem-ownership* one?) — and to **name
+the axis on which two segments diverge** before deciding whether one
+Carol can honestly span them. **These are examples, not the full
+universe.** Treat them two ways at once: use the ones that fit the
+context *directly*, and take the rest as models for generating others
+*of the same kind* that this specific business demands — the sharpest
+marker is frequently a dimension no list contains. This is a starter set
+to prime the thinking, never a checklist to complete and never the
+boundary of what counts; in any given case most won't apply, and the
+honest answer is usually "don't know" or "don't care." (Drawn from
+*[Choosing a target market](https://longform.asmartbear.com/target-market/)*,
+which offers these as a primer, not an inventory.)
+
+*The person and their role*
+- **Individual vs team** — one product can face two markets; sometimes
+  "both" (a free single-player mode hooks people, teams are where the
+  money is — Asana, Notion).
+- **Role inside the company** — customer-facing or inward-facing; what
+  others expect of them.
+- **Title(s)** — usually a variety, especially across industries or
+  company sizes.
+- **Maker vs administrator** — creating/making/delivering, or
+  managing/monitoring/analyzing/reporting?
+- **Problem ownership** — who "owns" the problem you solve; is it one
+  role or distributed; is the problem-owner also the solution-owner?
+- **Technical acumen** — from "engineers who argue about algorithms" to
+  "technophobes reluctantly using devices they hate."
+- **Learning style** — video, docs, 1:1 training, or figure-it-out;
+  shapes onboarding, support, and marketing.
+
+*What success means to them*
+- **Job-to-be-done success** — what objective numbers they're held to;
+  which are vital vs operational, satisfied vs maximized; what number
+  changing would get them promoted or fired.
+- **Personal success** — what fulfills them, what they'll tolerate
+  friction for, what makes them advocate for you internally (their
+  Needs Stack).
+- **Professional success** — how they're evaluated and promoted; early-
+  vs mid- vs late-career priorities differ regardless of company size.
+- **Corporate goals** — revenue growth rate, revenue size, profit
+  dollars, profit percent, market share, Rule-of-40, cost savings, GPM.
+
+*The organization*
+- **Organization size** — SMB is often bought by larger but not
+  vice-versa; matters most selling top-down or when the org itself is
+  the subject (e.g. HR software).
+- **Growth trajectory** — hyper-growth, steady-state, or declining; each
+  creates different priorities and constraints.
+- **Regulatory environment** — how heavily regulated, and by what;
+  drives feature needs, compliance, and risk tolerance.
+- **Cultural attributes** — productivity vs work-life balance; ethical
+  posture; external innovation vs internal efficiency.
+- **Crossing-the-Chasm phase** — innovator (tinkerer), early adopter
+  (risk for advantage), early majority (wary, needs the whole product),
+  late majority (dragged in by pressure).
+- **Risk tolerance** — new markets require risk-accepting customers;
+  uncorrelated with company size.
+- **Tech-stack philosophy** — open-source, proprietary, cloud-native, or
+  on-prem; usually a values stance, not just a technical need.
+
+*How they buy and decide*
+- **Budget type** — fixed/annual, flexible, or find-money-when-needed;
+  is there a threshold where the sale changes shape?
+- **Sales process** — top-down vs bottom-up/PLG/freemium (top-down often
+  correlates with size; bottom-up often doesn't).
+- **Decision cycle** — hours, weeks, or quarters.
+- **Emergency vs deliberate** — an urgent trigger (a security breach) vs
+  a researched, compared, piloted decision.
+- **Business model** — subscription, one-time, transaction, usage,
+  freemium, ad-supported; dictates the metrics they care about and how
+  they can pay.
+
+*Their tools and workflow*
+- **Integrations** — what your product must connect to (workflow, AI,
+  to-do, project management, chat).
+- **Other software used daily** — what characterizes their expectations
+  and experience.
+- **Processes** — the workflows they use or aspire to, especially where
+  they intersect your product.
+- **Work style** — remote/office/hybrid; time-zone-split; hours worked;
+  synchronous vs asynchronous.
+- **Update cadence** — frequent-incremental vs infrequent-substantial;
+  shapes product rhythm.
+- **Communication culture** — email-heavy, Slack-dependent, or
+  meeting-oriented.
+
 ### The keep-asking-why chain
 
 The first answer is rarely the marker. "Our best customers worry
@@ -149,8 +241,8 @@ For each candidate marker, check aloud when in doubt: could Marketing
 target this (an ad channel, a search phrase, a list)? Could Sales
 qualify it in one or two questions? Could Product name a feature that
 thrills this person specifically? A marker failing all three is
-description, not definition — press it through the why-chain or drop
-it. A predefined way to press harder: if a devil's-advocate
+description, not definition — press it through the why-chain (testing it
+against the dimensions menu) or drop it. A predefined way to press harder: if a devil's-advocate
 interrogation skill is installed in the environment (for example
 *Rude Q&A* / `asb-rude-qa`, from the same author as this method),
 invoke it against the draft definition with this brief: *attack this
