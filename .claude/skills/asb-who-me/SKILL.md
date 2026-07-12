@@ -151,6 +151,15 @@ them harder to grasp, not easier. Say plainly what you mean. If a
 sentence reads more clearly without a flourish, cut the flourish. State
 the actual point rather than gesturing wittily at it.
 
+### Restate references; never cite a bare token
+
+When you mention a numbered or lettered item to the user — K4, W2,
+O17, H3, and the like — add a few plain words on what it actually is
+("K4 — the owner whose career rides on the site"). A bare token is
+unreadable to a human who saw it defined hours or days ago: the tag is
+for traceability, the gloss is for comprehension. Keep the tag for
+accuracy; always add the gloss.
+
 ### One prompt at a time, one characteristic at a time
 
 Offer ONE prompt per exchange — focused beats buffet. If it draws a
