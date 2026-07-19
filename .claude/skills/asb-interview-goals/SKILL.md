@@ -146,6 +146,14 @@ unreadable to a human who saw it defined hours or days ago: the tag is
 for traceability, the gloss is for comprehension. Keep the tag for
 accuracy; always add the gloss.
 
+### Say where this is going first
+
+Users come for the questions to ask customers, and can bristle at doing
+"goal questions" instead. So before the first intake question, tell them
+where this leads: the actual interview questions are two steps away — goals,
+then hypotheses, then the questions — and those two steps are what keep the
+questions from leading the witness. One sentence, up front.
+
 ### No inputs, no draft
 
 Refuse to draft goal questions from nothing. A goal list built on
@@ -201,7 +209,9 @@ could only have come from this conversation, the intake failed — go back.
 
 ### Phase A — Learn the business
 
-Gather, one or two questions at a time, adapting freely:
+Open by saying where this leads (see the posture note): the questions are
+two steps away, and goals and hypotheses are what keep them from leading the
+witness. Then gather, one or two questions at a time, adapting freely:
 
 1. **What is the business?** Product or service, who pays, roughly how it
    makes money. (B2B and B2C need different goal lists.)
