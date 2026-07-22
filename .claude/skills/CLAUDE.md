@@ -7,7 +7,14 @@ wrong and you'll either publish broken skills or hobble local dev tooling.
 
 - **Public skill (`asb-*`)**: also has a wrapper at
   `src/content/skills/asb-<name>.mdx`. Appears on the website. Distributed.
+  A real directory here.
 - **Dev-only skill (no `asb-` prefix)**: no wrapper. Internal to this repo.
+  Lives in `dev-skills/<name>/` at the repo root; the entry here is only a
+  symlink (`.claude/skills/<name> -> ../../dev-skills/<name>`). Claude Code
+  follows the symlink, so local sessions load it normally — but the skills
+  CLI (`npx skills add asmartbear/asb-skills`) does not follow symlinks, so
+  strangers never install dev tooling (its `--all` flag ignores
+  `metadata.internal`, so the flag alone is not enough).
 
 `bun run lint` enforces these conventions.
 
@@ -71,17 +78,20 @@ Hard-code models, use `context: fork`, reference other skills/agents/files,
 depend on Claude Code mechanics — anything that makes the in-repo workflow
 better. They will never be distributed.
 
-Three hard rules:
+Four hard rules (all lint-enforced):
 
 1. Do NOT use the `asb-` prefix.
-2. Frontmatter MUST include `metadata: { internal: true }`. The skills CLI
-   (`npx skills add asmartbear/asb-skills`) scans all of `.claude/skills/`;
-   this flag is what keeps dev-only skills out of what strangers install.
-   Lint enforces it.
-3. Frontmatter MUST include `name: <dir-name>` (like public skills) — a
+2. The real directory MUST be `dev-skills/<name>/` with only a symlink at
+   `.claude/skills/<name>`. The skills CLI scans `.claude/skills/` wholesale
+   and its `--all` flag installs even `metadata.internal` skills — but it
+   never follows symlinks, while Claude Code does. Create with:
+   `ln -s ../../dev-skills/<name> .claude/skills/<name>`.
+3. Frontmatter MUST include `metadata: { internal: true }` — belt and
+   suspenders: it hides the skill from the CLI's default/interactive flows
+   should the symlink protection ever change.
+4. Frontmatter MUST include `name: <dir-name>` (like public skills) — a
    skill without `name` is excluded by the skills CLI *with a warning
-   printed to every installer's console*; with `name` + `internal` it is
-   hidden silently. Lint enforces it.
+   printed to every installer's console*; with `name` it is hidden silently.
 
 ## Workflow for creating a new public skill
 

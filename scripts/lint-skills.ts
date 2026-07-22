@@ -12,9 +12,11 @@
  *       - Have a frontmatter `name` (required by the skills CLI / Agent Skills spec).
  *       - NOT set `metadata.internal` (that flag hides a skill from the skills CLI).
  *       - Have a wrapper file with valid frontmatter (title, summary).
- *   - Dev-only skills (no wrapper) MUST set `metadata.internal: true` so the
- *     skills CLI (`npx skills add asmartbear/asb-skills`) doesn't offer them —
- *     it scans .claude/skills/ wholesale.
+ *   - Dev-only skills (no wrapper) MUST set `metadata.internal: true` AND live
+ *     in dev-skills/ with only a symlink in .claude/skills/. The skills CLI
+ *     (`npx skills add asmartbear/asb-skills`) scans .claude/skills/ wholesale;
+ *     `--all` ignores metadata.internal, but discovery never follows symlinks,
+ *     while Claude Code does — so the symlink is what keeps dev tooling local.
  *   - Every wrapper at src/content/skills/<name>.mdx must point to an existing SKILL.md.
  *   - Wrapper names that start with `asb-` but have no matching SKILL.md are an error.
  *   - The committed distribution manifests (.claude-plugin/marketplace.json,
@@ -22,7 +24,7 @@
  *
  * Exits non-zero on any failure.
  */
-import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
+import { readdirSync, readFileSync, existsSync, statSync, lstatSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import matter from 'gray-matter';
 import { marketplaceJson, skillsShJson } from './gen-manifests';
@@ -126,8 +128,17 @@ function lintSkill(name: string, isPublic: boolean) {
     if (internal) {
       err(`[skill:${name}] public skill sets metadata.internal — that hides it from the skills CLI`);
     }
-  } else if (!internal) {
-    err(`[skill:${name}] dev-only skill must set "metadata: { internal: true }" so the skills CLI doesn't distribute it`);
+  } else {
+    if (!internal) {
+      err(`[skill:${name}] dev-only skill must set "metadata: { internal: true }" so the skills CLI doesn't distribute it`);
+    }
+    // A real directory in .claude/skills/ gets distributed by
+    // `npx skills add --all` (which ignores metadata.internal). Dev-only
+    // skills must live in dev-skills/ with only a symlink here — the skills
+    // CLI doesn't follow symlinks; Claude Code does.
+    if (!lstatSync(join(SKILLS_DIR, name)).isSymbolicLink()) {
+      err(`[skill:${name}] dev-only skill must be a real dir in dev-skills/ plus a symlink in .claude/skills/ — a real dir here is installed by \`npx skills add --all\``);
+    }
   }
   // Required on ALL skills: without `name`, the skills CLI skips the skill
   // with a per-skill warning printed to every installer's console.
