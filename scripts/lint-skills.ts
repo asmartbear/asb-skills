@@ -24,10 +24,10 @@
  *
  * Exits non-zero on any failure.
  */
-import { readdirSync, readFileSync, existsSync, statSync, lstatSync } from 'node:fs';
+import { readdirSync, readFileSync, existsSync, statSync, lstatSync, readlinkSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import matter from 'gray-matter';
-import { marketplaceJson, skillsShJson } from './gen-manifests';
+import { marketplaceJson, skillsShJson, pluginJson, pluginSkillLinkTarget, PLUGIN_DIR } from './gen-manifests';
 
 const REPO_ROOT = resolve(import.meta.dir, '..');
 const SKILLS_DIR = join(REPO_ROOT, '.claude', 'skills');
@@ -148,10 +148,11 @@ function lintSkill(name: string, isPublic: boolean) {
 }
 
 /** The committed distribution manifests must match what gen-manifests generates. */
-function lintManifests() {
+function lintManifests(publicSkills: string[]) {
   const targets: Array<[string, string]> = [
     ['.claude-plugin/marketplace.json', marketplaceJson()],
     ['skills.sh.json', skillsShJson()],
+    [`${PLUGIN_DIR}/.claude-plugin/plugin.json`, pluginJson()],
   ];
   for (const [relPath, expected] of targets) {
     const path = join(REPO_ROOT, relPath);
@@ -159,6 +160,21 @@ function lintManifests() {
       err(`[manifest:${relPath}] missing — run \`bun run gen-manifests\``);
     } else if (readFileSync(path, 'utf8') !== expected) {
       err(`[manifest:${relPath}] stale — run \`bun run gen-manifests\``);
+    }
+  }
+
+  // The plugin skills dir must be exactly one correct symlink per public skill.
+  const linksDir = join(REPO_ROOT, PLUGIN_DIR, 'skills');
+  const entries = existsSync(linksDir) ? readdirSync(linksDir) : [];
+  for (const name of publicSkills) {
+    const p = join(linksDir, name);
+    if (!existsSync(p) || !lstatSync(p).isSymbolicLink() || readlinkSync(p) !== pluginSkillLinkTarget(name)) {
+      err(`[manifest:${PLUGIN_DIR}/skills/${name}] missing or wrong symlink — run \`bun run gen-manifests\``);
+    }
+  }
+  for (const entry of entries) {
+    if (!publicSkills.includes(entry)) {
+      err(`[manifest:${PLUGIN_DIR}/skills/${entry}] not a public skill — run \`bun run gen-manifests\``);
     }
   }
 }
@@ -228,7 +244,7 @@ for (const name of wrappers) {
 for (const name of workshops) {
   lintWorkshop(name);
 }
-lintManifests();
+lintManifests(wrappers.filter((w) => skillDirs.includes(w)));
 
 console.log(`Linted ${skillDirs.length} skills, ${wrappers.length} wrappers, ${workshops.length} workshops.`);
 if (warnings.length) {

@@ -9,33 +9,13 @@
   "plugins": [
     {
       "name": "asb-skills",
-      "source": "./",
-      "strict": false,
+      "source": "./plugins/asb-skills",
       "description": "Claude Code skills that implement frameworks and algorithms from A Smart Bear and the Hidden Multipliers book.",
       "author": {
         "name": "Jason Cohen"
       },
       "homepage": "https://skills.asmartbear.com",
-      "license": "CC-BY-4.0",
-      "skills": [
-        "./.claude/skills/asb-carol-dealbreakers",
-        "./.claude/skills/asb-carol-define",
-        "./.claude/skills/asb-carol-inciting-events",
-        "./.claude/skills/asb-carol-keystones",
-        "./.claude/skills/asb-carol-observations",
-        "./.claude/skills/asb-carol-strengths",
-        "./.claude/skills/asb-interview-debrief",
-        "./.claude/skills/asb-interview-goals",
-        "./.claude/skills/asb-interview-hypotheses",
-        "./.claude/skills/asb-interview-learning",
-        "./.claude/skills/asb-interview-questions",
-        "./.claude/skills/asb-interview-report",
-        "./.claude/skills/asb-needs-stack",
-        "./.claude/skills/asb-positioning",
-        "./.claude/skills/asb-rude-qa",
-        "./.claude/skills/asb-voters",
-        "./.claude/skills/asb-who-me"
-      ]
+      "license": "CC-BY-4.0"
     }
   ]
 }

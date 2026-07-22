@@ -1,0 +1,9 @@
+{
+  "name": "asb-skills",
+  "description": "Claude Code skills that implement frameworks and algorithms from A Smart Bear and the Hidden Multipliers book.",
+  "author": {
+    "name": "Jason Cohen"
+  },
+  "homepage": "https://skills.asmartbear.com",
+  "license": "CC-BY-4.0"
+}
