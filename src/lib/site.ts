@@ -45,11 +45,6 @@ export const INSTALL = {
   marketplaceUpdate: '/plugin marketplace update asb-skills',
 } as const;
 
-/** skills CLI command installing a single skill by name. */
-export function skillsCliAddCommand(skillName: string): string {
-  return `${INSTALL.cliAddAll} --skill ${skillName}`;
-}
-
 /** GitHub `blob/` URL for a path inside this repo. */
 export function githubBlobUrl(repoRelPath: string): string {
   return `${URLS.githubRepo}/blob/${URLS.githubBranch}/${repoRelPath}`;
