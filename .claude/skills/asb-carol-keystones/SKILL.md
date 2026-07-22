@@ -1,4 +1,5 @@
 ---
+name: asb-carol-keystones
 description: "Facilitates the third step of a proven ideal-customer (ICP) method: refining classified strengths into keystones — the specific characteristics, behaviors, or circumstances that make a customer NEED an extreme version of a strength, badly enough to drive the purchase alone. Takes a strengths chart (S1, S2, … — file or pasted), walks the strengths one at a time asking who requires an extreme version of each, gates every candidate on naming a real market segment that typifies it (no segment = table stakes, cut), and records survivors in KEYSTONES.md (K1, K2, … with [S] references and example segments). Delivers the strategic verdict when few or none survive: the product isn't compelling yet. Load when the user has classified strengths and asks who needs them, who their target market is, or 'turn our strengths into keystones.' Do NOT load to classify strengths and weaknesses (the previous step), to derive deal-breakers or the anti-market (the next step), or to write the final ideal-customer definition (later)."
 ---
 

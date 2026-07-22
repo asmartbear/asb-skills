@@ -3,7 +3,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { Marked, type Tokens } from 'marked';
 import { listWorkshops } from '../../lib/workshops';
 import { fetchOgMeta } from '../../lib/og-meta';
-import { URLS } from '../../lib/site';
+import { URLS, INSTALL } from '../../lib/site';
 
 export async function getStaticPaths() {
   return listWorkshops().map((workshop) => ({
@@ -92,9 +92,10 @@ head.push({ tag: 'meta', attrs: { name: 'twitter:description', content: fm.summa
       <h2 id="the-steps">The steps</h2>
       <p class="steps-download">
         This workshop runs several skills in sequence, and some rely on others
-        (like <code>asb-rude-qa</code>).
-        <a href={URLS.allSkillsZip} download><strong>↓ Download all skills as one ZIP</strong></a>
-        so you have the whole set before you begin.
+        (like <code>asb-rude-qa</code>) — install the whole set before you
+        begin: run <code>{INSTALL.cliAddAll}</code>, or
+        <a href={URLS.allSkillsZip} download><strong>↓ download all skills as one ZIP</strong></a>.
+        <a href="/install/">More install options →</a>
       </p>
       <ol class="step-list">
         {workshop.steps.map((s, i) => (

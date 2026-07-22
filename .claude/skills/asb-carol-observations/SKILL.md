@@ -1,4 +1,5 @@
 ---
+name: asb-carol-observations
 description: "Facilitates the first step of a proven ideal-customer (ICP) method: gathering raw, honest, specific observations about what a company and product actually are — before any judgment about strengths or weaknesses. Walks the user through twelve unsparing question categories (what customers praise, the complaint with no defense, what separates your most profitable customers, and more) — or processes a team's write-storm notes one observation at a time — and records the results in OBSERVATIONS.md (numbered O1, O2, …), vivid and unevaluated. For a company operating online, it first scans public reviews and press into an External Research section that seeds it. Load when the user wants to figure out their ideal customer, take an honest look at their company, run a strengths-and-weaknesses exercise from scratch, or says 'who is our Carol' or 'what are we actually good at.' Do NOT load to classify observations into strengths and weaknesses (the next step), or for personal self-reflection unrelated to a company."
 ---
 

@@ -1,4 +1,5 @@
 ---
+name: asb-interview-hypotheses
 description: "Facilitates the second step of a proven customer-interview method: recording the user's current best guesses — hypotheses — as numbered, falsifiable statements (H1, H2, …), each mapped to the goal questions it addresses, so interviews can confirm or contradict them instead of confirmation bias quietly filtering what's heard. Takes a GOALS.md goal-question list as input (file or pasted), elicits what the user believes goal by goal, sharpens vague beliefs into testable claims, prunes to hypotheses whose resolution would actually change what the user builds, targets, charges, or says, and preserves the result in HYPOTHESES.md. Load when the user has goal questions and wants to write hypotheses, list their assumptions, or record predictions before interviewing customers — 'I have my goals, what's next,' 'help me write down what I believe about my customers.' Do NOT load for writing the interview questions themselves, for analyzing interviews already conducted, or for statistical hypothesis testing."
 ---
 

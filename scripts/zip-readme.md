@@ -25,6 +25,14 @@ unzip asb-skills.zip -d ~/.claude/skills/
 Each skill lands in its own `~/.claude/skills/<name>/SKILL.md`. Delete any you
 don't want — every skill stands on its own.
 
+Note this archive is a snapshot. For an install that stays up to date (and
+works in Codex, Cursor, and other agents too), use the skills CLI instead:
+
+```bash
+npx skills add asmartbear/asb-skills    # install
+npx skills update                       # pull future improvements
+```
+
 ---
 
 For the latest versions, individual downloads, and the writing behind each

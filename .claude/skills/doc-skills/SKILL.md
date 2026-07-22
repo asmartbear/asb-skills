@@ -1,4 +1,7 @@
 ---
+name: doc-skills
+metadata:
+  internal: true
 description: "Reference for creating, editing, or updating Claude Code SKILL.md files — including any change to a skill's YAML frontmatter, description, invocation rules, or body. Covers all YAML frontmatter fields (description, when_to_use, disable-model-invocation, user-invocable, allowed-tools, disallowed-tools, context, agent, effort, paths, shell, etc.), authoring best practices, and string substitutions. Load BEFORE writing or modifying any file in .claude/skills/, not only when creating a new one. For agent .md files, see doc-agents."
 user-invocable: false
 ---

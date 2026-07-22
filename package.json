@@ -10,6 +10,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "lint": "bun run scripts/lint-skills.ts",
+    "gen-manifests": "bun run scripts/gen-manifests.ts",
     "link": "bun run scripts/link-skill.ts link",
     "unlink": "bun run scripts/link-skill.ts unlink",
     "deploy-and-wait": "bun run scripts/deploy-and-wait.ts"

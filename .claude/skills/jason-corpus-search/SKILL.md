@@ -1,4 +1,7 @@
 ---
+name: jason-corpus-search
+metadata:
+  internal: true
 description: "Semantically search Jason Cohen's A Smart Bear articles and Hidden Multipliers book corpus, returning on-disk file paths that can be read or grep'd directly with normal filesystem tools. Load whenever you need to find what Jason has written about a topic, ground an asb-* skill in source material, hunt for quotes or passages, or check whether an idea already has a canonical write-up before drafting one."
 allowed-tools: Bash(.claude/skills/jason-corpus-search/search.sh:*), Read, Grep, Glob
 ---

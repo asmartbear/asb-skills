@@ -1,4 +1,7 @@
 ---
+name: create-asb-skill
+metadata:
+  internal: true
 description: "Interactive, multi-phase workflow for authoring a new public asb-* skill from one of Jason Cohen's concepts. Invoke explicitly via /create-asb-skill — auto-invocation is disabled to avoid accidentally kicking off this long workflow."
 disable-model-invocation: true
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash(.claude/skills/jason-corpus-search/search.sh:*), Bash(bun run lint:*), Bash(bun run build:*), Bash(mkdir:*), Bash(ls:*), Bash(cp .claude/skills/create-asb-skill/template.mdx:*), Bash(cp .claude/skills/create-asb-skill/archetypes/:*), AskUserQuestion

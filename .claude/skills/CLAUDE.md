@@ -57,6 +57,13 @@ Stick to plain markdown plus a `description` field (universally understood).
 Name MUST start with `asb-`. Lowercase letters, digits, hyphens only. Max 64
 chars (excluding the prefix, well under).
 
+### 4. Frontmatter: `name` is required
+
+Every public skill's frontmatter must include `name: asb-<name>` matching the
+directory name. The Agent Skills spec (and the skills CLI that installs from
+this repo) requires it; it's plain YAML, so it doesn't violate the portability
+rule. Lint enforces presence and the dir-name match.
+
 ## Rules for dev-only skills (no `asb-` prefix)
 
 These exist to help Claude work *in this repo*. **They are unrestricted.**
@@ -64,7 +71,17 @@ Hard-code models, use `context: fork`, reference other skills/agents/files,
 depend on Claude Code mechanics — anything that makes the in-repo workflow
 better. They will never be distributed.
 
-The only hard rule: do NOT use the `asb-` prefix.
+Three hard rules:
+
+1. Do NOT use the `asb-` prefix.
+2. Frontmatter MUST include `metadata: { internal: true }`. The skills CLI
+   (`npx skills add asmartbear/asb-skills`) scans all of `.claude/skills/`;
+   this flag is what keeps dev-only skills out of what strangers install.
+   Lint enforces it.
+3. Frontmatter MUST include `name: <dir-name>` (like public skills) — a
+   skill without `name` is excluded by the skills CLI *with a warning
+   printed to every installer's console*; with `name` + `internal` it is
+   hidden silently. Lint enforces it.
 
 ## Workflow for creating a new public skill
 
@@ -79,4 +96,6 @@ The only hard rule: do NOT use the `asb-` prefix.
 4. Create the wrapper at `src/content/skills/asb-<name>.mdx` with `title`,
    `summary`, optional `order` and `featured`, plus any marketing prose for
    the page.
-5. `bun run lint && bun run build` must pass before commit.
+5. Run `bun run gen-manifests` to add the skill to the distribution manifests
+   (`.claude-plugin/marketplace.json`, `skills.sh.json`).
+6. `bun run lint && bun run build` must pass before commit.

@@ -1,4 +1,5 @@
 ---
+name: asb-rude-qa
 description: "Interrogates a user's decision, plan, pitch, positioning, target market, pricing, or still-forming idea with sharp, unsparing questions — extended when useful to hostile or even unfair framings — until the plan sharpens into defensible decisions, or the user concludes it isn't a good idea after all. Acts as the constructive devil's advocate that the user cannot be for themselves. Load when the user wants to stress-test, attack, pressure-test, find holes in, or play devil's advocate against something they're attached to; when they ask to be \"grilled,\" \"beat up,\" or told \"why I'm wrong\"; when they suspect their plan contains wishful thinking, fluffy language, or an unnamed elephant in the room; or when they need to convert vague aspirations into real strategic decisions (with consequences accepted). Do NOT load for ordinary code review, prose editing, or general feedback requests without an adversarial frame."
 ---
 

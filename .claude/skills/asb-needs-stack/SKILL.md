@@ -1,4 +1,5 @@
 ---
+name: asb-needs-stack
 description: "Builds a customer Needs Stack — the ladder in which every need is a means to the end one level up (buy infrastructure → set up a WordPress site → have a personal website → get a book deal). Anchors the level the user's product satisfies, phrased as the customer's own goal in the customer's own words, then walks downward (the steps the product makes obsolete) and upward (what the customer really wants), crystallizing every level — specific wording, a true means-to-an-end link, named real-world occupants — before moving on. Records the stack in NEEDS-STACK.md with the user's level marked and each level's positioning role: what you do, promise, reference as aspiration, or brag about obviating. Load when the user asks what their customer really wants, what level their product operates at, who their real alternatives (not just competitors) are, or to 'build our needs stack.' Do NOT load to rewrite marketing copy from a finished stack — that is a separate positioning task that consumes this file."
 ---
 

@@ -1,4 +1,5 @@
 ---
+name: asb-positioning
 description: "Converts marketing copy — headlines, ads, homepage claims, pitches, positioning statements — into value-first, vivid language: reframes save-time/save-money pitches as create-more-value pitches in the currency the customer measures value, fits each claim to the right level of the customer's needs (features at your level, the promise one level up, aspirations referenced but never promised, obviated steps bragged about), keeps every claim consistent with the declared pricing strategy (More for More, More for Less, or Less for Less), and forces specificity — no generic words, no clichés, show-don't-tell, real numbers only, claims passing the Opposite Test. Works one message at a time, recording survivors in POSITIONING.md. Sharper with an ideal-customer definition and a needs stack; works without. Load when the user wants marketing copy, positioning, headlines, or a pitch rewritten, sharpened, or audited. Do NOT load to build the needs stack or define the ideal customer — upstream steps this skill consumes."
 ---
 

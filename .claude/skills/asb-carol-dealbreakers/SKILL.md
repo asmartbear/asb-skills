@@ -1,4 +1,5 @@
 ---
+name: asb-carol-dealbreakers
 description: "Facilitates the fourth step of a proven ideal-customer (ICP) method: refining classified weaknesses into deal-breakers — the circumstances that disqualify the product outright, no matter how well everything else fits — and mapping the anti-market segments who therefore will never buy. Takes the weaknesses from a strengths chart (W1, W2, …) plus a keystones file (K1, K2, …), walks the weaknesses one at a time, records deal-breakers with their anti-market segments in DEALBREAKERS.md (D1, D2, …), then HONES the keystones: appending the qualifiers each deal-breaker forces ('…processing at least $5,000/mo'), editing KEYSTONES.md under its frozen numbers with a change log. Load when the user has keystones and weaknesses and asks who will never buy, what their anti-market is, or 'run the deal-breakers step.' Do NOT load to derive keystones from strengths (the previous step), to find inciting events (the next step), or to write the final ideal-customer definition."
 ---
 

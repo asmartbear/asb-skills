@@ -1,4 +1,7 @@
 ---
+name: exercise-asb-skill
+metadata:
+  internal: true
 description: "Simulated-use exerciser for asb-* skills: role-plays realistic user scenarios through a SKILL.md and judges the transcripts against a fixed rubric, producing a verdict table and a patch list. Invoke as /exercise-asb-skill <skill-name> [path-to-draft] — works on published skills (regression test before/after edits) and on in-progress drafts (Phase 7 of create-asb-skill)."
 disable-model-invocation: true
 allowed-tools: Read, Glob, Grep, Edit, AskUserQuestion

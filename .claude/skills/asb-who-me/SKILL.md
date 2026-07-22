@@ -1,4 +1,5 @@
 ---
+name: asb-who-me
 description: "Interrogates the user to discover who they actually are — what drives them, what drains them, and the natural strengths they can't see because they come so easily — using proven self-discovery prompts (even-as-a-kid, lost-in-the-work, pit-of-my-stomach dread), the anti-questions, and outside-in questions given as homework to people who know them (perfect scenario, personal hell, invisible strengths). Presses every self-flattering label into concrete episodes, welcomes socially unacceptable motives (money, fame, proving a point), and records each finding in WHO-ME.md as a non-judgmental fact — a strength in some contexts, a hindrance in others — with the contexts where it helps and hurts. Load when the user asks who they really are, what work fits them, what drives or drains them, why they keep burning out, or what to build given who they are. Do NOT load to inventory a company's or product's strengths or to distill the one or two decisive personal advantages — the voters step, which consumes this file."
 ---
 

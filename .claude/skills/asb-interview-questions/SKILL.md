@@ -1,4 +1,5 @@
 ---
+name: asb-interview-questions
 description: "Facilitates the third step of a proven customer-interview method: translating hypotheses into open-ended, unbiased interview questions — each a miniature experiment designed to test one hypothesis without leading the witness. Two modes: given a single hypothesis, it grills the question into shape and outputs the final question in chat; given a HYPOTHESES.md file, it iterates the whole list, grouping related hypotheses, and maintains a QUESTIONS.md file (numbered Q1, Q2, … mapped to H-numbers) as a live, resumable artifact. Load when the user has hypotheses and wants interview questions, asks how to phrase a question for customers without biasing the answer, or says 'turn my hypotheses into questions' or 'help me ask about X without leading.' Do NOT load for writing goal questions or hypotheses (earlier steps), for conducting or analyzing the interviews themselves, for survey/questionnaire design, or for job interviews."
 ---
 

@@ -1,4 +1,5 @@
 ---
+name: asb-interview-debrief
 description: "Facilitates the learning step of a proven customer-interview method — the recording half: turning raw material from ONE customer conversation (transcript, notes, memory dump) into a brief per-person debrief file, mapped against the numbered interview-question list (Q1, Q2, … with H-number tags). One concise answer per question actually asked, key phrases kept verbatim, unasked questions honestly skipped, a one-line commentary only where in-the-moment context helps later analysis, and an addenda section for everything heard that fit no question. Load when the user has just done a customer interview and says 'here's the transcript,' 'process my call notes,' 'file this conversation against my questions,' or 'add this interview to the record.' Do NOT load for writing goals, hypotheses, or interview questions (earlier steps), for synthesizing patterns across multiple interviews and updating hypotheses (the next step), or for summarizing meetings or transcripts unrelated to customer interviews."
 ---
 

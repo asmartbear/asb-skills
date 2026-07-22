@@ -1,4 +1,5 @@
 ---
+name: asb-carol-define
 description: "Facilitates the final step of a proven ideal-customer (ICP) method: synthesizing the working files — strengths and weaknesses, honed keystones, deal-breakers, and inciting events — into CAROL.md, the crisp definition of the ideal customer. The definition leads the file, behavioral and attitudinal, never demographic unless genuinely determinative; every marker must clear the bar that Marketing can target it, Sales can qualify against it, and Product can build features to thrill it. Brief reference sections on keystones, deal-breakers, and inciting events follow, because positioning, marketing, and feature work consume them. When keystone segments diverge, the skill forces the choice of a primary rather than averaging. Load when the user has the working files and says 'define our Carol,' 'write our ideal customer profile,' or 'who is our ICP.' Do NOT load to produce the upstream files (observations through inciting events), or to write the positioning, ads, or feature plans that start FROM this definition."
 ---
 

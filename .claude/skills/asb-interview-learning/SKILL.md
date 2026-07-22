@@ -1,4 +1,5 @@
 ---
+name: asb-interview-learning
 description: "Facilitates the learning step of a proven customer-interview method — the synthesis half: reads a directory of per-interview debrief files against the working HYPOTHESES.md and QUESTIONS.md and proposes evidence-cited updates ONE at a time — double down, tune numbers, mark disproved, park heard-once observations in a 'That's funny' watch section, add new hypotheses with new questions — applying each agreed change directly to the files with a change log, and ending with a stop-or-continue-or-re-aim verdict on the interviewing itself. Load when the user says 'what did we learn from these interviews,' 'update my hypotheses from the interviews,' 'synthesize my interview notes,' or 'should I keep interviewing?' Do NOT load for recording a single conversation into a debrief (the previous step), for writing initial goals, hypotheses, or interview questions (earlier steps), or for deciding what to build next (comes after this method)."
 ---
 

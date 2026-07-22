@@ -1,4 +1,5 @@
 ---
+name: asb-interview-report
 description: "Facilitates the final step of a proven customer-interview method: distilling everything a round of interviews produced (GOALS.md, HYPOTHESES.md, QUESTIONS.md, and a directory of per-interview debriefs) into a single FINAL-REPORT.md the whole company can use. Top: a summary as brief as possible without losing salient information. Below: numbered findings (F1, F2, …) tagged validated / disproved / directional / watch / untested, every one citing debriefs and quoting customers verbatim, plus per-area briefs that marshal the evidence for ideal-customer definition, positioning, pricing, marketing & sales, and product priorities. Load when the user says 'write up what we found from the interviews,' 'summarize the interview results for the team,' or 'turn the interviews into a report.' Do NOT load for updating hypotheses from interviews (the synthesis step), for recording one conversation (the debrief step), or for actually doing the positioning, ideal-customer, or pricing work the report feeds."
 ---
 

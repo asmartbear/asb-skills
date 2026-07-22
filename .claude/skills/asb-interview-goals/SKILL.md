@@ -1,4 +1,5 @@
 ---
+name: asb-interview-goals
 description: "Facilitates the first step of a proven customer-interview method: deciding exactly what you're trying to learn, written as numbered goal questions (G1, G2, …) that your hypotheses and interview questions will later be designed to answer. Interviews the user about their business — new idea or established company, B2B or B2C — then drafts a tailored goal-question list, critiques and revises it with them, and preserves the result in a GOALS.md file. Load when the user wants to interview customers, plan customer discovery or customer development, validate a startup idea, or answer unaskable questions like what to charge, how to position, who the ideal customer is, or what to build. Do NOT load for job or hiring interviews, for writing survey questionnaires, for analyzing customer interviews that have already been conducted, or when a goal-question list already exists and the user wants the next step (hypotheses)."
 ---
 

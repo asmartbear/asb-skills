@@ -1,4 +1,5 @@
 ---
+name: asb-carol-strengths
 description: "Facilitates the second step of a proven ideal-customer (ICP) method: distilling raw company observations into the few deep-truth attributes that matter, then classifying each as a strength, a weakness, or deliberately both. Takes an observations list (O1, O2, … — file or pasted), proposes attributes one at a time with their supporting observations, kills generic ones with the Opposite Test ('we love our customers' dies), classifies each with a concrete rubric (a third of the market sees it that way, or some customers buy/refuse for it alone), and records the result in STRENGTHS-WEAKNESSES.md (S1, S2, … / W1, W2, …). Load when the user has raw observations and wants to distill them, asks 'what are our real strengths and weaknesses,' or wants to classify what they learned from the honest-look exercise. Do NOT load to gather the raw observations (the previous step), to derive keystones or deal-breakers from classified attributes (later steps), or for a person's individual strengths and weaknesses."
 ---
 

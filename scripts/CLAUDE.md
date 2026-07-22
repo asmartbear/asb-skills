@@ -9,6 +9,14 @@ Scripts under Bun (`bun run scripts/<name>.ts`):
   repos. Not needed while developing here — Claude Code reads
   `.claude/skills/` from the current project directly. Exposed as
   `bun run link <name>` / `bun run unlink <name>`.
+- `gen-manifests.ts` — regenerates the two committed distribution manifests
+  from `listPublicSkills()` / `listWorkshops()`: `.claude-plugin/marketplace.json`
+  (Claude Code plugin marketplace; one "asb-skills" plugin whose `skills`
+  paths point into `.claude/skills/`, so nothing moves on disk) and
+  `skills.sh.json` (skills.sh page groupings mirroring the workshops). Run it
+  whenever skills are added/removed/renamed or workshop membership changes;
+  `lint-skills.ts` imports its builders and fails if the committed files are
+  stale. Exposed as `bun run gen-manifests`.
 - `zip-skills.ts` — chained ahead of `astro build`. Bundles every PUBLIC skill
   (`listPublicSkills()`, so dev-only skills are excluded) into
   `public/asb-skills.zip` (gitignored) for the site's "download all skills"

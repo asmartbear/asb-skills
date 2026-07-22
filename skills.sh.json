@@ -1,0 +1,45 @@
+{
+  "groupings": [
+    {
+      "title": "Find Your Carol",
+      "description": "Six skills, run in sequence, that turn an honest look at who you are into a precise definition of your ideal customer — the one whose love transforms your marketing, sales, pricing, and product.",
+      "skills": [
+        "asb-carol-observations",
+        "asb-carol-strengths",
+        "asb-carol-keystones",
+        "asb-carol-dealbreakers",
+        "asb-carol-inciting-events",
+        "asb-carol-define"
+      ]
+    },
+    {
+      "title": "Customer Interviews",
+      "description": "Six skills, run in sequence, that turn customer conversations into decisions you can defend — what to build, who for, what to charge, and how to say it.",
+      "skills": [
+        "asb-interview-goals",
+        "asb-interview-hypotheses",
+        "asb-interview-questions",
+        "asb-interview-debrief",
+        "asb-interview-learning",
+        "asb-interview-report"
+      ]
+    },
+    {
+      "title": "Find Yourself",
+      "description": "Two skills, run in sequence, that turn an honest look at who you are into the one or two decisive advantages you bet your whole strategy on.",
+      "skills": [
+        "asb-who-me",
+        "asb-voters"
+      ]
+    },
+    {
+      "title": "Standalone skills",
+      "description": "Self-contained skills that run on their own, outside any workshop sequence.",
+      "skills": [
+        "asb-rude-qa",
+        "asb-needs-stack",
+        "asb-positioning"
+      ]
+    }
+  ]
+}

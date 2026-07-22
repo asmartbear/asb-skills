@@ -1,4 +1,5 @@
 ---
+name: asb-voters
 description: "Distills a person's or company's strengths, experiences, and obsessions down to their one or two VOTERS — the decisive, idiosyncratically extreme traits that win the contest because customers who value them accept every other trade-off. Runs each candidate through a hard gauntlet: extremity earned through obsession (not mere competence), rarity among peers, decisiveness (name the weaknesses it overpowers), and reverberation (it must force decisions in product, pricing, and market). Caps the answer at two, records survivors in VOTERS.md — plus the near-miss 'special strengths' to deploy — and delivers the honest zero-voter verdict when nothing is extreme yet. Takes a self-portrait file (M-numbered), strengths or keystones charts, or a live capture. Load when the user asks what makes them special, what to bet the strategy on, their unfair advantage or superpower, or to 'find our voters.' Do NOT load to build the full self-portrait (the previous step) or to design the whole strategy — this file feeds it."
 ---
 

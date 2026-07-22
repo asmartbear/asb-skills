@@ -1,4 +1,6 @@
 ---
+metadata:
+  internal: true
 name: book-prose-writer
 description: "Rewrites text in Jason Cohen's prose style for the Hidden Multipliers book. Use when asked to rewrite, restyle, or edit prose for the book."
 argument-hint: "[text or file path to rewrite]"

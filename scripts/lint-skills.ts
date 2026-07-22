@@ -9,15 +9,23 @@
  *   - Body must be non-empty.
  *   - Public skills (those that ALSO have a wrapper at src/content/skills/<name>.mdx) MUST:
  *       - Have a name starting with `asb-`.
+ *       - Have a frontmatter `name` (required by the skills CLI / Agent Skills spec).
+ *       - NOT set `metadata.internal` (that flag hides a skill from the skills CLI).
  *       - Have a wrapper file with valid frontmatter (title, summary).
+ *   - Dev-only skills (no wrapper) MUST set `metadata.internal: true` so the
+ *     skills CLI (`npx skills add asmartbear/asb-skills`) doesn't offer them —
+ *     it scans .claude/skills/ wholesale.
  *   - Every wrapper at src/content/skills/<name>.mdx must point to an existing SKILL.md.
  *   - Wrapper names that start with `asb-` but have no matching SKILL.md are an error.
+ *   - The committed distribution manifests (.claude-plugin/marketplace.json,
+ *     skills.sh.json) must match what `bun run gen-manifests` would generate.
  *
  * Exits non-zero on any failure.
  */
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import matter from 'gray-matter';
+import { marketplaceJson, skillsShJson } from './gen-manifests';
 
 const REPO_ROOT = resolve(import.meta.dir, '..');
 const SKILLS_DIR = join(REPO_ROOT, '.claude', 'skills');
@@ -107,12 +115,39 @@ function lintSkill(name: string, isPublic: boolean) {
     err(`[skill:${name}] SKILL.md body is empty`);
   }
 
+  const internal = (data.metadata as Record<string, unknown> | undefined)?.internal === true;
   if (isPublic) {
     if (!name.startsWith('asb-')) {
       err(`[skill:${name}] is published (has a wrapper) but its name does not start with "asb-"`);
     }
     if (!data.description) {
       err(`[skill:${name}] public skill is missing a "description" field`);
+    }
+    if (internal) {
+      err(`[skill:${name}] public skill sets metadata.internal — that hides it from the skills CLI`);
+    }
+  } else if (!internal) {
+    err(`[skill:${name}] dev-only skill must set "metadata: { internal: true }" so the skills CLI doesn't distribute it`);
+  }
+  // Required on ALL skills: without `name`, the skills CLI skips the skill
+  // with a per-skill warning printed to every installer's console.
+  if (!data.name) {
+    err(`[skill:${name}] missing a "name" field (required by the skills CLI / Agent Skills spec)`);
+  }
+}
+
+/** The committed distribution manifests must match what gen-manifests generates. */
+function lintManifests() {
+  const targets: Array<[string, string]> = [
+    ['.claude-plugin/marketplace.json', marketplaceJson()],
+    ['skills.sh.json', skillsShJson()],
+  ];
+  for (const [relPath, expected] of targets) {
+    const path = join(REPO_ROOT, relPath);
+    if (!existsSync(path)) {
+      err(`[manifest:${relPath}] missing — run \`bun run gen-manifests\``);
+    } else if (readFileSync(path, 'utf8') !== expected) {
+      err(`[manifest:${relPath}] stale — run \`bun run gen-manifests\``);
     }
   }
 }
@@ -182,6 +217,7 @@ for (const name of wrappers) {
 for (const name of workshops) {
   lintWorkshop(name);
 }
+lintManifests();
 
 console.log(`Linted ${skillDirs.length} skills, ${wrappers.length} wrappers, ${workshops.length} workshops.`);
 if (warnings.length) {

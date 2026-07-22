@@ -1,4 +1,5 @@
 ---
+name: asb-carol-inciting-events
 description: "Facilitates the fifth step of a proven ideal-customer (ICP) method: mapping inciting events — the specific trigger moments that move a perfect-fit customer from could-buy-someday to buying-today. Takes a keystones file (K1, K2, … with market segments) and, when available, customer-interview findings; walks the keystones one at a time, harvesting real trigger stories from interview evidence (marked observed) and working backward through brainstorm lenses — crises, seasonal cycles, strategic windows, personal life-changes — for the rest (marked hypothesized), recording each event with the keystone it couples to and how to find prospects in that condition, in INCITING-EVENTS.md (E1, E2, …). Load when the user has keystones and asks what makes customers buy now, what triggers a purchase, or 'run the inciting-events step.' Do NOT load to derive keystones or deal-breakers (previous steps), to write the final ideal-customer definition (next step), or to write the ads themselves."
 ---
 

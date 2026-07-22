@@ -1,5 +1,5 @@
 ---
-import { URLS, githubRawUrl, githubBlobUrl } from '../lib/site';
+import { URLS, INSTALL, githubRawUrl, githubBlobUrl, skillsCliAddCommand } from '../lib/site';
 import CopyButton from './CopyButton.astro';
 
 interface Props {
@@ -18,10 +18,21 @@ const { name, copyText, githubUrl, rawUrl, lastUpdated } = Astro.props;
 const skillName = name ?? 'asb-skill-name';
 const rawSkillUrl = rawUrl ?? githubRawUrl(`.claude/skills/${skillName}/SKILL.md`);
 const blobSkillUrl = githubUrl ?? githubBlobUrl(`.claude/skills/${skillName}/SKILL.md`);
+const cliCommand = skillsCliAddCommand(skillName);
 ---
 
 <aside class="install-box">
   <h3>Installing <code>{skillName}</code></h3>
+
+  <div class="install-cli">
+    <pre><code>{cliCommand}</code></pre>
+    <CopyButton text={cliCommand} label="Copy command" />
+  </div>
+  <p class="install-hint">
+    Installs into Claude Code, Codex, Cursor, and dozens of other agents;
+    <code>{INSTALL.cliUpdate}</code> picks up future improvements.
+    Or skip the tooling and grab the file itself:
+  </p>
 
   <div class="install-actions">
     {copyText && <CopyButton text={copyText} label="Copy SKILL.md" />}
@@ -70,6 +81,22 @@ const blobSkillUrl = githubUrl ?? githubBlobUrl(`.claude/skills/${skillName}/SKI
   }
   .install-box h3 {
     margin-top: 0;
+  }
+
+  .install-cli {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    margin-block: 0.6rem 0.35rem;
+  }
+  .install-cli pre {
+    margin: 0;
+    padding: 0.4rem 0.7rem;
+    border-radius: 0.375rem;
+    background: var(--sl-color-black);
+    border: 1px solid var(--sl-color-gray-5);
+    font-size: 0.85rem;
   }
 
   .install-actions {
