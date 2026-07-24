@@ -908,6 +908,18 @@ summary are **marketing copy**, not labels. They have to pull a reader in
 and earn the click. Apply this voice from Phase 0 onward, and tighten in
 Phases 2 and 8.
 
+**The governing rule for every hook-shaped field (title, cardTitle,
+hook): emphasize the benefit and the result, never the mechanism.** The
+skill's method — scoring, interrogating, auditing, walking a checklist —
+is the "how," and the how belongs in the summary and body, not in the
+hook. The reader cares about the question they're carrying or the outcome
+they want, and the strongest hooks name THAT — often as a direct question
+to the reader. Learned live: for the viability-scoring skill, "Scores
+whether your problem can become a business" (mechanism) became "Do
+enough people want to pay for this?" (the reader's actual question), and
+the cardTitle "Problem Score" (the method) became "Good Market?" (the
+reader's worry).
+
 ### Title (full per-page title, the `title:` field)
 
 Hook + descriptive. The title MUST tell the reader what the skill is — a
@@ -918,8 +930,12 @@ is. Pithy beats clinical; vague is unacceptable.
 
 - ❌ Clinical/labeling: "Acquisition diagnostic skill", "Pricing framework"
 - ❌ Vague hook: "Sharpen your thinking", "Get unstuck"
+- ❌ Mechanism-led: "Score your idea on seven criteria"
 - ✅ Hook + descriptive: "Diagnose why your acquisition channel is broken",
   "Stress-test an idea until it cracks or sharpens"
+
+The descriptive half describes the result the reader gets, not the
+machinery that produces it.
 
 ### Card title (the `cardTitle:` field) — short home-card label
 
@@ -930,21 +946,32 @@ skill, not the marketing subtitle.
 
 - title: *"Rude Q&A: The Constructive Devil's Advocate"* → cardTitle: *"Rude Q&A"*
 - title: *"Diagnose why your acquisition channel is broken"* → cardTitle: *"Acquisition diagnostic"*
+- A short question naming the reader's worry beats a method name:
+  *"Good Market?"* beat *"Problem Score"* in live use.
 
 If the `title:` is already short (≤ 3 words), omit `cardTitle:` and it
 falls back to `title`.
 
-### Hook (the `hook:` field) — verb-led card one-liner
+### Hook (the `hook:` field) — benefit-led card one-liner
 
 Renders on the home-page card under the cardTitle. Distinct from
 `summary`: the hook is meant to be *scanned* in one beat, the summary is
-read. Verb-led, present-tense, 5–8 words. Falls back to `summary` if
-omitted, but `summary` is usually too long for the card.
+read. Falls back to `summary` if omitted, but `summary` is usually too
+long for the card. Two good shapes: a verb-led result statement
+(present-tense, 5–8 words), or a direct question that names the thing
+the reader is already worrying about — same length budget: the card
+shows about two lines, so ~8 words; a longer question wraps to three
+lines and looks wrong next to its neighbors. Either way it sells the
+result or the reader's question — never the mechanism.
 
 - ❌ Description: "A skill for stress-testing your plans."
 - ❌ Adjective-led: "Sharp, unsparing devil's advocate for your plans."
-- ✅ Verb-led: "Grills your plan until it cracks."
-- ✅ Verb-led: "Diagnoses why your funnel is broken."
+- ❌ Mechanism-led: "Scores whether your problem can become a business."
+- ❌ Right shape, too long: "Are you solving a problem that lots of
+  people want to pay you to solve?" (three card lines)
+- ✅ Verb-led result: "Grills your plan until it cracks."
+- ✅ Verb-led result: "Diagnoses why your funnel is broken."
+- ✅ Reader's question: "Do enough people want to pay for this?"
 
 ### Summary (the one-line `summary:` field)
 
