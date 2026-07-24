@@ -1,5 +1,5 @@
 ---
-name: asb-problem-score
+name: asb-problem
 description: "Scores whether a business idea can become a viable business, walking the path from 'The Problem' to 'Viable Business Model': one specific target market is Fermi-scored on seven multiplying criteria (Plausible, Self-Aware, Lucrative, Liquid, Eager ×2, Enduring), every optimistic number is challenged unless evidence backs it, and when the verdict is bad, narrower niches are re-scored side by side. Load when the user asks whether their startup or product idea is viable, whether a market really exists for what they want to build, why a product that solves a real problem isn't selling, which of several target markets to pursue, whether to persevere or give up on a product, or says 'score my idea.' Do NOT load for general devil's-advocate stress-testing of plans or pitches without the viability question, for building a full ideal-customer profile, for writing customer-interview questions, or for execution problems like funnel optimization, hiring, or fundraising."
 ---
 

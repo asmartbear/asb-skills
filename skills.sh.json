@@ -37,7 +37,7 @@
       "description": "Self-contained skills that run on their own, outside any workshop sequence.",
       "skills": [
         "asb-rude-qa",
-        "asb-problem-score",
+        "asb-problem",
         "asb-needs-stack",
         "asb-positioning"
       ]
