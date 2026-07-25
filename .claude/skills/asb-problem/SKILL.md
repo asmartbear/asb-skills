@@ -391,6 +391,19 @@ test for specific: a stranger could sort real people into "in the
 market" and "not in the market" using the description. "Indie makers,"
 "small businesses," "people who want to be more productive" all fail.
 
+A second test, faster and harder to fake: ask them to name real
+examples — actual companies or actual people they could point at
+today. A handful is plenty; this is not a counting exercise. Then
+press the part that matters: are there many more like these, or is
+each one a special case? No names at all means the market is imagined
+rather than observed. Names that turn out to be one-offs — a friend's
+company, an unusual setup, the one client who happened to ask — are
+real customers but not a pattern, and only a pattern can be scored;
+interesting one-offs are the most common way a market that isn't
+there looks like one that is. Either way this is Phase A material
+rather than a dead end: the names they *can* give are the raw
+material for a narrower, realer market.
+
 When the user arrives generic — an idea-shaped direction rather than a
 scoreable market — do not refuse and stop; refuse and BUILD. Treat their
 direction as the jumping-off point: propose one to three candidate
