@@ -114,7 +114,14 @@ deal"). Where a claim sits determines what kind of claim it should be:
   value rule governs a message's crux, not every supporting clause.
   What it forbids is an absence claim doing headline duty.
 
-A complete positioning-statement list covers all five roles. If the
+A complete positioning-statement list covers all five roles — and
+there is no sixth. An audience filter is not a role: narrowing lands
+*inside* a statement, as specificity qualifying a claim ("for the
+post-Series-A healthcare company facing its first SOC 2"), never as
+a standalone entry announcing who you're for. A message that does
+nothing but declare an audience gets folded into the claim it
+qualifies, or retired. Who the customer is was decided upstream; all
+this skill insists on is that the wording be specific about it. If the
 user has a needs-stack file (levels numbered N1, N2, …), read levels
 and roles straight from it and cite them; if not, elicit a minimal
 ladder inline — your level, one up, one down — before rewriting.
@@ -129,7 +136,7 @@ personal violation. It's terrifying. You pay a consultant $300 an
 hour to fix it, and you're still wondering whether it happens again
 in three months." Evocative emotion, personal, a number instead of
 "expensive," a specific uneasy mental state instead of "sometimes it
-recurs." Four moves get copy there:
+recurs." Five moves get copy there:
 
 1. **No generic words.** Words that span broad concepts instead of
    conjuring an image — very, many, various, several, some, effort,
@@ -174,7 +181,51 @@ recurs." Four moves get copy there:
    everyone knows earns credibility for the claims that follow — and
    **own it completely** — an abused word is usable only when backed
    with extraordinary specific proof, led by the proof, not the word.
-4. **The Opposite Test.** Construct each claim's opposite. If no
+4. **Clauses that subtract, not add.** Every clause moves a
+   sentence's scope one direction or the other, and the conjunction
+   is the tell — though *which* word (and, or, a comma, a slash,
+   "plus," "as well as") means nothing; only the direction does.
+   Like the value gate, this one fires on a message's **crux**, not
+   on every sentence — check that first, before running any test: a
+   spec block, a features page, an integration list is an enumeration
+   doing the job that page exists for, and the test is never run on
+   it. What's forbidden is a widening conjunction in the claim
+   itself. "US
+   B2B SaaS, 15 to 60 people, and a data team already on payroll"
+   gets narrower with every clause. "Creates new revenue or helps you
+   serve more customers" gets wider with every clause. Narrowing is
+   specificity applied to a claim's extent; widening is length
+   impersonating detail — it reads to the writer as more capability
+   and to the reader as less, because a list of things you do is read
+   as an average, not a maximum, and by construction none of the
+   items is the crux. **The test: delete the conjunction and
+   everything after it.** Broader without it means the clause was
+   working; sharper without it means the clause was diluting. Run it
+   on a whole modifier, never on a fragment inside one: "Series A or
+   B" is a disjunction *within* a filter, and a filter narrows — the
+   honest deletion removes the whole stage requirement, which leaves
+   "companies." Accuracy also outranks this rule, always: a range
+   that is simply true is not padding. Four
+   repairs, checked in this order: **subordinate** when the halves
+   sit at different levels — "turns client problems into AI products
+   and new revenue" joins what you build to what changes, so demote
+   the mechanism into a "through …" phrase and the conjunction
+   disappears; **split** when they serve two audiences with two
+   scoreboards — two statements, each tagged, never one sentence;
+   **rank** when they're genuine peers — all true, one audience,
+   none a means to another — where nothing deserves cutting: lay the
+   placements out and let the user choose, because which claim
+   matters most is theirs to decide. Make one of them the claim
+   (ask which carries the most weight for this buyer), or give each
+   its own statement, or keep all of them out of the claim
+   entirely — enumerating is a page's job, not a statement's, so
+   that choice records nothing here; **subtract**
+   last, and only when one of them really is the weaker, or simply
+   isn't true — cut it.
+   Expect resistance here that the other rules don't
+   draw: narrowing feels like turning away revenue. It isn't. It
+   changes who you *say* you serve, not who you *will* serve.
+5. **The Opposite Test.** Construct each claim's opposite. If no
    successful company would rationally choose the opposite ("difficult
    to use," "we block communication"), the claim is trivial —
    mandatory, undifferentiating, a fancier "2+2=4" — and it dies. It
@@ -418,7 +469,7 @@ Per message, run the gates in this order (each visible, briefly):
    story — all mixed signals, reworked before wording is polished.
    (Strategy undeclared: check the statements against each other.)
 4. **Vivid pass** — generics out, clichés out, show-don't-tell,
-   compress for density.
+   scope narrowed rather than widened, compress for density.
 5. **Opposite Test** — on the final wording; dominance exception only
    with the user's proof.
 6. **Truth check** — every specific confirmed or bracketed
