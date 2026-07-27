@@ -49,6 +49,22 @@ export default defineConfig({
           content:
             "(function(){function b(){document.querySelectorAll('nav.sidebar a > span').forEach(function(s){if(s.querySelector('strong'))return;var t=s.textContent,ci=t.indexOf(': '),qi=t.indexOf('? '),n=ci>=0?ci:(qi>=0?qi+1:-1);if(n>0){s.textContent='';var st=document.createElement('strong');st.textContent=t.slice(0,n);s.appendChild(st);s.appendChild(document.createTextNode(t.slice(n)));}});}document.addEventListener('DOMContentLoaded',b);document.addEventListener('astro:page-load',b);})();",
         },
+        // Fathom Analytics — cookie-free, ~2KB. `defer` keeps it off the render
+        // path: it downloads during parse and executes after, so head placement
+        // costs nothing and starts the fetch earlier than end-of-body would.
+        // Production only, so `bun run dev` doesn't pollute the stats.
+        ...(import.meta.env.PROD
+          ? [
+              {
+                tag: 'script' as const,
+                attrs: {
+                  src: 'https://cdn.usefathom.com/script.js',
+                  'data-site': 'VCJIPVUI',
+                  defer: true,
+                },
+              },
+            ]
+          : []),
       ],
       social: {
         github: URLS.githubRepo,
