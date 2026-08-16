@@ -288,7 +288,11 @@ what customers, competitors, and press actually say — praise,
 complaints, comparisons, existential events, pricing, notable
 incidents — and record the specific findings (each with its channel
 and a quote, rating, or number) in an **External Research** section at
-the top of `OBSERVATIONS.md`. That section is reference, not verdict:
+the top of `OBSERVATIONS.md`. Confirm the company and its market with
+current results from your search tools; do not rely on internal
+(training) knowledge, which is stale and is often wrong about a
+specific, real company. Every finding must trace to a live source, not
+to your memory of the company. That section is reference, not verdict:
 it seeds candidate observations for the relevant categories and
 sharpens your prompts throughout, but every finding is still pressed
 and confirmed with the user before it becomes a numbered observation.

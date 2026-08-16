@@ -295,7 +295,10 @@ If the environment provides web access, spend it Fermi-style where
 outside numbers exist: market counts for Plausible, budget norms and
 competitor pricing for Lucrative, evidence of active demand for
 Self-Aware (are people visibly searching, complaining, paying anyone
-today?), the competitive field for Eager. Page-one-search depth is
+today?), the competitive field for Eager. Confirm these market facts
+with current results from your search tools; do not rely on internal
+(training) knowledge, which is stale and is often wrong about market
+size, live competitors, and today's prices. Page-one-search depth is
 correct — the answer only needs to survive to a power of ten. Findings
 are evidence: accept the value they support even when it beats your
 skepticism. Without web access, challenge the user's numbers against

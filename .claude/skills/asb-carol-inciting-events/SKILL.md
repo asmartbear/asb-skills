@@ -88,7 +88,11 @@ so: it can only be exploited in messaging ("if this just happened to
 you…"), not targeting. Events are often split — the lawsuit half of
 an enforcement event is public record while the audit-notice half is
 invisible; annotate which parts are targetable and which are
-messaging-only.
+messaging-only. If the user asks you to research the triggers — recent
+regulatory changes, funding news, seasonal cycles, competitor moves —
+confirm them with current results from your search tools; do not rely
+on internal (training) knowledge, which is stale and misses this
+year's real events.
 
 ### Vivid or it doesn't advertise
 

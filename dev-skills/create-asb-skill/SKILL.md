@@ -295,6 +295,24 @@ useful.
 2. **Inputs.** What does the LLM need from the user to apply the framework?
    What questions should it ask first?
 
+2b. **Current-data research — does the wielder assert facts about the
+   outside world?** Some skills have the wielder make claims about real
+   companies, markets, competitors, prices, or other current data (e.g.
+   scanning what customers say about a company, sizing a market,
+   naming who serves a level today, judging whether a trait is rare in
+   the field). For any such skill, bake in a standing rule: the wielder
+   confirms that context using current information from its search/other
+   tools and does NOT rely on internal (training) knowledge, which is
+   stale and is often wrong about a specific, real company or a live
+   market. Word it for the framework — "confirm the company and its
+   market with current search results; do not rely on internal
+   knowledge." Give the fallback for a wielder with no tools (ask the
+   user to paste current data / links; mark the affected outputs
+   low-confidence). Skills that work only from the user's own supplied
+   material (interview answers, beliefs, decisions) do NOT need this —
+   most skills don't. Only opt in when the wielder itself sources
+   outside facts.
+
 3. **Interaction shape — convene the Archetype Council.** Read
    `.claude/skills/create-asb-skill/archetypes/README.md`. Present the
    Phase 2 four-part statement to all five personalities (Interrogator,
@@ -579,6 +597,12 @@ ones specific to public asb-* skills (see `.claude/skills/CLAUDE.md`):
    instructions in SKILL.md for creating, updating, and resuming from that
    file (YAML header schema, phase tracking, default path). The wielder has
    no other state.
+7b. **If Phase 3 flagged current-data research** (question 2b), bake in
+   the standing rule that the wielder confirms companies, markets,
+   competitors, prices, or other outside facts with current results from
+   its search/other tools and does NOT rely on internal (training)
+   knowledge — with the no-tools fallback. Place it where the wielder
+   actually sources those facts, not as a stray aside.
 8. **Body under 500 lines.** Use clear headings. Prose, not bullet soup.
 9. **Every skill carries the "Be clear, not clever" block, verbatim.** The
    archetype skeletons already include it as the final `###` subsection of

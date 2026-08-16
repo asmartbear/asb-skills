@@ -56,7 +56,11 @@ segments walked away from) reverberated outward from that one voter.
    obsession nobody has heard of is still rare — the missing
    reputation is an investment plan, not a failed test. Conversely,
    when reputation IS the claim, ask for the citable artifact (the
-   post peers link, the thing you're known by), not self-report.
+   post peers link, the thing you're known by), not self-report. When you
+test rarity against the field ("you and forty others?"), confirm the
+current competitive field using your search tools; do not rely on
+internal (training) knowledge, which is stale and may miss the peers
+who make a trait common — or the gap that makes it rare.
 3. **Decisive — name what it overpowers.** A voter proves itself by
    the trade-offs customers accept for it: the terrible companion
    software, the banned add-ons, the walked-away-from segments, the
