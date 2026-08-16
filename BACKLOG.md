@@ -192,33 +192,6 @@ when we sit down to build the skill.
   "Desire: Advocates, Buyers, and Hostages", "Love", "Utility",
   "Coercion");
   [willingness-to-pay](https://longform.asmartbear.com/willingness-to-pay/).
-- **Pick one pricing strategy and align behind it
-  (`asb-price-consistency`).** _(for upcoming podcast)_ Have the user
-  declare which of the three self-consistent strategies they intend —
-  More for More, More for Less, or Less for Less — then interrogate the
-  concrete signals (pricing page, homepage copy, hiring bar, support
-  SLA, onboarding, roadmap) and flag every mismatch, ordered by damage
-  to Carol's trust ("Mixed Signals"). It carries each strategy's own
-  demands: **More for More** must first name a specific "best at what?"
-  (design, quality, workflow, support — extreme, not average) and "best
-  for whom?" (a large-budget segment with a genuine keystone need, and
-  enough of them), then sustain it across hiring / support / roadmap or
-  the position collapses; **More for Less** keeps only features used by
-  ≥50% of customers or that ≥15% of new customers buy specifically for
-  (the rest are dead weight the low price can't carry); **Less for
-  Less** works only when the low price is the *outcome* of specific
-  weaknesses competitors refuse to copy (IKEA flat-pack, Southwest
-  one-plane, Costco membership) — it rejects "we'll just be cheaper" as
-  a non-strategy. Use the "Rude Q&A" skill for the interrogation.
-  `asb-positioning` already *consumes* a declared strategy but nothing
-  yet *produces* one — this closes that loop (related). Merges the
-  former "Self-consistency audit", "Design durable Less-for-Less
-  trade-offs", "More-for-More readiness check", the More-for-More
-  claim-namer, and the More-for-Less 50%/15% filter. _Source:_ _Price
-  is Not Just a Number_ chapter (`price-extra`, "Mixed Signals", "More
-  for More", "More for Less", "Less for Less");
-  [more-or-less](https://longform.asmartbear.com/more-or-less/),
-  [never-compete-on-price](https://longform.asmartbear.com/never-compete-on-price/).
 - **Multi-segment pricing-strategy mapper.** _(for upcoming podcast)_
   For one product used differently by distinct segments (SMBs running
   their whole business on it vs. enterprises using it for a single

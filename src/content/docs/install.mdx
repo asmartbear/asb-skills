@@ -10,28 +10,29 @@ import InstallInstructions from '../../components/InstallInstructions.astro';
     fenced code blocks can't interpolate imports. If a command changes,
     update both. */}
 
-Skills are just markdown files, so there are several ways to get them — from a
-one-line CLI install that stays updatable, down to copying a single file by
-hand. Most workshops run several skills together, and some depend on others
-(like `asb-rude-qa`), so installing the whole set is recommended.
+A skill is just a markdown file. You can get skills in several ways. One way
+is a one-line CLI install. This method updates later. Another way is to copy a
+single file by hand. Most workshops run several skills together. Some skills
+depend on other skills, like `asb-rude-qa`. So we recommend you install the
+whole set.
 
 ## Install with the skills CLI (recommended)
 
-One command installs every skill, into whichever coding agents you use —
-Claude Code, Codex, Cursor, and [dozens more](https://skills.sh):
+One command installs every skill. It works with any coding agent you use,
+such as Claude Code, Codex, Cursor, and [dozens more](https://skills.sh):
 
 ```bash
 npx skills add asmartbear/asb-skills
 ```
 
-Want just one? Add `--skill`:
+To install only one skill, add `--skill`:
 
 ```bash
 npx skills add asmartbear/asb-skills --skill asb-positioning
 ```
 
-Because the install points back at this repo, you get fixes and improvements
-whenever you update:
+The install points back to this repo. So you get fixes and improvements each
+time you update:
 
 ```bash
 npx skills update
@@ -40,16 +41,15 @@ npx skills update
 ## Or install as a Claude Code plugin
 
 This repo is also a [Claude Code plugin
-marketplace](https://code.claude.com/docs/en/discover-plugins). From within
-Claude Code:
+marketplace](https://code.claude.com/docs/en/discover-plugins). Use it from
+within Claude Code:
 
 ```
 /plugin marketplace add asmartbear/asb-skills
 /plugin install asb-skills@asb-skills
 ```
 
-That installs all the skills as one plugin. Pull the latest versions any time
-with:
+This installs all the skills as one plugin. To get the latest versions, run:
 
 ```
 /plugin marketplace update asb-skills
@@ -57,38 +57,39 @@ with:
 
 ## Or download everything as a ZIP
 
-No tooling required — grab a snapshot of every skill:
+You do not need any tools. Download a snapshot of every skill:
 
 <LinkButton href="/asb-skills.zip" icon="download" variant="primary" download>Download all skills (ZIP)</LinkButton>
 
-Unzip it into your Claude Code skills folder, then restart Claude Code (or run
-`/context`) to pick everything up:
+Unzip the file into your Claude Code skills folder. Then restart Claude Code,
+or run `/context`, to load the skills:
 
 ```bash
 unzip asb-skills.zip -d ~/.claude/skills/
 ```
 
-Each skill lands in its own `~/.claude/skills/asb-<name>/SKILL.md`. (Unlike
-the CLI methods, a ZIP is a snapshot — re-download to get updates.)
+Each skill goes into its own file: `~/.claude/skills/asb-<name>/SKILL.md`.
+Note: unlike the CLI methods, a ZIP file is a snapshot. To get updates,
+download the ZIP file again.
 
 ## Or copy a single file
 
-Every skill on this site is a single `SKILL.md` file, so you can also just copy
-the one you want:
+Every skill on this site is one `SKILL.md` file. You can copy just the file
+you want:
 
 <InstallInstructions />
 
 ## What is a Claude Code skill?
 
-A skill is a markdown file with YAML frontmatter that tells Claude when and how
-to apply a particular piece of knowledge or workflow. Claude auto-loads skills
-whose descriptions match what you're asking about. Read more in the official
-[Claude Code skills docs](https://docs.claude.com/en/docs/claude-code/skills).
-The same format is an open standard ([Agent Skills](https://agentskills.io)),
-which is why these skills also work in other coding agents.
+A skill is a markdown file with YAML frontmatter. The frontmatter tells Claude
+when and how to use a piece of knowledge or a workflow. Claude loads a skill
+automatically when its description matches your request. For more
+information, read the official [Claude Code skills docs](https://docs.claude.com/en/docs/claude-code/skills).
+This format is also an open standard, called [Agent Skills](https://agentskills.io).
+This is why these skills also work in other coding agents.
 
 ## Why "asb-"?
 
-Every skill on this site starts with `asb-` (for *A Smart Bear*). The prefix
-namespaces the skills so they don't collide with your own local skills, and
-makes it obvious in any Claude session which knowledge came from here.
+Every skill on this site starts with `asb-` (for *A Smart Bear*). This prefix
+keeps the skill names separate from your own local skill names. It also shows
+clearly, in any Claude session, which skills came from this site.

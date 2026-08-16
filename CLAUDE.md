@@ -28,6 +28,18 @@ then `/plugin install asb-skills@asb-skills`). All distribution artifacts
 ## Communication
 
 - Only report to me in ASD-STE100 Simplified Technical English.
+- Write every reader-facing artifact you author into this repo in ASD-STE100
+  Simplified Technical English too — not just chat. This covers the bulk prose
+  of skill-wrapper bodies (`src/content/skills/*.mdx`), workshop pages
+  (`src/content/workshops/*.mdx`), and other website documentation text: short
+  active sentences, one idea each, simple common words, present tense, few
+  gerunds, no clever metaphors.
+- **Exception — leave tuned one-liners exactly as written:** page titles,
+  `cardTitle`, `hook`, `summary`, the frontmatter `description`, and the home
+  hero tagline/blurbs. These are deliberately tuned; they are not STE prose.
+- This does **not** govern the operational instructions inside a skill's
+  `SKILL.md` (the prompt an LLM loads). That prose follows "clear, not clever"
+  but is not held to STE.
 
 ## Two classes of skill
 

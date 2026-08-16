@@ -950,6 +950,16 @@ summary are **marketing copy**, not labels. They have to pull a reader in
 and earn the click. Apply this voice from Phase 0 onward, and tighten in
 Phases 2 and 8.
 
+**Write the wrapper BODY prose in ASD-STE100 Simplified Technical English**
+(a house rule — see the root `CLAUDE.md` "Communication" section). That
+means the `## What this is about` paragraphs, `## Example invocation`
+prose, `## From the source` explanations, and any workshop-page narrative:
+short active sentences, one idea each, simple common words, present tense,
+few gerunds, no clever metaphors. The tuned one-liners — `title`,
+`cardTitle`, `hook`, `summary`, the frontmatter `description` — are the
+one **exception**: they keep the marketing voice below and are NOT held to
+STE. (The `SKILL.md` body you author is also out of scope for STE.)
+
 **The governing rule for every hook-shaped field (title, cardTitle,
 hook): emphasize the benefit and the result, never the mechanism.** The
 skill's method — scoring, interrogating, auditing, walking a checklist —

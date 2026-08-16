@@ -80,6 +80,13 @@ templating; the duplication is rare enough not to be worth the machinery.
 
 ## Conventions
 
+- **Write all reader-facing prose here in ASD-STE100 Simplified Technical
+  English:** skill-wrapper bodies (`content/skills/*.mdx`), workshop pages
+  (`content/workshops/*.mdx`), and docs pages. Short active sentences, one idea
+  each, simple common words, present tense, few gerunds, no clever metaphors.
+  **Leave tuned one-liners as written** — frontmatter `title`, `cardTitle`,
+  `hook`, `summary`, `description`, and the home hero tagline/blurbs. The
+  operational `SKILL.md` bodies (joined in at render time) are out of scope.
 - The `skills` content collection only describes the wrapper metadata; the
   canonical body comes from `.claude/skills/<name>/SKILL.md` via `lib/skills.ts`.
 - The Starlight sidebar is built at config-load time from `listPublicSkills()`.

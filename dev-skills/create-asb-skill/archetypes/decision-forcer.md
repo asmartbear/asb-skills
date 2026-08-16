@@ -117,6 +117,18 @@ with. Where the user's answers go fluffy, dwell. Where two axes conflict
 (the spreadsheet says A, the want says B), name the conflict rather than
 papering over it.
 
+**Some frameworks gate, not just weigh.** When an option carries hard
+*demands* — conditions it must meet to be viable at all — test those before
+scoring anything: an unmet demand **eliminates** that option (record the
+failed demand and take it off the table) rather than just scoring it low. The
+answer is then often reached by elimination. If *no* option meets its
+demands, say so plainly — that is an honest verdict, and the real work is
+usually upstream, not a forced pick from a bad set. This is also the exit
+when a user's answers stay vague indefinitely: the demand simply stays unmet,
+and you record that rather than lowering the bar. (Learned building a
+pricing-strategy skill, where each strategy's demands ruled options out and
+the choice fell out by elimination.)
+
 ### Phase D — Commit
 
 Drive to a choice:
