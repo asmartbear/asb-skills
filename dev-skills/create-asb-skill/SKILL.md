@@ -833,10 +833,28 @@ the way there.
    ```
    Report results. If lint fails, fix and re-run.
 
-3. Tell Jason: file paths written, lint/build status, confirmation that
-   Phases 5 (source-map audit) and 7 (simulated use) both passed, and the
-   suggested next step (`bun run dev` to preview locally, then commit and
-   push).
+3. **Catch up `BACKLOG.md`.** The backlog is the list of skills we *could*
+   build but haven't yet — so once a skill exists, its idea no longer
+   belongs there. If the concept you just forged is represented in
+   `BACKLOG.md`, remove exactly the part now built:
+   - Grep `BACKLOG.md` for the concept — its name, the chapter/section it
+     came from, the slug you just used, and a few key phrases. Check
+     **merged / umbrella entries too**: a single backlog bullet often folds
+     several ideas into one planned skill (it will say "Merges the former
+     …"), and the entry may name this skill's slug directly.
+   - If a standalone bullet maps to this skill, delete the whole bullet.
+   - If this skill implements only *part* of a multi-idea or umbrella
+     entry, delete only the part now built and leave the rest, keeping the
+     entry coherent.
+   - If removing the last bullet leaves a chapter section empty, remove that
+     section's `<!-- Ch. N … -->` comment too.
+   - If nothing matches, do nothing — not every skill was pre-listed.
+   Never delete a backlog idea the new skill does not actually cover.
+
+4. Tell Jason: file paths written, lint/build status, which `BACKLOG.md`
+   entry (if any) you removed, confirmation that Phases 5 (source-map audit)
+   and 7 (simulated use) both passed, and the suggested next step
+   (`bun run dev` to preview locally, then commit and push).
 
 ---
 

@@ -8,31 +8,6 @@ when we sit down to build the skill.
 
 <!-- Add entries here as: "- **Short name.** One-line idea. _Source:_ ..." -->
 
-- **Know thyself.** Interrogate the user about who they are with guiding
-  questions that surface stories and scattered anecdotes rather than tidy
-  self-summaries; collect the raw material, clean it up, then mine it for
-  the common themes that reveal who they really are. _Source:_ the
-  _Yourself_ chapter of *Hidden Multipliers* (primary); also
-  [be-yourself](https://longform.asmartbear.com/be-yourself/),
-  [authentic](https://longform.asmartbear.com/authentic/),
-  [scars](https://longform.asmartbear.com/scars/),
-  [compass](https://longform.asmartbear.com/compass/).
-- **Needs Stack for a persona.** Given a target persona, generate their
-  Needs Stack — the ranked layers of what they need from a product, from
-  table-stakes up through aspirational — so positioning and roadmap
-  decisions can be made against an explicit hierarchy. _Source:_ the
-  _Positioning_ chapter of *Hidden Multipliers* (primary); also
-  [needs-stack](https://longform.asmartbear.com/needs-stack/).
-- **Product positioning.** Generate positioning for a product grounded
-  in creating value (not saving money), written in Jason's voice —
-  concrete, specific, jargon-free — and built on top of the persona's
-  Needs Stack (produced by the **Needs Stack** skill above). _Source:_
-  the _Positioning_ chapter of *Hidden Multipliers* (primary); also
-  [more-value-not-save-money](https://longform.asmartbear.com/more-value-not-save-money/),
-  [specificity](https://longform.asmartbear.com/specificity/),
-  [another-10x](https://longform.asmartbear.com/another-10x/),
-  [opposite-test](https://longform.asmartbear.com/opposite-test/),
-  [focus](https://longform.asmartbear.com/focus/).
 - **Refine prose in Jason's voice.** Rewrite marketing/product prose to
   be direct, concrete, jargon-free, and honest — including naming the
   ways you're "worse" or "weak," because honesty (and the right framing
@@ -43,69 +18,43 @@ when we sit down to build the skill.
   [authentic](https://longform.asmartbear.com/authentic/),
   [authentic-is-dead](https://longform.asmartbear.com/authentic-is-dead/),
   [opposite-test](https://longform.asmartbear.com/opposite-test/).
-- **Customer-interview kit.** For a given product/persona, generate
-  interview goals, hypotheses to test, and the questions to ask —
-  framed so you learn whether the problem is real before you've
-  written code. _Source:_ the _Discovery_ chapter of *Hidden
-  Multipliers* (primary — you cited ch. 10; flagging since the
-  Yourself chapter is unrelated); also
-  [customer-development](https://longform.asmartbear.com/customer-development/),
-  [find-customers-to-interview](https://longform.asmartbear.com/find-customers-to-interview/),
-  [customer-validation](https://longform.asmartbear.com/customer-validation/).
-- **Define Carol (ICP).** Walk through the full _ICP_ chapter of
-  *Hidden Multipliers* to produce a sharp definition of Carol — the
-  ideal customer persona — building up a growing document as each
-  step lands. Likely splits into one skill per step, since each is
-  complex and benefits from heavy input (sales transcripts, support
-  tickets, brainstorming, customer interviews):
-  1. **Keystones** — strengths → motivating characteristics that
-     concentrate in your best customers and are absent in the worst.
-  2. **Deal-breakers** — weaknesses → disqualifiers that define the
-     anti-market and hone the keystone description.
-  3. **Inciting events** — what triggers Carol to buy *now*, coupled
-     to each keystone.
-  4. **Market-segment definition** — synthesize the above into a
-     specific, targetable segment description (the real "who is
-     Carol").
-
-  Each step appends to one shared "story of Carol" document.
-  _Source:_ the _ICP_ chapter of *Hidden Multipliers* (primary);
-  also [purgatory](https://longform.asmartbear.com/purgatory/)
-  (especially for steps 1 — Keystones — and 3 — Inciting events).
-- **Strengths & weaknesses (writestorm).** Run the strengths-and-
-  weaknesses exercise from the second half of the _Carol_ chapter,
-  driven by the writestorming protocol in the appendix. This is
-  step 0 of the Define-Carol journey above — keystones and deal-
-  breakers are derived from these strengths and weaknesses, so the
-  output feeds straight into the shared Carol document. _Source:_
-  the _Carol_ chapter of *Hidden Multipliers* (primary), together
-  with the _Writestorming_ appendix (`app-writestorming`).
-- **Willingness-to-pay strategy.** Force the user to commit to a
-  concrete WTP strategy that actually fits their company — picking
-  the specific motivators that drive *their* customers to pay, and
-  pricing/packaging against them — rather than defaulting to
-  generic "cost-plus" or "match the competition." _Source:_ the
-  _Price is Not Just a Number_ chapter of *Hidden Multipliers*
-  (`price-extra`, primary); also
-  [willingness-to-pay](https://longform.asmartbear.com/willingness-to-pay/).
-- **Should I raise prices?** Walk the user through deciding whether
-  (and how) to raise prices on an existing product — surfacing
-  willingness-to-pay signals, framing risk, the mechanics of
-  repositioning vs. raw price-hike, and downstream effects on
-  business model, retention, and marketing budget. _Source:_ the
-  two pricing chapters of *Hidden Multipliers* (`price-extra` —
-  _Price is Not Just a Number_; and `price-number` /
-  `price-wpe` — _Pricing the Number_, primary); from the
-  [pricing topic page](https://longform.asmartbear.com/topics/pricing/),
-  the on-topic articles are:
-  [more-value-not-save-money](https://longform.asmartbear.com/more-value-not-save-money/),
-  [willingness-to-pay](https://longform.asmartbear.com/willingness-to-pay/),
-  [pricing-determines-your-business-model](https://longform.asmartbear.com/pricing-determines-your-business-model/),
-  [never-compete-on-price](https://longform.asmartbear.com/never-compete-on-price/),
-  [discount-gambit](https://longform.asmartbear.com/discount-gambit/),
-  [more-or-less](https://longform.asmartbear.com/more-or-less/),
-  [price-vs-quantity](https://longform.asmartbear.com/price-vs-quantity/),
+- **Value-metric pricing redesign (price on value created, not cost
+  saved).** _(for upcoming podcast)_ Identify the metric the customer
+  already uses to judge success (growth, leads, revenue) rather than a
+  cost-savings metric, and recompute the price ceiling under both
+  framings to show the achievable multiple — the article's worked
+  example prices the same product at $5K/mo as a "save money" pitch
+  vs. $40K/mo as a "grow revenue" pitch (8×). A pricing-strategy
+  decision, distinct from `asb-positioning`, which only rewrites the
+  copy. _Source:_
+  [more-value-not-save-money](https://longform.asmartbear.com/more-value-not-save-money/).
+- **Annual-prepay cash-flow & payback calculator.** Compute payback
+  period (`CAC / (MRR × GPM)`), adjust for retention, then model moving
+  customers to an annual plan priced at 12× the monthly rate — showing
+  how the prepay covers ad spend before the credit-card bill comes due
+  — and choose among the four refund-policy options (pro-rata,
+  as-if-monthly, credits, no-refund). _Source:_
   [annual-prepay](https://longform.asmartbear.com/annual-prepay/).
+- **Discount-to-close reframer.** Take a discount-to-close pitch ("buy
+  now, X% off") and test it against the two-strategy comparison — what
+  padded list price it implies, what image discounting conveys, which
+  segment it attracts (bargain-hunters vs. advocates) — then rewrite it
+  as the lock-in-before-increase pitch ("price is going up, buy now to
+  lock your rate"), keeping the actual numbers. _Source:_
+  [discount-gambit](https://longform.asmartbear.com/discount-gambit/).
+- **Freemium true-cost calculator ("charge it to the marketing
+  department").** _(for upcoming podcast)_ Compute the fully-loaded cost
+  per free user (infra + support + the founder's own time), turn it into
+  an effective per-user price, net out freemium's indirect benefits, and
+  compare its ROI against the user's other acquisition channels — then
+  judge whether the free tier earns its keep and whether free-tier
+  feedback (free users outvote real ICPs 20:1) is distorting the roadmap.
+  The default business model of the entire WordPress plugin economy;
+  scoped as `asb-freemium`. _Source:_
+  [freemium](https://longform.asmartbear.com/freemium/); also
+  [bootstrapped-cpc](https://longform.asmartbear.com/bootstrapped-cpc/),
+  [ltv](https://longform.asmartbear.com/ltv/), and the _ICP_ chapter
+  (`icp`) — why the free tier is a sieve for ICPs, not a customer base.
 
 <!-- Ch. 1: The Profit Whale's Tail (profit-whale) -->
 
@@ -126,35 +75,8 @@ when we sit down to build the skill.
   sales/onboarding/positioning the mismatch could have been caught.
   _Source:_ _Profit Whale_ chapter ("Kiss Kiss, Bye Bye").
 
-<!-- Ch. 2: Carol Loves You For You (carol) — sub-steps of the existing
-     Strengths & weaknesses writestorm entry -->
-
-- **Raw-facts reverse-engineering interview.** Step 1 of the
-  writestorm: act as the outside consultant who can't ask "why" —
-  pull observable behaviors, decisions, and outcomes (not
-  rationalizations) to produce the neutral fact base. _Source:_
-  _Carol_ chapter ("Step 1: Generate Raw Facts").
-- **Observation-to-attribute distiller.** Step 2: take a messy list
-  of raw observations, clarify each, convert to a "deep truth"
-  attribute, merge duplicates, and flag generic ones via an
-  Opposite-Test-style check. _Source:_ _Carol_ chapter
-  ("Step 2: Distill into Important Attributes").
-
 <!-- Ch. 3: Speaking Carol Into Existence (icp) -->
 
-- **Facilitate going from strengths and customer stories to
-  keystones.** Be a "Rude Q&A" (see that skill) facilitator, taking
-  an input (messy) list of strengths and things that differentiate
-  profit-whale "head" customers from the tail, honing into
-  keystones that are sharply defined and have clearly defined
-  market segments. _Source:_ _ICP_ chapter ("Keystones").
-- **Facilitate going from weaknesses and lost deals and cancelled
-  customer stories and customer horror stories to deal-breakers.**
-  Be a "Rude Q&A" (see that skill) facilitator, taking an input
-  (messy) list of negative things as listed in the title, honing
-  into deal-breakers that are sharply defined and have clearly
-  defined market segments. _Source:_ _ICP_ chapter ("Avoid the
-  Anti-Market").
 - **Audit ads/homepage for anti-market language.** Paste ad copy or
   landing-page text; the skill scores each line against the user's
   keystones and deal-breakers, flags phrases that attract the
@@ -165,24 +87,6 @@ when we sit down to build the skill.
   deal-breakers; interrogate for the missing inciting event vs.
   priority-stack position, and output a re-engagement trigger to
   watch for. _Source:_ _ICP_ chapter ("Inciting Events").
-- **Inciting-event brainstorm via four lenses.** Run the user
-  through the chapter's four trigger categories (crises, seasonal
-  cycles, strategic decisions, personal life-changes) for each
-  keystone, then map each event to a detection signal Marketing and
-  Sales Ops can act on. _Source:_ _ICP_ chapter ("Inciting Events"
-  sub-sections).
-- **Hone keystones using deal-breakers.** Take keystone market
-  descriptions and the deal-breaker list, then iteratively append
-  qualifiers (e.g. "…processing at least $5000/mo") until each
-  keystone segment is disjoint from every deal-breaker. _Source:_
-  _ICP_ chapter ("Hone Keystones Using Deal-Breakers").
-- **Behavioral/attitudinal segmentation re-mapping.** Take the
-  user's current demographic target-market description; interrogate
-  with Qualifiers and Disqualifiers question banks, drill "why" past
-  surface features, and output a behavioral Carol bullet-set
-  Marketing/Sales/Product can act on. _Source:_ _ICP_ chapter
-  ("Rethinking How To Segment The Market").
-
 <!-- Ch. 4: A Rose by Any Other Name (positioning) -->
 
 - **Specificity Checklist scorer.** Submit a homepage/landing block;
@@ -222,46 +126,121 @@ when we sit down to build the skill.
 
 <!-- Ch. 5: Price is Just a Number (price-number) -->
 
-- **Vulnerable price-increase letter drafter.** Walk the founder
-  through composing an honest, personal price-increase email modeled
-  on the Smart Bear $35→$1,300 letter — eliciting the real reasons,
-  personal stakes, and early-adopter relationship — then draft and
-  critique it for honesty vs. corporate hedging. _Source:_
-  _Price is Just a Number_ chapter ("How to Raise Prices").
-- **Failed-price-increase diagnostician.** When signups drop after a
-  price increase, classify the root cause into the four named
-  failure modes (undifferentiated, no budget, value invisible,
-  impulse buy) and prescribe the corresponding fix. Leverage the
-  "Rude Q&A" skill. _Source:_ _Price is Just a Number_ chapter
+- **Should I raise my prices — and how? (`asb-raise-prices`).**
+  _(for upcoming podcast)_ Three connected jobs, in order: (a) decide
+  whether to change price at all, and in which direction, from real
+  signals rather than nerve — surfacing willingness-to-pay signals and
+  the profit-multiplier stakes (a 10% price rise can be a 100% profit
+  rise), and naming when a low price is really low confidence
+  (embarrassment about missing features, anchoring to your own build
+  cost, thinking about yourself instead of the customer, impostor
+  syndrome); (b) draft the honest, vulnerable increase letter in the
+  founder's own voice — modeled on the Smart Bear $35→$1,300 letter —
+  refusing corporate hedging; (c) weigh reposition vs. raw price-hike
+  and the downstream effects on business model, retention, and
+  marketing budget. Merges the former "Should I raise prices?",
+  "Vulnerable price-increase letter drafter", and the profit-multiplier
+  / pricing-confidence framings (facets of this skill, not skills of
+  their own). _Source:_ _Price is Just a Number_ chapter (`price-number`,
+  "The Profit Multiplier", "What If You Are Worth It?", "How to Raise
+  Prices"); _It's Your Turn Now_ chapter (`price-wpe`, the WP Engine
+  worked example — including the case where the right answer was to
+  *lower* the entry price, $49→$29); also
+  [more-value-not-save-money](https://longform.asmartbear.com/more-value-not-save-money/),
+  [willingness-to-pay](https://longform.asmartbear.com/willingness-to-pay/),
+  [annual-prepay](https://longform.asmartbear.com/annual-prepay/),
+  [discount-gambit](https://longform.asmartbear.com/discount-gambit/).
+- **Failed-price-increase diagnostician.** _(for upcoming podcast)_
+  When signups drop after a price increase, classify the root cause into
+  the four named failure modes (undifferentiated, no budget, value
+  invisible, impulse buy) and prescribe the corresponding fix. Leverage
+  the "Rude Q&A" skill. A likely follow-on to `asb-raise-prices` rather
+  than part of it. _Source:_ _Price is Just a Number_ chapter
   ("When Raising Prices Fails").
+- **Which market is your price choosing?** _(for upcoming podcast)_
+  Take a product's current price and diagnose which market that price
+  has *selected* — then show which order-of-magnitude rung it must move
+  to in order to reach the market the founder actually wants, and
+  everything that changes with it (segment, sales motion, support
+  model, funding, achievable scale). The payoff line is not "raise your
+  prices" but "you're at the $10 rung wondering why you can't afford
+  marketing; here is what the $100 rung requires." Combines the three
+  overlapping demand curves (Hobbyist / SMB / Enterprise), the
+  $500-is-the-same-as-$0 discretionary-budget threshold, and the add-on
+  price ceiling with the business-model ladder. Scoped as
+  `asb-price-market` — the spine of the WP Product Talk episode.
+  _Source:_ _Price is Just a Number_ chapter (`price-number`, "The
+  Market Multiplier" and "The Budget Multiplier");
+  [pricing-determines-your-business-model](https://longform.asmartbear.com/pricing-determines-your-business-model/)
+  (co-primary — the $0/$1/$10/$100/$1,000/$10,000/$100,000-per-month
+  ladder); also
+  [price-vs-quantity](https://longform.asmartbear.com/price-vs-quantity/),
+  [never-compete-on-price](https://longform.asmartbear.com/never-compete-on-price/).
 
 <!-- Ch. 6: Price is Not Just a Number (price-extra) -->
 
-- **Self-consistency audit (More/More vs More/Less vs Less/Less).**
-  User declares which of the three strategies they intend; the skill
-  interrogates concrete signals (pricing page, copy, hiring bar,
-  support SLA, onboarding, roadmap) and flags each mismatch,
-  ordered by damage to Carol's trust. Use the "Rude Q&A" skill for
-  strong interrogation. _Source:_ _Price is Not Just a Number_
-  chapter ("Mixed Signals").
-- **Find your authentic Love driver.** Workshop the user through
-  the ten Love drivers (Mission, Community, Reciprocity,
-  Transparency, Design, Quality, Personality, Culture, Ecosystem,
-  Authenticity); test which one or two the company can credibly own
-  with evidence (not aspiration); reject the rest. _Source:_
-  _Price is Not Just a Number_ chapter ("Love").
-- **Design durable Less-for-Less trade-offs.** Force the user to
-  name specific weaknesses competitors would refuse to copy (IKEA
-  flat-pack, Southwest one-plane, Costco membership + warehouse),
-  trace each weakness to the operational efficiency it unlocks, and
-  reject "we'll just be cheaper" as a non-strategy. _Source:_
-  _Price is Not Just a Number_ chapter ("Less for Less").
-- **More-for-More readiness check.** Stress-test whether the user
-  can actually sustain premium positioning by probing each required
-  dimension (extreme differentiation, large-budget ICP, top-talent
-  hiring, seconds-not-hours support, completeness-over-speed
-  cycles), and flag the predictable bootstrapper misalignment.
-  _Source:_ _Price is Not Just a Number_ chapter ("More for More").
+- **Willingness to pay: Love, Utility, Coercion
+  (`asb-willingness-to-pay`).** _(for upcoming podcast)_ Audit an
+  existing revenue base and classify what actually holds each segment —
+  the three kinds of desire, in ascending strategic value: **Love**
+  (advocacy / identity), **Utility** (rational reasons), **Coercion**
+  (trapped against their will). Name the one or two **Love** drivers the
+  company can credibly own with evidence, not aspiration, from the ten
+  (Mission, Community, Reciprocity, Transparency, Design, Quality,
+  Personality, Culture, Ecosystem, Authenticity); walk the thirteen
+  **Utility** attributes (Unique, Quality, Simplicity, Integrations,
+  Convenience, Training, System-of-record, Risk-reduction, Familiarity,
+  Market-leader, Onboarding, Location, Cheap) to find the one or two
+  worth deepening; and flag every place the company quietly relies on
+  **Coercion** (contracts, switching costs, data lock-in) and mistakes
+  it for retention — drafting a Love- or Utility-based replacement for
+  each (the T-Mobile "Un-carrier" reversal). The question it won't let
+  the user dodge: "if a good alternative appeared tomorrow, who leaves
+  immediately?" Ends by committing to a WTP strategy that fits — the
+  specific motivators that drive *their* customers to pay — rather than
+  defaulting to "cost-plus" or "match the competition." Merges the
+  former "Willingness-to-pay strategy", "Find your authentic Love
+  driver", "Utility-driver audit", and "Coercion audit & de-coercion
+  plan". _Source:_ _Price is Not Just a Number_ chapter (`price-extra`,
+  "Desire: Advocates, Buyers, and Hostages", "Love", "Utility",
+  "Coercion");
+  [willingness-to-pay](https://longform.asmartbear.com/willingness-to-pay/).
+- **Pick one pricing strategy and align behind it
+  (`asb-price-consistency`).** _(for upcoming podcast)_ Have the user
+  declare which of the three self-consistent strategies they intend —
+  More for More, More for Less, or Less for Less — then interrogate the
+  concrete signals (pricing page, homepage copy, hiring bar, support
+  SLA, onboarding, roadmap) and flag every mismatch, ordered by damage
+  to Carol's trust ("Mixed Signals"). It carries each strategy's own
+  demands: **More for More** must first name a specific "best at what?"
+  (design, quality, workflow, support — extreme, not average) and "best
+  for whom?" (a large-budget segment with a genuine keystone need, and
+  enough of them), then sustain it across hiring / support / roadmap or
+  the position collapses; **More for Less** keeps only features used by
+  ≥50% of customers or that ≥15% of new customers buy specifically for
+  (the rest are dead weight the low price can't carry); **Less for
+  Less** works only when the low price is the *outcome* of specific
+  weaknesses competitors refuse to copy (IKEA flat-pack, Southwest
+  one-plane, Costco membership) — it rejects "we'll just be cheaper" as
+  a non-strategy. Use the "Rude Q&A" skill for the interrogation.
+  `asb-positioning` already *consumes* a declared strategy but nothing
+  yet *produces* one — this closes that loop (related). Merges the
+  former "Self-consistency audit", "Design durable Less-for-Less
+  trade-offs", "More-for-More readiness check", the More-for-More
+  claim-namer, and the More-for-Less 50%/15% filter. _Source:_ _Price
+  is Not Just a Number_ chapter (`price-extra`, "Mixed Signals", "More
+  for More", "More for Less", "Less for Less");
+  [more-or-less](https://longform.asmartbear.com/more-or-less/),
+  [never-compete-on-price](https://longform.asmartbear.com/never-compete-on-price/).
+- **Multi-segment pricing-strategy mapper.** _(for upcoming podcast)_
+  For one product used differently by distinct segments (SMBs running
+  their whole business on it vs. enterprises using it for a single
+  project), decide which of the three strategies (More-for-More /
+  More-for-Less / Less-for-Less) actually describes each segment's
+  relationship to the product — legitimately different strategies for the
+  same product and price. Distinct from the self-consistency audit (one
+  chosen strategy) and the More-for-More readiness check. _Source:_
+  _It's Your Turn Now_ chapter (`price-wpe`, "Positioning for value").
 
 <!-- Ch. 7: And After All That, They Left (growth-ceiling) -->
 
@@ -290,6 +269,17 @@ when we sit down to build the skill.
   etc.), define a Happy-Path timeline, and write the proactive
   outreach message for each off-path signal. _Source:_
   _Growth Ceiling_ chapter ("Catch the Warning Signs").
+- **Growth-ceiling calculator.** _(for upcoming podcast)_ Compute the
+  hard cap on company size that churn imposes — the ceiling no marketing
+  budget can outspend — from the user's own churn and new-customer
+  numbers, show how far they are from it, and rank the levers
+  (onboarding first) by how much ceiling each one buys; then show how NRR
+  above 100% breaks the ceiling entirely (90% vs 110% = decelerating vs
+  compounding). Built to run in ~2 minutes on a founder's from-memory
+  numbers; scoped as `asb-growth-ceiling` — the one to compute live on
+  air. _Source:_ _And After All That, They Left_ chapter
+  (`growth-ceiling`, the churn-ceiling math); _Splitting the Surplus_
+  chapter (`nrr`).
 
 <!-- Ch. 8: Splitting the Surplus (nrr) -->
 
@@ -307,6 +297,22 @@ when we sit down to build the skill.
   answering tickets) vs. kickback-seekers, then draft a simple
   generous two-way offer (revenue split or good-faith referral,
   going first). _Source:_ _NRR_ chapter ("Partner Programs").
+- **Design expansion pricing (two-axis tiers).**
+  _(for upcoming podcast)_ Design a tier-and-usage structure that gives customers more
+  than one honest path to spend more, starting from what actually creates
+  surplus for them: pricing by usage / features / segment, the two-axis
+  pattern (per-seat plus tiers), tiers that map to how requirements
+  *grow* rather than to market segments, and the harder-than-it-looks
+  retention math (lose 20%, gain 20%, land at 96%). Gates on retention
+  first — says plainly when the answer is "fix cancellation before
+  touching tiers." Related packaging tactics: anchor-tier naming (name
+  the tier after the buyer's self-identity so they default to it) and the
+  free-trial-vs-money-back-guarantee structure. Scoped as
+  `asb-expansion-pricing`. _Source:_ _Splitting the Surplus_ chapter
+  (`nrr`);
+  [annual-prepay](https://longform.asmartbear.com/annual-prepay/);
+  _It's Your Turn Now_ chapter (`price-wpe`, "The non-exclusive
+  exclusive", "Try before you buy").
 
 <!-- Ch. 9: Your False-Positives Factory (experiments) -->
 
@@ -383,14 +389,6 @@ when we sit down to build the skill.
   named. Also leverage the "Rude Q&A" skill to hold the user
   strictly accountable for a great answer and for facing the
   truth. _Source:_ _Yourself_ chapter ("When To Fix Yourself").
-- **Find your Voter.** Identify the one or two decisive strengths
-  customers would forgive everything else for; test each candidate
-  by asking what weaknesses it would reframe as features (Etsy-
-  style), and reject voters that are merely "strengths" rather than
-  idiosyncratic obsessions. Also leverage the "Rude Q&A" skill to
-  hold the user strictly accountable for a great answer and for
-  facing the truth. _Source:_ _Yourself_ chapter ("One Voter Is
-  Enough").
 - **King's Gambit stress-test.** Present the user's strategy
   alongside the "conventional wisdom" critique they keep hearing;
   check whether the deviations actually flow from the user's
@@ -409,15 +407,6 @@ when we sit down to build the skill.
   _Source:_
   [great-strategy](https://longform.asmartbear.com/great-strategy/),
   [leverage](https://longform.asmartbear.com/leverage/),
-  [startup-beats-incumbent](https://longform.asmartbear.com/startup-beats-incumbent/).
-- **Problem/market check.** Walk the user through the table-based
-  analysis from
-  [problem](https://longform.asmartbear.com/problem/) to determine
-  whether their idea is hitting a real, sufficient problem in a
-  real market — filling out the table row by row and forcing
-  honest answers in each cell — including whether the problem is
-  one a startup can actually win against incumbents. _Source:_
-  [problem](https://longform.asmartbear.com/problem/),
   [startup-beats-incumbent](https://longform.asmartbear.com/startup-beats-incumbent/).
 - **Extreme-questions workshop.** Facilitate an "extreme
   brainstorming" session, posing the deliberately outsized
