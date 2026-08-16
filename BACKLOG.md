@@ -89,19 +89,6 @@ when we sit down to build the skill.
   watch for. _Source:_ _ICP_ chapter ("Inciting Events").
 <!-- Ch. 4: A Rose by Any Other Name (positioning) -->
 
-- **Specificity Checklist scorer.** Submit a homepage/landing block;
-  the skill runs each sentence through the five-point checklist (no
-  generic words, no cliché, show-don't-tell, emotional commiseration,
-  passes Opposite Test), flags banned words and clichés, and
-  proposes specific rewrites. _Source:_ _Positioning_ chapter
-  ("Specificity Checklist").
-- **Features / benefits / aspirations splitter.** Be a "Rude Q&A"
-  facilitator to determine the customer's Needs Stack along with
-  this product's level, generate the four-row positioning table
-  (Far above = aspirations + testimonials, Just above = benefits,
-  You = feature claims, Below = advancements) and draft one bullet
-  per row, then stitch into a paragraph. _Source:_ _Positioning_
-  chapter ("Creating Your Positioning Using the Needs Stack").
 - **Disrupt-yourself planner.** Walk the user up one rung of their
   Needs Stack, test it against the three barriers (different
   business, may not be possible, smaller market), and if blocked
@@ -360,12 +347,6 @@ when we sit down to build the skill.
 
 <!-- Ch. 11: To Thine Own Self Be True (yourself) -->
 
-- **Outside-In question pack.** Generate three personalized, easy-
-  to-answer prompts (perfect-circumstances, personal-hell,
-  invisible-superpowers) the user can send verbatim to 3–7 trusted
-  others, with coaching on who to ask and how to synthesize replies
-  into an attribute list. _Source:_ _Yourself_ chapter
-  ("Outside-In").
 - **Company-in-the-shape-of-you audit.** Take the user's 3–4
   defining attributes plus current pricing, positioning, product,
   and channels; walk each attribute against each strategy
