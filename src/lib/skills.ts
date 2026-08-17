@@ -27,8 +27,8 @@ export interface SkillWrapperFrontmatter {
   related?: string[];
   /** Optional slug of the workshop (`src/content/workshops/<slug>.mdx`) this skill is a step of. When set, the per-page shows a "Part of <workshop>" banner and the workshop page lists this skill as a step (ordered by `order`). Membership is one-to-one; lint checks the slug resolves. */
   workshop?: string;
-  /** Optional primary-source citation. When set, an "Adapted from <title>." sentence appears appended to the summary line at the top of the per-skill page. Use the foundation article most directly behind the skill — usually the first entry under `## From the source` Foundation. */
-  source?: { title: string; url: string };
+  /** Optional source citation(s). When set, an "Adapted from <title>." sentence appears appended to the summary line at the top of the per-skill page. Give a single `{ title, url }` for one source, or a list of them when the skill is adapted from more than one — they render joined ("A, B, and C"). The first entry supplies the page's social/OG hero image, so make it the most representative source. */
+  source?: { title: string; url: string } | { title: string; url: string }[];
 }
 
 export interface SkillFile {

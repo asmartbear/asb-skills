@@ -113,28 +113,17 @@ when we sit down to build the skill.
 
 <!-- Ch. 5: Price is Just a Number (price-number) -->
 
-- **Should I raise my prices — and how? (`asb-raise-prices`).**
-  _(for upcoming podcast)_ Three connected jobs, in order: (a) decide
-  whether to change price at all, and in which direction, from real
-  signals rather than nerve — surfacing willingness-to-pay signals and
-  the profit-multiplier stakes (a 10% price rise can be a 100% profit
-  rise), and naming when a low price is really low confidence
-  (embarrassment about missing features, anchoring to your own build
-  cost, thinking about yourself instead of the customer, impostor
-  syndrome); (b) draft the honest, vulnerable increase letter in the
-  founder's own voice — modeled on the Smart Bear $35→$1,300 letter —
-  refusing corporate hedging; (c) weigh reposition vs. raw price-hike
-  and the downstream effects on business model, retention, and
-  marketing budget. Merges the former "Should I raise prices?",
-  "Vulnerable price-increase letter drafter", and the profit-multiplier
-  / pricing-confidence framings (facets of this skill, not skills of
-  their own). _Source:_ _Price is Just a Number_ chapter (`price-number`,
-  "The Profit Multiplier", "What If You Are Worth It?", "How to Raise
-  Prices"); _It's Your Turn Now_ chapter (`price-wpe`, the WP Engine
-  worked example — including the case where the right answer was to
-  *lower* the entry price, $49→$29); also
-  [more-value-not-save-money](https://longform.asmartbear.com/more-value-not-save-money/),
-  [willingness-to-pay](https://longform.asmartbear.com/willingness-to-pay/),
+- **Execute a price increase: the vulnerable letter and reposition-vs-hike.**
+  The downstream half of raising prices — after the case and the moves are set
+  (the shipped `asb-raise-prices` skill builds those): (a) draft the honest,
+  vulnerable increase letter in the founder's own voice — modeled on the Smart
+  Bear $35→$1,300 letter — refusing corporate hedging; (b) weigh reposition
+  vs. raw price-hike and the downstream effects on business model, retention,
+  and marketing budget; (c) set the actual new number and tiers. _Source:_
+  _Price is Just a Number_ chapter (`price-number`, "How to Raise Prices");
+  _It's Your Turn Now_ chapter (`price-wpe`, the WP Engine worked example —
+  including the case where the right answer was to *lower* the entry price,
+  $49→$29); also
   [annual-prepay](https://longform.asmartbear.com/annual-prepay/),
   [discount-gambit](https://longform.asmartbear.com/discount-gambit/).
 - **Failed-price-increase diagnostician.** _(for upcoming podcast)_
@@ -144,25 +133,6 @@ when we sit down to build the skill.
   the "Rude Q&A" skill. A likely follow-on to `asb-raise-prices` rather
   than part of it. _Source:_ _Price is Just a Number_ chapter
   ("When Raising Prices Fails").
-- **Which market is your price choosing?** _(for upcoming podcast)_
-  Take a product's current price and diagnose which market that price
-  has *selected* — then show which order-of-magnitude rung it must move
-  to in order to reach the market the founder actually wants, and
-  everything that changes with it (segment, sales motion, support
-  model, funding, achievable scale). The payoff line is not "raise your
-  prices" but "you're at the $10 rung wondering why you can't afford
-  marketing; here is what the $100 rung requires." Combines the three
-  overlapping demand curves (Hobbyist / SMB / Enterprise), the
-  $500-is-the-same-as-$0 discretionary-budget threshold, and the add-on
-  price ceiling with the business-model ladder. Scoped as
-  `asb-price-market` — the spine of the WP Product Talk episode.
-  _Source:_ _Price is Just a Number_ chapter (`price-number`, "The
-  Market Multiplier" and "The Budget Multiplier");
-  [pricing-determines-your-business-model](https://longform.asmartbear.com/pricing-determines-your-business-model/)
-  (co-primary — the $0/$1/$10/$100/$1,000/$10,000/$100,000-per-month
-  ladder); also
-  [price-vs-quantity](https://longform.asmartbear.com/price-vs-quantity/),
-  [never-compete-on-price](https://longform.asmartbear.com/never-compete-on-price/).
 
 <!-- Ch. 6: Price is Not Just a Number (price-extra) -->
 

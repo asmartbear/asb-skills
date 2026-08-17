@@ -18,8 +18,9 @@ if (independentOnly) skills = skills.filter((s) => !s.wrapper.workshop);
 // Resolve OG thumbnails in parallel; failures fall back to no image.
 const thumbs = await Promise.all(
   skills.map(async (s) => {
-    if (!s.wrapper.source) return undefined;
-    const og = await fetchOgMeta(s.wrapper.source.url);
+    const primary = Array.isArray(s.wrapper.source) ? s.wrapper.source[0] : s.wrapper.source;
+    if (!primary) return undefined;
+    const og = await fetchOgMeta(primary.url);
     return og?.image;
   }),
 );

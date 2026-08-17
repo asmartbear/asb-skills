@@ -64,9 +64,15 @@ const frontmatterLines = Object.entries(skill.skillFrontmatter)
   .join('\n');
 const rawSkillFile = `${FENCE}\n${frontmatterLines}\n${FENCE}\n\n${skill.skillBody}\n`;
 
-// Pull OG meta from the source article, if one is set. Reuses its hero
+// Normalize source citation(s) to a list. The first entry supplies the OG hero.
+const sources = skill.wrapper.source
+  ? (Array.isArray(skill.wrapper.source) ? skill.wrapper.source : [skill.wrapper.source])
+  : [];
+const primarySource = sources[0];
+
+// Pull OG meta from the primary source article, if one is set. Reuses its hero
 // image so social shares of this skill page get the article's visual.
-const og = skill.wrapper.source ? await fetchOgMeta(skill.wrapper.source.url) : undefined;
+const og = primarySource ? await fetchOgMeta(primarySource.url) : undefined;
 
 type HeadTag = { tag: 'meta'; attrs?: Record<string, string | boolean | undefined> };
 const head: HeadTag[] = [];
@@ -91,17 +97,17 @@ if (skill.lastUpdated && !og?.modifiedTime) {
 ---
 
 <StarlightPage frontmatter={{ title: skill.wrapper.title, description: skill.wrapper.summary, head }} headings={headings}>
-  {og?.image && skill.wrapper.source && (
+  {og?.image && primarySource && (
     <a
       class="source-hero"
-      href={skill.wrapper.source.url}
+      href={primarySource.url}
       target="_blank"
       rel="noopener"
-      title={`Read the source article: ${skill.wrapper.source.title}`}
+      title={`Read the source article: ${primarySource.title}`}
     >
       <img
         src={og.image}
-        alt={og.imageAlt ?? skill.wrapper.source.title}
+        alt={og.imageAlt ?? primarySource.title}
         loading="lazy"
         decoding="async"
       />
@@ -110,8 +116,13 @@ if (skill.lastUpdated && !og?.modifiedTime) {
 
   <p>
     <em>{skill.wrapper.summary}</em>
-    {skill.wrapper.source && (
-      <em class="source-cite"> Adapted from <a href={skill.wrapper.source.url} target="_blank" rel="noopener">{skill.wrapper.source.title}</a>.</em>
+    {sources.length > 0 && (
+      <em class="source-cite"> Adapted from {sources.flatMap((s, i) => {
+        const link = <a href={s.url} target="_blank" rel="noopener">{s.title}</a>;
+        if (i === 0) return [link];
+        const sep = i === sources.length - 1 ? (sources.length > 2 ? ', and ' : ' and ') : ', ';
+        return [sep, link];
+      })}.</em>
     )}
   </p>
 
