@@ -136,32 +136,6 @@ when we sit down to build the skill.
 
 <!-- Ch. 6: Price is Not Just a Number (price-extra) -->
 
-- **Willingness to pay: Love, Utility, Coercion
-  (`asb-willingness-to-pay`).** _(for upcoming podcast)_ Audit an
-  existing revenue base and classify what actually holds each segment —
-  the three kinds of desire, in ascending strategic value: **Love**
-  (advocacy / identity), **Utility** (rational reasons), **Coercion**
-  (trapped against their will). Name the one or two **Love** drivers the
-  company can credibly own with evidence, not aspiration, from the ten
-  (Mission, Community, Reciprocity, Transparency, Design, Quality,
-  Personality, Culture, Ecosystem, Authenticity); walk the thirteen
-  **Utility** attributes (Unique, Quality, Simplicity, Integrations,
-  Convenience, Training, System-of-record, Risk-reduction, Familiarity,
-  Market-leader, Onboarding, Location, Cheap) to find the one or two
-  worth deepening; and flag every place the company quietly relies on
-  **Coercion** (contracts, switching costs, data lock-in) and mistakes
-  it for retention — drafting a Love- or Utility-based replacement for
-  each (the T-Mobile "Un-carrier" reversal). The question it won't let
-  the user dodge: "if a good alternative appeared tomorrow, who leaves
-  immediately?" Ends by committing to a WTP strategy that fits — the
-  specific motivators that drive *their* customers to pay — rather than
-  defaulting to "cost-plus" or "match the competition." Merges the
-  former "Willingness-to-pay strategy", "Find your authentic Love
-  driver", "Utility-driver audit", and "Coercion audit & de-coercion
-  plan". _Source:_ _Price is Not Just a Number_ chapter (`price-extra`,
-  "Desire: Advocates, Buyers, and Hostages", "Love", "Utility",
-  "Coercion");
-  [willingness-to-pay](https://longform.asmartbear.com/willingness-to-pay/).
 - **Multi-segment pricing-strategy mapper.** _(for upcoming podcast)_
   For one product used differently by distinct segments (SMBs running
   their whole business on it vs. enterprises using it for a single
