@@ -1,6 +1,14 @@
 {
   "groupings": [
     {
+      "title": "Find Yourself",
+      "description": "Two skills, run in sequence, that turn an honest look at who you are into the one or two decisive advantages you bet your whole strategy on.",
+      "skills": [
+        "asb-who-me",
+        "asb-voters"
+      ]
+    },
+    {
       "title": "Find Your Carol",
       "description": "Six skills, run in sequence, that turn an honest look at who you are into a precise definition of your ideal customer — the one whose love transforms your marketing, sales, pricing, and product.",
       "skills": [
@@ -25,11 +33,12 @@
       ]
     },
     {
-      "title": "Find Yourself",
-      "description": "Two skills, run in sequence, that turn an honest look at who you are into the one or two decisive advantages you bet your whole strategy on.",
+      "title": "Set Your Price",
+      "description": "Three skills, run in sequence, that build the value and desire behind your price and then charge for it — so customers value you more, love you more, and pay you more, for the right reasons.",
       "skills": [
-        "asb-who-me",
-        "asb-voters"
+        "asb-more-or-less",
+        "asb-willingness-to-pay",
+        "asb-raise-prices"
       ]
     },
     {
@@ -39,10 +48,7 @@
         "asb-rude-qa",
         "asb-problem",
         "asb-positioning",
-        "asb-needs-stack",
-        "asb-more-or-less",
-        "asb-raise-prices",
-        "asb-willingness-to-pay"
+        "asb-needs-stack"
       ]
     }
   ]
