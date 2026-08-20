@@ -45,6 +45,18 @@ export const INSTALL = {
   marketplaceUpdate: '/plugin marketplace update asb-skills',
 } as const;
 
+/**
+ * Kit (ConvertKit) newsletter form for the skills site. A plain HTML form POSTs
+ * straight to this endpoint — no `ck.js`, no cookies — so email capture stays
+ * consistent with the site's script-light, privacy-clean stance.
+ */
+export const NEWSLETTER = {
+  /** Kit form subscription endpoint (dedicated skills-site form e011e83a29). */
+  action: 'https://app.kit.com/forms/e011e83a29/subscriptions',
+  /** Email field name Kit expects on a plain POST. */
+  fieldName: 'email_address',
+} as const;
+
 /** GitHub `blob/` URL for a path inside this repo. */
 export function githubBlobUrl(repoRelPath: string): string {
   return `${URLS.githubRepo}/blob/${URLS.githubBranch}/${repoRelPath}`;

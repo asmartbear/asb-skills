@@ -1,0 +1,22 @@
+---
+/**
+ * Override of Starlight's built-in Footer.
+ *
+ * It wraps the upstream default Footer (edit link, last-updated, pagination,
+ * credits) and prepends a compact newsletter signup above it. Wrapping — rather
+ * than copying — keeps the default footer behavior intact across Starlight
+ * upgrades.
+ *
+ * The signup is hidden on the splash home page, which carries its own
+ * prominent signup card, so it does not appear twice there.
+ */
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Footer.astro';
+import NewsletterSignup from './NewsletterSignup.astro';
+
+const isSplash = Astro.props.entry.data.template === 'splash';
+---
+
+{!isSplash && <NewsletterSignup compact />}
+
+<Default {...Astro.props} />

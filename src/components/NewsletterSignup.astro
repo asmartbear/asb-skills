@@ -1,0 +1,190 @@
+---
+/**
+ * Newsletter signup — a plain HTML form that POSTs straight to Kit
+ * (ConvertKit). No `ck.js`, no cookies, no external script: email capture that
+ * matches the site's script-light, privacy-clean stance.
+ *
+ * `target="_blank"` sends the reader to Kit's own confirmation page in a new
+ * tab, so submitting never navigates them away from the skills site.
+ *
+ * Two looks:
+ *   <NewsletterSignup />          full accented card (home page)
+ *   <NewsletterSignup compact />  one muted row (sitewide footer)
+ *
+ * The heading is a tuned one-liner (exempt from STE); the reassurance line is
+ * STE prose. Override either with the `heading` / `blurb` props.
+ */
+import { NEWSLETTER } from '../lib/site';
+
+interface Props {
+  /** Compact one-row look for the footer. Default is the full card. */
+  compact?: boolean;
+  /** Tuned headline. Ignored in compact mode. */
+  heading?: string;
+  /** Short reassurance line under the heading. Ignored in compact mode. */
+  blurb?: string;
+}
+
+const {
+  compact = false,
+  heading = 'Get new skills and articles by email',
+  blurb = 'A short note when a new skill or article goes live. No spam. Unsubscribe anytime.',
+} = Astro.props;
+---
+
+{compact ? (
+  <form
+    class="nl nl--compact"
+    method="post"
+    action={NEWSLETTER.action}
+    target="_blank"
+  >
+    <label class="nl-compact-label" for="nl-email-compact">Get new skills by email</label>
+    <div class="nl-fields">
+      <input
+        id="nl-email-compact"
+        class="nl-input"
+        type="email"
+        name={NEWSLETTER.fieldName}
+        required
+        autocomplete="email"
+        placeholder="you@example.com"
+        aria-label="Email address"
+      />
+      <button class="nl-button" type="submit">Subscribe</button>
+    </div>
+  </form>
+) : (
+  <aside class="nl nl--full not-content">
+    <p class="nl-eyebrow">Newsletter</p>
+    <p class="nl-heading">{heading}</p>
+    <p class="nl-blurb">{blurb}</p>
+    <form
+      class="nl-form"
+      method="post"
+      action={NEWSLETTER.action}
+      target="_blank"
+    >
+      <div class="nl-fields">
+        <input
+          class="nl-input"
+          type="email"
+          name={NEWSLETTER.fieldName}
+          required
+          autocomplete="email"
+          placeholder="you@example.com"
+          aria-label="Email address"
+        />
+        <button class="nl-button" type="submit">Subscribe</button>
+      </div>
+    </form>
+  </aside>
+)}
+
+<style>
+  /* Shared field row: input grows, button hugs its text. Stacks on narrow. */
+  .nl-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  .nl-input {
+    flex: 1 1 16rem;
+    min-width: 0;
+    padding: 0.5rem 0.7rem;
+    font-size: 0.95rem;
+    color: var(--sl-color-white);
+    background: var(--sl-color-black);
+    border: 1px solid var(--sl-color-gray-4);
+    border-radius: 0.35rem;
+    box-sizing: border-box;
+  }
+  .nl-input::placeholder {
+    color: var(--sl-color-gray-3);
+  }
+  .nl-input:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 1px;
+    border-color: var(--sl-color-accent);
+  }
+  .nl-button {
+    flex: 0 0 auto;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--sl-color-black);
+    background: var(--sl-color-accent);
+    border: 1px solid var(--sl-color-accent);
+    border-radius: 0.35rem;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s;
+  }
+  .nl-button:hover {
+    background: var(--sl-color-accent-high);
+    border-color: var(--sl-color-accent-high);
+  }
+
+  /* Full card — mirrors the .differentiator aside on the home page. */
+  .nl--full {
+    margin-block: 0 2rem;
+    padding: 1.1rem 1.25rem;
+    border-inline-start: 3px solid var(--sl-color-accent);
+    background: var(--sl-color-accent-low);
+    border-radius: 0.35rem;
+    max-width: 46rem;
+  }
+  .nl-eyebrow {
+    margin: 0 0 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--sl-color-accent-high);
+  }
+  .nl-heading {
+    margin: 0 0 0.3rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--sl-color-white);
+  }
+  .nl-blurb {
+    margin: 0 0 0.85rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--sl-color-gray-1);
+  }
+  .nl-form {
+    margin: 0;
+  }
+
+  /* Compact footer row — quiet, full-width, sits above the footer meta. */
+  .nl--compact {
+    margin: 2.5rem 0 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+  }
+  .nl-compact-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--sl-color-gray-2);
+    flex: 0 0 auto;
+  }
+  .nl--compact .nl-fields {
+    flex: 1 1 20rem;
+  }
+  .nl--compact .nl-input {
+    flex-basis: 12rem;
+    padding-block: 0.4rem;
+    font-size: 0.9rem;
+  }
+  .nl--compact .nl-button {
+    padding-block: 0.4rem;
+    font-size: 0.9rem;
+  }
+</style>
