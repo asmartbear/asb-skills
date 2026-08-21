@@ -8,6 +8,35 @@ import { SITE, URLS } from './src/lib/site';
 const skills = listPublicSkills();
 const workshops = listWorkshops();
 
+// Site-wide JSON-LD (schema.org) — Starlight emits no structured data on its own.
+// Server-rendered so AI crawlers that don't run JS still see it. Kept to the
+// stable site-level entities (Organization + WebSite); per-page article schema is
+// intentionally out of scope here.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      // One shared brand entity across all A Smart Bear properties — the @id is
+      // the canonical brand URL, not this site, so the blog and this site can
+      // reference the same node.
+      '@type': 'Organization',
+      '@id': 'https://asmartbear.com/#org',
+      name: 'A Smart Bear',
+      url: 'https://asmartbear.com',
+      logo: `${SITE.url}/favicon.svg`,
+      sameAs: [URLS.githubRepo],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.name,
+      description: SITE.description,
+      publisher: { '@id': 'https://asmartbear.com/#org' },
+    },
+  ],
+};
+
 export default defineConfig({
   site: SITE.url,
 
@@ -28,6 +57,23 @@ export default defineConfig({
             title: SITE.name,
             href: '/rss.xml',
           },
+        },
+        // llms.txt — AI/LLM index (https://llmstxt.org/). Points agents at the
+        // curated index; /llms-full.txt (linked from it) carries the full text.
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'alternate',
+            type: 'text/markdown',
+            title: `${SITE.name} — llms.txt (AI/LLM index)`,
+            href: '/llms.txt',
+          },
+        },
+        // Site-wide structured data.
+        {
+          tag: 'script',
+          attrs: { type: 'application/ld+json' },
+          content: JSON.stringify(jsonLd),
         },
         // Default first-visit theme to dark. Starlight's ThemeProvider
         // reads localStorage['starlight-theme']; seed it before that
