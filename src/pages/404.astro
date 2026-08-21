@@ -1,0 +1,42 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { listWorkshops } from '../lib/workshops';
+import { SITE, URLS } from '../lib/site';
+
+// Custom 404. GitHub Pages serves this file with a real HTTP 404 status for any
+// unknown path. Static hosting cannot return a raw-markdown body, so this page
+// gives agents (and people) a short, crawlable recovery map instead: the site
+// landmarks, the machine-readable indexes, and the sitemap. The head adds the
+// same og:image as the rest of the site so shares of a dead link still resolve.
+const workshops = listWorkshops();
+
+const head = [
+  { tag: 'meta' as const, attrs: { property: 'og:image', content: `${SITE.url}/favicon.svg` } },
+  { tag: 'meta' as const, attrs: { property: 'og:image:alt', content: SITE.name } },
+];
+---
+
+<StarlightPage frontmatter={{ title: 'Page not found', description: 'That page does not exist. Here is where to look next.', template: 'splash', head }}>
+  <p>We did not find that page. It may have moved, or the link may be wrong.</p>
+
+  <h2>Where to look next</h2>
+  <ul>
+    <li><a href="/">Home</a> — the full list of skills and workshops.</li>
+    <li><a href="/install/">How to install</a> — install commands for Claude Code and other agents.</li>
+  </ul>
+
+  <h2>Workshops</h2>
+  <ul>
+    {workshops.map((w) => (
+      <li><a href={`/workshops/${w.name}/`}>{w.frontmatter.title}</a></li>
+    ))}
+  </ul>
+
+  <h2>For agents and crawlers</h2>
+  <ul>
+    <li><a href="/llms.txt">/llms.txt</a> — the AI/LLM index of every skill and workshop.</li>
+    <li><a href="/llms-full.txt">/llms-full.txt</a> — the full text of every skill, inlined as Markdown.</li>
+    <li><a href="/sitemap-index.xml">/sitemap-index.xml</a> — the sitemap of every page.</li>
+    <li><a href={URLS.githubRepo}>GitHub repository</a> — the source of every skill.</li>
+  </ul>
+</StarlightPage>

@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "bun run scripts/zip-skills.ts && astro build",
+    "build": "bun run scripts/zip-skills.ts && astro build && bun run scripts/check-agent-readiness.ts",
     "preview": "astro preview",
     "check": "astro check",
+    "check:agents": "bun run scripts/check-agent-readiness.ts",
     "lint": "bun run scripts/lint-skills.ts",
     "gen-manifests": "bun run scripts/gen-manifests.ts",
     "link": "bun run scripts/link-skill.ts link",

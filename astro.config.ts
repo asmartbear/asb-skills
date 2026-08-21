@@ -24,7 +24,19 @@ const jsonLd = {
       name: 'A Smart Bear',
       url: 'https://asmartbear.com',
       logo: `${SITE.url}/favicon.svg`,
-      sameAs: [URLS.githubRepo],
+      // The clearly-owned A Smart Bear properties, so an AI can resolve this
+      // one brand across the blog, the book, and the source repo.
+      sameAs: [
+        'https://longform.asmartbear.com',
+        'https://hiddenmultipliers.com',
+        'https://asmartbear.com',
+        URLS.githubRepo,
+      ],
+      founder: {
+        '@type': 'Person',
+        name: 'Jason Cohen',
+        url: 'https://longform.asmartbear.com',
+      },
     },
     {
       '@type': 'WebSite',
@@ -44,6 +56,9 @@ export default defineConfig({
     starlight({
       title: SITE.name,
       description: SITE.description,
+      // Use our own src/pages/404.astro (a crawlable recovery map for agents)
+      // instead of Starlight's minimal default, and avoid the route collision.
+      disable404Route: true,
       head: [
         {
           tag: 'meta',

@@ -2,6 +2,23 @@
 title: Skills from A Smart Bear
 description: Claude Code skills that implement frameworks and algorithms from A Smart Bear and the Hidden Multipliers book.
 template: splash
+# og:type overrides Starlight's default of "article" (this is the site home);
+# og:image reuses the site favicon (no dedicated raster share image yet).
+# YAML frontmatter cannot import from src/lib/site.ts, so the URL is inline —
+# grep for it if SITE.url ever changes (see src/CLAUDE.md).
+head:
+  - tag: meta
+    attrs:
+      property: og:type
+      content: website
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://skills.asmartbear.com/favicon.svg
+  - tag: meta
+    attrs:
+      property: og:image:alt
+      content: Skills from A Smart Bear
 hero:
   tagline: 'AI skills that facilitate executing the frameworks and workflows from the <a href="https://longform.asmartbear.com" target="_blank" rel="noopener">A Smart Bear</a> blog and in the book <em><a href="https://hiddenmultipliers.com" target="_blank" rel="noopener">Hidden Multipliers</a></em>.'
 ---
@@ -28,124 +45,7 @@ import NewsletterSignup from '../../components/NewsletterSignup.astro';
 
 <NewsletterSignup />
 
-<style is:global>{`
-  /* Splash hero leaves a lot of vertical space; tighten it on this page. */
-  .main-pane > .content-panel:first-child,
-  .main-pane main { padding-block-start: 1rem !important; }
-  .hero {
-    padding-block-start: 0 !important;
-    padding-block-end: 0.5rem !important;
-  }
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: flex-start;
-    row-gap: 0.5rem;
-    column-gap: 0.75rem;
-    margin-block: 0 2rem;
-  }
-  /* Defeat any default margin on Starlight's content-panel children so
-     wrapped button rows don't pick up paragraph-style spacing. */
-  .hero-actions > .sl-link-button {
-    margin-block: 0 !important;
-  }
-  /* The Blog / The Book buttons carry a small uppercase label above their
-     title so a first-time visitor knows what each destination is. */
-  .hero-actions .btn-stack {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    line-height: 1.15;
-    text-align: left;
-  }
-  .hero-actions .btn-eyebrow {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    opacity: 0.6;
-  }
-
-  /* "What makes these different" — an accented aside between the hero actions
-     and the skills grid. Present enough to be read, but styled as an aside so
-     it doesn't compete with the hero. */
-  .differentiator {
-    margin-block: 0 2rem;
-    padding: 1rem 1.25rem;
-    border-inline-start: 3px solid var(--sl-color-accent);
-    background: var(--sl-color-accent-low);
-    border-radius: 0.35rem;
-    max-width: 46rem;
-  }
-  .differentiator-eyebrow {
-    margin: 0 0 0.35rem;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: var(--sl-color-accent-high);
-  }
-  .differentiator-body {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: var(--sl-color-gray-1);
-  }
-  .differentiator-body strong {
-    color: var(--sl-color-white);
-    font-weight: 700;
-  }
-
-  /* Home page: Workshops and Skills side by side on wide screens; stacked
-     (Workshops first, per source order) on narrow ones. */
-  .home-columns {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    align-items: start;
-  }
-  @media (min-width: 50rem) {
-    .home-columns {
-      grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
-      /* Three shared rows: title / blurb / list. Both columns span them via
-         subgrid, so the titles align, the blurb tops align, and the first
-         tiles align — regardless of how the blurbs wrap. */
-      grid-template-rows: auto auto auto;
-      column-gap: 3rem;
-      row-gap: 0;
-    }
-    .home-col {
-      display: grid;
-      grid-row: 1 / span 3;
-      grid-template-rows: subgrid;
-      /* Critical: without this the list cell stretches to fill the tall
-         shared list row (sized to the longer Skills column), ballooning the
-         Workshops tiles. start keeps every cell — including the tiles — at
-         its natural height, top-anchored in its row. */
-      align-items: start;
-    }
-  }
-  /* Starlight injects "margin-top:1rem" on any element that follows a sibling
-     inside .sl-markdown-content (specificity 0,1,2) — it lands on the second
-     column (dropping Skills below Workshops) and on every 2nd+ child inside a
-     column. These 0,2,0 selectors outrank it and zero those offsets, so all
-     vertical spacing comes solely from the explicit bottom margins below and
-     every row lines up across the two columns. */
-  .home-columns > .home-col,
-  .home-columns .home-col > * {
-    margin-top: 0;
-  }
-  .home-col-title {
-    margin-block: 0 0.15rem;
-    line-height: 1.15;
-  }
-  .home-col-blurb {
-    margin-block: 0 0.85rem;
-    color: var(--sl-color-gray-3);
-    font-size: 0.95rem;
-  }
-`}</style>
+<p class="home-lead">Each skill runs one method from Jason Cohen's work. It asks you questions, tests your answers, and writes the result to a file you keep. Use these skills to define your ideal customer, sharpen your positioning, choose or raise your price, run customer interviews, or find the advantage to build your strategy on. Install a skill one time, then run it inside your agent. The skill drives the session; you do the thinking.</p>
 
 <div class="home-columns">
   <section class="home-col home-col--workshops">

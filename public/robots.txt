@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://skills.asmartbear.com/sitemap-index.xml
+
+# AI/LLM indexes (https://llmstxt.org/):
+#   https://skills.asmartbear.com/llms.txt       — curated index of every skill
+#   https://skills.asmartbear.com/llms-full.txt  — full text of every skill
