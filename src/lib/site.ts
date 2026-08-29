@@ -51,8 +51,8 @@ export const INSTALL = {
  * consistent with the site's script-light, privacy-clean stance.
  */
 export const NEWSLETTER = {
-  /** Kit form subscription endpoint (dedicated skills-site form e011e83a29). */
-  action: 'https://app.kit.com/forms/e011e83a29/subscriptions',
+  /** Kit form subscription endpoint (dedicated skills-site form, numeric id 9825251, uid e011e83a29). */
+  action: 'https://app.kit.com/forms/9825251/subscriptions',
   /** Email field name Kit expects on a plain POST. */
   fieldName: 'email_address',
 } as const;
