@@ -38,6 +38,41 @@ playing him at anything but chess. Every characteristic in the file
 is recorded this way: the fact, stated without judgment, plus the
 contexts where it helps and the contexts where it hurts.
 
+### A drain is a cost, not a wall
+
+Recording "I dread cold outreach" as a fact does NOT mean "never do
+cold outreach." A hindrance records what an activity *costs* the user
+in energy and what their skill at it is *today* — not a road that is
+closed. Choosing contexts is the main lever, but many necessary jobs
+can't be routed around: a founder with no audience and no budget for a
+salesperson still has to sell. "I'm bad at selling and I don't care"
+is not an available answer; "selling costs me a lot, so I do it in
+bounded doses, get better at it on purpose, and don't build the
+strategy on it being my edge" is. So every hindrance gets an honest
+response, chosen with the user, from three:
+
+- **Route around it** — when a real alternative exists that doesn't
+  sacrifice the goal: pick contexts where it doesn't come up, partner
+  or hire for it, or design the strategy so it isn't load-bearing.
+- **Budget for it** — when the work is necessary: do it in bounded,
+  scheduled doses (an hour of outreach each morning, before the
+  energizing work), batch it, pair it with recovery, and expect it to
+  cost more than it costs other people.
+- **Train it** — when competence would shrink the cost: much dread is
+  the dread of doing something badly, and it fades with practice and
+  a system (the tenth cold email is agony; the five-hundredth is a
+  template and a routine). Training to *adequate* is often exactly
+  right; training to *excellent* in order to make it the strategy's
+  foundation is the trap.
+
+The one-way rule stays: don't bet a strategy on becoming great at
+what drains you. But "don't bet on it" is not "avoid it." The few
+true walls — things that wreck the user even when skilled, or
+conflict with their values — are recorded as walls explicitly, never
+by default. Hear the difference in the episodes: "I procrastinate on
+it, then it's fine" is a cost; "even when it goes well I feel
+hollowed out for days" may be a wall.
+
 ### Why this is worth a file
 
 The right strategy — for a product, a company, a career — is one
@@ -136,7 +171,9 @@ it hides behind good results.
   in settle order, frozen.
 - **Drive** — a characteristic that pulls you in and energizes.
 - **Hindrance** — one that repels, drains, or blocks — recorded as
-  fact, never as a to-fix list.
+  fact and as an energy cost, never as a to-fix list and never, by
+  default, as a wall. Each carries a response: route, budget, or
+  train.
 - **Edge (outside-in)** — a strength invisible to you because it
   comes naturally; sourced from other people's answers.
 - **Homework** — the outside-in questions, assigned verbatim to 2–5
@@ -223,6 +260,11 @@ never re-asked once the user has answered the substance.
 - **The energized/wrecked check** on any claimed skill: "After a
   full day of it, are you buzzing or dead?" Skilled-but-draining is
   recorded as exactly that — the honest compound fact.
+- **The necessity check** on any hindrance: "Does what you want to
+  do require this — and is there a real way around it?" If it's
+  required and unavoidable, the response is budget and/or train, not
+  route; say so plainly. Never let "it drains me" quietly become
+  "so skip it" when skipping it costs the goal.
 
 ### The user owns the self-portrait; the gate owns the evidence
 
@@ -283,7 +325,15 @@ the user hasn't said — alongside related files they name, or a
 directory they pick (default: the current directory) — then check
 for an existing `WHO-ME.md` there: an in-progress header means resume — pick up
 exactly where the pointer says, including any homework marked
-pending; don't re-ask settled characteristics. Otherwise open small:
+pending; don't re-ask settled characteristics. Ask, too, roughly
+where the user is in their working life — years of work, and whether
+anyone has yet paid for or chosen them for the kind of work in
+question. Someone early in their career, or new to this kind of
+work, has fewer episodes and no commercial track record; that is
+normal. Episodes from school, side projects, jobs, hobbies, and
+volunteering all count as evidence, and say so up front. Record the
+stage in the preamble so the next step can frame its verdict
+honestly. Otherwise open small:
 one line on how this works (prompts, episodes, a file of facts) and
 the first drive prompt — one, not a menu.
 
@@ -352,7 +402,10 @@ closing press over just the new material.
   should I build") — answered against it, as the map talking, not as
   therapy or a strategy plan: "you're excellent at the thing that
   wrecks you, rewarded into more of it, and the energizing thing is
-  a footnote." This reading is the single most valuable thing the
+  a footnote." Where a hindrance meets something the user's goal
+  requires, the shape names it as a cost to budget and train, never
+  as a reason to give up the goal. This reading is the single most
+  valuable thing the
   exercise produces, so it does NOT live only in chat: record it as
   the file's `## The shape` section, placed right after the
   preamble — the executive summary the M-entries below support.
@@ -371,6 +424,10 @@ closing press over just the new material.
   distills this file to the one or two decisive traits a strategy
   can be built on. It's fine to run that distillation before the
   homework returns and revisit it after — the edge often feeds it.
+  For a user early in their career, set the expectation now: that
+  step will most likely find nothing extreme *yet*, because extremity
+  is earned over years — and its real deliverable for them is a
+  concrete plan for which trait to build into one.
   If a voters-distillation skill from this method's author is
   installed (for example *Voters* / `asb-voters`), name it: "when
   you're ready, run `asb-voters` on this file."
@@ -412,9 +469,13 @@ prescribe what to do; it says what shape the answer has to have.>
 **M4.** <The dread/drain fact, stated plainly — not a to-fix item.>
     Evidence: <…>
     Cost if ignored: <the context where this quietly ruins things>.
-    Route around it by: <context choices, not self-improvement vows —
-    unless the user explicitly chooses to invest in changing it,
-    recorded as a decision>.
+    Necessary? <whether the user's path requires it, and whether a
+    real way around it exists>.
+    Response: <route / budget / train, or a mix — one or two concrete
+    lines each: "Budget: outreach 9–10 a.m., three days a week,
+    before the energizing work. Train: one script, refined weekly
+    from replies." Mark it "Wall" only when the episodes show it
+    wrecks the user even when done well.>
 
 ## The edge (outside-in)
 
@@ -462,10 +523,16 @@ the user's confirmation while the file is in progress.
 - **Sanitized motives presented as complete.** One pass of "and
   what's the less presentable version?" is mandatory whenever every
   recorded drive would look good on an awards-dinner slide.
-- **Fixing the user.** No coaching plans, no self-improvement
-  regimens, no diagnosing why they are this way — and no recording a
-  hindrance as a to-fix item; route-around-by-context is the frame
-  unless the user explicitly decides to invest in change.
+- **Fixing the user.** No coaching programs, no diagnosing why they
+  are this way, and no recording a hindrance as a to-fix item. A
+  one- or two-line budget-or-train response on a hindrance IS in
+  scope (see *A drain is a cost, not a wall*); a full
+  self-improvement regimen is not.
+- **Turning drains into walls.** Never record or describe a
+  hindrance as "avoid this" by default. If the user's goal requires
+  it, the honest message is "this costs you energy; here's how to
+  budget for it and get better at it" — not a detour that quietly
+  abandons the goal.
 - **Writing the marketing.** This file feeds positioning, bios, and
   About pages; this skill doesn't write them. The moment the file
   has to sound good, it stops being true — decline the LinkedIn

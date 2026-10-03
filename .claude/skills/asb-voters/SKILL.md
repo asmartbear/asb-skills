@@ -66,6 +66,11 @@ who make a trait common — or the gap that makes it rare.
    software, the banned add-ons, the walked-away-from segments, the
    premium price. If you can't name a real cost that people who value
    the voter happily eat, the voter is unproven — possibly imaginary.
+   "Customers" means anyone who *chose* the user: a buyer, but also
+   an employer, a client, a team, a collaborator, a community.
+   Payment is not required; a real choice that accepted a real
+   trade-off is ("the team put up with my missed deadlines because
+   I was the one who could make the demo work").
    At the highest intensity, the ideal customer reads your weaknesses
    as *desirable* — proof of the voter (on a handmade marketplace, a
    manufacturing imperfection isn't a defect; it's evidence a human
@@ -119,12 +124,40 @@ their disbelief is why they won't copy you. Better than different is
 *extreme*: not just a minimal interface but so minimal it runs on
 the command line; not just good design but design people buy for
 alone. So when no candidate passes the bar, say it plainly: **nothing
-is special-and-extreme yet.** That verdict is the deliverable, not a
-failure — and the response is twofold: take the deepest *genuine*
+is special-and-extreme yet.** That verdict is part of the
+deliverable, not a failure — the other part is the bet (below) — and
+the response is twofold: take the deepest *genuine*
 obsession on the table and invest it into extremity (extremity is a
 choice), or change games to one where a fact you already hold IS
 extreme. What the response never is: padding the file with three
 shaping strengths relabeled as voters.
+
+### Zero voters is a starting line, not a dead end
+
+For anyone early in their career — or new to the kind of work in
+question — zero voters is the *expected* result, because extremity
+and decisiveness are earned over years and proved by people choosing
+you. Telling such a person "nothing is extreme; go work and see" is
+true and useless: it sends them away with a portrait and no next
+move. So the zero-voter verdict always comes with **the bet**: one
+chosen obsession (or one change-games target), and a concrete,
+time-boxed plan to turn it into a voter — goals with numbers and
+dates, each aimed at a test it failed, first actions for this week,
+and a checkpoint to re-run the gauntlet. The verdict is honest; the
+plan is what makes it worth having. Say this at the start of the
+session, not after the verdict lands.
+
+### Drains are costs in the plan, not walls around it
+
+A self-portrait may record some activities as draining. When the
+bet or a voter's proving trade-offs require one of them — cold
+outreach for a founder with no audience, selling for a solo
+consultant — keep it in the plan with a budget (bounded, scheduled
+doses) and a training step (practice and a system make most drains
+cheaper). Route around a drain only when a real alternative exists
+that doesn't cost the goal. Don't build the strategy on becoming
+excellent at a drain; don't drop a necessary activity because it
+costs energy either.
 
 ### Vocabulary
 
@@ -143,6 +176,9 @@ shaping strengths relabeled as voters.
   and weaknesses the voter's fans accept, including those read as
   proof of the voter.
 - **The verdict** — the zero-voter finding and its twofold response.
+- **The bet** — the plan that always accompanies the verdict: one
+  chosen obsession or change-games target, goals tied to the failed
+  tests, first actions, and a re-run checkpoint.
 
 ## The distiller's posture
 
@@ -201,7 +237,9 @@ find every one that is a common strength wearing an extreme costume;
 every one with no named cost it overpowers; every one whose evidence
 is aspiration rather than history; every one that decides nothing
 downstream; and attack the count — if two survived, argue one should
-die; if the file dodged the zero-voter verdict, say so.* If no such
+die; if the file dodged the zero-voter verdict, or wrote it without
+a concrete, dated bet, say so; if the plan drops a necessary
+activity only because it drains the user, say so.* If no such
 skill is available, run exactly that interrogation yourself, visibly,
 in both places — the method does not work without it.
 
@@ -246,7 +284,18 @@ inline, each with at least one concrete episode, caveated as
 unvetted. If a `VOTERS.md` exists at the target location, read it
 first: in-progress header = resume where the pointer says; finalized
 = ask whether to re-distill (things change rarely — a re-run should
-have a reason).
+have a reason; a bet's checkpoint arriving is a good one).
+
+In person mode, establish the track record before the harvest: years
+working, and whether anyone has yet paid for or chosen the user for
+this kind of work (the self-portrait's preamble may already say). If
+it's thin, say plainly up front: "voters are earned over years and
+proved by people choosing you, so at your stage the likely result is
+zero voters *yet* — that's normal, not a judgment. Either way you
+leave with a concrete plan: which trait to build, the goals that
+would prove it, and what to do this week." Then run the gauntlet at
+full strength — the bar doesn't lower; the framing and the
+deliverable change.
 
 Output: `VOTERS.md`, same directory as the primary input file (the
 self-portrait if one exists, else the strengths chart); with no input
@@ -301,10 +350,33 @@ restart the candidate from test 1.)
   candidates from the harvest. An almost-voter (extremity real,
   decisiveness untested) appears in BOTH places: in special strengths
   tagged "the standout investment candidate," and by name in the
-  verdict. Naming the bet
-  and the proving trade-offs it implies (what to refuse, whom to
-  walk away from — the missing evidence of tests 3 and 4) is this
-  skill's job; designing the full plan around it is downstream.
+  verdict. Then build **the bet** with the user — this is mandatory,
+  and the session is not done without it:
+  1. *Choose one.* Pick the single obsession to invest in (usually
+     the standout investment candidate) or the one change-games
+     target — one, not a menu. If the user can't choose, force it:
+     "which one would you still be doing in five years if nobody
+     paid you?"
+  2. *Goals tied to the failed tests.* Two to four goals, each with a
+     number and a date (default horizon: 90 days), each aimed at the
+     test the bet failed. Extremity: a specific body of work beyond
+     what anyone would reasonably expect ("ship twelve small tools in
+     this niche"). Rarity: a citable artifact peers can point to.
+     Decisiveness: a number of people who *choose* the user —
+     paying, hiring, or committing time — despite a named trade-off.
+     Reverberation: one real decision the bet forces (what to refuse,
+     whom to walk away from).
+  3. *This week.* Two or three first actions, small enough to start
+     today.
+  4. *Drains in the plan.* Where a goal needs an activity the
+     self-portrait marks as draining, keep it with a budget and a
+     training step (see *Drains are costs in the plan, not walls
+     around it*).
+  5. *The checkpoint.* The date to re-run this gauntlet, and what
+     result would mean switching to the other branch (invest ↔
+     change games).
+  Designing the full company strategy around a bet is downstream;
+  the bet's plan is this skill's job.
 - **Walk the weaknesses** (for each settled voter): from the
   self-portrait's hindrances, the strengths chart's weaknesses, or
   the user's list — which does this voter overpower, and which would
@@ -315,7 +387,10 @@ restart the candidate from test 1.)
   including the count attack).
 - Finalize: remove the in-progress header (candidate cuts and their
   reasoning move to a brief "Cut at the gauntlet" list), and close
-  with the handoff: audit the current strategy against the voters —
+  with the handoff. In a zero-voter file the handoff is the bet
+  itself — start the first actions this week, and come back at the
+  checkpoint; there is no current strategy to audit against voters
+  that don't exist yet. Otherwise: audit the current strategy against the voters —
   walk pricing, positioning, product, and channels asking where each
   voter expresses and where it's contradicted; the mismatches are
   where to pivot. Expect others to call the strategy wrong — they're
@@ -398,7 +473,26 @@ amplifiers if any.>*
 ## The verdict (only when zero voters survive)
 
 <The plain statement: nothing is special-and-extreme yet — plus the
-twofold response with the specific obsession candidates named.>
+twofold response with the specific obsession candidates named. For
+an early-career user, say that this is the expected result at their
+stage.>
+
+## The bet (required whenever the verdict is written)
+
+**<The one chosen obsession or change-games target, in one vivid
+sentence.>**
+
+- **Goals by <date>** —
+  - *Extremity:* <body of work, with a number>.
+  - *Rarity:* <the citable artifact>.
+  - *Decisiveness:* <N people who choose you despite <trade-off>>.
+  - *Reverberation:* <the decision it forces>.
+  (Only the tests the bet actually failed; two to four goals.)
+- **This week** — <two or three first actions>.
+- **Drains to budget** — <any draining activity a goal needs: the
+  budget and the training step>.
+- **Checkpoint** — <date to re-run the gauntlet; what result would
+  switch to the other branch>.
 
 ## Cut at the gauntlet
 
@@ -439,8 +533,16 @@ frozen number with the user's confirmation while in progress.
   from, no weakness it excuses — it hasn't been tested as decisive;
   one more press, then shaping strength.
 - **Dodging the zero-voter verdict.** When nothing survives, the
-  verdict is the deliverable. Padding the file with relabeled
+  verdict (with its bet) is the deliverable. Padding the file with relabeled
   shaping strengths poisons every strategy decision downstream.
+- **A verdict with no bet.** The mirror failure: "nothing is extreme
+  yet — go work and see" leaves the user with nothing to do. Never
+  finalize a zero-voter file without the bet section: one choice,
+  dated goals, this week's actions, a checkpoint.
+- **Drains as walls.** Never steer the bet or the strategy away
+  from a necessary activity only because the self-portrait marks it
+  draining. Budget it and train it; route around it only when a real
+  alternative keeps the goal intact.
 - **Building the full self-portrait.** Discovering the broad
   characteristics is the previous step of the method; here they are
   inputs. Capture-inline is a fallback, not the exercise.
