@@ -27,65 +27,46 @@ where it becomes a strength and where it becomes a hindrance.
 people — is it a strength? Yes on a sales call, yes closing a
 candidate with rival offers, yes when the opponent is your own past
 self. No in a meeting whose goal is to help rather than to win the
-argument, no when it drains the joy from hobbies, no when comparison
-becomes the thief of joy. It is neither strength nor weakness; it is
-a **fact of the personality**, and whether it *expresses* as strength
-or weakness depends on context. You won't quickly change these facts
-— they shift rarely, and only with deliberate investment — but you
-can intentionally select contexts where they express as strengths.
-That's the whole game: as Buffett put it, you beat Bobby Fischer by
-playing him at anything but chess. Every characteristic in the file
-is recorded this way: the fact, stated without judgment, plus the
-contexts where it helps and the contexts where it hurts.
+argument, no when comparison drains the joy from hobbies. It is
+neither strength nor weakness; it is a **fact of the personality**,
+and whether it *expresses* as strength or weakness depends on
+context. These facts shift rarely, and only with deliberate
+investment — but you can select contexts where they express as
+strengths. As Buffett put it, you beat Bobby Fischer by playing him
+at anything but chess. The right strategy hinges on what you already
+do exceptionally well and *want* to do for years, rather than on
+polishing weaknesses for small gains; this file is the raw material
+for that strategy. Every characteristic is recorded as the fact,
+stated without judgment, plus the contexts where it helps and the
+contexts where it hurts.
 
 ### A drain is a cost, not a wall
 
-Recording "I dread cold outreach" as a fact does NOT mean "never do
-cold outreach." A hindrance records what an activity *costs* the user
-in energy and what their skill at it is *today* — not a road that is
-closed. Choosing contexts is the main lever, but many necessary jobs
-can't be routed around: a founder with no audience and no budget for a
-salesperson still has to sell. "I'm bad at selling and I don't care"
-is not an available answer; "selling costs me a lot, so I do it in
-bounded doses, get better at it on purpose, and don't build the
-strategy on it being my edge" is. So every hindrance gets an honest
-response, chosen with the user, from three:
+Recording "I dread cold outreach" does NOT mean "never do cold
+outreach." A hindrance records what an activity *costs* in energy and
+how skilled the user is at it *today* — not a closed road. Choosing
+contexts is the main lever, but many necessary jobs can't be routed
+around: a founder with no audience and no budget for a salesperson
+still has to sell. So every hindrance gets an honest response, chosen
+with the user:
 
-- **Route around it** — when a real alternative exists that doesn't
-  sacrifice the goal: pick contexts where it doesn't come up, partner
-  or hire for it, or design the strategy so it isn't load-bearing.
-- **Budget for it** — when the work is necessary: do it in bounded,
-  scheduled doses (an hour of outreach each morning, before the
-  energizing work), batch it, pair it with recovery, and expect it to
-  cost more than it costs other people.
+- **Route around it** — only when a real alternative keeps the goal
+  intact: other contexts, a partner or hire, a strategy where it
+  isn't load-bearing.
+- **Budget for it** — when the work is necessary: bounded, scheduled
+  doses (an hour of outreach each morning, before the energizing
+  work), batched, paired with recovery.
 - **Train it** — when competence would shrink the cost: much dread is
-  the dread of doing something badly, and it fades with practice and
-  a system (the tenth cold email is agony; the five-hundredth is a
-  template and a routine). Training to *adequate* is often exactly
-  right; training to *excellent* in order to make it the strategy's
-  foundation is the trap.
+  dread of doing it badly, and fades with practice and a system (the
+  tenth cold email is agony; the five-hundredth is a routine).
+  Training to *adequate* is often right; training to *excellent* to
+  make it the strategy's foundation is the trap.
 
-The one-way rule stays: don't bet a strategy on becoming great at
-what drains you. But "don't bet on it" is not "avoid it." The few
-true walls — things that wreck the user even when skilled, or
-conflict with their values — are recorded as walls explicitly, never
-by default. Hear the difference in the episodes: "I procrastinate on
-it, then it's fine" is a cost; "even when it goes well I feel
-hollowed out for days" may be a wall.
-
-### Why this is worth a file
-
-The right strategy — for a product, a company, a career — is one
-whose success hinges on things you already do exceptionally well,
-that you *want* to execute for years, and that doesn't require you
-to become excellent where you're weak and others are strong. You
-don't win by making weaknesses slightly less weak; you win by
-playing games where your existing strengths are already the key to
-winning. But most people build strategies they think will impress
-others, compete on dimensions where others are strong, and spend
-their energy polishing embarrassments for small gains. The file this
-skill produces is the raw material for the other choice: a strategy,
-and a life, in the shape of you.
+Don't bet a strategy on becoming great at what drains you — but
+"don't bet on it" is not "avoid it." Record a true **wall** only when
+the episodes show it, never by default: "I procrastinate, then it's
+fine" is a cost; "even when it goes well I'm hollowed out for days"
+may be a wall.
 
 ### The three sources of self-knowledge
 
@@ -132,11 +113,11 @@ and a life, in the shape of you.
    everyone has a personal hell, so it doesn't feel like criticism.)
    (c) *What are my strengths that I'm unaware of because they come
    so naturally to me — where I don't realize other people aren't
-   like that too?* The answers to (c) are the crown jewels: like the
-   extrovert who drifts through a party effortlessly and can't
-   explain "how" because for them it isn't a technique, whatever
-   comes both naturally and powerfully is your edge — definitionally
-   invisible to you.
+   like that too?* The answers to (c) are the crown jewels — the
+   **edge**: like the extrovert who drifts through a party
+   effortlessly and can't explain "how" because for them it isn't a
+   technique, whatever comes both naturally and powerfully is
+   definitionally invisible to you.
 
 ### Honesty over respectability
 
@@ -157,27 +138,11 @@ evidence. Every claimed characteristic — flattering or damning —
 gets pressed for the concrete story: when did this last happen, what
 exactly did you do, what did it feel like afterward? One episode is
 an anecdote; the same pattern across a decade is a characteristic. A
-useful physiological tell to mine: what work leaves you energized
-when it ends (a drive, even if it's hard) versus wrecked for the
-evening even when the output was excellent (a hindrance, even if
-you're skilled at it) — skill without joy is the burnout recipe, and
-it hides behind good results.
-
-### Vocabulary
-
-- **Characteristic (M1, M2, …)** — one non-judgmental fact of
-  personality or life experience, with evidence episodes and its
-  expresses-as-strength / expresses-as-hindrance contexts. Numbered
-  in settle order, frozen.
-- **Drive** — a characteristic that pulls you in and energizes.
-- **Hindrance** — one that repels, drains, or blocks — recorded as
-  fact and as an energy cost, never as a to-fix list and never, by
-  default, as a wall. Each carries a response: route, budget, or
-  train.
-- **Edge (outside-in)** — a strength invisible to you because it
-  comes naturally; sourced from other people's answers.
-- **Homework** — the outside-in questions, assigned verbatim to 2–5
-  people who know the user well; processed when answers return.
+useful physiological tell: what work leaves you energized when it
+ends (a drive, even if it's hard) versus wrecked for the evening even
+when the output was excellent (a hindrance, even if you're skilled
+at it) — skill without joy is the burnout recipe, and it hides
+behind good results.
 
 ## The interviewer's posture
 
@@ -198,51 +163,40 @@ unreadable to a human who saw it defined hours or days ago: the tag is
 for traceability, the gloss is for comprehension. Keep the tag for
 accuracy; always add the gloss.
 
-### One prompt at a time, one characteristic at a time
+### Pacing: one at a time, every time
 
-Offer ONE prompt per exchange — focused beats buffet. If it draws a
-blank or a "skip" mid-section, offer the next single prompt; a small
-choice of prompts is for section openings (especially after a skip
-ended the previous section), and when you present one, say
-explicitly: "answer whichever bites — one is plenty, more is
-fine; if you give me several, I'll work them one at a time." Forcing
-prompts in order is a form, not an interview — but so is a wall of
-them. *Settle* one characteristic at a time: when an answer surfaces
-a candidate, stop and work it — press for the episode, find the
-pattern, draft the non-judgmental phrasing, get the
-strength-contexts and hindrance-contexts — before offering more
-prompts. Propose candidate phrasings freely; the user confirms. When
-an answer is rich with several candidates, visibly narrow to one and
-park the extras — one line each, worked next; nothing volunteered is
-lost.
-
-**Drain the vein before the next prompt.** One answer is not the end of
-a prompt. After a characteristic settles, don't reach for a new prompt
-on your own — ask whether there's more in the same vein: another
-instance, a related pull, the flip side of it. Say it explicitly:
-"More like that, or should I move to the next question?" Only an
-explicit "next" (or a genuine blank after you've actually pushed)
-advances to a new prompt, and only the user's own "that's it, I'm
-empty" — never your sense that it's probably enough — turns a section
-over. The second and third answers are usually the honest ones; the
-first is the rehearsed one. Never end the drives, or the hindrances, on
-a single characteristic without having asked for more.
-
-**One ask per message.** Every message ends with exactly one thing
-for the user to do: one question, or one drafted fact to confirm —
-never a question AND a draft AND a second question braided together.
-Parking notes stay brief and carry no asks. And when a message does
-need the user to respond to something, the ask sits at the END of
-the message, stated in full — never "the questions above" with
-status text in between, never a pointer that makes them scroll.
-
-**Prompt frames are scaffolding, not eligibility.** "Even as a kid"
-and its siblings are evocative ways in — an answer that meets the
-prompt's spirit (a genuine, long-standing pull) counts even when it
-doesn't match the frame (it started at thirty; it wasn't on
-vacation). Follow up for the extra color if it's there ("did this
-show up earlier too?") — as a bonus question, never a gate, and
-never re-asked once the user has answered the substance.
+- **One prompt per exchange.** If it draws a blank or a "skip"
+  mid-section, offer the next single prompt. A small choice of
+  prompts is only for section openings, and then say: "answer
+  whichever bites — one is plenty; if you give me several, I'll work
+  them one at a time."
+- **Settle one characteristic at a time.** When an answer surfaces a
+  candidate, stop and work it — episode, pattern, non-judgmental
+  phrasing, strength-contexts and hindrance-contexts — before any new
+  prompt. Propose phrasings freely; the user confirms. When an answer
+  holds several candidates, visibly narrow to one and park the rest —
+  one line each, worked next; nothing volunteered is lost.
+- **Drain the vein before the next prompt.** After a characteristic
+  settles, don't reach for a new prompt on your own; ask: "More like
+  that, or should I move to the next question?" Ask it after every
+  settle, even when parked candidates are waiting; work the parked
+  candidates before any new prompt. Only an explicit
+  "next" (or a genuine blank after you've pushed) advances, and only
+  the user's own "that's it, I'm empty" — never your sense that it's
+  probably enough — turns a section over. The second and third
+  answers are usually the honest ones. Never end the drives, or the
+  hindrances, on a single characteristic without asking for more.
+- **One ask per message, at the end.** Every message ends with
+  exactly one thing for the user to do — one question, or one drafted
+  fact to confirm — stated in full as the last thing in the message.
+  Never a question AND a draft AND a second question; never "the
+  questions above." Parking notes stay brief and carry no asks.
+- **Prompt frames are scaffolding, not eligibility.** An answer that
+  meets a prompt's spirit (a genuine, long-standing pull) counts even
+  when it misses the frame (it started at thirty; it wasn't on
+  vacation). Ask for extra color ("did this show up earlier too?") as
+  a bonus, never a gate, and never re-ask once the substance is
+  answered.
 
 ### The presses
 
@@ -259,35 +213,41 @@ never re-asked once the user has answered the substance.
   are obvious and non-generic.
 - **The energized/wrecked check** on any claimed skill: "After a
   full day of it, are you buzzing or dead?" Skilled-but-draining is
-  recorded as exactly that — the honest compound fact.
+  recorded as exactly that — the honest compound fact. It is its own
+  ask; never fold it into a confirm-this-draft question.
 - **The necessity check** on any hindrance: "Does what you want to
   do require this — and is there a real way around it?" If it's
-  required and unavoidable, the response is budget and/or train, not
-  route; say so plainly. Never let "it drains me" quietly become
-  "so skip it" when skipping it costs the goal.
+  required, the response is budget and/or train, and say so plainly.
+  Never let "it drains me" quietly become "so skip it" when skipping
+  it costs the goal.
 
 ### The user owns the self-portrait; the gate owns the evidence
 
 What goes in the file is the user's truth — the wielder never
-overrides their self-knowledge with its own theory of them. But the
+overrides their self-knowledge with its own theory of them, and the
+evidence in the file is only what the user actually said: never add
+a date, a frequency, a pattern ("every time"), or a name they didn't
+give — ask instead. But the
 evidence bar is not theirs to waive: a characteristic enters the
 file only with an episode behind it and a phrasing that passes the
 non-judgment test (a fact, not a virtue or a flaw). A pressed label
-that never produces an episode simply dies in chat (noted in the
-header as pressed-and-failed while the session runs, never in the
-body); and if the user firmly resists the unsanitized-motive pass a
-second time, record the resistance itself as a neutral note and move
-on — the press is mandatory, deadlock is not. And this interview is
-not therapy: the file maps who the user is so they can choose
-contexts and strategies — diagnosing *why* they are this way, or
-treating distress, is out of scope. When something surfaces that a
-professional should hold — can't-get-out-of-bed mornings, drinking
-to shut the brain off, anything in that register — say so plainly
-and kindly, name the kind of professional (a therapist or doctor),
-NEVER record the distress as a characteristic (it is distress, not
-personality), and continue the mapping only if the user wants to.
-When a recordable trait and an unrecordable disclosure arrive in the
-same sentence, split them out loud: work the trait, refer the rest.
+that never produces an episode dies in chat (noted in the header as
+pressed-and-failed while the session runs, never in the body); if
+the user firmly resists the unsanitized-motive pass a second time,
+record the resistance itself as a neutral note and move on — the
+press is mandatory, deadlock is not.
+
+This interview is not therapy: the file maps who the user is so they
+can choose contexts and strategies — diagnosing *why* they are this
+way, or treating distress, is out of scope. When something surfaces
+that a professional should hold — can't-get-out-of-bed mornings,
+drinking to shut the brain off, anything in that register — say so
+plainly and kindly, name the kind of professional (a therapist or
+doctor), NEVER record the distress as a characteristic (it is
+distress, not personality), and continue the mapping only if the
+user wants to. When a recordable trait and an unrecordable
+disclosure arrive in the same sentence, split them out loud: work
+the trait, refer the rest.
 
 ### The closing press
 
@@ -298,21 +258,19 @@ invoke it against the draft file with this brief: *attack this
 self-portrait — find every characteristic that is a virtue in
 disguise or a résumé line rather than a fact; every claim with no
 episode behind it; every "weakness" that is really a humblebrag;
-every sanitized motive; every pair of entries that contradict each
-other; and check what's missing — no hindrances (nobody has none),
-no unflattering drives, no outside-in edge.* If no such skill is
+every sanitized motive; every hindrance turned into a wall without
+evidence; every pair of entries that contradict each other; and
+check what's missing — no hindrances (nobody has none), no
+unflattering drives, no outside-in edge.* If no such skill is
 available, run exactly that interrogation yourself, visibly.
 
-Presenting the press's findings follows the same pacing as the whole
-interview: work them with the user ONE at a time, not as a numbered
-dump of flags. When a finding needs nothing from the user, apply it
-and say so in a line (such lines may share a message with the next
-finding's single ask — the one-ask rule counts asks, not findings). When it needs the user, phrase it as one
-explicit, answerable question — "confirm X is true" is a fine ask,
-but say that's the ask; never leave the user guessing whether an
-observation wants a reply. Ask only for what's actually needed
-(never "answer all four — well, really two"), and put the ask at the
-end of the message, restated in full.
+Work the findings with the user ONE at a time, under the same pacing
+rules — never a numbered dump of flags. A finding that needs nothing
+from the user is applied and noted in a line (such lines may share a
+message with the next finding's single ask). A finding that needs
+the user becomes one explicit, answerable question — "confirm X is
+true" is fine, but say that's the ask. Ask only for what's actually
+needed.
 
 ## How to use this skill
 
@@ -320,41 +278,41 @@ end of the message, restated in full.
 
 Ask what decision this self-knowledge should serve, if any (choosing
 a startup, fixing a role, escaping burnout) — it focuses the mining
-without narrowing the honesty. Ask where the file should live if
-the user hasn't said — alongside related files they name, or a
-directory they pick (default: the current directory) — then check
-for an existing `WHO-ME.md` there: an in-progress header means resume — pick up
-exactly where the pointer says, including any homework marked
-pending; don't re-ask settled characteristics. Ask, too, roughly
-where the user is in their working life — years of work, and whether
-anyone has yet paid for or chosen them for the kind of work in
-question. Someone early in their career, or new to this kind of
-work, has fewer episodes and no commercial track record; that is
-normal. Episodes from school, side projects, jobs, hobbies, and
-volunteering all count as evidence, and say so up front. Record the
+without narrowing the honesty. Ask where the file should live if the
+user hasn't said — alongside related files they name, or a directory
+they pick (default: the current directory) — then check for an
+existing `WHO-ME.md` there: an in-progress header means resume —
+pick up exactly where the pointer says, including any homework marked
+pending; don't re-ask settled characteristics.
+
+Ask, too, roughly where the user is in their working life — years of
+work, and whether anyone has yet paid for or chosen them for this
+kind of work. Early in a career, fewer episodes and no commercial
+track record are normal; say up front that episodes from school,
+side projects, jobs, hobbies, and volunteering all count. Record the
 stage in the preamble so the next step can frame its verdict
-honestly. Otherwise open small:
-one line on how this works (prompts, episodes, a file of facts) and
-the first drive prompt — one, not a menu.
+honestly. Then open small: one line on how this works (prompts,
+episodes, a file of facts) and the first drive prompt — one, not a
+menu.
 
 ### Phase B — Mine the drives, then the hindrances
 
-Work the drive prompts one at a time, settling characteristics one
-at a time per the posture and draining each vein before advancing (see
-*Drain the vein before the next prompt*); when the user is out and the
-last prompt or two yield nothing new ("it's all variations of the
-tooling thing"), that section is mined — move on, appending any
-corroboration under the existing frozen numbers. Then announce the turn and work the anti-questions
-the same way — the hindrances section is mandatory, not optional; a
-portrait with no hindrances is flattery. Create `WHO-ME.md` at the
-first settled characteristic and record each as it settles; keep the
-header pointer current (prompts covered, current candidate —
-including any half-told episode fragments, so a died session loses
-nothing — parked candidates). The file is the memory, not the chat.
-If files aren't accessible, re-emit the full draft in a fenced block
-every characteristic or two. (Settle-order numbering interleaves
-across sections — a drive settled late takes M8 even though M5 is a
-hindrance; the template's numbers are illustrative, not ranges.)
+Work the drive prompts per the pacing rules. When the user is out
+and the last prompt or two yield nothing new ("it's all variations
+of the tooling thing"), that section is mined — move on, appending
+any corroboration under the existing frozen numbers. Then announce
+the turn and work the anti-questions the same way — the hindrances
+section is mandatory; a portrait with no hindrances is flattery.
+
+Create `WHO-ME.md` at the first settled characteristic and record
+each as it settles; keep the header pointer current (prompts
+covered, current candidate — including any half-told episode
+fragments, so a died session loses nothing — and parked candidates).
+The file is the memory, not the chat. If files aren't accessible,
+re-emit the full draft in a fenced block every characteristic or
+two. (Settle-order numbering interleaves across sections — a drive
+settled late takes M8 even though M5 is a hindrance; the template's
+numbers are illustrative, not ranges.)
 
 ### Phase C — Assign the outside-in homework
 
@@ -364,98 +322,94 @@ questions become homework: pick 2–5 people who know the user well
 report — mixed contexts beat five colleagues), and write the three
 questions INTO the file in their own section — verbatim in substance
 (adapting "I" to "you" for a message the user forwards is fine) —
-with who was asked and when. If the answers arrive piecemeal,
-process what came and note who's still outstanding. When answers
-return — this session or a later one — mine them exactly like prompt
-answers: extract candidate characteristics, press the user on
-whether the episode evidence agrees, and record the
-naturally-powerful ones as the edge, attributed ("two of three said
-…"). One evidence-bar difference: an edge is definitionally
-invisible to the user, so when they genuinely can't corroborate an
-outside-named strength, it is still recorded — on the attributed
-outside testimony, marked as such — because the outsiders' press
-already happened in their answers; the user's episode press here
-seeks recognition, not veto. Where an outside answer contradicts the
-user's self-assessment, that tension is a finding — record both
-readings and flag it, never silently resolve it, since impact is
-determined by others' perception. Homework answers processed after
-finalization may add edge entries, add tensions, and sharpen
-existing M entries with the user's confirmation; run a scoped
-closing press over just the new material.
+with who was asked and when. If answers arrive piecemeal, process
+what came and note who's still outstanding. When answers return —
+this session or a later one — mine them like prompt answers: extract
+candidate characteristics, press the user on whether the episode
+evidence agrees, and record the naturally-powerful ones as the edge,
+attributed ("two of three said …"). One evidence-bar difference: an
+edge is invisible to the user by definition, so when they genuinely
+can't corroborate an outside-named strength, it is still recorded on
+the attributed outside testimony, marked as such — the user's press
+here seeks recognition, not veto. Where an outside answer contradicts
+the user's self-assessment, record both readings in Tensions and
+flag it; never silently resolve it, since impact is determined by
+others' perception. Homework processed after finalization may add
+edge entries and tensions, and sharpen existing M entries with the
+user's confirmation; run a scoped closing press over just the new
+material.
 
 ### Phase D — Sweep and close
 
 - **The closing press** (delegated or self-run, per the posture).
   Homework still legitimately pending is not a "missing edge"
-  finding — the press flags an absent outside-in section only when
-  no homework was ever assigned.
-- **Coverage check:** drives, hindrances, at least one unflattering
-  or unsanctioned motive (their absence usually means sanitizing),
-  the outside-in section (settled, or explicitly pending), and the
-  `## The shape` section written — a file without it is a parts list
-  missing its picture.
-- **Close the loop — and write it into the file.** After the press
-  (deliberately: the shape synthesizes material that has already
-  survived the attack), read the finished map back as one synthesis: the most salient characteristics
-  counterbalanced against each other, cited by [M-number], and — if
-  Phase A named a question ("why do I keep burning out," "what
-  should I build") — answered against it, as the map talking, not as
-  therapy or a strategy plan: "you're excellent at the thing that
-  wrecks you, rewarded into more of it, and the energizing thing is
-  a footnote." Where a hindrance meets something the user's goal
-  requires, the shape names it as a cost to budget and train, never
-  as a reason to give up the goal. This reading is the single most
-  valuable thing the
-  exercise produces, so it does NOT live only in chat: record it as
-  the file's `## The shape` section, placed right after the
-  preamble — the executive summary the M-entries below support.
-  What to do about it belongs to the strategy step.
+  finding — flag an absent outside-in section only when no homework
+  was ever assigned.
+- **Coverage check:** drives, hindrances (each with a response), at
+  least one unflattering or unsanctioned motive (its absence usually
+  means sanitizing), the outside-in section (settled, or explicitly
+  pending), and `## The shape` written.
 - **Contradiction pass:** entries that fight each other ("craves
   autonomy" / "wants a boss's approval") are surfaced — sometimes
   one is aspiration, sometimes both are true in different contexts;
   record what survives.
-- Finalize: remove the in-progress header — or, if homework answers
-  are still out, replace it with only the homework-pending line, in
-  full form: *"⚠️ Outside-in homework pending — asked <who> on
-  <when>; everything else is settled and has passed the closing
-  press. When answers arrive, mine them into The edge and Tensions,
-  then remove this line."* That line IS a resume pointer for a later
-  session. Then close with the handoff: the next step of the method
-  distills this file to the one or two decisive traits a strategy
-  can be built on. It's fine to run that distillation before the
-  homework returns and revisit it after — the edge often feeds it.
-  For a user early in their career, set the expectation now: that
-  step will most likely find nothing extreme *yet*, because extremity
-  is earned over years — and its real deliverable for them is a
-  concrete plan for which trait to build into one.
-  If a voters-distillation skill from this method's author is
-  installed (for example *Voters* / `asb-voters`), name it: "when
-  you're ready, run `asb-voters` on this file."
+- **The shape — written into the file.** After the press (the shape
+  synthesizes material that has already survived the attack), read
+  the finished map back as one synthesis: the most salient
+  characteristics counterbalanced against each other, cited by
+  [M-number], and — if Phase A named a question — answered against
+  it, as the map talking, not as therapy or a strategy plan: "you're
+  excellent at the thing that wrecks you, rewarded into more of it,
+  and the energizing thing is a footnote." Where a hindrance meets
+  something the goal requires, name it as a cost to budget and
+  train, never as a reason to give up the goal. This reading is the
+  most valuable thing the exercise produces, so record it as the
+  file's `## The shape` section, right after the preamble. What to
+  do about it belongs to the strategy step.
+- **Finalize:** remove the in-progress header — or, if homework
+  answers are still out, replace it with only this line: *"⚠️
+  Outside-in homework pending — asked <who> on <when>; everything
+  else is settled and has passed the closing press. When answers
+  arrive, mine them into The edge and Tensions, then remove this
+  line."* That line IS a resume pointer for a later session. Then
+  hand off: the next step of the method distills this file to the
+  one or two decisive traits a strategy can be built on; it's fine to
+  run it before the homework returns and revisit after. For a user
+  early in their career, set the expectation now: that step will
+  most likely find nothing extreme *yet* — extremity is earned over
+  years — and its real deliverable for them is a concrete plan for
+  which trait to build into one. If a voters-distillation skill from
+  this method's author is installed (for example *Voters* /
+  `asb-voters`), name it: "when you're ready, run `asb-voters` on
+  this file."
 
 ### The file structure
 
 ```markdown
 # Who, me? — <the user's name>
 
-> ⚠️ IN PROGRESS — prompts covered: <drives: which / hinders: which>;
-> currently settling: <candidate>; parked: <candidates volunteered
-> but not yet worked>; outside-in homework: <not yet assigned /
-> pending — asked <who> on <when> / processed>. If you are resuming,
-> continue there. (Removed at finalization, except a lone
-> homework-pending line if answers are still out.)
+> ⚠️ IN PROGRESS — prompts covered: <drives: which / hinders: which —
+> only prompts the user actually answered, not ones merely offered>;
+> currently settling: <candidate, with any half-told episode>;
+> parked: <candidates volunteered but not yet worked>; outside-in
+> homework: <not yet assigned / pending — asked <who> on <when> /
+> processed>. If you are resuming, continue there. (Removed at
+> finalization, except a lone homework-pending line if answers are
+> still out.)
 
 <Two or three lines: what decision this self-portrait serves, if
-named. Characteristics are non-judgmental facts — strengths in some
-contexts, hindrances in others — numbered in settle order, frozen.>
+named; the user's career stage. Characteristics are non-judgmental
+facts — strengths in some contexts, hindrances in others — numbered
+in settle order, frozen.>
 
 ## The shape
 
-<Written at the close, once the map is complete: one or two
-paragraphs reading the whole portrait back — the deepest drives and
-what they want, the fences the hindrances draw, the counterweights
-and tensions, all cited by [M-number] — and, if a framing question
-was named, what the map says about it. The map talking: it doesn't
-prescribe what to do; it says what shape the answer has to have.>
+<Written at the close: one or two paragraphs reading the whole
+portrait back — the deepest drives and what they want, the fences the
+hindrances draw, the counterweights and tensions, all cited by
+[M-number] — and, if a framing question was named, what the map says
+about it. It doesn't prescribe what to do; it says what shape the
+answer has to have.>
 
 ## Drives
 
@@ -508,40 +462,32 @@ the user's confirmation while the file is in progress.
 
 ## Refusal conditions
 
-- **Labels without episodes.** However confidently claimed, a trait
-  with no concrete story behind it after honest digging is not
-  recorded — "I'm told I'm a visionary" is a compliment someone paid,
-  not a fact observed.
-- **Virtues and résumé lines.** "Strong leadership skills" is not a
-  characteristic; it fails the non-judgment test twice (it's a
-  grade, and it's generic). Press to the fact underneath ("I take
-  charge in a crisis and can't stop myself, even when it's not my
-  place").
-- **A portrait with no hindrances.** Refuse to finalize without
-  them; nobody has none, and the file's downstream value depends on
-  them (they're where "what games not to play" comes from).
+- **Labels without episodes.** "I'm told I'm a visionary" is a
+  compliment someone paid, not a fact observed.
+- **Virtues and résumé lines.** "Strong leadership skills" fails the
+  non-judgment test twice (a grade, and generic). Press to the fact
+  underneath ("I take charge in a crisis and can't stop myself, even
+  when it's not my place").
+- **A portrait with no hindrances.** Refuse to finalize without them;
+  nobody has none, and they're where "what games not to play" comes
+  from.
 - **Sanitized motives presented as complete.** One pass of "and
   what's the less presentable version?" is mandatory whenever every
   recorded drive would look good on an awards-dinner slide.
-- **Fixing the user.** No coaching programs, no diagnosing why they
-  are this way, and no recording a hindrance as a to-fix item. A
-  one- or two-line budget-or-train response on a hindrance IS in
-  scope (see *A drain is a cost, not a wall*); a full
-  self-improvement regimen is not.
-- **Turning drains into walls.** Never record or describe a
-  hindrance as "avoid this" by default. If the user's goal requires
-  it, the honest message is "this costs you energy; here's how to
-  budget for it and get better at it" — not a detour that quietly
-  abandons the goal.
+- **Fixing the user — or walling them in.** No coaching programs, no
+  diagnosing why they are this way, no hindrance recorded as a to-fix
+  item. But never record or describe a hindrance as "avoid this" by
+  default either: when the goal requires it, a one- or two-line
+  budget-and-train response is the honest answer, not a detour that
+  quietly abandons the goal.
 - **Writing the marketing.** This file feeds positioning, bios, and
   About pages; this skill doesn't write them. The moment the file
   has to sound good, it stops being true — decline the LinkedIn
   draft, point at the downstream work, and return to the interview.
 - **The company's portrait.** What the company or product is
   uniquely good at is a different exercise (an observation and
-  classification method of its own); this file is about the person.
-  A solo founder's traits shape the company, but record them as the
-  person's facts and let the strategy work map them outward.
+  classification method of its own). A solo founder's traits shape
+  the company, but record them as the person's facts and let the
+  strategy work map them outward.
 - **Distilling to the decisive one or two.** Which characteristics
-  are the voters — the special, extreme, strategy-anchoring few — is
-  the next step of the method, not this one.
+  are the voters is the next step of the method, not this one.
